@@ -1,5 +1,7 @@
 %!TEX root = main.tex
 
+\chapter{Lógica Proposicional}
+
 \chapter{Teorias de Primeira Ordem}
 
 \section{Linguagens de Primeira Ordem}
@@ -22,13 +24,13 @@
                 \begin{enumerate}[label=\roman*.]
                     \item as variáveis são termos;
                     \item as constantes são termos;
-                    \item se $t_1, t_2, \ldots, t_n$ são termos e $f$ é um símbolo de função $n$-ário, então $ft_1 t_2 \ldots t_n$ é um termo;
+                    \item se $t_1, t_2, \ldots, t_n$ são termos e $f$ é um símbolo de função $n$-ário, então $f(t_1, t_2, \ldots, t_n)$ é um termo;
                     \item todos os termos têm uma das formas acima.
                 \end{enumerate}
             \item As \textit{fórmulas} correspondentes a um alfabeto são definidas do seguinte modo:
                 \begin{enumerate}[label=\roman*.]
-                    \item se $t_1$ e $t_2$ são termos, então $= t_1  t_2$ é uma fórmula;
-                    \item se $t_1, t_2, \ldots, t_n$ são termos e $R$ é um símbolo de predicado $n$-ário, então $R t_1 t_2 \ldots t_n$ é uma fórmula;
+                    \item se $t_1$ e $t_2$ são termos, então $= (t_1,  t_2)$ é uma fórmula;
+                    \item se $t_1, t_2, \ldots, t_n$ são termos e $R$ é um símbolo de predicado $n$-ário, então $R(t_1, t_2, \ldots, t_n)$ é uma fórmula;
                     \item se $\alpha$ e $\beta$ são fórmulas, então $(\neg \alpha)$ e $(\alpha \lor \beta)$ são fórmulas;
                     \item se $x$ é uma variável e $\alpha$ é uma fórmula, então $(\forall x)(\alpha)$ é uma fórmula;
                     \item todas as fórmulas têm uma das formas acima.
