@@ -2,7 +2,7 @@
 
 \chapter{Números Reais como na Análise}
 
-\section{Corpos Ordenados Completos}
+\section{Corpos Ordenados}
 
 \begin{defi} \label{reais:def.corpo}
     Uma tripla $(\F, +, \cdot)$ é um \textit{corpo} se no conjunto $\F \neq \emptyset$ existem duas operações, $+ :\F \times \F \to \F$ e $\cdot: \F \times \F \to \F$, para as quais
@@ -202,20 +202,22 @@
 
 \section{Naturais}
 
+Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
+
 \begin{defi}
-    Um subconjunto $I \subseteq \R$ é \textit{indutivo} se $1 \in I$ e $n \in I \Rightarrow n+1 \in I$. Isso é denotado por $\ind{I}$.
+    Um subconjunto $I \subseteq \F$ é \textit{indutivo} se $1 \in I$ e $n \in I \Rightarrow n+1 \in I$. Isso é denotado por $\ind{I}$.
 \end{defi}
 
 \begin{ex}
-    $\R$ é um conjunto indutivo. Com isso, o conjunto de todos os subconjuntos indutivos de $\R$ é não vazio, isto é, $\{ I \in \mathcal{P}{(\R)} : \ind{(I)} \} \neq \emptyset$. Em particular, isso nos permite considerar $\bigcap \{ I \in \mathcal{P}{(\R)} : \ind{(I)} \}$.
+    $\F$ é um conjunto indutivo. Com isso, o conjunto de todos os subconjuntos indutivos de $\F$ é não vazio, isto é, $\{ I \in \mathcal{P}{(\F)} : \ind{(I)} \} \neq \emptyset$. Em particular, isso nos permite considerar $\bigcap \{ I \in \mathcal{P}{(\F)} : \ind{(I)} \}$.
 \end{ex}
 
 \begin{prop}
-    Se $\mathcal{A}$ é uma coleção não vazia de subconjuntos indutivos de $\R$, isto é, se 
-        $ \ds
-            \mathcal{A} \subseteq \{ I \in \mathcal{P}{(\R)} : \ind{(I)} \}
-        $
-    e $\mathcal{A} \neq \emptyset$, então $\bigcap \mathcal{A}$ é um conjunto indutivo.
+    Se $\mathcal{A}$ é uma coleção não vazia de subconjuntos indutivos de $\F$, isto é, se 
+        \[
+            \mathcal{A} \in \mathcal{P}{(\{ I \in \mathcal{P}{(\F)} : \ind{(I)} \})}_{\neq \emptyset},
+        \]
+    então $\bigcap \mathcal{A}$ é um conjunto indutivo.
 \end{prop}
 
 \begin{proof} 
@@ -223,18 +225,22 @@
 \end{proof}
 
 \begin{defi}
-    O conjunto dos números naturais, denotado por $\N$, é definido como a interseção de todos os subconjuntos indutivos de $\R$:
+    O conjunto dos números naturais é definido como o menor subconjunto indutivo de $\F$:
         \[
-            \N := \bigcap \{ I \in \mathcal{P}{(\R)} : \ind{(I)} \}.
+            \N_{\F} := \bigcap \{ I \in \mathcal{P}{(\F)} : \ind{(I)} \}.
         \]
-    Em particular, $\N_0 := \N \cup \{0\}$.
+    % Em particular, $\N_0 := \N \cup \{0\}$.
 \end{defi}
 
-\begin{teo}[Indução fraca]
+\begin{obs}
+    Explicação
+\end{obs}
+
+\begin{teo}[Indução]
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Se um subconjunto $A \subseteq \N$ é indutivo, então $A = \N$.
-            \item Seja $s(n)$ uma proposição bem definida para cada $n \in \N$. Se $s(1)$ é verdadeira e se $s(n) \Rightarrow s(n+1)$ é verdadeira, então $s(n)$ é verdadeira para todo $n \in \N$.
+            \item Seja $s(n)$ uma proposição bem definida para cada $n \in \N$. Se $s(1)$ é verdadeira e se $s(n+1)$ é verdadeira sempre que $s(n)$ é verdadeira, então $s(n)$ é verdadeira para todo $n \in \N$.
         \end{enumerate}
 \end{teo}
 
@@ -249,54 +255,57 @@
 \begin{prop}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Para quaisquer $m,n \in \N$, tem-se $m+n \in \N$ e $m \cdot n \in \N$.
+            \item Para quaisquer $m,n \in \N$ tem-se $m+n \in \N$.
+            \item Para quaisquer $m,n \in \N$ tem-se $m \cdot n \in \N$.
             \item Para qualquer $n \in \N$, tem-se $n \geq 1$. Isso significa, em particular, que $\N$ é limitado inferiormente.
-            \item $\N$ não é limitado superiormente.
-            \item (Propriedade arquimediana de $\R$) Para quaisquer $a \in \R_{>0}$ e $b \in \R$ existe $n \in \N$ tal que $na > b$.
-            \item Para todo $\epsilon \in \R_{>0}$ existe $n \in \N$ tal que $\dfrac{1}{n} < \epsilon$.
-            \item Se $a,x,y \in \R$ cumprem $a \leq x \leq a + \dfrac{y}{n}$ para todo $n \in \N$, então $x=a$.
         \end{enumerate}
 \end{prop}
 
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Definindo $G := \{ m \in \N : \forall n (n \in \N \Rightarrow n+m \in \N )\}$, temos $G \subseteq \N$. Temos que $1 \in G$ pois, para todo $n \in \N$, vale $n \in \N \Rightarrow n+1 \in \N$, já que $\N$ é indutivo. Agora, se $n+m \in \N$, então, como $\N$ é indutivo, vale $(n+m)+1 \in \N$, isto é, $n+(m+1) \in \N$. Assim, $m \in G \Rightarrow m+1 \in G$, isto é, $G$ é indutivo e, portanto, cumpre $\N \subseteq G$, donde $G = \N$. Agora, definindo $H := \{ m \in \N : \forall n (n \in \N \Rightarrow n \cdot m \in \N )\}$, temos $H \subseteq \N$. Temos que $1 \in H$ pois, para todo $n \in \N$, vale $n \cdot 1 = n \in \N$. Agora, se $n \cdot m \in H$, então $n \cdot (m+1) \in H$ pois $n \cdot (m+1) = n \cdot m + n \cdot 1$ e, como vimos, a soma de dois naturais é um natural. Com isso, $H$ é indutivo e, portanto, cumpre $\N \subseteq H$, donde $H = \N$. \itemproof
+            \item Fixe $m \in \N$ e defina $A := \{n \in \N : m + n \in \N \}$. Temos $1 \in A$ pois se $m \in \N$ então $m+1 \in \N$ já que $\N$ é indutivo. Agora, se $n \in A$, então $m + n \in \N$, e como $\N$ é indutivo vem $(m+n)+1 \in \N$, isto é, $m+(n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$. Como $A \subseteq \N$ pela definição de $A$, segue que $A = \N$. Como $m$ foi fixado arbitrariamente, segue que $m + n \in \N$ para quaisquer $m,n \in \N$. \itemproof
+            \item Fixe $m \in \N$ e defina $A := \{n \in \N : m \cdot n \in \N \}$. Temos $1 \in A$ pois $m \cdot 1 = m \in \N$. Agora, se $n \in A$, então $m \cdot n \in \N$, e pelo item anterior $m \cdot n + m \in \N$, isto é, $m \cdot (n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$. Como $A \subseteq \N$ pela definição de $A$, segue que $A = \N$. Como $m$ foi fixado arbitrariamente, segue que $m \cdot n \in \N$ para quaisquer $m,n \in \N$. \itemproof
             \item Definindo $A := \{ n \in \N : n \geq 1\}$, temos $A \subseteq \N$. Claramente $1 \in A$ pois $1 \geq 1$. Agora, se $n \in A$, então $1>0 \Rightarrow n+1 > n \geq 1 \Rightarrow n+1 \geq 1$, de modo que $n+1 \in A$. Com isso $\N \subseteq A$, donde $A = \N$. \itemproof
-            \item Suponha que $\N$ seja limitado superiormente. Como $\N \subsetneq \R$, existe $a := \sup{\N}$. Como $a-1$ não é cota superior de $\N$, existe $n \in \N$ tal que $a-1 < n$, donde $a < n+1 \in \N$, absurdo! Em particular, concluímos que para todo $x \in \R$ existe $n \in \N$ tal que $n > x$. \itemproof
-            \item Pelo item anterior, para o número $\frac{b}{a}$ existe $n \in \N$ tal que $n > \frac{b}{a}$, e sendo $a>0$, temos $na>b$. \itemproof
-            \item Basta colocar $b=1$ e $a= \epsilon$ no item anterior: existe $n \in \N$ tal que $n \cdot \epsilon > 1$, donde $\frac{1}{n} < \epsilon$. \itemproof
-            \item Se fosse $x > a$, então a propriedade arquimediana nos diz que existe $n \in \N$ tal que $n \cdot (x-a) > y$, donde $x > a + \frac{y}{n}$, o que contraria a hipótese. Logo, só pode ser $x=a$. \itemproof
         \end{enumerate}
 \end{proof}
 
-\begin{lem}
+\begin{lem} \label{lema.reais:discretude}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Para qualquer $n \in \N$, ou $n-1=0$ ou $n-1 \in \N$.
-            \item Para quaisquer $m,n \in \N$, com $m<n$, temos $n-m \in \N$.
-            \item Para todo $n \in \N$ não existe $m \in \N$ para o qual $n < m < n+1$.
+            \item Para qualquer $n \in \N$, se $n \neq 1$, então $n-1 \in \N$.
+            \item Para quaisquer $m,n \in \N$, se $n<m$, então $m-n \in \N$.
+            \item Para qualquer $n \in \N$ não existe $m \in \N$ tal que $n < m < n+1$.
         \end{enumerate}
 \end{lem}
 
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Definindo $A := \{ n \in \N : n-1=0 \lor n-1 \in \N \}$, temos $A \subseteq \N$. Temos $1 \in A$ pois vale $1 - 1 = 0 \lor 1 - 1 \in \N$. Agora, se $n \in A$, então $(n+1)-1 = n \in A$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, de modo que $\N \subseteq A$, donde $A = \N$. \itemproof
-            \item Definindo $A := \{ m \in \N : \forall n (n \in \N \land m < n \Rightarrow n - m \in \N) \}$, temos $A \subseteq \N$. Sendo $n \in \N$ com $n>1$, temos $n-1 > 0$, isto é, $n-1 \neq 0$; com isso, pelo item anterior, $n-1 \in \N$. Agora, supondo que $n,m \in \N$ e $m<n$ implicam $n-m \in \N$, provemos que $n,m \in \N$ e $m+1<n$ implicam $n-(m+1) \in \N$. De fato, $m+1 < n \Rightarrow m < n-1$; pelo item anterior, $n-1 \in \N$, donde, pela hipótese de indução, $(n-1) - m \in \N$, isto é, $n - (m+1) \in \N$. Isso nos mostra que $m \in A \Rightarrow m+1 \in A$, isto é, que $A$ é indutivo; daí, $\N \subseteq A$, donde $A = \N$. \itemproof
+            \item Suponha que existe $p \in \N$ com $p \neq 1$ tal que $p-1 \notin \N$, e seja $A = \N \setminus \{p\}$. Como $1 \in \N$ e $p \neq 1$, temos $1 \in A$. Agora, se $n \in A$, então $n \neq p$, e também $n+1 \neq p$ (se fosse $n+1 = p$, então $p-1 = n \in \N$, mas supomos $p-1 \notin \N$), de modo que $A$ é indutivo. Assim, $\N \setminus \{ p\} = \N$, uma clara contradição, de modo que não existe tal $p$. \itemproof
+            \item Definindo $A := \{n \in \N : \forall m (m \in \N \land n < m \Rightarrow m - n \in \N) \}$, temos $A \subseteq \N$. Para todo $m \in \N$ com $m > 1$, temos $m \neq 1$, de modo que $m-1 \in \N$ pelo item anterior. Com isso, $1 \in A$. Agora, se $n \in A$, então para todo $m \in \N$ com $m > n$ tem-se $m-n \in \N$, e precisamos provar que $n+1 \in A$, isto é, que para todo $m \in \N$ com $m > n+1$ tem-se $m-(n+1) \in \N$. Se $m>n+1$, então $m>n+1>n$, de modo que, pela hipótese de indução, temos $m-n \in \N$. Agora, como $m>n+1$, temos $m-n \neq 1$, e como $m-n \in \N$, pelo item anterior temos $(m-n)-1 \in \N$, isto é, $m-(n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$, de modo que $A = \N$. \itemproof
             \item Sendo $n \in \N$, suponha que existe $m \in \N$ tal que $n < m < n+1$. Daí, $m-n<1$ e, pelo item anterior, $m - n \in \N$, absurdo! Logo, tal $m$ não pode existir. \itemproof
         \end{enumerate}
 \end{proof}
 
-\begin{teo}[Princípio da Boa Ordenação] Todo subconjunto não vazio de números naturais possui um menor elemento. Isto é, se $\emptyset \neq A \subseteq \N$, então existe $a \in A$ tal que $a \leq x$ para todo $x \in A$.
+\begin{teo}[Princípio da Boa Ordenação]
+    Todo subconjunto não vazio de números naturais possui um elemento mínimo. Isto é, se $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$, então existe $a \in A$ tal que $a \leq x$ para todo $x \in A$.
 \end{teo}
 
 \begin{proof}
-    Defina $[n] := \{ x \in \N \mid x \leq n \}$ e $X := \{ n \in \N \mid [n] \subseteq \N - A\}$. Se $1 \in A$, então $1 = \min A$. Se $1 \notin A$, então $[1] = \{ 1 \} \subset \N - A$, de modo que $1 \in X$. Agora, como $A \neq \emptyset$, temos que $X \neq \N$. Se $1 \in X$ e $X \neq \N$, então existe $n_0 \in X$ tal que $n_0 + 1 \notin X$, isto é, $[n_0] \cap A = \emptyset$ e $[n_0+1] \cap A \neq \emptyset$. Com isso, $n_0 + 1 \in A$, sendo este o menor elemento de $A$ (pois não existe um natural entre $n_0$ e $n_0 + 1$). \itemproof
+    Defina $[n] := \{ x \in \N : x \leq n \}$ e $X := \{ n \in \N : [n] \subseteq \N \setminus A\}$. Se $1 \in A$, então $1 = \min A$. Se $1 \notin A$, então $[1] = \{ 1 \} \subset \N \setminus A$, de modo que $1 \in X$. Agora, como $A \neq \emptyset$, temos que $X \neq \N$. Se $1 \in X$ e $X \neq \N$, então existe $n_0 \in X$ tal que $n_0 + 1 \notin X$ (se um tal $n_0$ não existisse, $X$ seria indutivo e teríamos $X = \N$), isto é, $[n_0] \cap A = \emptyset$ e $[n_0+1] \cap A \neq \emptyset$. Com isso, temos $n_0 + 1 \in A$, sendo este o elemento mínimo de $A$ (pois, pelo lema \eqref{lema.reais:discretude}, não existe um natural entre $n_0$ e $n_0 + 1$). \itemproof
 \end{proof}
 
 \begin{proof}
-    Suponha por contradição que existe um conjunto $\emptyset \neq A \subseteq \N$ que não tem um elemento mínimo. Definindo $X := \{ n \in \N : [n] \cap A = \emptyset \}$, veja que $1 \in X$ (de fato, se $1 \notin X$, então  $[1] \cap A \neq \emptyset$, de modo que $1 \in A$ seria o menor elemento de $A$, absurdo!). Agora, se $n \in X$, então $[n] \cap A = \emptyset$; daí, se fosse $n+1 \in A$, este seria o menor elemento de $A$, absurdo! Logo, só pode ser $n+1 \in X$, de modo que $X$ é indutivo e $\N \subset X$. Como $X \subset \N$ por definição, temos que $X = \N$, donde $A = \emptyset$, uma contradição. \itemproof
+    Suponha por contradição que existe um subconjunto $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ que não tem um elemento mínimo. Definindo
+        \[
+            X := \{ n \in \N : \forall r (r \in \N \land 1 \leq r \leq n \Rightarrow r \in \N \setminus A) \},
+        \]
+    temos $1 \in X$. De fato, se fosse $1 \notin X$, então existiria $r \in \N$ tal que $1 \leq r \leq 1$ e $r \notin \N \setminus A$, isto é, teríamos $1 \in A$, de modo que $A$ teria um elemento mínimo, uma contradição. Agora, provemos que se $n \in X$ então $n+1 \in X$. Se fosse $n+1 \notin X$, então teríamos $n+1 \in A$, e como $A$ não tem um elemento mínimo existiria $p \in A$ tal que $p < n+1$. Como $p \in \N$, pelo lema \eqref{lema.reais:discretude} teríamos $1 \leq p \leq n$ (não poderia ser $n < p < n+1$ justamente pelo lema), mas como $n \in X$ teríamos $p \in \N \setminus A$, uma contradição pois $p \in A$. Com isso, $n+1 \in X$ e $X$ é indutivo, de modo que, $X = \N$. Logo, para todo $n \in \N$ temos $n \in \N \setminus A$, isto é, $A = \emptyset$, de modo que não existe um subconjunto não vazio de $\N$ que não tenha um elemento mínimo. \itemproof
+\end{proof}
+
+\begin{proof}
+    Suponha por contradição que existe um subconjunto $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ que não tem um elemento mínimo. Definindo $X := \{ n \in \N : [n] \cap A = \emptyset \}$, temos $1 \in X$ (de fato, se $1 \notin X$, então  $[1] \cap A \neq \emptyset$, de modo que $1 \in A$ seria o elemento mínimo de $A$, absurdo!). Agora, se $n \in X$, então $[n] \cap A = \emptyset$; daí, se fosse $n+1 \in A$, este seria o elemento mínimo de $A$, absurdo! Logo, só pode ser $n+1 \in X$, de modo que $X$ é indutivo e $\N \subseteq X$. Como $X \subseteq \N$ por definição, temos que $X = \N$, donde $A = \emptyset$, uma contradição. \itemproof
 \end{proof}
 
 
@@ -528,7 +537,10 @@
 \section{Inteiros e Racionais}
 
 \begin{defi}
-    O conjunto dos números inteiros, denotado por $\Z$, é definido como $\Z := \N_0 \cup -\N$, em que $-\N := \{-n : n \in \N\}$.
+    O conjunto dos números inteiros é definido como
+        \[
+            \Z_{\F} := \N_{\F} \cup \{ 0\} \cup -\N_{\F}.
+        \]
 \end{defi}
 
 \begin{prop}
@@ -541,7 +553,12 @@
 (Racionais) Sendo $y,w \neq 0$, temos que $x \cdot w = y \cdot z \Leftrightarrow x \cdot y^{-1} = z \cdot w^{-1}$.
 
 \begin{defi}
-    O conjunto dos números racionais, denotado por $\Q$, é definido como $\Q := \{ p \cdot q^{-1} : p \in \Z, q \in \Z_{\neq 0} \}$. Denotaremos $p \cdot q^{-1}$ por $\frac{p}{q}$.
+    O conjunto dos números racionais é definido como
+        \[
+            \Q_{\F} := \{x \in \F : \exists a \exists b (a \in \Z_{\F} \land b \in \Z_{\F} \land b \neq 0 \land x = a \cdot b^{-1} ) \}.
+        \]
+    
+    , denotado por $\Q$, é definido como $\Q := \{ p \cdot q^{-1} : p \in \Z, q \in \Z_{\neq 0} \}$. Denotaremos $p \cdot q^{-1}$ por $\frac{p}{q}$.
 \end{defi}
 
 \begin{prop}

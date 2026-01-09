@@ -723,4 +723,17 @@ O axioma do vazio nos diz que existe um conjunto $x$ que cumpre $\forall y (y \n
         \end{enumerate}
 \end{defi}
 
+\item $\N$ não é limitado superiormente.
+\item (Propriedade arquimediana de $\R$) Para quaisquer $a \in \R_{>0}$ e $b \in \R$ existe $n \in \N$ tal que $na > b$.
+\item Para todo $\epsilon \in \R_{>0}$ existe $n \in \N$ tal que $\dfrac{1}{n} < \epsilon$.
+\item Se $a,x,y \in \R$ cumprem $a \leq x \leq a + \dfrac{y}{n}$ para todo $n \in \N$, então $x=a$.
+
+\item Suponha que $\N$ seja limitado superiormente. Como $\N \subsetneq \R$, existe $a := \sup{\N}$. Como $a-1$ não é cota superior de $\N$, existe $n \in \N$ tal que $a-1 < n$, donde $a < n+1 \in \N$, absurdo! Em particular, concluímos que para todo $x \in \R$ existe $n \in \N$ tal que $n > x$. \itemproof
+\item Pelo item anterior, para o número $\frac{b}{a}$ existe $n \in \N$ tal que $n > \frac{b}{a}$, e sendo $a>0$, temos $na>b$. \itemproof
+\item Basta colocar $b=1$ e $a= \epsilon$ no item anterior: existe $n \in \N$ tal que $n \cdot \epsilon > 1$, donde $\frac{1}{n} < \epsilon$. \itemproof
+\item Se fosse $x > a$, então a propriedade arquimediana nos diz que existe $n \in \N$ tal que $n \cdot (x-a) > y$, donde $x > a + \frac{y}{n}$, o que contraria a hipótese. Logo, só pode ser $x=a$. \itemproof
+
+Definindo $A := \{ n \in \N : n-1=0 \lor n-1 \in \N \}$, temos $A \subseteq \N$. Temos $1 \in A$ pois vale $1 - 1 = 0 \lor 1 - 1 \in \N$. Agora, se $n \in A$, então $(n+1)-1 = n \in A$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, de modo que $\N \subseteq A$, donde $A = \N$. 
+
+Agora, supondo que $n,m \in \N$ e $m<n$ implicam $n-m \in \N$, provemos que $n,m \in \N$ e $m+1<n$ implicam $n-(m+1) \in \N$. De fato, $m+1 < n \Rightarrow m < n-1$; pelo item anterior, $n-1 \in \N$, donde, pela hipótese de indução, $(n-1) - m \in \N$, isto é, $n - (m+1) \in \N$. Isso nos mostra que $m \in A \Rightarrow m+1 \in A$, isto é, que $A$ é indutivo; daí, $\N \subseteq A$, donde $A = \N$. \itemproof
 
