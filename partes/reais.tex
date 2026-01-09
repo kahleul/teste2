@@ -25,9 +25,14 @@
 \end{obs}
 
 \begin{prop}
-    Seja $\F$ um corpo. Valem as seguintes afirmações.
+    Seja $(\F,+,\cdot)$ um corpo. Valem as seguintes afirmações.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item (Unicidade)
+                \begin{enumerate}[label=\roman*.]
+                    \item O elemento neutro $0$ de $+$ é único.
+                    \item O elemento neutro $1$ de $\cdot$ é único.
+                    \item O inverso multiplicativo de cada elemento de $\F_{\neq 0}$ é único.
+                \end{enumerate}
             \item (Leis do corte) Para quaisquer $x,y,z \in \F$, temos
                 \begin{enumerate}[label=\roman*.]
                     \item $x+z=y+z \Rightarrow x=y$;
@@ -75,7 +80,7 @@
             \item Existe um subconjunto $\F_{>0} \subseteq \F$ tal que
                 \begin{enumerate}[label=\roman*.]
                     \item se $x,y \in \F_{>0}$, então $x+y \in \F_{>0}$ e $x \cdot y \in \F_{>0}$;
-                    \item se $x \in \F$, então ou $x=0$, ou $x \in \F_{>0}$, ou $-x \in \F_{>0}$.
+                    \item se $x \in \F$, então ou $x=0$, ou $x \in \F_{>0}$, ou $-x \in \F_{>0}$, exclusivamente.
                 \end{enumerate}
         \end{enumerate}
 \end{prop}
@@ -118,6 +123,7 @@
 \end{prop}
 
 \begin{proof}
+    Ver \cite{johnpfaffen}, teorema 4.5, página 14. \itemproof
 \end{proof}
 
 \begin{defi}
@@ -293,7 +299,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{teo}
 
 \begin{proof}
-    Defina $[n] := \{ x \in \N : x \leq n \}$ e $X := \{ n \in \N : [n] \subseteq \N \setminus A\}$. Se $1 \in A$, então $1 = \min A$. Se $1 \notin A$, então $[1] = \{ 1 \} \subset \N \setminus A$, de modo que $1 \in X$. Agora, como $A \neq \emptyset$, temos que $X \neq \N$. Se $1 \in X$ e $X \neq \N$, então existe $n_0 \in X$ tal que $n_0 + 1 \notin X$ (se um tal $n_0$ não existisse, $X$ seria indutivo e teríamos $X = \N$), isto é, $[n_0] \cap A = \emptyset$ e $[n_0+1] \cap A \neq \emptyset$. Com isso, temos $n_0 + 1 \in A$, sendo este o elemento mínimo de $A$ (pois, pelo lema \eqref{lema.reais:discretude}, não existe um natural entre $n_0$ e $n_0 + 1$). \itemproof
+    Suponha por contradição que existe um subconjunto $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ que não tem um elemento mínimo. Definindo $[n] := \{ x \in \N : x \leq n \}$ e $X := \{ n \in \N : [n] \cap A = \emptyset \}$, temos $1 \in X$ (de fato, se $1 \notin X$, então  $[1] \cap A \neq \emptyset$, de modo que $1 \in A$ seria o elemento mínimo de $A$, absurdo!). Agora, se $n \in X$, então $[n] \cap A = \emptyset$; daí, se fosse $n+1 \in A$, este seria o elemento mínimo de $A$, absurdo! Logo, só pode ser $n+1 \in X$, de modo que $X$ é indutivo e $\N \subseteq X$. Como $X \subseteq \N$ por definição, temos que $X = \N$, donde $A = \emptyset$, uma contradição. \itemproof
 \end{proof}
 
 \begin{proof}
@@ -305,9 +311,16 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{proof}
 
 \begin{proof}
-    Suponha por contradição que existe um subconjunto $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ que não tem um elemento mínimo. Definindo $X := \{ n \in \N : [n] \cap A = \emptyset \}$, temos $1 \in X$ (de fato, se $1 \notin X$, então  $[1] \cap A \neq \emptyset$, de modo que $1 \in A$ seria o elemento mínimo de $A$, absurdo!). Agora, se $n \in X$, então $[n] \cap A = \emptyset$; daí, se fosse $n+1 \in A$, este seria o elemento mínimo de $A$, absurdo! Logo, só pode ser $n+1 \in X$, de modo que $X$ é indutivo e $\N \subseteq X$. Como $X \subseteq \N$ por definição, temos que $X = \N$, donde $A = \emptyset$, uma contradição. \itemproof
+    Defina $X := \{ n \in \N : [n] \subseteq \N \setminus A\}$. Se $1 \in A$, então $1 = \min A$. Se $1 \notin A$, então $[1] = \{ 1 \} \subset \N \setminus A$, de modo que $1 \in X$. Agora, como $A \neq \emptyset$, temos que $X \neq \N$. Se $1 \in X$ e $X \neq \N$, então existe $n_0 \in X$ tal que $n_0 + 1 \notin X$ (se um tal $n_0$ não existisse, $X$ seria indutivo e teríamos $X = \N$), isto é, $[n_0] \cap A = \emptyset$ e $[n_0+1] \cap A \neq \emptyset$. Com isso, temos $n_0 + 1 \in A$, sendo este o elemento mínimo de $A$ (pois, pelo lema \eqref{lema.reais:discretude}, não existe um natural entre $n_0$ e $n_0 + 1$). \itemproof
 \end{proof}
 
+\begin{cor}
+    Todo subconjunto não vazio de números naturais limitado superiormente possui um elemento máximo. Isto é, se $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ é limitado superiormente, então existe $a \in A$ tal que $x \leq a$ para todo $x \in A$.
+\end{cor}
+
+\begin{proof}
+    
+\end{proof}
 
 \begin{teo}[Indução forte]
     Se $A \subseteq \N$ é tal que $n \in A$ sempre que $m \in A$ para todo $m < n$, então $A = \N$.
@@ -317,7 +330,31 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
     Provemos que $X := \N - A$ é vazio. De fato, se $X \neq \emptyset$, então pela Boa Ordenação existiria $p \in X$ mínimo; daí, todo $m < p$ seria $m \in A$, de modo que, pela definição de $A$, $p \in A$, absurdo! Logo, $X = \emptyset$. \itemproof
 \end{proof}
 
+\begin{defi}
+    Um corpo ordenado $\F$ é \textit{arquimediano} se para quaisquer $a \in \F_{>0}$ e $b \in \F$ existe $n \in \N_{\F}$ tal que $n \cdot a > b$.
+\end{defi}
+
+\begin{teo}
+    $\N_{\F}$ é ilimitado superiormente se, e somente se,
+        \begin{enumerate}[label=\roman*.]
+            \item $\F$ é arquimediano;
+            \item para todo $\epsilon \in \F_{>0}$ existe $n \in \N$ tal que $0 < \frac{1}{n} < \epsilon$.
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    Ver \cite{cursodeanalise1}, teorema 3 do capítulo 3. \itemproof    
+\end{proof}
+
+\begin{comment}
+\subsection*{Algumas equivalências}
+
+O objetivo desta subseção é provar que, em $\N$, indução, indução forte e boa ordenação são equivalentes.
+\end{comment}
+
 \section{Conjuntos Finitos}
+
+Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 
 \begin{defi}
     Um conjunto $X \neq \emptyset$ é \textit{finito} se existem um natural $n \in \N$ e uma bijeção $f: [n] \to X$. Isso é denotado por $|X|=n$. O natural $n$ é o \textit{número de elementos} de $X$, enquanto $f$ é uma \textit{contagem dos elementos} de $X$. Em particular, o conjunto vazio $\emptyset$ é finito e tem $0$ elementos.
@@ -534,7 +571,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
     \textbf{(b)} A união de uma família enumerável de conjuntos enumeráveis é enumerável.
 \end{cor}
 
-\section{Inteiros e Racionais}
+\section{Inteiros}
 
 \begin{defi}
     O conjunto dos números inteiros é definido como
@@ -554,6 +591,12 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 
 \begin{proof}
 \end{proof}
+
+\begin{prop}
+    Para todo $x \in \F$ existe um único $n \in \Z$ tal que $n \leq x < n+1$.
+\end{prop}
+
+\section{Racionais}
 
 (Racionais) Sendo $y,w \neq 0$, temos que $x \cdot w = y \cdot z \Leftrightarrow x \cdot y^{-1} = z \cdot w^{-1}$.
 
@@ -600,6 +643,8 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 
 \begin{proof}
 \end{proof}
+
+\section{Corpos Ordenados Completos}
 
 \section{Coisas}
 

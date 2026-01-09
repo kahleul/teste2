@@ -1,5 +1,7 @@
 %!TEX root = main.tex
 
+O conteúdo aqui é lixo. Quando vou modificar o texto removendo uma grande parte, em vez de apagar eu coloco aqui, como um backup. Evidentemente esse .tex foi criado antes da sincronização com o github, mas continuo com a prática de salvar o lixo aqui.
+
 \begin{defi} % definições de corpo e corpo ordenado
     Diremos que um conjunto $\F \neq \emptyset$ é um \textit{corpo} se em $\F$ estiverem definidas duas operações, $+ :\F \times \F \to \F$ e $\cdot: \F \times \F \to \F$, chamadas respectivamente de adição e multiplicação, para as quais valem, para todos $x,y,z \in \F$,
         \begin{itemize}
@@ -736,4 +738,14 @@ O axioma do vazio nos diz que existe um conjunto $x$ que cumpre $\forall y (y \n
 Definindo $A := \{ n \in \N : n-1=0 \lor n-1 \in \N \}$, temos $A \subseteq \N$. Temos $1 \in A$ pois vale $1 - 1 = 0 \lor 1 - 1 \in \N$. Agora, se $n \in A$, então $(n+1)-1 = n \in A$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, de modo que $\N \subseteq A$, donde $A = \N$. 
 
 Agora, supondo que $n,m \in \N$ e $m<n$ implicam $n-m \in \N$, provemos que $n,m \in \N$ e $m+1<n$ implicam $n-(m+1) \in \N$. De fato, $m+1 < n \Rightarrow m < n-1$; pelo item anterior, $n-1 \in \N$, donde, pela hipótese de indução, $(n-1) - m \in \N$, isto é, $n - (m+1) \in \N$. Isso nos mostra que $m \in A \Rightarrow m+1 \in A$, isto é, que $A$ é indutivo; daí, $\N \subseteq A$, donde $A = \N$. \itemproof
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left]
+            \item[\textbf{(a)} $\Rightarrow$ \textbf{(b)}:] \itemproof
+            \item[\textbf{(b)} $\Rightarrow$ \textbf{(c)}:] \itemproof
+            \item[\textbf{(c)} $\Rightarrow$ \textbf{(d)}:] \itemproof
+            \item[\textbf{(d)} $\Rightarrow$ \textbf{(a)}:] \itemproof  
+        \end{enumerate}
+\end{proof}
 
