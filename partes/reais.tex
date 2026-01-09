@@ -544,7 +544,12 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{defi}
 
 \begin{prop}
-    Para quaisquer $m,n \in \Z$, temos $m+n \in \Z$ e $m \cdot n \in \Z$.
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Para quaisquer $m,n \in \Z$ tem-se $m+n \in \Z$.
+            \item Para quaisquer $m,n \in \Z$ tem-se $m-n \in \Z$ e $n-m \in \Z$.
+            \item Para quaisquer $m,n \in \Z$ tem-se $m \cdot n \in \Z$.
+        \end{enumerate}
 \end{prop}
 
 \begin{proof}
@@ -557,8 +562,6 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
         \[
             \Q_{\F} := \{x \in \F : \exists a \exists b (a \in \Z_{\F} \land b \in \Z_{\F} \land b \neq 0 \land x = a \cdot b^{-1} ) \}.
         \]
-    
-    , denotado por $\Q$, é definido como $\Q := \{ p \cdot q^{-1} : p \in \Z, q \in \Z_{\neq 0} \}$. Denotaremos $p \cdot q^{-1}$ por $\frac{p}{q}$.
 \end{defi}
 
 \begin{prop}
