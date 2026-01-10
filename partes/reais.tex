@@ -272,7 +272,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 
 
 
-\subsection{A Unicidade dos Números Naaturais}
+\subsection{A Unicidade dos Números Naturais}
 
 \begin{comment}
 \subsection*{Algumas equivalências}
@@ -626,7 +626,11 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Do contrário, seria $x \leq \beta < \sup{S}$ para todo $x \in S$, de modo que $\beta$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo.
+            \item Segue facilmente por contradição.
+                \begin{enumerate}[label=\roman*.]
+                    \item Do contrário, seria $x \leq \beta < \sup{S}$ para todo $x \in S$, de modo que $\beta$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo. \itemproof
+                    \item Do contrário, existiria $\epsilon \in \F_{>0}$ tal que $x \leq \sup{S} - \epsilon < \sup{S}$ para todo $x \in S$, de modo que $\sup{S} - \epsilon$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo. \itemproof
+                \end{enumerate}
             \item Segue analogamente. \itemproof
         \end{enumerate}
 \end{proof}
