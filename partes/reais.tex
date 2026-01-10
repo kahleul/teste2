@@ -2,7 +2,7 @@
 
 \chapter{Números Reais como na Análise}
 
-\section{Corpos Ordenados}
+\section{Corpos}
 
 \begin{defi} \label{reais:def.corpo}
     Uma tripla $(\F, +, \cdot)$ é um \textit{corpo} se no conjunto $\F \neq \emptyset$ existem duas operações, $+ :\F \times \F \to \F$ e $\cdot: \F \times \F \to \F$, para as quais
@@ -126,87 +126,9 @@
     Ver \cite{johnpfaffen}, teorema 4.5, página 14. \itemproof
 \end{proof}
 
-\begin{defi}
-    Sejam $(\F, +, \cdot, \leq)$ um corpo ordenado e $S \in \mathcal{P}(\F)_{\neq \emptyset}$.
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Dizemos que $S$ é
-                \begin{enumerate}[label=\roman*.]
-                    \item \textit{limitado superiormente} se existe $M \in \F$ tal que $x \leq M$ para todo $x \in S$. Nesse caso, dizemos que $M$ é uma \textit{cota superior} de $S$.
-                    \item \textit{limitado inferiormente} se existe $m \in \F$ tal que $m \leq x$ para todo $x \in S$. Nesse caso, dizemos que $m$ é uma \textit{cota inferior} de $S$.
-                \end{enumerate}
-            \item Dizemos que $\alpha \in \F$ é o 
-                \begin{enumerate}[label=\roman*.]
-                    \item \textit{supremo} de $S$ se $\alpha$ é uma cota superior de $S$ e $\alpha \leq x$ para toda cota superior $x \in \F$ de $S$. Denotamos $\alpha$ por $\sup{S}$.
-                    \item \textit{ínfimo} de $S$ se $\alpha$ é uma cota inferior de $S$ e $x \leq \alpha$ para toda cota inferior $x \in \F$ de $S$. Denotamos $\alpha$ por $\inf{S}$.
-                \end{enumerate}
-        \end{enumerate}
-\end{defi}
-
-\begin{prop}
-    Sejam $\F$ um corpo ordenado e $S \in \mathcal{P}(\F)_{\neq \emptyset}$.
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item O supremo de $S$, quando existe, é único.
-            \item O ínfimo de $S$, quando existe, é único.
-        \end{enumerate}
-\end{prop}
-
-\begin{proof}
-    \leavevmode
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item oi
-            \item Segue analogamente. \itemproof
-        \end{enumerate}
-\end{proof}
-
-\begin{defi}
-    Um corpo ordenado $(\F,+,\cdot, \leq)$ é \textit{completo} se todo subconjunto não vazio de $\F$ limitado superiormente possui supremo em $\F$.
-\end{defi}
-
-\begin{teo}
-    Existe um corpo ordenado completo.
-\end{teo}
-
-\begin{obs}
-    Veremos mais a frente que, a menos de isomorfismos, existe um único corpo ordenado completo. Ele é denotado por $\R$ e seus elementos são chamados de \textit{números reais}.
-\end{obs}
-
-\subsection*{Propriedades do Supremo e do Ínfimo}
-
-\begin{cor}
-    Todo subconjunto não vazio de $\R$ limitado inferiormente possui ínfimo em $\R$.
-\end{cor}
-
-\begin{proof} 
-\end{proof}
-
-\begin{teo}
-    \leavevmode
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Seja $S \in \mathcal{P}(\R)_{\neq \emptyset}$ limitado superiormente.
-                \begin{enumerate}[label=\roman*.]
-                    \item Se $\beta \in \R$ e  $\beta < \sup{S}$, então existe $x \in S$ tal que $x > \beta$.
-                    \item Para todo $\epsilon \in \R_{>0}$ existe $x \in S$ tal que $\sup{S} - \epsilon < x$.
-                \end{enumerate}
-            \item Seja $S \in \mathcal{P}(\R)_{\neq \emptyset}$ limitado inferiormente.
-                \begin{enumerate}[label=\roman*.]
-                    \item Se $\beta \in \R$ e  $\inf{S} < \beta$, então existe $x \in S$ tal que $x < \beta$.
-                    \item Para todo $\epsilon \in \R_{>0}$ existe $x \in S$ tal que $x < \inf{S} + \epsilon$.
-                \end{enumerate}
-        \end{enumerate}
-\end{teo}
-
-\begin{proof}
-    
-\end{proof}
 
 
-
-
-
-
-
-
-\section{Naturais}
+\section{Números Naturais}
 
 Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 
@@ -334,8 +256,8 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
     Um corpo ordenado $\F$ é \textit{arquimediano} se para quaisquer $a \in \F_{>0}$ e $b \in \F$ existe $n \in \N_{\F}$ tal que $n \cdot a > b$.
 \end{defi}
 
-\begin{teo}
-    $\N_{\F}$ é ilimitado superiormente se, e somente se,
+\begin{teo} \label{teo.reais:arquimedes}
+    $\N_{\F}$ é ilimitado superiormente em $\F$ se, e somente se,
         \begin{enumerate}[label=\roman*.]
             \item $\F$ é arquimediano;
             \item para todo $\epsilon \in \F_{>0}$ existe $n \in \N$ tal que $0 < \frac{1}{n} < \epsilon$.
@@ -345,6 +267,12 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \begin{proof}
     Ver \cite{cursodeanalise1}, teorema 3 do capítulo 3. \itemproof    
 \end{proof}
+
+\subsection{O Teorema da Recursão}
+
+
+
+\subsection{A Unicidade dos Números Naaturais}
 
 \begin{comment}
 \subsection*{Algumas equivalências}
@@ -429,8 +357,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{prop}
     Seja $X$ um conjunto finito.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Todo subconjunto próprio $Y \subsetneq X$ não admite uma bijeção $f : X \to Y$.
-
+            \item Para todo subconjunto próprio $Y \subsetneq X$ não existe uma bijeção $f : X \to Y$.
             \item Todo subconjunto $Y \subseteq X$ também é finito. Se $Y \subsetneq X$, então $|Y| < |X|$, sendo $|Y| = |X|$ somente quando $Y = X$.
         \end{enumerate}
 \end{prop}
@@ -496,7 +423,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{defi}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Um conjunto $X$ é dito \textit{infinito} quando ele não é finito, isto é, quando $X \neq \emptyset$ e quando, para cada $n \in \N$, não existe uma bijeção $f : [n] \to X$.
+            \item Um conjunto $X$ é \textit{infinito} quando ele não é finito, isto é, quando $X \neq \emptyset$ e quando não existe uma bijeção $f : [n] \to X$ para todo $n \in \N$.
             \item Diremos que $X \subseteq \N$ é \textit{ilimitado} quando ele não é limitado, isto é, quando para cada $n \in \N$ existe $p \in X$ tal que $p > n$.
         \end{enumerate}
 \end{defi}
@@ -571,7 +498,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
     \textbf{(b)} A união de uma família enumerável de conjuntos enumeráveis é enumerável.
 \end{cor}
 
-\section{Inteiros}
+\section{Números Inteiros}
 
 \begin{defi}
     O conjunto dos números inteiros é definido como
@@ -596,7 +523,9 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
     Para todo $x \in \F$ existe um único $n \in \Z$ tal que $n \leq x < n+1$.
 \end{prop}
 
-\section{Racionais}
+\subsection{Teoria Elementar dos Números}
+
+\section{Números Racionais}
 
 (Racionais) Sendo $y,w \neq 0$, temos que $x \cdot w = y \cdot z \Leftrightarrow x \cdot y^{-1} = z \cdot w^{-1}$.
 
@@ -644,9 +573,101 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{proof}
 \end{proof}
 
-\section{Corpos Ordenados Completos}
+\section{Números Reais}
 
-\section{Coisas}
+\begin{defi}
+    Sejam $(\F, +, \cdot, \leq)$ um corpo ordenado e $S \in \mathcal{P}(\F)_{\neq \emptyset}$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dizemos que $S$ é
+                \begin{enumerate}[label=\roman*.]
+                    \item \textit{limitado superiormente} se existe $M \in \F$ tal que $x \leq M$ para todo $x \in S$. Nesse caso, dizemos que $M$ é uma \textit{cota superior} de $S$.
+                    \item \textit{limitado inferiormente} se existe $m \in \F$ tal que $m \leq x$ para todo $x \in S$. Nesse caso, dizemos que $m$ é uma \textit{cota inferior} de $S$.
+                \end{enumerate}
+            \item Dizemos que $\alpha \in \F$ é o 
+                \begin{enumerate}[label=\roman*.]
+                    \item \textit{supremo} de $S$ se $\alpha$ é uma cota superior de $S$ e $\alpha \leq x$ para toda cota superior $x \in \F$ de $S$. Denotamos $\alpha$ por $\sup{S}$.
+                    \item \textit{ínfimo} de $S$ se $\alpha$ é uma cota inferior de $S$ e $x \leq \alpha$ para toda cota inferior $x \in \F$ de $S$. Denotamos $\alpha$ por $\inf{S}$.
+                \end{enumerate}
+        \end{enumerate}
+\end{defi}
+
+\begin{prop}
+    Sejam $(\F, +, \cdot, \leq)$ um corpo ordenado e $S \in \mathcal{P}(\F)_{\neq \emptyset}$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item O supremo de $S$, quando existe, é único.
+            \item O ínfimo de $S$, quando existe, é único.
+        \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Sejam $\alpha$ e $\beta$ supremos de $S$. Como $\alpha$ é a menor das cotas superiores de $S$ e $\beta$ é uma cota superior de $S$, temos $\alpha \leq \beta$. Como $\beta$ é a menor das cotas superiores de $S$ e $\alpha$ é uma cota superior de $S$, temos $\beta \leq \alpha$. Logo $\alpha = \beta$. \itemproof
+            \item Segue analogamente. \itemproof
+        \end{enumerate}
+\end{proof}
+
+\begin{teo} \label{teo.reais:supinf}
+    Sejam $(\F,+,\cdot, \leq)$ um corpo ordenado e $S \in \mathcal{P}(\F)_{\neq \emptyset}$. 
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Suponha que existe $\sup{S}$.
+                \begin{enumerate}[label=\roman*.]
+                    \item Se $\beta \in \F$ e  $\beta < \sup{S}$, então existe $x \in S$ tal que $x > \beta$.
+                    \item Para todo $\epsilon \in \F_{>0}$ existe $x \in S$ tal que $\sup{S} - \epsilon < x$.
+                \end{enumerate}
+            \item Suponha que existe $\inf{S}$.
+                \begin{enumerate}[label=\roman*.]
+                    \item Se $\beta \in \F$ e  $\inf{S} < \beta$, então existe $x \in S$ tal que $x < \beta$.
+                    \item Para todo $\epsilon \in \F_{>0}$ existe $x \in S$ tal que $x < \inf{S} + \epsilon$.
+                \end{enumerate}
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Do contrário, seria $x \leq \beta < \sup{S}$ para todo $x \in S$, de modo que $\beta$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo.
+            \item Segue analogamente. \itemproof
+        \end{enumerate}
+\end{proof}
+
+\begin{defi}
+    Um corpo ordenado $\F$ é \textit{completo} se todo subconjunto não vazio de $\F$ limitado superiormente possui supremo em $\F$.
+\end{defi}
+
+\begin{cor}
+    Um corpo ordenado $\F$ é \textit{completo} se, e somente se, todo subconjunto não vazio de $\F$ limitado inferiormente possui ínfimo em $\F$.
+\end{cor}
+
+\begin{proof}
+    Ver \cite{ajwhite}, teorema 1-10, página 32. Ver \cite{stromberg}, corolário 1.12, página 13. \itemproof
+\end{proof}
+
+\begin{prop}
+    Todo corpo ordenado completo é arquimediano.
+\end{prop}
+
+\begin{proof}
+    Provemos que em todo corpo ordenado completo $\F$ o conjunto $\N_{\F}$ é ilimitado superiormente. Daí, pelo teorema \eqref{teo.reais:arquimedes}, seguirá que $\F$ é arquimediano.
+    
+    Suponha que $\N_{\F}$ seja limitado superiormente. Como $\N_{\F} \in \mathcal{P}(\F)_{\neq \emptyset}$, existe $a := \sup{\N_{\F}}$. Por \eqref{teo.reais:supinf}, para $\epsilon = 1$ existe $n \in \N_{\F}$ tal que $a-1 < n$, isto é, $a < n+1$, e como $n+1 \in \N_{\F}$, temos uma contradição. \itemproof
+\end{proof}
+
+
+\begin{teo}
+    Existe um corpo ordenado completo.
+\end{teo}
+
+\begin{obs}
+    Veremos mais a frente que, a menos de isomorfismos, existe um único corpo ordenado completo. Ele é denotado por $\R$ e seus elementos são chamados de \textit{números reais}.
+\end{obs}
+
+\subsection*{Propriedades do Supremo e do Ínfimo}
+
+\begin{proof} 
+\end{proof}
+
+
 
 
 
