@@ -118,6 +118,8 @@
             \item $x \leq |x|$ para todo $x \in \F$;
             \item $|x \cdot y| = |x| \cdot |y|$ para quaisquer $x,y \in \F$;
             \item $|x+y| \leq |x|+|y|$ para quaisquer $x,y \in \F$;
+            \item $|x| - |y| \leq ||x|-|y|| \leq |x-y|$ para quaisquer $x,y \in \F$;
+            \item $|x-z| \leq |x-y| + |y-z|$;
             \item $|x| \leq \epsilon \Leftrightarrow -\epsilon \leq x \leq \epsilon$ para quaisquer $x \in \F$ e $\epsilon \in \F_{>0}$.
         \end{enumerate}
 \end{prop}
@@ -164,7 +166,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
     Explicação
 \end{obs}
 
-\begin{teo}[Indução]
+\begin{teo}[Indução] \label{teo.reais:indução}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Se um subconjunto $A \subseteq \N$ é indutivo, então $A = \N$.
@@ -270,7 +272,26 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 
 \subsection{O Teorema da Recursão}
 
+\begin{defi}
+    Uma tripla $(N, s, a)$ é um \textit{sistema de Peano} se $N$ é um conjunto, $s: N \to N$ é uma função injetiva, $a \in N \setminus s(N)$, e para qualquer $A \in \mathcal{P}(N)$, se $a \in A$ e $\forall x (x \in A \Rightarrow s(x) \in A)$, então $A = N$.
+\end{defi}
 
+\begin{teo}
+    Seja $(\F,+,\cdot,\leq)$ um corpo ordenado. A tripla $(\N_{\F}, s : n \mapsto n + 1_{\F}, 1_{\F})$ é um sistema de Peano.
+\end{teo}
+
+\begin{proof}
+    Como $\N_{\F}$ é um conjunto indutivo, temos $\forall n (n \in \N_{\F} \Rightarrow n+1 \in \N_{\F})$, de modo que $s(n) := n+1$ define uma função de $\N_{\F}$ em $\N_{\F}$, que é injetiva pela lei do corte de $\F$. Temos $1_{\F} \in \N_{\F}$ por definição e, se $n \in \N_{\F}$ é tal que $n+1_{\F} = 1_{\F}$, então $n=0_{\F}$, isto é, $n \notin \N_{\F}$, uma contradição. Logo $1 \in \N_{\F} \setminus s(\N_{\F})$. Por fim, em $\N_{\F}$ vale o princípio de indução, ver \eqref{teo.reais:indução}. Logo $(\N_{\F}, s : n \mapsto n + 1_{\F}, 1_{\F})$ é um sistema de Peano. 
+    %É absolutamente evidente que $s$ está bem definida e é injetiva.
+\end{proof}
+
+\begin{teo}[da Recursão]
+    Sejam $(N, s, 1)$ um sistema de Peano, $X$ um conjunto, $x_0 \in X$ e $g:X \to X$ uma função. Existe e é única a função $f : N \to X$ tal que
+        \begin{itemize}
+            \item $f(1) = x_0$;
+            \item $f(s(n)) = g(f(n))$, para todo $n \in N$.
+        \end{itemize}
+\end{teo}
 
 \subsection{A Unicidade dos Números Naturais}
 
@@ -582,6 +603,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
                 \begin{enumerate}[label=\roman*.]
                     \item \textit{limitado superiormente} se existe $M \in \F$ tal que $x \leq M$ para todo $x \in S$. Nesse caso, dizemos que $M$ é uma \textit{cota superior} de $S$.
                     \item \textit{limitado inferiormente} se existe $m \in \F$ tal que $m \leq x$ para todo $x \in S$. Nesse caso, dizemos que $m$ é uma \textit{cota inferior} de $S$.
+                    \item \textit{limitado} se $S$ é limitado superiormente e inferiormente.
                 \end{enumerate}
             \item Dizemos que $\alpha \in \F$ é o 
                 \begin{enumerate}[label=\roman*.]
