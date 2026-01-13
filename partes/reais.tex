@@ -272,8 +272,8 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 
 \subsection{A Unicidade dos Números Naturais}
 
-\begin{teo}[da Recursão]
-    Sejam $(\F, +_{\F}, \cdot_{\F}, \leq_{\F})$ corpo ordenado, $X$ um conjunto, $a \in X$ e $f:X \to X$ uma função. Existe e é única a função $\varphi : \N_{\F} \to X$ tal que
+\begin{teo}[da Recursão] \label{teo.reais:recursão}
+    Sejam $(\F, +_{\F}, \cdot_{\F}, \leq_{\F})$ um corpo ordenado, $X$ um conjunto, $a \in X$ e $f:X \to X$ uma função. Existe e é única a função $\varphi : \N_{\F} \to X$ tal que
         \begin{itemize}
             \item $\varphi(1_{\F}) = a$;
             \item $\varphi(n +_{\F} 1_{\F}) = f(\varphi(n))$, para todo $n \in \N_{\F}$.
@@ -297,6 +297,32 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{teo}
 
 \begin{proof}
+    Tomando $X = \N_{\F_2}$, $a = 1_{\F_2}$ e $f: \N_{\F_2} \to \N_{\F_2}$ dada por $f(n) = n +_2 1_{\F_2}$ no teorema da recursão \eqref{teo.reais:recursão}, existe uma única função $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que $\varphi(1_{\F_1}) = 1_{\F_2}$ e $\varphi(n +_1 1_{\F_1}) = f[\varphi(n)] = \varphi(n) +_2 1_{\F_2}$.
+        \begin{enumerate}[label=\roman*.]
+            \item Provemos a bijetividade de $\varphi$ construíndo explicitamente sua função inversa. Tomando $X = \N_{\F_1}$, $a = 1_{\F_1}$ e $g: \N_{\F_1} \to \N_{\F_1}$ dada por $g(n) = n +_1 1_{\F_1}$ no teorema da recursão \eqref{teo.reais:recursão}, existe uma única função $\psi : \N_{\F_2} \to \N_{\F_1}$ tal que $\psi(1_{\F_2}) = 1_{\F_1}$ e $\psi(n +_2 1_{\F_2}) = g[\psi(n)] = \psi(n) +_1 1_{\F_1}$. Vamos provar que $\psi \circ \varphi = \id_{\F_1}$ e $\varphi \circ \psi = \id_{\F_2}$. Sendo $F := \psi \circ \varphi : \N_{\F_1} \to \N_{\F_1}$, temos
+                \[
+                    F(1_{\F_1}) = \psi[\varphi(1_{\F})] = \psi(1_{\F_2}) = 1_{\F_1},
+                \]
+            e ainda,
+                \[
+                    F(n +_1 1_{\F_1}) = \psi[\varphi(n +_1 1_{\F})] = \psi[\varphi(n) +_2 1_{\F_2}] = F(n) +_1 1_{\F_1}.
+                \]
+            Agora, como $\id_{\N_{\F_1}}(1_{\F_1}) = 1_{\F_1}$ e $\id_{\N_{\F_1}}(n +_1 1_{\F_1}) = \id_{\N_{\F_1}}(n) +_1 1_{\F_1}$, e como só existe uma função com essas propriedades, vem $F = \id_{\N_{\F_1}}$. A prova de que $\varphi \circ \psi = \id_{\N_{\F_2}}$ é completamente análoga, de modo que $\psi$ é a função inversa de $\varphi$ e, portanto, $\varphi$ é bijetiva.
+            \item Fixe $m \in \N_{\F_1}$ e defina $A := \{n \in \N_{\F_1} : \varphi(m +_1 n) = \varphi(m) +_2 \varphi(n) \}$. Como $\varphi(m +_1 1_{\F_1}) = \varphi(m) +_2 1_{\F_2}$, temos $1_{\F_1} \in A$ pois $\varphi$ foi obtida pelo teorema da recursão. Agora, se $n \in A$, então $\varphi(m +_1 n) = \varphi(m) +_2 \varphi(n)$ e
+                \begin{align*}
+                    \varphi[m +_1 (n +_1 1_{\F_1})] &= \varphi[(m +_1 n) +_1 1_{\F_1}] \\
+                    &= \varphi[(m +_1 n)] +_2 1_{\F_2} \\
+                    &= [\varphi(m) +_2 \varphi(n)] +_2 1_{\F_2} \\
+                    &= \varphi(m) +_2 [\varphi(n) +_2 1_{\F_2}] \\
+                    &= \varphi(m) +_2 \varphi(n +_1 1_{\F_1}),
+                \end{align*}
+            de modo que $n +_1 1_{\F_1} \in A$, isto é, $A$ é indutivo. Logo $A = \N$.
+            \item Fixe $m \in \N_{\F_1}$ e defina $A := \{n \in \N_{\F_1} : \varphi(m \cdot_1 n) = \varphi(m) \cdot_2 \varphi(n) \}$. Como
+                \[
+                    \varphi(m \cdot_1 1_{\F_1}) = \varphi(m) = \varphi(m) \cdot_2 1_{\F_2} = \varphi(m) \cdot_2 \varphi(1_{\F_1}),
+                \]
+            temos $1_{\F_1} \in A$.
+        \end{enumerate} 
     \itemproof
 \end{proof}
 
