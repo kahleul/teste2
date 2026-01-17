@@ -58,6 +58,7 @@
 \end{prop}
 
 \begin{proof}
+    \itemproof
 \end{proof}
 
 \begin{defi}
@@ -281,33 +282,46 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{teo}
 
 \begin{proof}
-    Para simplificar a notação vamos omitir o índice $_{\F}$. \itemproof
+    Para simplificar a notação vamos omitir o índice $_{\F}$. Sendo $\mathcal{C}$ o conjunto de todos as relações de $\N$ em $X$ que tem as propriedades desejadas, deve existir um único elemento de $\mathcal{C}$ que seja uma função de domínio $\N$. Formalmente,
+        \[
+            \mathcal{C} := \{R \in \mathcal{P}{(\N \times X)} : (1,a) \in R \land \forall n \forall x ((n,x) \in R \Rightarrow (n+1, f(x)) \in R)\}.
+        \]
+    Como $\N \times X \in \mathcal{C}$, temos $\mathcal{C} \neq \emptyset$, logo existe $\varphi := \bigcap \mathcal{C}\in \mathcal{C}$. Afirmamos que $\varphi$ é esse único elemento procurado. Provemos então que $\varphi$ é uma função de domínio $\N$. Para tanto, $\varphi$ deve ter as seguintes propriedades:
+        \begin{itemize}
+            \item A relação $\varphi$ tem domínio $\N$: $\forall n (n \in \N \Rightarrow \exists x (x \in X \land  (n,x) \in \varphi ))$.
+            \item A relação $\varphi$ é funcional: $\forall n \forall x \forall y ((n,x) \in \varphi \land (n,y) \in \varphi \Rightarrow x=y )$.
+        \end{itemize}
+    Sendo $S := \{n \in \N : \exists x ((n,x) \in \varphi \land \forall y ((n,y) \in \varphi \Rightarrow y=x ) ) \}$, se $S = \N$, então $\varphi$ terá essas propriedades. Como $S \subseteq \N$, basta provar que $\N \subseteq S$, e para isso basta provar que $S$ é um conjunto indutivo.
+        \begin{enumerate}[label=\roman*.]
+            \item Como $(1,a) \in \varphi$, provemos a unicidade de $a$. Se existisse $b \in X$ tal que $(1,b) \in \varphi$ e $b \neq a$, então $(1,a) \in \varphi \setminus \{(1,b)\}$, e se $(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$; como $n+1 \neq 1$, teríamos $(n+1, f(x)) \in \varphi \setminus \{(1,b)\}$, de modo que $\varphi \setminus \{(1,b)\} \in \mathcal{C}$, uma contradição. Com isso, $1 \in S$.
+            \item Se $n \in S$, então existe um único $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n+1,f(x)) \in \varphi$; provemos então a unicidade de $f(x)$. Suponha que exista $b \in X$ tal que $(n+1,b) \in \varphi$ e $b \neq f(x)$. Temos $(1,a) \in \varphi \setminus \{(n+1,b)\}$ pois $n+1 \neq 1$. Se $(m,y) \in \varphi \setminus \{(n+1,b)\}$, então $(m,y) \in \varphi$ e $(m+1,f(y)) \in \varphi$. Se $m=n$, então $y=x$, $m+1 = n+1$ e $f(y) = f(x) \neq b$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Se $m \neq n$, então $m+1 \neq n+1$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Com isso, vem $\varphi \setminus \{(n+1, b)\} \in \mathcal{C}$, uma contradição. Logo, se $n \in S$, então $n+1 \in S$, de modo que $S = \N$.
+            %$(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$. Provemos a unicidade de $f(x)$. $\varphi \subseteq \varphi \setminus \{(1,b)\}$,
+        \end{enumerate}
+    Com isso, fica provada a existência de uma função $\varphi : \N \to X$ com as propriedades desejadas. Provemos, por fim, sua unicidade. Sendo $\psi : \N \to X$ uma função com essas mesmas propriedades e definindo $T := \{ n \in \N : \psi(n) = \varphi(n)\}$, claramente $1 \in T$, e se $n \in T$, então $\psi(n) = \varphi(n)$, de modo que $\psi(n+1) = f(\psi(n)) = f(\varphi(n)) = \varphi(n+1)$, isto é, $n+1 \in T$. Com isso, vem $T = \N$, o que prova a unicidade de $\varphi$. \itemproof
 \end{proof}
 
 \begin{teo}
-    Sejam $(\F_1, +_1, \cdot_1, \leq_1)$ e $(\F_2, +_2, \cdot_2, \leq_2)$ corpos ordenados. Existe uma única bijeção $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que,
-        \begin{itemize}
-            \item $\varphi (m +_1 n) = \varphi(m) +_2 \varphi(n)$,
-            \item $\varphi (m \cdot_1 n) = \varphi(m) \cdot_2 \varphi(n)$, e
-            \item $m \leq_1 n \Leftrightarrow \varphi(m) \leq_2 \varphi(n)$
-        \end{itemize}
-    para quaisquer $m,n \in \N_{\F_1}$, 
+    Sejam $(\F_1, +_1, \cdot_1, \leq_1)$ e $(\F_2, +_2, \cdot_2, \leq_2)$ corpos ordenados. Existe uma única bijeção $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que, para quaisquer $m,n \in \N_{\F_1}$, valem as seguintes afirmações.
+        \begin{enumerate}[label=\roman*.]
+            \item $\varphi (m +_1 n) = \varphi(m) +_2 \varphi(n)$.
+            \item $\varphi (m \cdot_1 n) = \varphi(m) \cdot_2 \varphi(n)$.
+            \item $m \leq_1 n \Leftrightarrow \varphi(m) \leq_2 \varphi(n)$.
+        \end{enumerate}
     %$\varphi (m +_1 n) = \varphi(m) +_2 \varphi(n)$, $\varphi (m \cdot_1 n) = \varphi(m) \cdot_2 \varphi(n)$ e $m \leq_1 n \Leftrightarrow \varphi(m) \leq_2 \varphi(n)$.
     %Os conjuntos $\N_{\F_1}$ e $\N_{\F_2}$ são isomorfos.
 \end{teo}
 
 \begin{proof}
-    Tomando $X = \N_{\F_2}$, $a = 1_{\F_2}$ e $f: \N_{\F_2} \to \N_{\F_2}$ dada por $f(n) = n +_2 1_{\F_2}$ no teorema da recursão \eqref{teo.reais:recursão}, existe uma única função $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que $\varphi(1_{\F_1}) = 1_{\F_2}$ e $\varphi(n +_1 1_{\F_1}) = f[\varphi(n)] = \varphi(n) +_2 1_{\F_2}$.
+    Tomando $X = \N_{\F_2}$, $a = 1_{\F_2}$ e $f: \N_{\F_2} \to \N_{\F_2}$ dada por $f(n) = n +_2 1_{\F_2}$ no teorema da recursão \eqref{teo.reais:recursão}, existe uma única função $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que $\varphi(1_{\F_1}) = 1_{\F_2}$ e $\varphi(n +_1 1_{\F_1}) = f[\varphi(n)] = \varphi(n) +_2 1_{\F_2}$. Provemos a bijetividade de $\varphi$ construindo explicitamente sua função inversa. Tomando $X = \N_{\F_1}$, $a = 1_{\F_1}$ e $g: \N_{\F_1} \to \N_{\F_1}$ dada por $g(n) = n +_1 1_{\F_1}$ no teorema da recursão \eqref{teo.reais:recursão}, existe uma única função $\psi : \N_{\F_2} \to \N_{\F_1}$ tal que $\psi(1_{\F_2}) = 1_{\F_1}$ e $\psi(n +_2 1_{\F_2}) = g[\psi(n)] = \psi(n) +_1 1_{\F_1}$. Vamos provar que $\psi \circ \varphi = \id_{\F_1}$ e $\varphi \circ \psi = \id_{\F_2}$. Sendo $F := \psi \circ \varphi : \N_{\F_1} \to \N_{\F_1}$, temos
+        \[
+            F(1_{\F_1}) = \psi[\varphi(1_{\F})] = \psi(1_{\F_2}) = 1_{\F_1},
+        \]
+    e ainda,
+        \[
+            F(n +_1 1_{\F_1}) = \psi[\varphi(n +_1 1_{\F})] = \psi[\varphi(n) +_2 1_{\F_2}] = F(n) +_1 1_{\F_1}.
+        \]
+    Agora, como $\id_{\N_{\F_1}}(1_{\F_1}) = 1_{\F_1}$ e $\id_{\N_{\F_1}}(n +_1 1_{\F_1}) = \id_{\N_{\F_1}}(n) +_1 1_{\F_1}$, e como só existe uma função com essas propriedades, vem $F = \id_{\N_{\F_1}}$. A prova de que $\varphi \circ \psi = \id_{\N_{\F_2}}$ é completamente análoga, de modo que $\psi$ é a função inversa de $\varphi$ e, portanto, $\varphi$ é bijetiva.
         \begin{enumerate}[label=\roman*.]
-            \item Provemos a bijetividade de $\varphi$ construíndo explicitamente sua função inversa. Tomando $X = \N_{\F_1}$, $a = 1_{\F_1}$ e $g: \N_{\F_1} \to \N_{\F_1}$ dada por $g(n) = n +_1 1_{\F_1}$ no teorema da recursão \eqref{teo.reais:recursão}, existe uma única função $\psi : \N_{\F_2} \to \N_{\F_1}$ tal que $\psi(1_{\F_2}) = 1_{\F_1}$ e $\psi(n +_2 1_{\F_2}) = g[\psi(n)] = \psi(n) +_1 1_{\F_1}$. Vamos provar que $\psi \circ \varphi = \id_{\F_1}$ e $\varphi \circ \psi = \id_{\F_2}$. Sendo $F := \psi \circ \varphi : \N_{\F_1} \to \N_{\F_1}$, temos
-                \[
-                    F(1_{\F_1}) = \psi[\varphi(1_{\F})] = \psi(1_{\F_2}) = 1_{\F_1},
-                \]
-            e ainda,
-                \[
-                    F(n +_1 1_{\F_1}) = \psi[\varphi(n +_1 1_{\F})] = \psi[\varphi(n) +_2 1_{\F_2}] = F(n) +_1 1_{\F_1}.
-                \]
-            Agora, como $\id_{\N_{\F_1}}(1_{\F_1}) = 1_{\F_1}$ e $\id_{\N_{\F_1}}(n +_1 1_{\F_1}) = \id_{\N_{\F_1}}(n) +_1 1_{\F_1}$, e como só existe uma função com essas propriedades, vem $F = \id_{\N_{\F_1}}$. A prova de que $\varphi \circ \psi = \id_{\N_{\F_2}}$ é completamente análoga, de modo que $\psi$ é a função inversa de $\varphi$ e, portanto, $\varphi$ é bijetiva.
             \item Fixe $m \in \N_{\F_1}$ e defina $A := \{n \in \N_{\F_1} : \varphi(m +_1 n) = \varphi(m) +_2 \varphi(n) \}$. Como $\varphi(m +_1 1_{\F_1}) = \varphi(m) +_2 1_{\F_2}$, temos $1_{\F_1} \in A$ pois $\varphi$ foi obtida pelo teorema da recursão. Agora, se $n \in A$, então $\varphi(m +_1 n) = \varphi(m) +_2 \varphi(n)$ e
                 \begin{align*}
                     \varphi[m +_1 (n +_1 1_{\F_1})] &= \varphi[(m +_1 n) +_1 1_{\F_1}] \\
@@ -321,9 +335,18 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
                 \[
                     \varphi(m \cdot_1 1_{\F_1}) = \varphi(m) = \varphi(m) \cdot_2 1_{\F_2} = \varphi(m) \cdot_2 \varphi(1_{\F_1}),
                 \]
-            temos $1_{\F_1} \in A$.
-        \end{enumerate} 
-    \itemproof
+            temos $1_{\F_1} \in A$. Agora, se $n \in A$, então $\varphi(m \cdot_1 n) = \varphi(m) \cdot_2 \varphi(n)$ e
+                \begin{align*}
+                    \varphi[m \cdot_1 (n +_1 1_{\F_1})] &= \varphi(m \cdot_1 n +_1 m \cdot_1 1_{\F_1}) \\
+                    &= \varphi(m \cdot_1 n) +_2 \varphi(m) \\
+                    &= \varphi(m) \cdot_2 \varphi(n) +_2 \varphi(m) \\
+                    &= \varphi(m) \cdot_2 (\varphi(n) +_2 1_{\F_2}) \\
+                    &= \varphi(m) \cdot_2 [\varphi(n +_1 1_{\F_1})],
+                \end{align*}
+            de modo que $n +_1 1_{\F_1} \in A$, isto é, $A$ é indutivo. Logo $A = \N$.
+            \item Se $m = n$, então $\varphi(m) = \varphi(n)$, e se $\varphi(m) = \varphi(n)$, então $m=n$ pela injetividade de $\varphi$. Com isso, basta provarmos $m <_1 n \Leftrightarrow \varphi(m) <_2 \varphi(n)$. Se $m <_1 n$, então pelo lema \eqref{lema.reais:discretude} existe $k \in \N_{\F_1}$ tal que $n = m +_1 k$. Com isso, $\varphi(n) = \varphi(m) +_2 \varphi(k)$, e se fosse $\varphi(m) \geq_2 \varphi(n)$, teríamos $\varphi(k) \leq_2 0_{\F_2}$, um absurdo. Agora, se $\varphi(m) <_2 \varphi(n)$, então $m \neq n$ pela injetividade de $\varphi$, e se fosse $m >_1 n$ existiria $k \in \N_{\F_1}$ tal que $m = n +_1 k$, de modo que $\varphi(n +_1 k) <_2 \varphi(n)$, uma contradição.
+        \end{enumerate}
+    Com isso, vemos que a função $\varphi : \N_{\F_1} \to \N_{\F_2}$, obtida pelo teorema da recursão, é bijetiva, preserva a adição, a multiplicação e a ordem, como queríamos. \itemproof
 \end{proof}
 
 \begin{comment}
