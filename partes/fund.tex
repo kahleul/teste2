@@ -860,7 +860,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Definindo $f : X \to \mathcal{P}{(X)}$ por $f(x) := \{y \in X : y \leq x \}$, temos que $f$ é bijetora em relação a $Y := \Im{(f)}$. De fato, se $f(x) = f(y)$, então $x \in f(y)$ e $y \in f(x)$ já que $x \in f(x)$ e $y \in f(y)$; daí, pela definição de $f$, vem $x \leq y$ e $y \leq x$, de modo que $x = y$ e $f$ é injetora. Provemos então que $x \leq y$ se, e somente se, $f(x) \subseteq f(y)$, para quaisquer $x,y \in X$. Se $z \in f(x)$, então $z \leq x$, e se $x \leq y$, então $z \leq y$, de modo que $z \in f(y)$ e $f(x) \subseteq f(y)$. Agora, se $x \in f(x) \subseteq f(y)$, então $x \in f(y)$, donde $x \leq y$. Com isso, $(X, \leq)$ é ordem-isomorfo a $(Y, \subseteq)$, como havíamos afirmado. \itemproof
+    Definindo $f : X \to \mathcal{P}{(X)}$ por $f(x) := \{y \in X : y \leq x \}$, temos que $f$ é bijetiva em relação a $Y := \Im{(f)}$. De fato, se $f(x) = f(y)$, então $x \in f(y)$ e $y \in f(x)$ já que $x \in f(x)$ e $y \in f(y)$; daí, pela definição de $f$, vem $x \leq y$ e $y \leq x$, de modo que $x = y$ e $f$ é injetiva. Provemos então que $x \leq y$ se, e somente se, $f(x) \subseteq f(y)$, para quaisquer $x,y \in X$. Se $z \in f(x)$, então $z \leq x$, e se $x \leq y$, então $z \leq y$, de modo que $z \in f(y)$ e $f(x) \subseteq f(y)$. Agora, se $x \in f(x) \subseteq f(y)$, então $x \in f(y)$, donde $x \leq y$. Com isso, $(X, \leq)$ é ordem-isomorfo a $(Y, \subseteq)$, como havíamos afirmado. \itemproof
 \end{proof}
 
 \begin{defi}
@@ -870,8 +870,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             \item Dizemos que $x \in X$ é um \textit{limitante inferior} de $S$ se $x \leq y$ para todo $y \in S$.
             \item Dizemos que $S$ é \textit{limitado superiormente} se existe $x \in X$ que é um limitante superior de $S$.
             \item Dizemos que $S$ é \textit{limitado inferiormente} se existe $x \in X$ que é limitante inferior de $S$.
-            \item Dizemos que $x \in S$ é o \textit{máximo} de $S$ se $y \leq x$ para todo $y \in S$.
-            \item Dizemos que $x \in S$ é o \textit{mínimo} de $S$ se $x \leq y$ para todo $y \in S$.
+            \item Dizemos que $x \in S$ é o \textit{elemento máximo} de $S$ se $y \leq x$ para todo $y \in S$.
+            \item Dizemos que $x \in S$ é o \textit{elemento mínimo} de $S$ se $x \leq y$ para todo $y \in S$.
             \item Dizemos que $x \in S$ é \textit{maximal} em $S$ se não existe $y \in S$ tal que $x < y$.
             \item Dizemos que $x \in S$ é \textit{minimal} em $S$ se não existe $y \in S$ tal que $y < x$.
             \item Dizemos que $x \in X$ é o \textit{supremo} de $S$ se $S$ é limitado superiormente e $x \leq y$ para todo limitante superior $y \in X$ de $S$.
@@ -1000,41 +1000,15 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{defi}[Função] \label{defi.fund:função}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Uma relação $f$ é uma \textit{função} se $(a,b) \in f$ e $(a,c) \in f$ implicam $b=c$. A \textit{imagem} de $a \in \Dom{(f)}$ é denotada por $f(a)$.
-            \item Uma \textit{função de $A$ em $B$} é uma função $f$ tal que $\Dom{(f)} = A$ e $\Im{(f)} \subseteq B$. Isso é denotado por $f : A \to B$.
+            \item Uma relação $f$ é uma \textit{função} se $(a,b) \in f$ e $(a,c) \in f$ implicam $b=c$. A \textit{imagem} de $a \in \Dom{(f)}$ por $f$ é denotada por $f(a)$.
+            \item Uma \textit{função parcial de $A$ em $B$} é uma função $f$ tal que $\Dom{(f)} \subseteq A$ e $\Im{(f)} \subseteq B$.
+            \item Uma \textit{função total de $A$ em $B$} é uma função $f$ tal que $\Dom{(f)} = A$ e $\Im{(f)} \subseteq B$. Isso é denotado por $f : A \to B$.
         \end{enumerate}
 \end{defi}
 
 \begin{obs}
-    Um símbolo de predicado para ``$f$ é função'', onde $f$ ocorre livre, é
-        \[
-            \operatorname{Fun}(f) \overset{\text{def}}{\leftrightarrow} \operatorname{Rel}(f) \land \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c).
-        \]
-    Um símbolo de predicado para ``$f$ é função de $A$ em $B$'', onde $f$, $A$ e $B$ ocorrem livre, é
-        \[
-            \operatorname{Fun}(f,A,B) \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \Dom{(f)} = A \land \Im{(f)} \subseteq B,
-        \]
-    ou ainda, de maneira mais explícita,
-        \[
-            \operatorname{Fun}{(f,A,B)} \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \forall x(x \in A \leftrightarrow \exists y((x,y) \in f)) \land \forall x \forall y((x,y) \in f \rightarrow y \in B).
-        \]
+    Escrevemos apenas ``função de $A$ em $B$'', omitindo o ``total''.
 \end{obs}
-
-\begin{prop}
-    Sejam $f$ e $g$ funções e $X$ um conjunto.
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $f|_X$ é uma função e seu domínio é $\Dom{(f)} \cap X$.
-            \item $g \circ f$ é uma função.
-        \end{enumerate}
-\end{prop}
-
-\begin{proof}
-    \leavevmode
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Por definição, $f|_X = \{ (a,b) \in f : a \in X \}$, isto é, $f$ é um conjunto de pares ordenados e, portanto, uma relação. Se $(a,b) \in f|_X$ e $(a,c) \in f|_X$, então, pela definição de $f|_X$, $(a,b) \in f$, $(a,c) \in f$ e $a \in X$; como $f$ é função, $b=c$, de modo que $f|_X$ é também uma função. Provemos, por fim, que $\Dom{(f|_X)} =  \Dom{(f)} \cap X$. Se $a \in \Dom{(f|_X)}$, então existe $b \in \Im{(f|_X)}$ tal que $(a,b) \in f|_X$; pela definição de $f|_X$, vem $(a,b) \in f$ e $a \in X$, e de $(a,b) \in f$ vem $a \in \Dom{(f)}$. Com isso, $a \in \Dom{(f)} \cap X$, de modo que $\Dom{(f|_X)} \subseteq \Dom{(f)} \cap X$. Por outro lado, se $a \in \Dom{(f)} \cap X$, então de $a \in \Dom{(f)}$ segue que existe $b \in \Im{(f)}$ tal que $(a,b) \in f$, e como $a \in X$, vem $(a,b) \in f|_X$, de modo que $\Dom{(f)} \cap X \subseteq \Dom{(f|_X)}$. Logo $\Dom{(f|_X)} = \Dom{(f)} \cap X$. Em particular, temos $f|_X = f |_{\Dom{(f)} \cap X}$. \itemproof
-            \item Se $(a,x) \in g \circ f$ e $(a,y) \in g \circ f$, então, por definição, existe $b \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a,b) \in f$ e $(b,x) \in g$ e existe $c \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a, c) \in f$ e $(c,y) \in g$. Como $f$ é função, vem $b=c$; daí, vem $(b,x) \in g$ e $(b,y) \in g$, e como $g$ é função, vem $x=y$. \itemproof
-        \end{enumerate}
-\end{proof}
 
 \begin{defi}
     A \textit{função identidade} de um conjunto $A$ é a função $\id_A : A \to A$ definida por $\id_A{(x)} = x$ para todo $x \in A$.
@@ -1048,42 +1022,61 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     Teste só para ver se está funcionando. \itemproof
 \end{proof}
 
-\subsection{Bijeções e Funções Inversas}
-
-\subsubsection{Injeções}
-
-\begin{defi}
-    Uma função $f$ é \textit{injetora} se
-        \[
-            \forall x \forall y (x,y \in \Dom{(f)} \rightarrow (x \neq y \rightarrow f(x) \neq f(y))).
-        \]
-\end{defi}
-
 \begin{prop}
-    Sejam $f$ e $g$ funções.
+    Sejam $f$ e $g$ funções e $X$ um conjunto.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $f$ e $g$ são injetoras, então $g \circ f$ é injetora.
-            \item Se $g \circ f$ é injetora e $\Im{(f)} \subseteq \Dom{(g)}$, então $f$ é injetora.
+            \item $f \circ f^{-1} = \id_{\Im{(f)}}$.
+            \item $f|_X$ é uma função e seu domínio é $\Dom{(f)} \cap X$.
+            \item $g \circ f$ é uma função.
         \end{enumerate}
 \end{prop}
 
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Sejam $x,y \in \Dom{(g \circ f)}$. Se $g(f(x)) = g(f(y))$, então $f(x) = f(y)$ pela injetividade de $g$. Se $f(x) = f(y)$, então $x = y$ pela injetividade de $f$. Logo $g \circ f$ é injetora. \itemproof
-            \item Sejam $x,y \in \Dom{(f)}$ tais que $f(x) = f(y)$. Se $\Im{(f)} \subseteq \Dom{(g)}$, então $f(x), f(y) \in \Dom{(g)}$, e como $f(x) = f(y)$, temos $g (f(x)) = g(f(y))$. Daí, pela injetividade de $g \circ f$ temos $x=y$, de modo que $f$ é injetora. \itemproof
+            \item \itemproof
+            \item Por definição, $f|_X = \{ (a,b) \in f : a \in X \}$, isto é, $f$ é um conjunto de pares ordenados e, portanto, uma relação. Se $(a,b) \in f|_X$ e $(a,c) \in f|_X$, então, pela definição de $f|_X$, $(a,b) \in f$, $(a,c) \in f$ e $a \in X$; como $f$ é função, $b=c$, de modo que $f|_X$ é também uma função. Provemos, por fim, que $\Dom{(f|_X)} =  \Dom{(f)} \cap X$. Se $a \in \Dom{(f|_X)}$, então existe $b \in \Im{(f|_X)}$ tal que $(a,b) \in f|_X$; pela definição de $f|_X$, vem $(a,b) \in f$ e $a \in X$, e de $(a,b) \in f$ vem $a \in \Dom{(f)}$. Com isso, $a \in \Dom{(f)} \cap X$, de modo que $\Dom{(f|_X)} \subseteq \Dom{(f)} \cap X$. Por outro lado, se $a \in \Dom{(f)} \cap X$, então de $a \in \Dom{(f)}$ segue que existe $b \in \Im{(f)}$ tal que $(a,b) \in f$, e como $a \in X$, vem $(a,b) \in f|_X$, de modo que $\Dom{(f)} \cap X \subseteq \Dom{(f|_X)}$. Logo $\Dom{(f|_X)} = \Dom{(f)} \cap X$. Em particular, temos $f|_X = f |_{\Dom{(f)} \cap X}$. \itemproof
+            \item Se $(a,x) \in g \circ f$ e $(a,y) \in g \circ f$, então, por definição, existe $b \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a,b) \in f$ e $(b,x) \in g$ e existe $c \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a, c) \in f$ e $(c,y) \in g$. Como $f$ é função, vem $b=c$; daí, vem $(b,x) \in g$ e $(b,y) \in g$, e como $g$ é função, vem $x=y$. \itemproof
+        \end{enumerate}
+\end{proof}
+
+
+
+\subsection{Bijeções e Funções Inversas}
+
+\subsubsection{Injeções}
+
+\begin{defi}
+    Uma função $f$ é \textit{injetiva} se
+        \[
+            \forall x \forall y (x,y \in \Dom{(f)} \rightarrow (x \neq y \rightarrow f(x) \neq f(y))).
+        \]
+\end{defi}
+
+\begin{prop} \label{prop.fund:feginj}
+    Sejam $f$ e $g$ funções.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $f$ e $g$ são injetivas, então $g \circ f$ é injetiva.
+            \item Se $g \circ f$ é injetiva e $\Im{(f)} \subseteq \Dom{(g)}$, então $f$ é injetiva.
+        \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Sejam $x,y \in \Dom{(g \circ f)}$. Se $g(f(x)) = g(f(y))$, então $f(x) = f(y)$ pela injetividade de $g$. Se $f(x) = f(y)$, então $x = y$ pela injetividade de $f$. Logo $g \circ f$ é injetiva. \itemproof
+            \item Sejam $x,y \in \Dom{(f)}$ tais que $f(x) = f(y)$. Se $\Im{(f)} \subseteq \Dom{(g)}$, então $f(x), f(y) \in \Dom{(g)}$, e como $f(x) = f(y)$, temos $g (f(x)) = g(f(y))$. Daí, como $\Dom{(f)} = \Dom{(g \circ f)}$ (proposição \eqref{prop.fund:relacoes}) e $g \circ f$ é injetiva, vem $x=y$, de modo que $f$ é injetiva. \itemproof
         \end{enumerate}
 \end{proof}
 
 \begin{teo} \label{teo.fund:inj}
     Seja $f$ uma função.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se a relação $f^{-1}$ é uma função, então $f^{-1}$ é injetora.
+            \item Se a relação $f^{-1}$ é uma função, então $f^{-1}$ é injetiva.
             \item A relação $f^{-1}$ é uma função se, e somente se,
                 \begin{enumerate}[label=\roman*.]
-                    \item $f$ é injetora;\footnote{Uma hipótese adicional necessária para este enunciado é a de que $\Dom{(f)} \neq \emptyset$. Colocamos essa hipótese aqui, numa nota de rodapé, para não deixar o enunciado feio e, principalmente, para não chatear o leitor.}
-                    \item $f^{-1} \circ f = \id_{\Dom{(f)}}$;
-                    \item $f \circ f^{-1} = \id_{\Im{(f)}}$.
+                    \item $f$ é injetiva.
+                    \item $f^{-1} \circ f = \id_{\Dom{(f)}}$.
                 \end{enumerate}
         \end{enumerate}
 \end{teo}
@@ -1091,22 +1084,16 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $(y,x) \in f^{-1}$ e $(z,x) \in f^{-1}$, então $(x,y) \in f$ e $(x,z) \in f$, e como $f$ é função vem $y=z$, de modo que $f^{-1}$ é uma função injetora. \itemproof
-            \item A equivalência mais importante é com $f$ ser injetora.
+            \item Se $(y,x) \in f^{-1}$ e $(z,x) \in f^{-1}$, então $(x,y) \in f$ e $(x,z) \in f$, e como $f$ é função vem $y=z$, de modo que $f^{-1}$ é uma função injetiva. \itemproof
+            \item A equivalência mais importante é com $f$ ser injetiva.
                 \begin{enumerate}[label=\roman*.]
-                    \item Se $f^{-1}$ é uma função, então $(x,y) \in f^{-1}$ e $(x,z) \in f^{-1}$ implicam $y=z$. Daí, como $(y,x) \in f$ e $(z,x) \in f$, sendo $y=z$ segue que $f$ é injetora. Agora, se $f$ é injetora, então $(y,x) \in f$ e $(z,x) \in f$ implicam $y=z$, e como $(x,y) \in f^{-1}$ e $(x,z) \in f^{-1}$, segue que $f^{-1}$ é uma função. \itemproof
+                    \item Se $f^{-1}$ é uma função, então $(x,y) \in f^{-1}$ e $(x,z) \in f^{-1}$ implicam $y=z$. Daí, como $(y,x) \in f$ e $(z,x) \in f$, sendo $y=z$ segue que $f$ é injetiva. Agora, se $f$ é injetiva, então $(y,x) \in f$ e $(z,x) \in f$ implicam $y=z$, e como $(x,y) \in f^{-1}$ e $(x,z) \in f^{-1}$, segue que $f^{-1}$ é uma função.
                 \end{enumerate}
-            Provemos que $f$ é injetora se, e somente se, $f^{-1} \circ f = \id_{\Dom{(f)}}$.
+            Provemos que $f$ é injetiva se, e somente se, $f^{-1} \circ f = \id_{\Dom{(f)}}$.
                 \begin{enumerate}[label=\roman*., resume]
-                    \item ($\Rightarrow$) Se $(x,z) \in f^{-1} \circ f$, então existe $y \in \Im{(f)} \cap \Dom{(f^{-1})}$ tal que $(x,y) \in f$ e $(y,z) \in f^{-1}$. Com isso, $(z,y) \in f$, e como $f$ é injetora vem $z=x$, de modo que $(x,x) \in \id_{\Dom{(f)}}$, isto é, $f^{-1} \circ f \subseteq \id_{\Dom{(f)}}$. Agora, se $(x,x) \in \id_{\Dom{(f)}}$, então existe $y \in \Im{(f)}$ tal que $(x, y) \in f$, isto é, $(y,x) \in f^{-1}$. Com isso, $(x,x) \in f^{-1} \circ f$, de modo que $\id_{\Dom{(f)}} \subseteq f^{-1} \circ f$. Com isso, vem $f^{-1} \circ f = \id_{\Dom{(f)}}$.
+                    \item ($\Rightarrow$) Se $(x,z) \in f^{-1} \circ f$, então existe $y \in \Im{(f)} \cap \Dom{(f^{-1})}$ tal que $(x,y) \in f$ e $(y,z) \in f^{-1}$. Com isso, $(z,y) \in f$, e como $f$ é injetiva vem $z=x$, de modo que $(x,x) \in \id_{\Dom{(f)}}$, isto é, $f^{-1} \circ f \subseteq \id_{\Dom{(f)}}$. Agora, se $(x,x) \in \id_{\Dom{(f)}}$, então existe $y \in \Im{(f)}$ tal que $(x, y) \in f$, isto é, $(y,x) \in f^{-1}$. Com isso, $(x,x) \in f^{-1} \circ f$, de modo que $\id_{\Dom{(f)}} \subseteq f^{-1} \circ f$. Com isso, vem $f^{-1} \circ f = \id_{\Dom{(f)}}$.
                     
-                    ($\Leftarrow$) Se $(x,y) \in f$ e $(z,y) \in f$, então $(y,x) \in f^{-1}$ e $(y,z) \in f^{-1}$. Como $(x,x) \in f^{-1} \circ f$, existe $w \in \Im{(f)} \cap \Dom{(f^{-1})}$ tal que $(x,w) \in f$ e $(w,x) \in f^{-1}$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in f^{-1}$. Analogamente temos $(y,z) \in f^{-1}$, e como $f$ é uma função vem $x=z$, de modo que $f$ é injetora.  \itemproof
-
-                    Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetora.
-                \end{enumerate}
-            Por fim, provemos que $f$ é injetora se, e somente se, $f \circ f^{-1} = \id_{\Im{(f)}}$.
-                \begin{enumerate}[label=\roman*., resume]
-                    \item Segue analogamente. Para ver os detalhes, consulte ver \cite{fajardo2024conjuntos}, teorema 4.14, página 104.\itemproof
+                    ($\Leftarrow$) Sendo $(x,y) \in f$ e $(z,y) \in f$, temos $(y,x) \in f^{-1}$, de modo que $(z,x) \in f^{-1} \circ f$, e como $f^{-1} \circ f = \id_{\Dom{(f)}}$, vem $x=z$, o que prova a injetividade de $f$.
                 \end{enumerate}
             Com isso, todas as equivalências foram provadas. \itemproof
         \end{enumerate}
@@ -1117,25 +1104,25 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{defi}
 
 \begin{teo} \label{teo.fund:invesquerda}
-    Uma função $f$ é invertível à esquerda se, e somente se, $f$ é injetora.
+    Uma função $f$ é invertível à esquerda se, e somente se, $f$ é injetiva.
 \end{teo}
 
 \begin{proof}
-    Se $f$ é injetora, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função tal que $f^{-1} \circ f = \id_{\Dom{(f)}}$, isto é, $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetora. \itemproof
+    Se $f$ é injetiva, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função tal que $f^{-1} \circ f = \id_{\Dom{(f)}}$, isto é, $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível à esquerda, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetiva. \itemproof
 \end{proof}
 
 \subsubsection{Sobrejeções}
 
 \begin{defi}
-    Uma função $f : A \to B$ é \textit{sobrejetora em relação a $B$} se $\Im{(f)} = B$.
+    Uma função $f : A \to B$ é \textit{sobrejetiva em relação a $B$} se $\Im{(f)} = B$.
 \end{defi}
 
 \begin{prop}
-    Uma função $f: A \to B$ é sobrejetora em relação a $B$ se, e somente se, para todo $y \in B$ existe $x \in A$ tal que $(x,y) \in f$.
+    Uma função $f: A \to B$ é sobrejetiva em relação a $B$ se, e somente se, para todo $y \in B$ existe $x \in A$ tal que $(x,y) \in f$.
 \end{prop}
 
 \begin{proof}
-    \itemproof    
+    Segue da proposição \eqref{prop.fund:domeimdeRAB}. \itemproof    
 \end{proof}
 
 \begin{lem}
@@ -1159,11 +1146,11 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \end{enumerate}
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{prop.fund:fegsob}
     Sejam $f : A \to B$ e $g : C \to D$ funções.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $f$ e $g$ são sobrejetoras e $B=C$, então $g \circ f$ é sobrejetora.
-            \item Se $g \circ f$ é sobrejetora e $f(A) \subseteq C$, então $g$ é sobrejetora.
+            \item Se $f$ e $g$ são sobrejetivas e $B=C$, então $g \circ f$ é sobrejetiva.
+            \item Se $g \circ f$ é sobrejetiva e $f(A) \subseteq C$, então $g$ é sobrejetiva.
         \end{enumerate} 
 \end{prop}
 
@@ -1176,7 +1163,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{defi}
 
 \begin{teo} \label{teo.fund:invdireita}
-    Uma função $f:A \to B$ é invertível à direita se, e somente se, $f$ é sobrejetora em relação a $B$.
+    Uma função $f:A \to B$ é invertível à direita se, e somente se, $f$ é sobrejetiva em relação a $B$.
 \end{teo}
 
 \begin{obs}
@@ -1190,11 +1177,11 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \subsubsection{Bijeções e Funções Inversas}
 
 \begin{defi}
-    Uma função $f: A \to B$ é \textit{bijetora em relação a $B$} se é injetora e sobrejetora em relação a $B$.
+    Uma função $f: A \to B$ é \textit{bijetiva em relação a $B$} se é injetiva e sobrejetiva em relação a $B$.
 \end{defi}
 
 \begin{prop} \label{prop.fund:defbij}
-    Uma função $f: A \to B$ é bijetora em relação a $B$ se, e somente se, para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$.
+    Uma função $f: A \to B$ é bijetiva em relação a $B$ se, e somente se, para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$.
 \end{prop}
 
 \begin{proof}
@@ -1202,22 +1189,21 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{proof}
 
 \begin{prop}
-    Se $f : A \to B$ e $g : B \to C$ são funções bijetoras, então a função $g \circ f : A \to C$ é uma função bijetora.
+    Se $f : A \to B$ e $g : B \to C$ são funções bijetivas, então a função $g \circ f : A \to C$ é uma função bijetiva.
 \end{prop}
 
 \begin{proof}
-    
+    Segue como corolário imediato das proposições \eqref{prop.fund:feginj} e \eqref{prop.fund:fegsob}. \itemproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:bij1}
     Seja $f : A \to B$ uma função.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se a relação $f^{-1}$ é uma função de $B$ em $A$, então $f^{-1}$ bijetora.
+            \item Se a relação $f^{-1}$ é uma função de $B$ em $A$, então $f^{-1}$ bijetiva.
             \item A relação $f^{-1}$ é uma função de $B$ em $A$ se, e somente se,
                 \begin{enumerate}[label=\roman*.]
-                    \item $f$ é bijetora;
-                    \item $f^{-1} \circ f = \id_{A}$;
-                    \item $f \circ f^{-1} = \id_{B}$.
+                    \item $f$ é bijetiva.
+                    \item $f^{-1} \circ f = \id_{A}$.
                 \end{enumerate}
         \end{enumerate}
 \end{teo}
@@ -1225,16 +1211,16 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Como $f$ é função, para todo $x \in A$ existe um único $y \in B$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela proposição \eqref{prop.fund:defbij}, $f^{-1}$ é bijetora em relação a $A$. \itemproof
-            \item A equivalência que mais importa é com $f$ ser bijetora.
+            \item Como $f$ é função, para todo $x \in A$ existe um único $y \in B$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela proposição \eqref{prop.fund:defbij}, $f^{-1}$ é bijetiva em relação a $A$. \itemproof
+            \item A equivalência que mais importa é com $f$ ser bijetiva.
                 \begin{enumerate}[label=\roman*.]
-                    \item Se $f^{-1} \subseteq B \times A$ é uma função tal que $\Dom{(f^{-1})} = B$, então para todo $y \in B$ existe um único $x \in A$ tal que $(y,x) \in f^{-1}$, isto é, $(x,y) \in f$. Daí, pela proposição \eqref{prop.fund:defbij}, temos que $f$ é bijetora. Agora, pela mesma proposição, se $f$ é bijetora, então para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela definição de função, $f^{-1}$ é uma função de $B$ em $A$. \itemproof
+                    \item Se $f^{-1} \subseteq B \times A$ é uma função tal que $\Dom{(f^{-1})} = B$, então para todo $y \in B$ existe um único $x \in A$ tal que $(y,x) \in f^{-1}$, isto é, $(x,y) \in f$. Daí, pela proposição \eqref{prop.fund:defbij}, temos que $f$ é bijetiva. Agora, pela mesma proposição, se $f$ é bijetiva, então para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela definição de função, $f^{-1}$ é uma função de $B$ em $A$. \itemproof
                 \end{enumerate}
-            Provemos que $f$ é bijetora se, e somente se, $f^{-1} \circ f = \id_A$.
+            Provemos que $f$ é bijetiva se, e somente se, $f^{-1} \circ f = \id_A$.
                 \begin{enumerate}[label=\roman*., resume]
                     \item Segue analogamente à prova do teorema \eqref{teo.fund:inj}. \itemproof
                 \end{enumerate}
-            Por fim, provemos que $f$ é bijetora se, e somente se, $f \circ f^{-1} = \id_B$.
+            Por fim, provemos que $f$ é bijetiva se, e somente se, $f \circ f^{-1} = \id_B$.
                 \begin{enumerate}[label=\roman*., resume]
                     \item Segue analogamente à prova do teorema \eqref{teo.fund:inj}. \itemproof
                 \end{enumerate}
@@ -1261,7 +1247,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{teo} \label{teo.fund:bij2}
     Seja $f: A \to B$ uma função.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $f$ é invertível se, e somente se, $f$ é bijetora.
+            \item $f$ é invertível se, e somente se, $f$ é bijetiva.
             \item Se $f$ é invertível, então a função inversa de $f$ é a relação inversa $f^{-1}$.
         \end{enumerate}
 \end{teo}
@@ -1269,13 +1255,13 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pelo teorema \eqref{teo.fund:invesquerda}, $f$ é invertível à esquerda se, e somente se, $f$ é injetora. Pelo teorema \eqref{teo.fund:invdireita}, $f$ é invertível à direita se, e somente se, $f$ é sobrejetora. Com isso, $f$ é invertível se, e somente, $f$ é bijetora. \itemproof  
-            \item Se $f$ é invertível, então $f$ é bijetora. Se $f$ é bijetora, então pelo teorema \eqref{teo.fund:bij1} a relação $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$, isto é, $f^{-1} : B \to A$. Naturalmente, $f^{-1}$ (como relação inversa de $f$) é uma candidata para ser a função inversa de $f$, de sorte que teorema \eqref{teo.fund:bij1} temos $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, isto é, $f^{-1}$ é, de fato, a função inversa de $f$. \itemproof
+            \item $f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pelo teorema \eqref{teo.fund:invesquerda}, $f$ é invertível à esquerda se, e somente se, $f$ é injetiva. Pelo teorema \eqref{teo.fund:invdireita}, $f$ é invertível à direita se, e somente se, $f$ é sobrejetiva. Com isso, $f$ é invertível se, e somente, $f$ é bijetiva. \itemproof  
+            \item Se $f$ é invertível, então $f$ é bijetiva. Se $f$ é bijetiva, então pelo teorema \eqref{teo.fund:bij1} a relação $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$, isto é, $f^{-1} : B \to A$. Naturalmente, $f^{-1}$ (como relação inversa de $f$) é uma candidata para ser a função inversa de $f$, de sorte que teorema \eqref{teo.fund:bij1} temos $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, isto é, $f^{-1}$ é, de fato, a função inversa de $f$. \itemproof
         \end{enumerate}
 \end{proof}
 
 \begin{obs}
-    Vamos resumir o que está acontecendo. O resultado mais importante é a equivalência entre $f : A \to B$ ser invertível e $f$ ser bijetora: por um lado, se $f$ é bijetora, então existe uma função inversa de $f$, que é única, e ela é dada pela relação inversa $f^{-1} \subseteq B \times A$, que pelo teorema \eqref{teo.fund:bij1} é uma função de $B$ em $A$, que é ainda bijetora. Por outro lado, se $f$ é invertível, então existe $f^{-1} : B \to A$ (como função inversa de $f$), que coincide com $f^{-1}$ (como relação inversa de $f$).
+    Vamos resumir o que está acontecendo. O resultado mais importante é a equivalência entre $f : A \to B$ ser invertível e $f$ ser bijetiva: por um lado, se $f$ é bijetiva, então existe uma função inversa de $f$, que é única, e ela é dada pela relação inversa $f^{-1} \subseteq B \times A$, que pelo teorema \eqref{teo.fund:bij1} é uma função de $B$ em $A$, que é ainda bijetiva. Por outro lado, se $f$ é invertível, então existe $f^{-1} : B \to A$ (como função inversa de $f$), que coincide com $f^{-1}$ (como relação inversa de $f$).
 \end{obs}
 
 \section{O Axioma do Infinito e os Números Naturais}
@@ -1469,6 +1455,23 @@ Para a próxima versão do teorema da recursão, denotamos por $X^{<\omega}$ o c
 \subsection{Aritmética dos Números Naturais}
 
 \section{O Axioma da Escolha}
+
+Convém introduzir um símoblo predicado.
+
+\begin{obs}
+    Um símbolo de predicado para ``$f$ é função'', onde $f$ ocorre livre, é
+        \[
+            \operatorname{Fun}(f) \overset{\text{def}}{\leftrightarrow} \operatorname{Rel}(f) \land \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c).
+        \]
+    Um símbolo de predicado para ``$f$ é função de $A$ em $B$'', onde $f$, $A$ e $B$ ocorrem livre, é
+        \[
+            \operatorname{Fun}(f,A,B) \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \Dom{(f)} = A \land \Im{(f)} \subseteq B,
+        \]
+    ou ainda, de maneira mais explícita,
+        \[
+            \operatorname{Fun}{(f,A,B)} \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \forall x(x \in A \leftrightarrow \exists y((x,y) \in f)) \land \forall x \forall y((x,y) \in f \rightarrow y \in B).
+        \]
+\end{obs}
 
 \begin{ax}[da Escolha]
     Para todo conjunto $x$ de conjuntos não vazios existe uma função $f : x \to \bigcup x$ tal que $f(y) \in y$ para todo $y \in x$.

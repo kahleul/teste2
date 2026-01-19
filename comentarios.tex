@@ -763,3 +763,15 @@ física cringe 01/10/2026
     Como $\N_{\F}$ é um conjunto indutivo, temos $\forall n (n \in \N_{\F} \Rightarrow n+1 \in \N_{\F})$, de modo que $s(n) := n+1$ define uma função de $\N_{\F}$ em $\N_{\F}$, que é injetiva pela lei do corte de $\F$. Temos $1_{\F} \in \N_{\F}$ por definição e, se $n \in \N_{\F}$ é tal que $n+1_{\F} = 1_{\F}$, então $n=0_{\F}$, isto é, $n \notin \N_{\F}$, uma contradição. Logo $1 \in \N_{\F} \setminus s(\N_{\F})$. Por fim, em $\N_{\F}$ vale o princípio de indução, ver \eqref{teo.reais:indução}. Logo $(\N_{\F}, s : n \mapsto n + 1_{\F}, 1_{\F})$ é um sistema de Peano. 
     %É absolutamente evidente que $s$ está bem definida e é injetiva.
 \end{proof}
+
+$(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$. Provemos a unicidade de $f(x)$. $\varphi \subseteq \varphi \setminus \{(1,b)\}$,
+
+\begin{comment}
+\subsection*{Algumas equivalências}
+
+O objetivo desta subseção é provar que, em $\N$, indução, indução forte e boa ordenação são equivalentes.
+\end{comment}
+
+Se $(x,y) \in f$ e $(z,y) \in f$, então $(y,x) \in f^{-1}$ e $(y,z) \in f^{-1}$. Como $(x,x) \in f^{-1} \circ f$, existe $w \in \Im{(f)} \cap \Dom{(f^{-1})}$ tal que $(x,w) \in f$ e $(w,x) \in f^{-1}$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in f^{-1}$. Analogamente temos $(y,z) \in f^{-1}$, e como $f$ é uma função vem $x=z$, de modo que $f$ é injetora.
+
+\footnote{Uma hipótese adicional necessária para este enunciado é a de que $\Dom{(f)} \neq \emptyset$. Colocamos essa hipótese aqui, numa nota de rodapé, para não deixar o enunciado feio e, principalmente, para não chatear o leitor.}

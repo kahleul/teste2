@@ -293,15 +293,14 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
         \end{itemize}
     Sendo $S := \{n \in \N : \exists x ((n,x) \in \varphi \land \forall y ((n,y) \in \varphi \Rightarrow y=x ) ) \}$, se $S = \N$, então $\varphi$ terá essas propriedades. Como $S \subseteq \N$, basta provar que $\N \subseteq S$, e para isso basta provar que $S$ é um conjunto indutivo.
         \begin{enumerate}[label=\roman*.]
-            \item Como $(1,a) \in \varphi$, provemos a unicidade de $a$. Se existisse $b \in X$ tal que $(1,b) \in \varphi$ e $b \neq a$, então $(1,a) \in \varphi \setminus \{(1,b)\}$, e se $(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$; como $n+1 \neq 1$, teríamos $(n+1, f(x)) \in \varphi \setminus \{(1,b)\}$, de modo que $\varphi \setminus \{(1,b)\} \in \mathcal{C}$, uma contradição. Com isso, $1 \in S$.
-            \item Se $n \in S$, então existe um único $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n+1,f(x)) \in \varphi$; provemos então a unicidade de $f(x)$. Suponha que exista $b \in X$ tal que $(n+1,b) \in \varphi$ e $b \neq f(x)$. Temos $(1,a) \in \varphi \setminus \{(n+1,b)\}$ pois $n+1 \neq 1$. Se $(m,y) \in \varphi \setminus \{(n+1,b)\}$, então $(m,y) \in \varphi$ e $(m+1,f(y)) \in \varphi$. Se $m=n$, então $y=x$, $m+1 = n+1$ e $f(y) = f(x) \neq b$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Se $m \neq n$, então $m+1 \neq n+1$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Com isso, vem $\varphi \setminus \{(n+1, b)\} \in \mathcal{C}$, uma contradição. Logo, se $n \in S$, então $n+1 \in S$, de modo que $S = \N$.
-            %$(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$. Provemos a unicidade de $f(x)$. $\varphi \subseteq \varphi \setminus \{(1,b)\}$,
+            \item Como $(1,a) \in \varphi$, provemos a unicidade de $a$ como imagem de $1$ por $\varphi$. Se existisse $b \in X$ tal que $(1,b) \in \varphi$ e $b \neq a$, então $(1,a) \in \varphi \setminus \{(1,b)\}$, e se $(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$; como $n+1 \neq 1$, teríamos $(n+1, f(x)) \in \varphi \setminus \{(1,b)\}$, de modo que $\varphi \setminus \{(1,b)\} \in \mathcal{C}$, uma contradição. Com isso, $1 \in S$.
+            \item Se $n \in S$, então existe um único $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n+1,f(x)) \in \varphi$; provemos então a unicidade de $f(x)$ como imagem de $n+1$ por $\varphi$. Suponha que exista $b \in X$ tal que $(n+1,b) \in \varphi$ e $b \neq f(x)$. Temos $(1,a) \in \varphi \setminus \{(n+1,b)\}$ pois $n+1 \neq 1$. Se $(m,y) \in \varphi \setminus \{(n+1,b)\}$, então $(m,y) \in \varphi$ e $(m+1,f(y)) \in \varphi$. Se $m=n$, então $y=x$, $m+1 = n+1$ e $f(y) = f(x) \neq b$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Se $m \neq n$, então $m+1 \neq n+1$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Com isso, vem $\varphi \setminus \{(n+1, b)\} \in \mathcal{C}$, uma contradição. Logo, se $n \in S$, então $n+1 \in S$, de modo que $S = \N$.
         \end{enumerate}
     Com isso, fica provada a existência de uma função $\varphi : \N \to X$ com as propriedades desejadas. Provemos, por fim, sua unicidade. Sendo $\psi : \N \to X$ uma função com essas mesmas propriedades e definindo $T := \{ n \in \N : \psi(n) = \varphi(n)\}$, claramente $1 \in T$, e se $n \in T$, então $\psi(n) = \varphi(n)$, de modo que $\psi(n+1) = f(\psi(n)) = f(\varphi(n)) = \varphi(n+1)$, isto é, $n+1 \in T$. Com isso, vem $T = \N$, o que prova a unicidade de $\varphi$. \itemproof
 \end{proof}
 
 \begin{teo}
-    Sejam $(\F_1, +_1, \cdot_1, \leq_1)$ e $(\F_2, +_2, \cdot_2, \leq_2)$ corpos ordenados. Existe uma única bijeção $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que, para quaisquer $m,n \in \N_{\F_1}$, valem as seguintes afirmações.
+    Sejam $(\F_1, +_1, \cdot_1, \leq_1)$ e $(\F_2, +_2, \cdot_2, \leq_2)$ corpos ordenados. Existe uma única bijeção $\varphi : \N_{\F_1} \to \N_{\F_2}$ tal que, para quaisquer $m,n \in \N_{\F_1}$, valem as seguintes propriedades.
         \begin{enumerate}[label=\roman*.]
             \item $\varphi (m +_1 n) = \varphi(m) +_2 \varphi(n)$.
             \item $\varphi (m \cdot_1 n) = \varphi(m) \cdot_2 \varphi(n)$.
@@ -349,11 +348,9 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
     Com isso, vemos que a função $\varphi : \N_{\F_1} \to \N_{\F_2}$, obtida pelo teorema da recursão, é bijetiva, preserva a adição, a multiplicação e a ordem, como queríamos. \itemproof
 \end{proof}
 
-\begin{comment}
-\subsection*{Algumas equivalências}
+\subsection{Definições recursivas}
 
-O objetivo desta subseção é provar que, em $\N$, indução, indução forte e boa ordenação são equivalentes.
-\end{comment}
+O objetivo desta subseção é usar o teorema da recursão \eqref{teo.reais:recursão} para fazermos definições recursivas.
 
 \section{Conjuntos Finitos}
 
@@ -473,7 +470,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{defi}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Um conjunto $X \subseteq \N$ é \textit{limitado} se existir $n \in \N$ tal que $x \leq n$ para todo $x \in X$.
+            \item Um conjunto $X \subseteq \N$ é \textit{limitado} se existe $n \in \N$ tal que $x \leq n$ para todo $x \in X$.
 
             \item (Maior elemento)
         \end{enumerate}
@@ -499,7 +496,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Um conjunto $X$ é \textit{infinito} quando ele não é finito, isto é, quando $X \neq \emptyset$ e quando não existe uma bijeção $f : [n] \to X$ para todo $n \in \N$.
-            \item Diremos que $X \subseteq \N$ é \textit{ilimitado} quando ele não é limitado, isto é, quando para cada $n \in \N$ existe $p \in X$ tal que $p > n$.
+            \item Um subconjunto $X \subseteq \N$ é \textit{ilimitado} se ele não é limitado, isto é, se para todo $n \in \N$ existe $p \in X$ tal que $p > n$.
         \end{enumerate}
 \end{defi}
 
@@ -547,7 +544,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \section{Conjuntos Enumeráveis e Não-Enumeráveis}
 
 \begin{defi}
-    Um conjunto $X$ é dito \textit{enumerável} quando é finito ou quando existe uma bijeção $f : \N \to X$. A função $f$ é chamada de uma \textit{enumeração} dos elementos de $X$.
+    Um conjunto $X$ é \textit{enumerável} se é finito ou se existe uma bijeção $f : \N \to X$. A função $f$ é uma \textit{enumeração} de $X$.
 \end{defi}
 
 \begin{teo}
