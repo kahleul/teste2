@@ -775,3 +775,21 @@ O objetivo desta subseção é provar que, em $\N$, indução, indução forte e
 Se $(x,y) \in f$ e $(z,y) \in f$, então $(y,x) \in f^{-1}$ e $(y,z) \in f^{-1}$. Como $(x,x) \in f^{-1} \circ f$, existe $w \in \Im{(f)} \cap \Dom{(f^{-1})}$ tal que $(x,w) \in f$ e $(w,x) \in f^{-1}$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in f^{-1}$. Analogamente temos $(y,z) \in f^{-1}$, e como $f$ é uma função vem $x=z$, de modo que $f$ é injetora.
 
 \footnote{Uma hipótese adicional necessária para este enunciado é a de que $\Dom{(f)} \neq \emptyset$. Colocamos essa hipótese aqui, numa nota de rodapé, para não deixar o enunciado feio e, principalmente, para não chatear o leitor.}
+
+%%se $f$ é invertível à esquerda e à direita. A função $g: B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$ é chamada de \textit{função inversa} de $f$.
+
+$f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pelo teorema \eqref{teo.fund:invesquerda}, $f$ é invertível à esquerda se, e somente se, $f$ é injetiva. Pelo teorema \eqref{teo.fund:invdireita}, $f$ é invertível à direita se, e somente se, $f$ é sobrejetiva. Com isso, $f$ é invertível se, e somente, $f$ é bijetiva. \itemproof  
+
+\begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item A função inversa de uma função invertível é única.\footnote{Note que é esta proposição que nos permite dizer ``a função inversa'' em vez de ``uma função inversa''. }
+            \item Uma função é invertível se, e somente se, é invertível à esquerda e à direita.
+        \end{enumerate}
+
+\begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
+            \item A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $g_1$ e $g_2 : B \to A$ são as funções inversas à esquerda e à direita de $f$, respectivamente, então $g_1 \circ f = \id_A$ e $f \circ g_2 = \id_B$.
+        \end{enumerate}
+
+
+
+

@@ -1025,7 +1025,6 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{prop}
     Sejam $f$ e $g$ funções e $X$ um conjunto.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $f \circ f^{-1} = \id_{\Im{(f)}}$.
             \item $f|_X$ é uma função e seu domínio é $\Dom{(f)} \cap X$.
             \item $g \circ f$ é uma função.
         \end{enumerate}
@@ -1108,17 +1107,17 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Se $f$ é injetiva, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função tal que $f^{-1} \circ f = \id_{\Dom{(f)}}$, isto é, $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível à esquerda, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetiva. \itemproof
+    Se $f$ é injetiva, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função e $f^{-1} \circ f = \id_{\Dom{(f)}}$, de modo que $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível à esquerda, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetiva. \itemproof
 \end{proof}
 
 \subsubsection{Sobrejeções}
 
 \begin{defi}
-    Uma função $f : A \to B$ é \textit{sobrejetiva em relação a $B$} se $\Im{(f)} = B$.
+    Uma função $f : A \to B$ é \textit{sobrejetiva $B$} se $\Im{(f)} = B$.
 \end{defi}
 
 \begin{prop}
-    Uma função $f: A \to B$ é sobrejetiva em relação a $B$ se, e somente se, para todo $y \in B$ existe $x \in A$ tal que $(x,y) \in f$.
+    Uma função $f: A \to B$ é sobrejetiva em $B$ se, e somente se, para todo $y \in B$ existe $x \in A$ tal que $(x,y) \in f$.
 \end{prop}
 
 \begin{proof}
@@ -1158,12 +1157,28 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     \itemproof
 \end{proof}
 
+\begin{lem}
+    Para qualquer função $f$, tem-se $f \circ f^{-1} = \id_{\Im{(f)}}$.
+\end{lem}
+
+\begin{proof}
+    \itemproof
+\end{proof}
+
+\begin{teo} \label{teo.fund:sob}
+    Uma função $f : B \to A$ é sobrejetiva se, e somente se, $f \circ f^{-1} = \id_B$.
+\end{teo}
+
+\begin{proof}
+    \itemproof
+\end{proof}
+
 \begin{defi}
     Uma função $f:A \to B$ é \textit{invertível à direita} se existe uma função $g : B \to A$ tal que $f \circ g = \id_{B}$. Dizemos que $g$ é uma \textit{inversa à direita} de $f$.
 \end{defi}
 
 \begin{teo} \label{teo.fund:invdireita}
-    Uma função $f:A \to B$ é invertível à direita se, e somente se, $f$ é sobrejetiva em relação a $B$.
+    Uma função $f:A \to B$ é invertível à direita se, e somente se, $f$ é sobrejetiva em $B$.
 \end{teo}
 
 \begin{obs}
@@ -1185,7 +1200,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    Segue imediatamente da definição. \itemproof
 \end{proof}
 
 \begin{prop}
@@ -1203,7 +1218,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             \item A relação $f^{-1}$ é uma função de $B$ em $A$ se, e somente se,
                 \begin{enumerate}[label=\roman*.]
                     \item $f$ é bijetiva.
-                    \item $f^{-1} \circ f = \id_{A}$.
+                    \item $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$.
                 \end{enumerate}
         \end{enumerate}
 \end{teo}
@@ -1216,32 +1231,28 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                 \begin{enumerate}[label=\roman*.]
                     \item Se $f^{-1} \subseteq B \times A$ é uma função tal que $\Dom{(f^{-1})} = B$, então para todo $y \in B$ existe um único $x \in A$ tal que $(y,x) \in f^{-1}$, isto é, $(x,y) \in f$. Daí, pela proposição \eqref{prop.fund:defbij}, temos que $f$ é bijetiva. Agora, pela mesma proposição, se $f$ é bijetiva, então para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela definição de função, $f^{-1}$ é uma função de $B$ em $A$. \itemproof
                 \end{enumerate}
-            Provemos que $f$ é bijetiva se, e somente se, $f^{-1} \circ f = \id_A$.
+            Provemos que $f$ é bijetiva em $B$ se, e somente se, $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_{B}$.
                 \begin{enumerate}[label=\roman*., resume]
-                    \item Segue analogamente à prova do teorema \eqref{teo.fund:inj}. \itemproof
-                \end{enumerate}
-            Por fim, provemos que $f$ é bijetiva se, e somente se, $f \circ f^{-1} = \id_B$.
-                \begin{enumerate}[label=\roman*., resume]
-                    \item Segue analogamente à prova do teorema \eqref{teo.fund:inj}. \itemproof
+                    \item Se $f$ é bijetiva em $B$, então $f$ é injetiva e sobrejetiva, de modo que, pelos teoremas \eqref{teo.fund:inj} e \eqref{teo.fund:sob}, vem $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, respectivamente. Agora, se $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, então pelos mesmos teoremas $f$ é injetiva e sobrejetiva em $B$, isto é, $f$ é bijetiva em $B$. \itemproof
                 \end{enumerate}
             Com isso, todas as equivalências foram provadas. \itemproof
         \end{enumerate}
 \end{proof}
 
 \begin{defi}
-    Uma função $f: A \to B$ é \textit{invertível} se $f$ é invertível à esquerda e à direita. A função $g: B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$ é chamada de \textit{função inversa} de $f$.
+    Uma função $f: A \to B$ é \textit{invertível} se existe uma função $g : B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$. Dizemos que $g$ é a \textit{inversa} de $f$.
 \end{defi}
 
 \begin{prop}
-    A função inversa de uma função invertível é única.
+    A função inversa de uma função invertível é única.\footnote{Note que é esta proposição que nos permite dizer ``a função inversa'' em vez de ``uma função inversa''. }
 \end{prop}
 
 \begin{proof}
-    Sejam $f : A \to B$ uma função invertível e $g_1, g_2 : B \to A$ funções inversas de $f$. Provemos que $g_1 = g_2$. De fato,
+    Seja $f : A \to B$ uma função invertível. Sejam $g_1, g_2 : B \to A$ funções inversas de $f$. Provemos que $g_1 = g_2$. De fato,
         \[
             g_1 = g_1 \circ \id_B = g_1 \circ (f \circ g_2) = (g_1 \circ f) \circ g_2 = \id_A \circ g_2 = g_2.    
         \]
-    Logo, a inversa de $f$, quando existe, é única. \itemproof
+    Logo, a função inversa da função $f : A \to B$, quando existe, é única. \itemproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:bij2}
@@ -1255,13 +1266,21 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pelo teorema \eqref{teo.fund:invesquerda}, $f$ é invertível à esquerda se, e somente se, $f$ é injetiva. Pelo teorema \eqref{teo.fund:invdireita}, $f$ é invertível à direita se, e somente se, $f$ é sobrejetiva. Com isso, $f$ é invertível se, e somente, $f$ é bijetiva. \itemproof  
-            \item Se $f$ é invertível, então $f$ é bijetiva. Se $f$ é bijetiva, então pelo teorema \eqref{teo.fund:bij1} a relação $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$, isto é, $f^{-1} : B \to A$. Naturalmente, $f^{-1}$ (como relação inversa de $f$) é uma candidata para ser a função inversa de $f$, de sorte que teorema \eqref{teo.fund:bij1} temos $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, isto é, $f^{-1}$ é, de fato, a função inversa de $f$. \itemproof
+            \item Se $f$ é invertível, então existe uma função $g: B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$, de modo que $f$ é invertível à esquerda e à direita, isto é, $f$ é injetiva (teorema \eqref{teo.fund:invesquerda}) e sobrejetiva em $B$ (teorema \eqref{teo.fund:invdireita}), isto é, $f$ é bijetiva em $B$. Por outro lado, se $f$ é bijetiva em $B$, então pelo teorema \eqref{teo.fund:bij1} sua relação inversa $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$ e, mais ainda, satisfaz $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$, de modo que $f$ é invertível. \itemproof   
+            \item Segue imediatamente do primeiro item. \itemproof
         \end{enumerate}
 \end{proof}
 
+\begin{cor}
+    Uma função é invertível se, e somente se, é invertível à esquerda e à direita.
+\end{cor}
+
+\begin{proof}
+    A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $f$ é invertível à esquerda e à direita, então pelos teoremas \eqref{teo.fund:invesquerda} e \eqref{teo.fund:invdireita} $f$ é bijetiva em $B$, de modo que, pelo teorema \eqref{teo.fund:bij2}, $f$ é invertível.
+\end{proof}
+
 \begin{obs}
-    Vamos resumir o que está acontecendo. O resultado mais importante é a equivalência entre $f : A \to B$ ser invertível e $f$ ser bijetiva: por um lado, se $f$ é bijetiva, então existe uma função inversa de $f$, que é única, e ela é dada pela relação inversa $f^{-1} \subseteq B \times A$, que pelo teorema \eqref{teo.fund:bij1} é uma função de $B$ em $A$, que é ainda bijetiva. Por outro lado, se $f$ é invertível, então existe $f^{-1} : B \to A$ (como função inversa de $f$), que coincide com $f^{-1}$ (como relação inversa de $f$).
+    Vamos resumir o que está acontecendo. O resultado mais importante é a equivalência entre invertibilidade e bijetividade: por um lado, se $f : A \to B$ é bijetiva, então a relação inversa $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$ tal que $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$, o que prova que $f$ é invertível. Por outro lado, se $f$ é invertível, então existe $f^{-1} : B \to A$ tal que $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$, o que prova que $f$ é bijetiva.
 \end{obs}
 
 \section{O Axioma do Infinito e os Números Naturais}
