@@ -1265,6 +1265,136 @@ O conjunto $\mathcal{M}_{m \times n} \left(\R \right)$ de todas as matrizes $m \
 
 
 
-\chapter{Geometria Analítica}  
+\chapter{Geometria Analítica}
+
+\begin{defi}
+    A \textit{projeção} de $A \in \R^n$ em $B \in \R^n_{\neq 0}$ é definida como
+        \[
+            \op{proj}_{B}{A} := \left(\dfrac{A \cdot B}{\| B\|^2}\right) B.
+        \]
+\end{defi}
+
+
+\begin{defi}
+    Uma \textit{reta} no $\R^n$ que passa pelo ponto $P \in \R^n$ e é paralela ao vetor $A \in \R^n_{\neq 0}$ é a imagem da função $L : \R \to \R^n$ definida por $L(t) = P + t A$. Denota-se $L(P,A):= \Im{L}$, isto é,
+        \[
+            L(P,A) := \{ X \in \R^n : \exists t (t \in \R \land X = P + t A) \}.
+        \]
+\end{defi}
+
+\begin{prop} \label{c2.prop:retas}
+    Sejam $P, Q, A, B \in \R^n$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item $L(P,A) = L(P,B) \Leftrightarrow A \parallel B$.
+            \item $L(P,A) = L(Q,B) \Leftrightarrow Q \in L(P,A) \lor P \in L(Q,B)$.
+            \item Se $P \neq Q$, então existe uma única reta $L \subsetneq \R^n$ tal que $P,Q \in L$.
+        \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
+            \item 
+            \item Pois tome $L = L(P, Q-P)$. Temos $P \in L$ pois $P = P + 0 \cdot (Q-P)$ e temos $Q \in L$ pois $Q = P + 1 \cdot (Q-P)$. Agora, seja $L'$ uma reta tal que $P, Q \in L'$. Como $P \in L'$, temos por definição $L' = L(P,A)$ para algum vetor $A \in \R^n_{\neq 0}$. Como $Q \in L' = L(P,A)$, existe $t \in \R$ tal que $Q = P + t A$. Daí, $Q-P = t A$, e como $Q - P \neq 0$, temos $t \neq 0$ e $Q-P \parallel A$, donde $L' = L$ pelo primeiro item. \itemproof
+        \end{enumerate}
+\end{proof}
+
+
+
+\begin{defi}
+    Duas retas $L(P,A)$ e $L(Q,B)$ são \textit{paralelas} se $A \parallel B$. Isso é denotado por $L(P,A) \parallel L(Q,B)$.
+\end{defi}
+
+\begin{teo}[Paralelas]
+    Seja $L \subsetneq \R^n$ uma reta. Para todo ponto $Q \notin L$ existe uma única reta $L' \subsetneq \R^n$ tal que $Q \in L'$ e $L' \parallel L$. 
+\end{teo}
+
+\begin{proof}
+    Seja $L = L(P,A)$ e tome $L' = L(Q,A)$. De cara, $Q \in L'$ e $L' \parallel L$. A unicidade segue imediatamente da proposição \eqref{c2.prop:retas}. \itemproof
+\end{proof}
+
+\begin{teo}
+    Sejam $P, A \in \R^2$. Se $N \in \R^2$ é tal que $N \cdot A = 0$, então
+        \begin{enumerate}[label=\roman*.]
+            \item $\{ X \in \R^2 : (X-P) \cdot N = 0 \} = L(P,A)$;
+            \item vale
+                \[
+                    \| X \| \geq \dfrac{|P \cdot N|}{\| N\|}
+                \]
+            para todo $X \in L(P,A)$, com igualdade somente se $X = \op{proj}_{N}{P}$;
+            \item Se $Q \notin L(P,A)$, então
+                \[
+                    \| X-Q \| \geq \dfrac{|(P-Q)\cdot N|}{\|N\|}
+                \]
+            para todo $X \in L(P,A)$, com igualdade somente se $Q = \op{proj}_{N}{(P-Q)}$;
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    Comecemos com um lema: se $(a,b), (c,d) \in \R^2$ são tais que $(a,b) \cdot (c,d) = 0$, então $(c,d) = t \cdot (b,-a)$ para algum $t \in \R$.
+\end{proof}
+
+\begin{defi}
+    Seja $n \in \N_{\geq 2}$. Um \textit{plano} no $\R^n$ que passa por um ponto $P \in \R^n$ e é gerado por vetores $u,v \in \R^n$, linearmente independentes, é a imagem da função $\alpha : \R^2 \to \R^n$ definida por $\alpha(s,t) = P + su + tv$. Denota-se $\{P + su + tv\} := \Im{\alpha}$, isto é,
+        \[
+             \{P + su + tv\} = \{ X \in \R^n : \exists s \exists t (s,t \in \R \land X = P + su + tv) \}.
+        \]
+\end{defi}
+
+\begin{teo}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $M = \{P + sA + tB\}$ e $M' = \{P + sC + tD\}$ são planos, então $M = M'$ se, e somente se, $[A,B] = [C,D]$.
+            \item Se $\alpha = \{P + su + tv\}$ e $\beta = \{Q + su + tv\}$ são planos, então $\alpha = \beta$ se, e somente se, $Q \in \alpha$ ou $P \in \beta$.
+            \item Se $P, Q, R \in \R^n$ não são colineares, então existe um único plano $\alpha \subsetneq \R^n$ tal que $P, Q, R \in \alpha$.
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item ($\Rightarrow$) bla bla
+
+            ($\Leftarrow$)
+            \item ($\Rightarrow$) bla bla
+
+            ($\Leftarrow$)
+            \item 
+        \end{enumerate}
+\end{proof}
+
+\begin{defi}
+    Sejam $\alpha = \{P + sA + tB\}$ e $\beta = \{Q + sC + tD\}$ planos no $\R^n$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Um vetor $v \in \R^n$ é \textit{paralelo ao plano} $\alpha$ se $v \in [A,B]$.
+            \item Os planos $\alpha$ e $\beta$ são \textit{paralelos} se $[A,B] = [C,D]$.
+        \end{enumerate}
+\end{defi}
+
+\begin{teo}[Paralelas]
+    Seja $\alpha \subsetneq \R^n$ um plano. Para todo ponto $Q \notin \alpha$ existe um único plano $\beta \subsetneq \R^n$ tal que $Q \in \beta$ e $\beta \parallel \alpha$.
+\end{teo}
+
+\begin{proof}
+    \itemproof
+\end{proof}
+
+
+\begin{teo}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dois vetores $u, v \in \R^n$ são L.I. se, e somente se, existe uma reta $r \subsetneq \R^n$ tal que $u,v,0 \in r$.
+            \item Três vetores $u, v, w \in \R^n$ são L.I. se, e somente se, existe um plano $\alpha \subsetneq \R^n$ tal que $u,v,w,0 \in \alpha$.
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
+            \item 
+        \end{enumerate}
+\end{proof}
 
 % \label{teo:importante} ~\ref{teo:importante}

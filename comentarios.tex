@@ -2,37 +2,6 @@
 
 O conteúdo aqui é lixo. Quando vou modificar o texto removendo uma grande parte, em vez de apagar eu coloco aqui, como um backup. Evidentemente esse .tex foi criado antes da sincronização com o github, mas continuo com a prática de salvar o lixo aqui.
 
-\begin{defi} % definições de corpo e corpo ordenado
-    Diremos que um conjunto $\F \neq \emptyset$ é um \textit{corpo} se em $\F$ estiverem definidas duas operações, $+ :\F \times \F \to \F$ e $\cdot: \F \times \F \to \F$, chamadas respectivamente de adição e multiplicação, para as quais valem, para todos $x,y,z \in \F$,
-        \begin{itemize}
-            \item A1: a associatividade da adição, isto é, $x + (y + z) = (x + y) + z$; 
-            \item A2: a comutatividade da adição, isto é, $x + y = y + x$; 
-            \item A3: a existência de um único $0 \in \F$, denominado \textit{elemento neutro} da adição, para o qual $x + 0 = x = 0+x$;
-            \item A4: a existência um único $-x \in \F$, denominado \textit{oposto aditivo} de $x$, para o qual $x + (-x) = 0$;
-            \item M1: a associatividade da multiplicação, isto é, $x \cdot (y \cdot z) = (x \cdot y) \cdot z$; 
-            \item M2: a comutatividade da multiplicação, isto é, $x \cdot y = y \cdot x$; 
-            \item M3: a existência de um único $0 \neq 1 \in \F$, denominado \textit{elemento neutro} da multiplicação, para o qual $x \cdot 1 = x = 1 \cdot x$;
-            \item M4: a existência de um único $x^{-1} \in \F$, denominado \textit{inverso multiplicativo} de $x \neq 0$, para o qual $x \cdot x^{-1} = 1$;
-            \item D: a distributividade da multiplicação em relação à adição, isto é, $x \cdot ( y + z) = x \cdot y + x \cdot z$. 
-        \end{itemize}
-\end{defi}
-
-Diremos que um conjunto $\F$ é um \textit{corpo} se em $\F$ existirem (pelo menos) dois elementos distintos, $0 \in \F$ e $1 \in \F$, e estiverem definidas duas operações, $+ :\F \times \F \to \F$ e $\cdot: \F \times \F \to \F$, para as quais valem
-        \begin{itemize}
-            \item A1: $\forall x \forall y \forall z (x,y,z \in \F \rightarrow x + (y + z) = (x + y) + z)$;
-            \item A2: $\forall x \forall y (x,y \in \F \rightarrow x + y = y + x)$;
-            \item A3: $\forall x(x \in \F \rightarrow x + 0 = x )$;
-            \item A4: $\forall x (x \in \F \rightarrow \exists y ( y \in \F \land x + y = 0))$;
-            \item M1: $\forall x \forall y \forall z (x,y,z \in \F \rightarrow x \cdot (y \cdot z) = (x \cdot y) \cdot z)$;
-            \item M2: $\forall x \forall y (x,y \in \F \rightarrow x \cdot y = y \cdot x)$;
-            \item M3: $\forall x(x \in \F \rightarrow x \cdot 1 = x )$;
-            \item M4: $\forall x (x \in \F \land x \neq 0 \rightarrow \exists  y ( y \in \F \land x \cdot y = 1))$;
-            \item D: $\forall x \forall y \forall z (x,y,z \in \F \rightarrow x \cdot (y + z) = (x \cdot y) + (x \cdot z))$.
-    \end{itemize}
-
-As operações $+$ e $\cdot$ se chamam \textit{adição} e \textit{multiplicação}. As propriedades descritas em A1--A2 e M1--M2 se chamam, respectivamente, \textit{associatividade} e \textit{comutatividade}. Em A3 e M3, existência de um \textit{elemento neutro}. Em A4 e M4, existência de \textit{opostos} e \textit{inversos}, respectivamente. Em D, \textit{distributividade}.
-
-
 
 \begin{obs} \textbf{(a)} Pela proposição \eqref{prop:1}, o conjunto $\N$ dos números naturais é o menor dos conjuntos indutivos, no seguinte sentido: para qualquer conjunto indutivo $X$, temos $\N \subset X$. Em particular, isso significa que se $X \subset \N$ e se $X$ é indutivo, então $X=\N$. \end{obs}
 
@@ -74,16 +43,6 @@ Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = 
     \textbf{(a)} O conjunto 
 \end{prop}
 
-
-    , para todo $x \in A$, se $| x-a | < \delta$, então $| f(x) - f(a)| < \epsilon$. Em símbolos,
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : \forall x \in A, |x-a| < \delta \Rightarrow |f(x) - f(a)| < \epsilon,
-        \]
-    ou ainda, 
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : x \in \left] a - \delta, a + \delta \right[ \cap D_f \Rightarrow f(x) \in \left]f(a) - \epsilon, f(a) + \epsilon \right[.
-        \]
-
 \textbf{(a)} $a \in \R$ é um ponto de acumulação de $A \subseteq \R$ se, e somente se, $0$ é ponto de acumulação de $B := \{h \in \R_{\neq 0} : a+h \in A \}$
 
 \textbf{(a)} ($\Rightarrow$) Para que $0$ seja um ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ deve existir $h \in B$ tal que $0 < |h-0| < \delta$. Bem, como $a$ é um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ existe $x \in A$ tal que $0 < |x-a| < \delta$. Pois tomando $h := x-a$, temos que $x = a+h$, e como $x \in A$, temos $a+h \in A$, de modo que $h \in B$. Daí, segue a conclusão.
@@ -105,21 +64,7 @@ Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = 
 \begin{proof}
 \end{proof}
 
-\begin{defi}
-    (Limite) Diremos que a função $f : A \subseteq \R \to \R$ tem \textit{limite} $L \in \R$ no ponto de acumulação $a \in \R$ de $A$, indicando isso por $ \ds \lim_{x \to a} f(x) = L$, se para todo $\epsilon \in \R_{>0}$ existir $\delta = \delta(\epsilon, a) \in \R_{>0}$ tal que
-        \[
-            0 < | x-a | < \delta \Rightarrow | f(x) - L| < \epsilon
-        \]
-    para todo $x \in A$.
-    Seja $f$ uma função e $p$ um número real. Dizemos que $f$ tem \textit{limite} $L$ quando $x$ \textit{tende} a $p$, indicando   $ \ds \lim_{x \to p} f(x) = L$, se para todo $\epsilon > 0$ existir $\delta > 0$ tal que, para todo $x \in D_f$, se $| x-p | < \delta$ e $x \neq p$, então $|f(x) - L| < \epsilon$. Em símbolos,
-        \[
-             \forall \epsilon > 0, \exists \delta > 0 : \forall x \in D_f \backslash \{p\}, |x-p| < \delta \Rightarrow |f(x) - L| < \epsilon,
-        \]
-    ou ainda, para simplificar a notação,
-        \[
-            \lim_{x \to p} f(x) = L \Leftrightarrow \forall \epsilon > 0, \exists \delta > 0: 0 < |x-p| < \delta \Rightarrow |f(x) - L| < \epsilon.
-        \] 
-\end{defi}
+
 
 \begin{defi}
     \textbf{(a)} Diremos que $a \in \R$ é um \textit{ponto de acumulação à direita} de $A \subseteq \R$ se $a$ é ponto de acumulação de $A \cap \left] a, +\infty \right[$.
@@ -790,6 +735,55 @@ $f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pe
             \item A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $g_1$ e $g_2 : B \to A$ são as funções inversas à esquerda e à direita de $f$, respectivamente, então $g_1 \circ f = \id_A$ e $f \circ g_2 = \id_B$.
         \end{enumerate}
 
+\begin{enumerate}[label=\roman*.]
+            \item Se $(y,z) \in f \circ f^{-1}$, então existe $x \in \Dom{(f)} \cap \Im{(f^{-1})}$ tal que $(y,x) \in f^{-1}$ e $(x,z) \in f$. Daí, $(x,y) \in f$, e como $f$ é uma função, vem $y=z$. Logo $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$.
+            \item Agora, se $(y,y) \in \id_{\Im{(f)}}$, então existe $x \in \Dom{(f)}$ tal que $(x,y) \in f$. Logo $(y,x) \in f^{-1}$, de modo que $(y, y) \in f \circ f^{-1}$, isto é, $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$.
+        \end{enumerate}
+    Com isso, vem $f \circ f^{-1} = \id_{\Im{(f)}}$, como queríamos. \itemproof
 
+Convém introduzir um símoblo predicado.
 
+\begin{obs}
+    Um símbolo de predicado para ``$f$ é função'', onde $f$ ocorre livre, é
+        \[
+            \operatorname{Fun}(f) \overset{\text{def}}{\leftrightarrow} \operatorname{Rel}(f) \land \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c).
+        \]
+    Um símbolo de predicado para ``$f$ é função de $A$ em $B$'', onde $f$, $A$ e $B$ ocorrem livre, é
+        \[
+            \operatorname{Fun}(f,A,B) \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \Dom{(f)} = A \land \Im{(f)} \subseteq B,
+        \]
+    ou ainda, de maneira mais explícita,
+        \[
+            \operatorname{Fun}{(f,A,B)} \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \forall x(x \in A \leftrightarrow \exists y((x,y) \in f)) \land \forall x \forall y((x,y) \in f \rightarrow y \in B).
+        \]
+\end{obs}
 
+\[
+    \operatorname{Fun}{(f,A,B)} \overset{\text{def}}{\leftrightarrow} \forall x \left(x \in f \rightarrow \exists a \exists b \left(x = (a,b)\right)\right) \land \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c) \land \forall x(x \in A \leftrightarrow \exists y((x,y) \in f)) \land \forall x \forall y((x,y) \in f \rightarrow y \in B).
+\]
+
+\[
+    B^{A} := \{f \in \mathcal{P}{(A \times B)} : \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c) \land \forall x(x \in A \rightarrow \exists y((x,y) \in f)) \}
+\]
+
+\begin{ax}[da Escolha]
+    Para todo conjunto $x$ de conjuntos não vazios existe uma função $f : x \to \bigcup x$ tal que $f(y) \in y$ para todo $y \in x$.
+        \[
+            \forall x \left(\emptyset \notin x \rightarrow \exists f \left(\operatorname{Fun}\left(f, x, \bigcup x \right) \land \forall y (y \in x \rightarrow f(y) \in y) \right)\right).
+        \]
+        \[\forall x \exists f \left( \operatorname{Fun}\left(f, x \setminus \{\emptyset\}, \bigcup x \right) \land \forall y (y \in x \setminus \{\emptyset\} \rightarrow f(y) \in y) \right).\]
+    Dizemos que $f$ é uma \textit{função escolha} em $x$.
+%\forall y (y \in x \rightarrow \exists z (z \in y))
+\end{ax}
+
+\[
+\forall x \exists f \left( f : x \setminus \{\emptyset\} \to \bigcup x \land \forall y (y \in x \setminus \{\emptyset\} \rightarrow f(y) \in y) \right).
+\]
+
+O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ em $\mathcal{X}$ indexada em $I$ é definido como
+        \[
+           \prod_{i \in I} X_i := \left\{ f \in \mathcal{P}\left(I \times \bigcup_{i \in I} X_i\right) : \operatorname{Fun}\left(f, I, \bigcup_{i \in I} X_i \right) \land \forall i(i \in I \rightarrow f(i) \in X_i) \right\},
+        \]
+    isto é, $\prod_{i \in I} X_i$ é definido como o conjunto de todas as funções $f$ de domínio $I$ tais que $f(i) \in X_i$ para todo $i \in I$.
+
+    Sendo $g$ a função identidade em $x$ e fazendo $I = x$ e $X_i = i$ para todo $i \in I$, temos que $g$ é a sequência $\left(X_i \right)_{i \in I}$. Como $I \neq \emptyset$ e $X_i \neq \emptyset$ para todo $i \in I$, temos, por hipótese, que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, toda função $f \in \prod_{i \in I} X_i$ é tal que $f(i) \in X_i$ para todo $i \in I$, isto é, $f(y) \in y$ para todo $y \in x$, como exige o axioma da escolha.

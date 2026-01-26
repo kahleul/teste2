@@ -2,6 +2,94 @@
 
 \chapter{Lógica Proposicional}
 
+Seguimos \cite{herculespaulovich}.
+
+\begin{defi}
+    \leavevmode
+    \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Um \textit{alfabeto} é uma coleção infinita de símbolos distintos, nenhum deles propriamente contido em outro, separados nas seguintes categorias:
+                \begin{enumerate}[label=\roman*.]
+                    \item Conectivos: $\neg$, $\rightarrow$.
+                    \item Parênteses: $($, $)$.
+                    \item Variáveis proposicionais: $p_1, p_2, p_3 \ldots, p_i, \ldots$.
+            \end{enumerate}
+            \item As \textit{fórmulas} correspondentes a um alfabeto são definidas do seguinte modo:
+                \begin{enumerate}[label=\roman*.]
+                    \item se $\mathbf{p}$ é uma variável proposicional, então $(\mathbf{p})$ é uma fórmula.
+                    \item se $\mathbf{A}$ e $\mathbf{B}$ são fórmulas, então $(\neg \mathbf{A})$ e $(\mathbf{A} \rightarrow \mathbf{B})$ são fórmulas;
+                    \item todas as fórmulas são obtidas por um número finito de aplicações das regras acimas. 
+            \end{enumerate}
+            O conjunto de todas as fórmulas é denotado por $\mathrm{Form}$
+        \item sla porra
+    \end{enumerate}
+\end{defi}
+
+\begin{ax}
+    Os axiomas da Lógica Proposicional são as seguintes fórmulas.
+        \begin{enumerate}[label=$\mathrm{Ax}_{\arabic*}$.]
+            \item $(\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A}))$
+            \item $((\mathbf{A} \rightarrow (\mathbf{B} \to \mathbf{C})) \rightarrow ((\mathbf{A} \rightarrow \mathbf{B})\rightarrow(\mathbf{A} \rightarrow \mathbf{C})))$
+            \item $(((\neg \mathbf{B}) \rightarrow (\neg \mathbf{A})) \rightarrow ( ((\neg \mathbf{B}) \rightarrow \mathbf{A}) \rightarrow \mathbf{B}))$
+        \end{enumerate}
+    Definimos $\Lambda := \{\mathrm{Ax}_{1}, \mathrm{Ax}_{2}, \mathrm{Ax}_{3} \}$.
+\end{ax}
+
+\begin{defi}
+    Sejam $\Delta \subseteq \mathrm{Form}$ e $\mathbf{A} \in \mathrm{Form}$. 
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Uma \textit{dedução} de $\mathbf{A}$ a partir de $\Delta$ é uma sequência $(A_1, \ldots, A_n)$ tal que $A_n \equiv \mathbf{A}$ e, para cada $k \in [n]$, vale  pelo menos uma das seguintes afirmações.
+                \begin{enumerate}
+                    \item $A_k \in \Lambda$.
+                    \item $A_k \in \Delta$.
+                    \item Existem índices $i,j < k$ tais que $A_k$ é obtida de $A_i$ e $A_j$ via $\mathrm{MP}$.
+                \end{enumerate}
+            Isso é denotado por $\Delta \vdash \mathbf{A}$.
+            \item Dizemos que $\mathbf{A}$ é uma \textit{consequência sintática} de $\Delta$ se $\Delta \vdash \mathbf{A}$.
+            \item Dizemos que $\mathbf{A}$ é um \textit{teorema} se $\emptyset \vdash \mathbf{A}$. Isso é denotado por $\vdash \mathbf{A}$.
+        \end{enumerate}
+\end{defi}
+
+\begin{prop}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item $\vdash (\mathbf{A} \rightarrow \mathbf{A})$.
+        \end{enumerate}
+\end{prop}
+
+\begin{teo}[da Dedução]
+    Sejam $\Delta \subseteq \mathrm{Form}$ e $\mathbf{A}, \mathbf{B} \in \mathrm{Form}$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$, então $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$.
+            \item Se $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$, então $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$.
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Façamos indução no número de fórmulas que ocorrem na dedução de $\mathbf{B}$ a partir de $\Delta \cup \{\mathbf{A}\}$. Se $(A_1)$ é uma dedução de $\mathbf{B}$, então $A_1 \equiv \mathbf{B}$.
+                \begin{enumerate}[label=\roman*.]
+                    \item Se $\mathbf{B} \in \Lambda$, então $\Delta \vdash \mathbf{B}$, e como $\Delta \vdash (\mathbf{B} \rightarrow (\mathbf{A} \rightarrow \mathbf{B}))$, temos, via MP, que $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$.
+                    \item Se $\mathbf{B} \in \Delta$, então $\Delta \vdash \mathbf{B}$, e como $\Delta \vdash (\mathbf{B} \rightarrow (\mathbf{A} \rightarrow \mathbf{B}))$, temos, via MP, que $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$.
+                    \item Se $\mathbf{B} \equiv \mathbf{A}$, então de $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{A})$ vem $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$.
+                \end{enumerate}
+            Agora, seja $(A_1, \ldots, A_n)$ uma dedução de $\mathbf{B}$ a partir de $\Delta \cup \{\mathbf{A}\}$ e suponha, por hipótese de indução, que o resultado vale para toda fórmula que pode ser deduzida a partir de $\Delta \cup \{\mathbf{A}\}$ por uma dedução com menos de $n$ fórmulas. Se $\mathbf{B} \in \Lambda$, $\mathbf{B} \in \Delta$ ou $\mathbf{B} \equiv \mathbf{A}$, então podemos deduzir $(\mathbf{A} \rightarrow \mathbf{B})$ a partir de $\Delta$ exatamente do mesmo modo que fizemos na base da indução. Suponha, então, que $\mathbf{B}$ é obtida de duas fórmulas de índices $<n$ via MP. Essas duas fórmulas têm as formas $\mathbf{C}$ e $(\mathbf{C} \rightarrow \mathbf{B})$, e como elas foram deduzidas de $\Delta \cup \{\mathbf{A}\}$ por menos de $n$ fórmulas, temos que $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{C})$ e $\Delta \vdash (\mathbf{A} \rightarrow (\mathbf{C} \rightarrow \mathbf{B}))$. Com isso, podemos deduzir $(\mathbf{A} \rightarrow \mathbf{B})$ a partir de $\Delta$ do seguinte modo.
+                \[
+                    \begin{array}{rll}
+                        & \vdots & \vdots \\
+                        i. & \Delta \vdash (\mathbf{A} \rightarrow \mathbf{C}) & \\
+                        & \vdots & \vdots \\
+                        j. & \Delta \vdash (\mathbf{A} \rightarrow (\mathbf{C} \rightarrow \mathbf{B})) & \\[1ex]
+                        k. & \Delta \vdash ((\mathbf{A} \rightarrow (\mathbf{C} \rightarrow \mathbf{B})) \rightarrow ((\mathbf{A} \rightarrow \mathbf{C}) \rightarrow (\mathbf{A} \rightarrow \mathbf{B}))) & \mathrm{Ax}_2 \\[1ex]
+                        l. & \Delta \vdash ((\mathbf{A} \rightarrow \mathbf{C}) \rightarrow (\mathbf{A} \rightarrow \mathbf{B})) & \text{MP}(j, k) \\[1ex]
+                        m. & \Delta \vdash (\mathbf{A} \rightarrow \mathbf{B}) & \text{MP}(i, l)
+                \end{array}
+                \]
+            Assim, se $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$, então $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$. \itemproof
+            \item Como $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$ e $\Delta \subseteq \Delta \cup \{\mathbf{A}\}$, temos $\Delta \cup \{\mathbf{A}\} \vdash (\mathbf{A} \rightarrow \mathbf{B})$. Daí, como $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{A}$, temos que $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$. \itemproof
+        \end{enumerate}
+\end{proof}
+
 \chapter{Teorias de Primeira Ordem}
 
 \section{Linguagens de Primeira Ordem}
@@ -1002,7 +1090,11 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Uma relação $f$ é uma \textit{função} se $(a,b) \in f$ e $(a,c) \in f$ implicam $b=c$. A \textit{imagem} de $a \in \Dom{(f)}$ por $f$ é denotada por $f(a)$.
             \item Uma \textit{função parcial de $A$ em $B$} é uma função $f$ tal que $\Dom{(f)} \subseteq A$ e $\Im{(f)} \subseteq B$.
-            \item Uma \textit{função total de $A$ em $B$} é uma função $f$ tal que $\Dom{(f)} = A$ e $\Im{(f)} \subseteq B$. Isso é denotado por $f : A \to B$.
+            \item Uma \textit{função total de $A$ em $B$} é uma função $f$ tal que $\Dom{(f)} = A$ e $\Im{(f)} \subseteq B$. Isso é denotado por $f : A \to B$. O conjunto de todas as funções de $A$ em $B$ é denotado por $B^{A}$, isto é,
+                \begin{align*}
+                    B^{A} := \{f \in \mathcal{P}{(A \times B)} : & \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c) \\ 
+                    & \land \forall x(x \in A \rightarrow \exists y((x,y) \in f)) \}.
+                \end{align*}
         \end{enumerate}
 \end{defi}
 
@@ -1124,7 +1216,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     Segue da proposição \eqref{prop.fund:domeimdeRAB}. \itemproof    
 \end{proof}
 
-\begin{lem}
+\begin{lem} \label{lem.fund:fegsob}
     Sejam $f: A \to B$ e $g: C \to D$ funções.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item $\Dom{(g \circ f)} = \{ x \in A : f(x) \in C\}$.
@@ -1154,7 +1246,11 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $B=C$, então $\Dom{(g \circ f)} = A$ pelo lema \eqref{lem.fund:fegsob}. Se $g$ é sobrejetiva, então para todo $z \in D$ existe $y \in C = B$ tal que $(y,z) \in g$. Se $f$ é sobrejetiva, então para esse $y \in B$ existe $x \in A$ tal que $(x,y) \in f$. Com isso, para todo $z \in D$ existe $x \in A$ tal que $(x,z) \in g \circ f$, o que prova a sobrejetividade de $g \circ f$. \itemproof
+            \item Se $f(A) \subseteq C$, então $\Dom{(g \circ f)} = A$ pelo lema \eqref{lem.fund:fegsob}. Se $g \circ f$ é sobrejetiva, então para todo $z \in D$ existe $x \in A$ tal que $(x,z) \in g \circ f$. Com isso, existe $y \in f(A) \cap C = C$ tal que $(x,y) \in f$ e $(y,z) \in g$. o que prova a sobrejetividade de $g$. \itemproof
+        \end{enumerate}
 \end{proof}
 
 \begin{lem}
@@ -1162,15 +1258,15 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{lem}
 
 \begin{proof}
-    \itemproof
+    Provemos que $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$ e $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$. Se $(y,z) \in f \circ f^{-1}$, então existe $x \in \Dom{(f)} \cap \Im{(f^{-1})}$ tal que $(y,x) \in f^{-1}$ e $(x,z) \in f$. Daí, $(x,y) \in f$, e como $f$ é uma função, vem $y=z$. Logo $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$. Por outro lado, se $(y,y) \in \id_{\Im{(f)}}$, então existe $x \in \Dom{(f)}$ tal que $(x,y) \in f$. Logo $(y,x) \in f^{-1}$, de modo que $(y, y) \in f \circ f^{-1}$, isto é, $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$. Com isso, vem $f \circ f^{-1} = \id_{\Im{(f)}}$, como queríamos. \itemproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:sob}
-    Uma função $f : B \to A$ é sobrejetiva se, e somente se, $f \circ f^{-1} = \id_B$.
+    Uma função $f : A \to B$ é sobrejetiva se, e somente se, $f \circ f^{-1} = \id_B$.
 \end{teo}
 
 \begin{proof}
-    \itemproof
+    Se $f$ é sobrejetiva em $B$, então $\Im{(f)} = B$, de modo que $f \circ f^{-1} = \id_B$. Por outro lado, se $f \circ f^{-1} = \id_B$, então $f$ é sobrejetiva em $B$ porque, como também $f \circ f^{-1} = \id_{\Im{(f)}}$, vem $\Im{(f)} = B$. \itemproof
 \end{proof}
 
 \begin{defi}
@@ -1182,7 +1278,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{obs}
-    A prova deste teorema depende do axioma da escolha. Mais precisamente, de um enunciado equivalente ao axioma da escolha: para toda relação $R$ existe uma função $f \subseteq R$ tal que $\Dom{(f)} = \Dom{(R)}$. Ainda assim, enunciamos este resultado aqui por uma questão de organização didática.  
+    A prova da volta ($\Leftarrow$) deste teorema depende do axioma da escolha. Mais precisamente, de um enunciado equivalente ao axioma da escolha: para toda relação $R$ existe uma função $f \subseteq R$ tal que $\Dom{(f)} = \Dom{(R)}$. Ainda assim, enunciamos este resultado aqui por uma questão de organização didática.  
 \end{obs}
 
 \begin{proof}
@@ -1192,11 +1288,11 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \subsubsection{Bijeções e Funções Inversas}
 
 \begin{defi}
-    Uma função $f: A \to B$ é \textit{bijetiva em relação a $B$} se é injetiva e sobrejetiva em relação a $B$.
+    Uma função $f: A \to B$ é \textit{bijetiva em relação a $B$} se é injetiva e sobrejetiva em $B$.
 \end{defi}
 
 \begin{prop} \label{prop.fund:defbij}
-    Uma função $f: A \to B$ é bijetiva em relação a $B$ se, e somente se, para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$.
+    Uma função $f: A \to B$ é bijetiva em $B$ se, e somente se, para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$.
 \end{prop}
 
 \begin{proof}
@@ -1214,10 +1310,10 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{teo} \label{teo.fund:bij1}
     Seja $f : A \to B$ uma função.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se a relação $f^{-1}$ é uma função de $B$ em $A$, então $f^{-1}$ bijetiva.
+            \item Se a relação $f^{-1}$ é uma função de $B$ em $A$, então $f^{-1}$ é bijetiva.
             \item A relação $f^{-1}$ é uma função de $B$ em $A$ se, e somente se,
                 \begin{enumerate}[label=\roman*.]
-                    \item $f$ é bijetiva.
+                    \item $f$ é bijetiva em $B$.
                     \item $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$.
                 \end{enumerate}
         \end{enumerate}
@@ -1226,8 +1322,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Como $f$ é função, para todo $x \in A$ existe um único $y \in B$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela proposição \eqref{prop.fund:defbij}, $f^{-1}$ é bijetiva em relação a $A$. \itemproof
-            \item A equivalência que mais importa é com $f$ ser bijetiva.
+            \item Como $f$ é função, para todo $x \in A$ existe um único $y \in B$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela proposição \eqref{prop.fund:defbij}, $f^{-1}$ é bijetiva em $A$. \itemproof
+            \item A equivalência que mais importa é com $f$ ser bijetiva em $B$.
                 \begin{enumerate}[label=\roman*.]
                     \item Se $f^{-1} \subseteq B \times A$ é uma função tal que $\Dom{(f^{-1})} = B$, então para todo $y \in B$ existe um único $x \in A$ tal que $(y,x) \in f^{-1}$, isto é, $(x,y) \in f$. Daí, pela proposição \eqref{prop.fund:defbij}, temos que $f$ é bijetiva. Agora, pela mesma proposição, se $f$ é bijetiva, então para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela definição de função, $f^{-1}$ é uma função de $B$ em $A$. \itemproof
                 \end{enumerate}
@@ -1475,39 +1571,30 @@ Para a próxima versão do teorema da recursão, denotamos por $X^{<\omega}$ o c
 
 \section{O Axioma da Escolha}
 
-Convém introduzir um símoblo predicado.
-
-\begin{obs}
-    Um símbolo de predicado para ``$f$ é função'', onde $f$ ocorre livre, é
-        \[
-            \operatorname{Fun}(f) \overset{\text{def}}{\leftrightarrow} \operatorname{Rel}(f) \land \forall a \forall b \forall c ((a,b) \in f \land (a,c) \in f \rightarrow b=c).
-        \]
-    Um símbolo de predicado para ``$f$ é função de $A$ em $B$'', onde $f$, $A$ e $B$ ocorrem livre, é
-        \[
-            \operatorname{Fun}(f,A,B) \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \Dom{(f)} = A \land \Im{(f)} \subseteq B,
-        \]
-    ou ainda, de maneira mais explícita,
-        \[
-            \operatorname{Fun}{(f,A,B)} \overset{\text{def}}{\leftrightarrow} \operatorname{Fun}(f) \land \forall x(x \in A \leftrightarrow \exists y((x,y) \in f)) \land \forall x \forall y((x,y) \in f \rightarrow y \in B).
-        \]
-\end{obs}
-
 \begin{ax}[da Escolha]
-    Para todo conjunto $x$ de conjuntos não vazios existe uma função $f : x \to \bigcup x$ tal que $f(y) \in y$ para todo $y \in x$.
+    Para todo conjunto $x$ de conjuntos não vazios existe uma função $\varphi : x \to \bigcup x$ tal que $\varphi(y) \in y$ para todo $y \in x$.
         \[
-            \forall x \left(\emptyset \notin x \rightarrow \exists f \left(\operatorname{Fun}\left(f, x, \bigcup x \right) \land \forall y (y \in x \rightarrow f(y) \in y) \right)\right).
+            \forall x \left(\emptyset \notin x \rightarrow \exists \varphi \left( \varphi : x \to \bigcup x \land \forall y (y \in x \rightarrow \varphi(y) \in y) \right)\right).
         \]
-        \[\forall x \exists f \left( \operatorname{Fun}\left(f, x \setminus \{\emptyset\}, \bigcup x \right) \land \forall y (y \in x \setminus \{\emptyset\} \rightarrow f(y) \in y) \right).\]
-    Dizemos que $f$ é uma \textit{função escolha} em $x$.
-%\forall y (y \in x \rightarrow \exists z (z \in y))
 \end{ax}
 
 \begin{obs}
-    Usamos a sigla AC (do inglês Axiom of Choice) para nos referir ao axioma da escolha. Por seu caráter não construtivo, o axioma da escolha é o axioma matemático mais controverso, evitado por uns e usado indiscriminadamente por outros. Desastres acontecem com e sem AC: por exemplo, sem AC, muitos resultados matemáticos fundamentais falham, sendo equivalentes em ZF a AC ou a alguma forma fraca de AC.
+    Usamos a sigla \textsf{AC} (do inglês \textit{Axiom of Choice}) para nos referirmos ao axioma da escolha. Por seu caráter não construtivo, o axioma da escolha é o axioma matemático mais controverso, evitado por uns e usado indiscriminadamente por outros. Desastres acontecem com e sem \textsf{AC}: por exemplo, sem \textsf{AC}, muitos resultados matemáticos fundamentais falham, sendo equivalentes em \textsf{ZF} a \textsf{AC} ou a alguma forma fraca de \textsf{AC}.
 \end{obs}
 
+\begin{prop}
+    O axioma da escolha é equivalente à seguinte afirmação.
+        \[
+            \forall x \exists \varphi \left( \varphi : x \setminus \{\emptyset\} \to \bigcup x \land \forall y (y \in x \setminus \{\emptyset\} \rightarrow \varphi(y) \in y) \right).
+        \]
+\end{prop}
+
+\begin{proof}
+    \itemproof
+\end{proof}
+
 \begin{defi}
-    Uma \textit{sequência} de elementos de um conjunto $X$ \textit{indexada} por elementos de um conjunto $I$ é uma função $x : I \to X$. 
+    Uma \textit{sequência} em $X$ \textit{indexada} $I$ é uma função $x : I \to X$. Isso é denotado por $\left( x_i \right)_{i \in I}$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Denotamos por $x_i$ a imagem de $i \in I$ pela sequência $x : I \to X$, isto é, $x_i := x(i)$.
             \item Denotamos por $\left( x_i \right)_{i \in I}$ a sequência $x : I \to X$.
@@ -1517,9 +1604,9 @@ Convém introduzir um símoblo predicado.
 \end{defi}
 
 \begin{defi}
-    O \textit{produto cartesiano} de $\left(X_i \right)_{i \in I}$ é definido como
+    O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ é definido como
         \[
-           \prod_{i \in I} X_i := \left\{ f \in \mathcal{P}\left(I \times \bigcup_{i \in I} X_i\right) : \operatorname{Fun}\left(f, I, \bigcup_{i \in I} X_i \right) \land \forall i(i \in I \rightarrow f(i) \in X_i) \right\},
+           \prod_{i \in I} X_i := \left\{ f \in \left(\bigcup_{i \in I} X_i\right)^{I} : \forall i(i \in I \rightarrow f(i) \in X_i) \right\},
         \]
     isto é, $\prod_{i \in I} X_i$ é definido como o conjunto de todas as funções $f$ de domínio $I$ tais que $f(i) \in X_i$ para todo $i \in I$.
 \end{defi}
@@ -1529,12 +1616,14 @@ Convém introduzir um símoblo predicado.
 \end{prop}
 
 \begin{proof}
-    ($\Rightarrow$) Usemos a notação usual de função escrevendo $g = (X_i)_{i \in I}$. Note que o conjunto imagem de $g$, denotado por $\{X_i : i \in I \}$, é, formalmente, o conjunto
-        \[
-            \left\{ x \in \mathcal{P}\left( \bigcup_{j \in I} X_j \right) : \exists i (i \in I \land x = X_i) \right\}.
-        \]
-    Como $X_i \neq \emptyset$ para todo $i \in I$, temos que $\emptyset \notin \mathrm{Im}(g)$, de modo que, pelo axioma da escolha, existe uma função $f : \mathrm{Im}(g) \to \bigcup \mathrm{Im}(g)$ tal que $f(x) \in x$ para todo $x \in \mathrm{Im}(g)$. Assim, existe uma função, $f \circ g : I \to \bigcup \mathrm{Im}(g)$, tal que que $(f \circ g)(i) = f(X_i) \in X_i$ para todo $i \in I$, de modo que $f \circ g \in \prod_{i \in I} X_i \neq \emptyset$.
+    Usemos a notação usual de função escrevendo $g = (X_i)_{i \in I}$.
 
-    $(\Leftarrow)$ Agora, seja $x \neq \emptyset$ tal que $\emptyset \notin x$. Sendo $g$ a função identidade em $x$ e fazendo $I = x$ e $X_i = i$ para todo $i \in I$, temos que $g$ é a sequência $\left(X_i \right)_{i \in I}$. Como $I \neq \emptyset$ e $X_i \neq \emptyset$ para todo $i \in I$, temos, por hipótese, que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, toda função $f \in \prod_{i \in I} X_i$ é tal que $f(i) \in X_i$ para todo $i \in I$, isto é, $f(y) \in y$ para todo $y \in x$, como exige o axioma da escolha.
+    ($\Rightarrow$) Como $g(i) \neq \emptyset$ para todo $i \in I$, temos $\emptyset \notin \Im{(g)}$, de modo que, pelo axioma da escolha, existe uma função $\varphi : \Im{(g)} \to \bigcup \Im{(g)}$ tal que $\varphi(y) \in y$ para todo $y \in \Im{(g)}$. Tomando $f := \varphi \circ g : I \to \bigcup \Im{g}$, temos, para todo $i \in I$,
+        \[
+            f(i) = (\varphi \circ g)(i) = \varphi[g(i)] \in g(i),
+        \]
+    isto é, $f(i) \in g(i)$. Como $g(i) := X_i$, vem $f(i) \in X_i$ para todo $i \in I$, de modo que $f \in \prod_{i \in I} X_i$, isto é, $\prod_{i \in I} X_i \neq \emptyset$.
+
+    $(\Leftarrow)$ Agora, seja $x \neq \emptyset$ tal que $\emptyset \notin x$. Defina $g = (X_i)_{i \in I}$ assim: $I = x$ e $g := \id_I$. Como $X_i = g(i) = \id_I(i) = i \in I = x$ e $\emptyset \notin x$, temos $X_i \neq \emptyset$ para todo $i \in I$, de modo que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, existe $\varphi \in \prod_{i \in I} X_i$ tal que $\varphi(i) \in X_i$ para todo $i \in I$, e como $X_i = i$ e $I = x$, vem $\varphi(i) \in i$ para todo $i \in x$, de modo que $\varphi : x \to \bigcup x$ é uma função de escolha em $x$. \itemproof
 \end{proof}
 
