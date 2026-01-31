@@ -3,28 +3,6 @@
 O conteúdo aqui é lixo. Quando vou modificar o texto removendo uma grande parte, em vez de apagar eu coloco aqui, como um backup. Evidentemente esse .tex foi criado antes da sincronização com o github, mas continuo com a prática de salvar o lixo aqui.
 
 
-\begin{obs} \textbf{(a)} Pela proposição \eqref{prop:1}, o conjunto $\N$ dos números naturais é o menor dos conjuntos indutivos, no seguinte sentido: para qualquer conjunto indutivo $X$, temos $\N \subset X$. Em particular, isso significa que se $X \subset \N$ e se $X$ é indutivo, então $X=\N$. \end{obs}
-
-Simbolicamente,
-        \[
-            \forall A (A \subseteq \N \land \forall n (n \in \N \land \forall m (m \in \N \land m<n \to m \in A) \to n \in A ) \to A = \N )
-        \]
-
-Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = \R$; como $\R$ é indutivo; o resultado segue. Suponha então que $\mathcal{A} \neq \emptyset$.
-
-\begin{defi}
-    Sejam $(\F,+,\cdot)$ um corpo e $x,y \in \F$ quaisquer.
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Diremos que $x$ é \textit{negativo} se $-x$ for positivo.
-            \item Escrevemos 
-                \begin{enumerate}[label=\roman*.]
-                    \item $x<y$ quando $y>x$;
-                    \item $x \leq y$ quando $y \geq x$.
-                \end{enumerate}
-        \end{enumerate}
-    Notação $\R_{>0}$ etc.
-\end{defi}
-
 \begin{defi}
     \textbf{(a)} Sejam $a,b \in \R$ tais que $a<b$. O conjunto $\{ x \in \R : a < x < b \}$ será denotado por $]a,b[$.
 
@@ -38,10 +16,6 @@ Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = 
 \begin{obs}
     Nos itens (b) e (c) acima, escrevemos ``um intervalo $I \subseteq \R$'', mas ainda não sabemos se pode ser $I = \R$ pois ainda não sabemos se $\R$ é um intervalo. Isso é resolvido pela seguinte
 \end{obs}
-
-\begin{prop}
-    \textbf{(a)} O conjunto 
-\end{prop}
 
 \textbf{(a)} $a \in \R$ é um ponto de acumulação de $A \subseteq \R$ se, e somente se, $0$ é ponto de acumulação de $B := \{h \in \R_{\neq 0} : a+h \in A \}$
 
@@ -61,11 +35,6 @@ Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = 
     $a \in \R$ é um ponto de acumulação de $A \subseteq \R$ se, e somente se, para todo $\delta \in \R_{>0}$ existir $x \in A$ tal que $0 < |x-a| < \epsilon$.
 \end{prop}
 
-\begin{proof}
-\end{proof}
-
-
-
 \begin{defi}
     \textbf{(a)} Diremos que $a \in \R$ é um \textit{ponto de acumulação à direita} de $A \subseteq \R$ se $a$ é ponto de acumulação de $A \cap \left] a, +\infty \right[$.
 
@@ -84,43 +53,7 @@ Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = 
     para todo $x \in A$.
 \end{defi}
 
-\begin{defi} (Limites Laterais) 
-    Sejam $f$ uma função e $p$ um número real.
-
-    \textbf{(a)} Suponha que existe um número real $b > p$ tal que $\left]p, b\right[ \subset D_f$. Diremos que $f$ tem limite $L$ quando $x$ tende a $p$, \textit{pela direita}, indicando
-        $ \ds
-            \lim_{x \to p^+} f(x) = L,
-        $
-    se para todo $\epsilon > 0$ existir $\delta > 0$, com $p + \delta < b$, tal que se $p < x < p + \delta$, então $|f(x) - L| < \epsilon$. O número real $L$, quando existe, denomina-se \textit{limite lateral à direita} de $f$ em $p$.
-
-    \textbf{(b)} Suponha que existe um número real $a < p$ tal que $\left]a, p\right[ \subset D_f$. Diremos que $f$ tem limite $L$ quando $x$ tende a $p$, \textit{pela esquerda}, indicando
-        $ \ds
-            \lim_{x \to p^-} f(x) = L,
-        $
-    se para todo $\epsilon > 0$ existir $\delta > 0$, com $a < p - \delta $, tal que se $p - \delta < x < p$, então $|f(x)-L| < \epsilon$. O número real $L$, quando existe, denomina-se \textit{limite lateral à esquerda} de $f$ em $p$.
-\end{defi}
-
-\begin{defi} 
-    (Limites no Infinito) Seja $f$ uma função.
-    
-    \textbf{(a)} Suponha que existe um número real $a$ tal que $\left]a, +\infty \right[ \subset D_f$. Diremos que $f$ tem limite $L$ quando $x$ \textit{cresce indefinidamente}, ou \textit{tende ao infinito positivo}, indicando
-        $ \ds
-            \lim_{x \to + \infty} f(x) = L,
-        $
-    se para todo $\epsilon > 0$ existir um $\delta > 0$, com $\delta > a$, tal que $x > \delta \Rightarrow |f(x) - L| < \epsilon$. O número real $L$, quando existe, denomina-se \textit{limite no infinito positivo} de $f$.
-    
-    \textbf{(b)} Suponha que existe um número real $a$ tal que $\left] -\infty, a\right[ \subset D_f$. Diremos que $f$ tem limite $L$ quando $x$ \textit{decresce indefinidamente}, ou \textit{tende ao infinito negativo}, indicando
-        $ \ds
-            \lim_{x \to - \infty} f(x) = L,
-        $
-    se para todo $\epsilon > 0$ existir um $\delta > 0$, com $-\delta < a$, tal que $x < -\delta \Rightarrow |f(x) - L| < \epsilon$. O número real $L$, quando existe, denomina-se \textit{limite no infinito negativo} de $f$.
-\end{defi} 
-
-
-
-    Bagunça
-
-\begin{lem}
+\begin{lem} l'hospital do guidorizzi kk buxa
     \textbf{(a)} Se $f : D_f \subseteq \R \to \R$ é uma função derivável no intervalo aberto $I := \left]a,b \right[ \subseteq D_g$, com $g'(x)>0$ para todo $x \in I$ e $\ds \lim_{x \to a^+} g(x) = 0$, então $g(x)>0$ para todo $x \in I$.
 
     \textbf{(b)} Sejam $f : D_f \subseteq \R \to \R$ e $g:D_g \subseteq \R \to \R$ funções deriváveis no intervalo aberto $I := \left]a,b \right[ \subseteq D_f \cap D_g$, com $g'(x)>0$ para todo $x \in I$ e $\ds \lim_{x \to a^+} f(x) = \lim_{x \to a^+} g(x) = 0$. Se existem constantes $\alpha, \beta \in \R$ tais que
@@ -178,71 +111,18 @@ Se $\mathcal{A} = \emptyset$, então $\bigcap \mathcal{A} = \bigcap \emptyset = 
         $
 \end{proof}
 
-\textbf{(a)} Sejam $f:D_f \subseteq \R \to \R$ e $g: D_g \subseteq \R \to \R$ funções para as quais existe $r>0$ tal que $f$ e $g$ são deriváveis e $g(x) \neq 0$ em $\left] p,p+r \right[ \subseteq D_f \cap D_g$  sempre que $0 < |x-p| < r$. Nesse caso, se $\lim_{x \to p^+} \dfrac{f'(x)}{g'(x)} \in \R$, então $\ds \lim_{x \to p^+} \dfrac{f(x)}{g(x)} = \lim_{x \to p^+} \dfrac{f'(x)}{g'(x)}$.
     
-     Sejam $f:D_f \subseteq \R \to \R$ e $g: D_g \subseteq \R \to \R$ funções tais que, dado $p \in D_f \cap D_g$, $f$ e $g$ são deriváveis e $g(x) \neq 0$ em
-        \begin{itemize}
-            \item $\left]p, + \infty \right[ \subseteq D_f \cap D_g$  sempre que $p<x$ (caso $x \to + \infty$); ou 
-            \item $\left] -\infty, p \right[ \subseteq D_f \cap D_g$ sempre que $x<p$ (caso $x \to - \infty$).
-        \end{itemize}
-    Se $\ds \lim_{x \to \pm \infty} \dfrac{f'(x)}{g'(x)} \in \R \cup \{\pm \infty\}$, então $\ds \lim_{x \to \pm \infty} \dfrac{f(x)}{g(x)} = \lim_{x \to \pm \infty} \dfrac{f'(x)}{g'(x)}$.
-    
-    
-    
-    (1ª Regra de L'Hospital) Sejam $f:D_f \subseteq \R \to \R$ e $g: D_g \subseteq \R \to \R$ funções tais que, dado $p \in D_f \cap D_g$, existe $r>0$ tal que $f$ e $g$ são deriváveis e $g(x) \neq 0$ em 
-        \begin{itemize} 
-            \item $\left] p,p+r \right[ \subseteq D_f \cap D_g$ sempre que $p<x<p+r$ (caso $x \to p^+$); ou
-            \item $\left[p-r, p \right[ \subseteq D_f \cap D_g$ sempre que $p-r<x<p$ (caso $x \to p^-$); ou
-            \item $\left]p-r,p \right[ \cup \left] p,p+r \right[ \subseteq D_f \cap D_g$ sempre que $0 < |x-p| < r$; (caso $x \to p$).
 
-            
-            \item $\left]r, + \infty \right[ \subseteq D_f \cap D_g$  sempre que $r<x$ (caso $x \to + \infty$); ou 
-            \item $\left] -\infty, r \right[ \subseteq D_f \cap D_g$ sempre que $x<-r$ (caso $x \to - \infty$).
-        \end{itemize} 
-
-
-Seja $\mathcal{F}$ uma $\sigma$-álgebra em conjunto $\Omega$, $\Pb : \mathcal{F} \to \R$ uma probabilidade em $\Omega$ e $A, B, A_1, A_2, \ldots \in \mathcal{F}$. São válidas as seguintes afirmações.
-\begin{itemize}
-\item A1: $\forall u \forall v \forall w (u,v,w \in V \rightarrow u+(v+w)= (u+v)+w)$;
-            \item A2: $\forall u \forall v  (u,v \in V \rightarrow u+v= v+u)$;
-            \item A3: $\forall u (u \in V \rightarrow u+0_V = u)$;
-            \item A4: $\forall u (u \in V \rightarrow \exists v(v \in V \land u+v=0_V))$;
-            \item M1: $\forall u \forall \lambda_1 \forall \lambda_2 (u \in V \land \lambda_1, \lambda_2 \in \R \rightarrow \lambda_1 \cdot (\lambda_2 \cdot u) = (\lambda_1 \cdot \lambda_2) \cdot u)$;
-            \item M2: $\forall u \forall \lambda_1 \forall \lambda_2 (u \in V \land \lambda_1, \lambda_2 \in \R \rightarrow
-            (\lambda_1 + \lambda_2) \cdot u = \lambda_1 \cdot u + \lambda_2 \cdot u)$;
-            \item M3: $\forall u \forall v \forall \lambda_1 (u,v \in V \land \lambda_1 \in \R \rightarrow \lambda_1 \cdot (u + v) = \lambda_1 \cdot u + \lambda_1 \cdot v )$;
-            \item M4: $\forall u(u \in V \rightarrow 1 \cdot u = u)$.
-\end{itemize}
 
 E ainda, diremos que $V$ é um espaço vetorial se, e somente se, a tripla $(V, +, \cdot)$, bem definida, for um espaço vetorial.  Diremos que a tripla $(V, +, \cdot)$ é um \textit{espaço vetorial} sobre $\R$ se no conjunto $V \neq \emptyset$ estiverem definidas duas operações, $+:V \times V \to V$ e $\cdot: \R \times V \to V$, denominadas respectivamente de \textit{adição} e \textit{multiplicação por escalar}, para as quais valem. Diremos que um conjunto $V$ é um \textit{espaço vetorial} sobre $\R$ se em $V$ existir pelo menos um elemento, $0_V \in V$, e estiverem definidas duas operações, $+ : V \times V \to V$ e $\cdot : \R \times V \to V$, para as quais valem
 
 
-%\title{Lógica, Teoria dos Conjuntos e os \\ Fundamentos da Matemática \\  \large{Processo Número: 108178/2025-0}}
-%\author{Bolsista: Alexander Kahleul \\ Orientador: Prof. Dr. Gabriel Fernandes}
-%\date{Período:  01/04/2025 a 31/07/2025 }
+
 
 
     Usaremos indução no comprimento de \( \mathbf{u}_1 \ldots \mathbf{u}_n \). Escreva \( \mathbf{u}_1 \) como \( \mathbf{v} \mathbf{v}_1 \ldots \mathbf{v}_k \), onde \( \mathbf{v} \) é um símbolo de índice \( k \) e \( \mathbf{v}_1, \ldots, \mathbf{v}_k \) são designadores. Como \( \mathbf{u}_1' \) começa com \( \mathbf{v} \), ele tem a forma \( \mathbf{v} \mathbf{v}_1' \ldots \mathbf{v}_k' \), onde \( \mathbf{v}_1', \ldots, \mathbf{v}_k' \) são designadores. Agora \( \mathbf{u}_1 \) é compatível com \( \mathbf{u}_1' \); logo, \( \mathbf{v}_1 \ldots \mathbf{v}_k \) é compatível com \( \mathbf{v}_1' \ldots \mathbf{v}_k' \). Pela hipótese de indução, \( \mathbf{v}_i = \mathbf{v}_i' \) para \( i = 1, \ldots, k \); portanto, \( \mathbf{u}_1 = \mathbf{u}_1' \). Disso segue que \( \mathbf{u}_2 \ldots \mathbf{u}_n \) é compatível com \( \mathbf{u}_2' \ldots \mathbf{u}_n' \); assim, pela hipótese de indução, \( \mathbf{u}_i = \mathbf{u}_i' \) para \( i = 2, \ldots, n \).
 
-    \textbf{(a)}
-        Adicionemos $-z$ a ambos os membros da igualdade $x + z = y + z$:
-            \begin{enumerate}
-                \item $\Rightarrow$: $(x + z) + (-z) = (y + z) + (-z)$;
-                \item A1: $x + \left[z + (-z) \right] = y + \left[z + (-z) \right]$;
-                \item A4: $x + 0 = y + 0$;
-                \item A3: $x = y$.
-            \end{enumerate}
-        Multipliquemos ambos os membros da igualdade $x \cdot z = y \cdot z$ por $z^{-1}$ (que existe, pois $z \neq 0$):
-
-    \textbf{(b)}
-        Pois tome
-            \begin{enumerate}[itemsep=0pt, topsep=0pt]
-                \item A3: $0 + 0 = 0$;
-                \item a: $(0 + 0) \cdot x = 0 \cdot x$;
-                \item M2: $x \cdot (0 + 0) = x \cdot 0$;
-                \item D: $x \cdot 0 + x \cdot 0 = x \cdot 0$;
-                \item a: $x \cdot 0 = 0$. $\blacksquare$
-            \end{enumerate}
+    
 
 Uma função $T : V \to W$ é uma transformação linear se, e somente se $T(\lambda_1 v_1 + \lambda_2 v_2) = \lambda_1 T(v_1) + \lambda_2 T(v_2)$ para quaisquer $v_1, v_2 \in V$ e $\lambda_1, \lambda_2 \in \R$.
 
@@ -265,70 +145,12 @@ a função $\varphi : \{ h \in \R_{\neq 0} : a+h \in A \setminus \{ a\} \} \to \
 Um resultado lá em topologia da reta garante que podemos considerar a questão da existência desses limites, já que $a$ e $0$ são pontos de acumulação dos domínios das respectivas funções.
 
 \begin{defi}
-    Seja $G$ um conjunto não vazio e $* : G \times G \to G$ uma operação.
-    
-    \textbf{(a)} Dizemos que o par $(G, *)$ é um \textit{grupo} se $*$ cumpre as seguintes propriedades:
-        \begin{itemize}
-            \item \textit{associatividade}:
-                $
-                    x * (y * z) = (x * y) * z 
-                $
-            para quaisquer $x, y, z \in G$;
-            \item \textit{elemento neutro}: existe um $e \in G$, chamado de \textit{elemento neutro} de $*$, tal que
-                $
-                    x * e = x = e * x
-                $
-            para todo $x \in G$;
-            \item \textit{invertibilidade}: para todo $x \in G$, existe um $y \in G$, chamado de \textit{inverso} de $x$, tal que
-                $
-                    x * y = e = y * x.
-                $
-        \end{itemize}
-    \textbf{(b)} Dizemos que o grupo $(G,*)$ é \textit{comutativo}, ou \textit{abeliano}, se a operação $*$ cumpre a seguinte propriedade:
-        \begin{itemize}
-            \item \textit{comutatividade}: $x * y = y * x$ para quaisquer $x,y \in G$.
-        \end{itemize}
     Diremos que o par $(X, *)$ é um \textit{monoide} se no conjunto $X \neq \emptyset$ estiver definida uma operação $*:X \times X \to X$ para a qual vale, para quaisquer $a, b, c \in X$,
         \begin{itemize}
             \item A1: a associatividade de $*$, isto é, $a + (b + c) = (a + b) + c$;
             \item A3: a existência de um \textit{elemento neutro} da operação $*$, tal que $a + 0 = a$;
         \end{itemize}
 \end{defi}
-
-    Diremos que um conjunto $G$ é um \textit{grupo} se em $G$ estiver definida uma operação $* : G \times G \to G$ e existir $e \in G$ para os quais valem
-        \begin{itemize}
-            \item G1: $\forall x \forall y \forall z (x,y,z \in G \rightarrow x * (y * z) = (x * y) * z )$;
-            \item G3: $\forall x (x \in G \rightarrow x*e=x=e*x)$
-            \item G4: $\forall x(x \in G \rightarrow \exists y (y \in G \land x * y = e = y * x))$.
-        \end{itemize}
-
-\begin{defi} Seja $(A, +, \cdot, \leq)$ um anel ordenado e $S \subset A$.
-    
-    \textbf{(a)} Diremos que $S$ é 
-        \begin{itemize}
-            \item \textit{limitado inferiormente} se existir $a \in A$ tal que $a \leq x$ para todo $x \in S$;
-            \item \textit{limitado superiormente} se existir $a \in A$ tal que $x \leq a$ para todo $x \in S$.
-        \end{itemize}
-    O conjunto vazio é considerado limitado inferiormente e superiormente.
-
-    \textbf{(b)} Diremos que $S$ tem um
-        \begin{itemize}
-            \item \textit{menor elemento} se existir $b \in S$ tal que $b \leq x$ para todo $x \in S$; 
-            \item \textit{maior elemento} se existir $b \in S$ tal que $x \leq b$ para todo $x \in S$.
-        \end{itemize}
-    Indicamos o\footnote{ O leitor atento terá percebido que, a princípio, o artigo correto seria \textit{um}, pois nada foi estabelecido a respeito da unicidade do menor (maior) elemento; no entanto, esse é o caso: (prove:) se existe um menor (maior) elemento, ele é único.} menor elemento de $S$, quando existe, por $\min S$; analogamente, indicamos o maior elemento de $S$, quando existe, por $\max S$.
-\end{defi}
-
-\begin{obs}
-    \leavevmode
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Observe que O1--O3 é uma relação de ordem, enquanto O1--O4 é uma relação de ordem total. Com isso, um anel é ordenado se nele existe uma relação de ordem total para a qual vale, adicionalmente, OA e OM.
-            \item Analogamente, um domínio é ordenado se nele existe uma relação de ordem total para a qual vale, adicionalmente, OA e OM.
-            \item Indica-se $a<b$ se $a \leq b$ e $a \neq b$. Análogos sentidos têm $>$ e $\geq$.
-        \end{enumerate}
-\end{obs}
-
-se a equação $\lambda u = 0_V$ só for válida para $\lambda = 0$. Como $0_V \notin S$, temos $u \neq 0_V$; daí $\lambda = 0$ por \eqref{prop:basicas}.
 
 $\mathcal{B}$ gera $V$ e se os vetores de $\mathcal{B}$ forem linearmente independentes.
 
@@ -787,3 +609,37 @@ O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ em
     isto é, $\prod_{i \in I} X_i$ é definido como o conjunto de todas as funções $f$ de domínio $I$ tais que $f(i) \in X_i$ para todo $i \in I$.
 
     Sendo $g$ a função identidade em $x$ e fazendo $I = x$ e $X_i = i$ para todo $i \in I$, temos que $g$ é a sequência $\left(X_i \right)_{i \in I}$. Como $I \neq \emptyset$ e $X_i \neq \emptyset$ para todo $i \in I$, temos, por hipótese, que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, toda função $f \in \prod_{i \in I} X_i$ é tal que $f(i) \in X_i$ para todo $i \in I$, isto é, $f(y) \in y$ para todo $y \in x$, como exige o axioma da escolha.
+
+
+
+    Sejam $\mathbf{A}$ uma fórmula, $p_1, \ldots, p_n$ as variáveis que ocorrem em $\mathbf{A}$ e $v$ uma valoração. Definindo
+
+
+\begin{proof}
+    Sejam $p_1, \ldots, p_n$ as variáveis proposicionais que ocorrem em $\mathbf{A}$ e $v$ uma valoração qualquer. Definindo $p'_i$ e $\mathbf{A}'$ como no lema \eqref{lem.fund:troca}, temos $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}'$, e como $\vDash \mathbf{A}$, temos $\mathbf{A}' \equiv \mathbf{A}$, de modo que $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}$. Agora, definindo
+        \[
+            v_1(p_i) :=
+                \begin{cases}
+                    v(p_i), & \text{se } i < n \\
+                    \mathfrak{t}, & \text{se } i = n
+                \end{cases}
+            \quad \text{ e } \quad
+            v_2(p_i) :=
+                \begin{cases}
+                    v(p_i), & \text{se } i < n \\
+                    \mathfrak{f}, & \text{se } i = n
+                \end{cases},
+        \]
+    cada $p'_i$, para $i<n$, fica bem definido. Como $v_2(p_n) = \mathfrak{f}$, vem $\{p'_1, \ldots, p'_{n-1}, (\neg p_n) \} \vdash \mathbf{A}$, de modo que, pelo teorema da dedução \eqref{teo.fund:deduçãoproposicional}, temos $\{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A})$. Analogamente, como $v_1(p_n) = \mathfrak{t}$, então $\{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A})$. Assim:
+        \[
+            \begin{array}{rll}
+                1. & \{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A}) & p. \\
+                2. & \{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A}) & p. \\
+                3. & \{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A}) \rightarrow (((\neg p_n) \rightarrow \mathbf{A}) \rightarrow \mathbf{A}) & \eqref{prop.fund:propriedadesvdash} \\
+                4. & \{p'_1, \ldots, p'_{n-1}\} \vdash (((\neg p_n) \rightarrow \mathbf{A}) \rightarrow \mathbf{A}) & \text{MP}(2,3) \\
+                5. & \{p'_1, \ldots, p'_{n-1}\} \vdash \mathbf{A} & \text{MP}(1,4)
+            \end{array}
+        \]
+    Com isso, eliminamos $p_n$. Repetindo esse processo (um número finito de vezes), eliminamos $p_{n-1}, \ldots, p_1$, obtendo por fim $\vdash \mathbf{A}$.
+    \itemproof
+\end{proof}

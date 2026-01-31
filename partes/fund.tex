@@ -7,32 +7,39 @@ Seguimos \cite{herculespaulovich}.
 \begin{defi}
     \leavevmode
     \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Um \textit{alfabeto} é uma coleção infinita de símbolos distintos, nenhum deles propriamente contido em outro, separados nas seguintes categorias:
+            \item O \textit{alfabeto proposicional} $\mathrm{Alf}$ é uma coleção infinita de símbolos distintos, nenhum deles propriamente contido em outro, separados nas seguintes categorias:
                 \begin{enumerate}[label=\roman*.]
                     \item Conectivos: $\neg$, $\rightarrow$.
                     \item Parênteses: $($, $)$.
                     \item Variáveis proposicionais: $p_1, p_2, p_3 \ldots, p_i, \ldots$.
             \end{enumerate}
-            \item As \textit{fórmulas} correspondentes a um alfabeto são definidas do seguinte modo:
+            \item As \textit{fórmulas} sobre $\mathrm{Alf}$ são definidas indutivamente pelas seguintes regras:
                 \begin{enumerate}[label=\roman*.]
-                    \item se $\mathbf{p}$ é uma variável proposicional, então $(\mathbf{p})$ é uma fórmula.
+                    \item se $\mathbf{p}$ é uma variável proposicional, então $\mathbf{p}$ é uma fórmula.
                     \item se $\mathbf{A}$ e $\mathbf{B}$ são fórmulas, então $(\neg \mathbf{A})$ e $(\mathbf{A} \rightarrow \mathbf{B})$ são fórmulas;
-                    \item todas as fórmulas são obtidas por um número finito de aplicações das regras acimas. 
+                    \item todas as fórmulas são obtidas por um número finito de aplicações das regras acima. 
             \end{enumerate}
-            O conjunto de todas as fórmulas é denotado por $\mathrm{Form}$
-        \item sla porra
+            O conjunto de todas as fórmulas é denotado por $\mathrm{Form}$, enquanto o conjunto de todas as fórmulas atômicas é denotado por $\mathrm{Form}_{\mathrm{At}}$ 
+        \item A \textit{linguagem proposicional} é o par $\mathcal{L} := (\mathrm{Alf}, \mathrm{Form})$
     \end{enumerate}
 \end{defi}
 
-\begin{ax}
-    Os axiomas da Lógica Proposicional são as seguintes fórmulas.
-        \begin{enumerate}[label=$\mathrm{Ax}_{\arabic*}$.]
-            \item $(\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A}))$
-            \item $((\mathbf{A} \rightarrow (\mathbf{B} \to \mathbf{C})) \rightarrow ((\mathbf{A} \rightarrow \mathbf{B})\rightarrow(\mathbf{A} \rightarrow \mathbf{C})))$
-            \item $(((\neg \mathbf{B}) \rightarrow (\neg \mathbf{A})) \rightarrow ( ((\neg \mathbf{B}) \rightarrow \mathbf{A}) \rightarrow \mathbf{B}))$
+\begin{defi}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Um \textit{sistema de dedução proposicional} é uma tripla $(\mathcal{L}, \mathrm{Ax}, \mathrm{R})$, onde $\mathcal{L}$ é a linguagem proposicional, $\mathrm{Ax}$ é um conjunto de esquemas de axiomas e $R$ é um conjunto de regras de inferência.
+            \item A Lógica Proposicional é o sistema $\mathcal{L}_{P} := (\mathcal{L}, \Lambda, \mathrm{MP})$, onde $\Lambda$ é um conjunto formado pelos esquemas de axiomas 
+                \begin{enumerate}[label=$\mathrm{Ax}_{\arabic*}$.]
+                    \item $(\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A}))$
+                    \item $((\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{C})) \rightarrow ((\mathbf{A} \rightarrow \mathbf{B})\rightarrow(\mathbf{A} \rightarrow \mathbf{C})))$
+                    \item $(((\neg \mathbf{B}) \rightarrow (\neg \mathbf{A})) \rightarrow ( ((\neg \mathbf{B}) \rightarrow \mathbf{A}) \rightarrow \mathbf{B}))$
+                \end{enumerate}
+            e MP é a regra de inferência \textit{Modus Ponens}, a saber,
+                \[
+                    \mathrm{MP} := \{(\{\mathbf{A}, (\mathbf{A} \rightarrow \mathbf{B})\}, \mathbf{B} ) : \mathbf{A}, \mathbf{B} \in \mathrm{Form}\}.
+                \]
         \end{enumerate}
-    Definimos $\Lambda := \{\mathrm{Ax}_{1}, \mathrm{Ax}_{2}, \mathrm{Ax}_{3} \}$.
-\end{ax}
+\end{defi}
 
 \begin{defi}
     Sejam $\Delta \subseteq \mathrm{Form}$ e $\mathbf{A} \in \mathrm{Form}$. 
@@ -50,13 +57,23 @@ Seguimos \cite{herculespaulovich}.
 \end{defi}
 
 \begin{prop}
-    \leavevmode
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $\vdash (\mathbf{A} \rightarrow \mathbf{A})$.
-        \end{enumerate}
+    $\vdash (\mathbf{A} \rightarrow \mathbf{A})$.
 \end{prop}
 
-\begin{teo}[da Dedução]
+\begin{proof}
+    Pois tome:
+        \[
+            \begin{array}{rll}
+                1. & ((\mathbf{A} \rightarrow ((\mathbf{A} \rightarrow \mathbf{A}) \rightarrow \mathbf{A})) \rightarrow ((\mathbf{A} \rightarrow (\mathbf{A} \rightarrow \mathbf{A})) \rightarrow (\mathbf{A} \rightarrow \mathbf{A}) )) & \mathrm{Ax}_2 \\
+                2. & (\mathbf{A} \rightarrow ((\mathbf{A} \rightarrow \mathbf{A}) \rightarrow \mathbf{A})) & \mathrm{Ax}_1 \\
+                3. & ((\mathbf{A} \rightarrow (\mathbf{A} \rightarrow \mathbf{A})) \rightarrow (\mathbf{A} \rightarrow \mathbf{A}) ) & \text{MP}(1,2) \\
+                4. & (\mathbf{A} \rightarrow (\mathbf{A} \rightarrow \mathbf{A})) & \mathrm{Ax}_1 \\
+                5. & (\mathbf{A} \rightarrow \mathbf{A}) & \text{MP}(4,5)
+            \end{array}
+        \]
+\end{proof}
+
+\begin{teo}[da Dedução] \label{teo.fund:deduçãoproposicional}
     Sejam $\Delta \subseteq \mathrm{Form}$ e $\mathbf{A}, \mathbf{B} \in \mathrm{Form}$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Se $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$, então $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$.
@@ -88,6 +105,148 @@ Seguimos \cite{herculespaulovich}.
             Assim, se $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$, então $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$. \itemproof
             \item Como $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$ e $\Delta \subseteq \Delta \cup \{\mathbf{A}\}$, temos $\Delta \cup \{\mathbf{A}\} \vdash (\mathbf{A} \rightarrow \mathbf{B})$. Daí, como $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{A}$, temos que $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$. \itemproof
         \end{enumerate}
+\end{proof}
+
+\begin{prop} \label{prop.fund:propriedadesvdash}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item $\{\mathbf{A} \rightarrow \mathbf{B}, \mathbf{B} \rightarrow \mathbf{C} \} \vdash \mathbf{A} \rightarrow \mathbf{C}$.
+            \item $\vdash \mathbf{A} \leftrightarrow \neg \neg \mathbf{A}$.
+        \end{enumerate}
+\end{prop}
+
+\begin{defi}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Uma \textit{valoração proposicional} é uma função $\bar{v} : \mathrm{Form}_{\mathrm{At}} \to \{\mathfrak{t}, \mathfrak{f} \}$.
+            \item Uma \textit{valoração} é uma função $v: \mathrm{Form} \to \{\mathfrak{t}, \mathfrak{f} \}$ tal que
+                \begin{enumerate}[label=\roman*.]
+                    \item $v |_{\mathrm{Form}_{\mathrm{At}}} = \bar{v}$;
+                    \item $v[(\neg \mathbf{A})] = \mathfrak{f}$ se, e somente se, $v(\mathbf{A}) = \mathfrak{t}$;
+                    \item $v[(\mathbf{A} \rightarrow \mathbf{B})] = \mathfrak{f}$ se, e somente se, $v(\mathbf{A}) = \mathfrak{t}$ e $v(\mathbf{B}) = \mathfrak{f}$.
+                \end{enumerate}
+        \end{enumerate}
+\end{defi}
+
+\begin{defi}
+    Uma fórmula $\mathbf{A}$ é \textit{válida}, ou \textit{tautológica}, se $v(\mathbf{A}) = \mathfrak{t}$ para toda valoração $v$. Isso é denotado por $\vDash \mathbf{A}$.
+\end{defi}
+
+\begin{lem} \label{lem.fund:axregrasvalidos}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Os axiomas de $\mathcal{L}_P$ são válidos.
+            \item Se $\vDash \mathbf{A}$ e $\vDash (\mathbf{A} \rightarrow \mathbf{B})$, então $\vDash \mathbf{B}$.
+        \end{enumerate}
+\end{lem}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Suponha, por absurdo, que $\not\vDash\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A})$. Isso só é possível se $v[(\mathbf{B} \rightarrow \mathbf{A})] = \mathfrak{f}$, o que, por sua vez, só é possível se $v(\mathbf{A}) = \mathfrak{f}$, o que contraria a hipótese. Logo, $\vDash\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A})$. A prova de que os outros (esquemas de) axiomas são válidos segue analogamente. \itemproof
+            \item Suponha, por absurdo, que $\not\vDash \mathbf{B}$. Logo, existe uma valoração $v$ tal que $v(\mathbf{B}) = \mathfrak{f}$. Para essa valoração, como $\vDash \mathbf{A}$, temos $v(\mathbf{A}) = \mathfrak{t}$, de modo que $v[(\mathbf{A} \rightarrow \mathbf{B})] = \mathfrak{f}$, o que contraria a hipótese. Com isso, $\vDash \mathbf{B}$. \itemproof
+        \end{enumerate}
+\end{proof}
+
+
+\begin{teo}[da Correção] \label{teo.fund:correçãoproposicional}
+    Se $\vdash \mathbf{A}$, então $\vDash \mathbf{A}$.    
+\end{teo}
+
+\begin{proof}
+    Façamos indução no número de fórmulas que ocorrem na dedução de $\mathbf{A}$. Se $(A_1)$ é a dedução de $\mathbf{A}$, então $A_1 \equiv \mathbf{A}$ e $\mathbf{A}$ é um axioma, e como todos os axiomas são válidos (lema \eqref{lem.fund:axregrasvalidos}), temos $\vDash \mathbf{A}$. Agora, seja $(A_1, \ldots, A_n)$ a dedução de $\mathbf{A}$ e suponha, por hipótese de indução, que o resultado vale para toda fórmula que pode ser deduzida por uma dedução com menos de $n$ fórmulas. Se $\mathbf{A}$ é um axioma, então $\vDash \mathbf{A}$. Suponha, então, que $\mathbf{A}$ é obtida de duas fórmulas de índices $<n$ via MP. Essas duas fórmulas têm as formas $\mathbf{B}$ e $(\mathbf{B} \rightarrow \mathbf{A})$, e como elas foram deduzidas por menos de $n$ fórmulas, temos que $\vDash \mathbf{B}$ e $\vDash (\mathbf{B} \rightarrow \mathbf{A})$. Daí, como a regra MP conserva validade (lema \eqref{lem.fund:axregrasvalidos}), temos que $\vDash \mathbf{A}$. \itemproof
+\end{proof}
+
+\begin{lem}[Kalmár] \label{lem.fund:troca}
+    Sejam $\mathbf{A}(p_1, \ldots, p_n) \in \mathrm{Form}$ e $v : \mathrm{Form} \to \{\mathfrak{t}, \mathfrak{f} \}$. Se
+        \[
+            p'_i :\equiv
+                \begin{cases}
+                    p_i, & \text{se } v(p_i) = \mathfrak{t} \\
+                    (\neg p_i), & \text{se } v(p_i) = \mathfrak{f}
+                \end{cases}
+            \quad \text{ e } \quad
+            \mathbf{A}' :\equiv
+                \begin{cases}
+                    \mathbf{A}, & \text{se } v(\mathbf{A}) = \mathfrak{t} \\
+                    (\neg \mathbf{A}), & \text{se } v(\mathbf{A}) = \mathfrak{f}
+                \end{cases},
+        \]
+    então $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}'$.
+\end{lem}
+
+\begin{proof}
+    Façamos indução no número de conectivos que ocorrem em $\mathbf{A}$.
+\end{proof}
+
+\begin{teo}[da Completude] \label{teo.fund:completudeproposicional}
+    Se $\vDash \mathbf{A}$, então $\vdash \mathbf{A}$.
+\end{teo}
+
+\begin{proof}
+    Sejam $p_1, \ldots, p_n$ as variáveis proposicionais que ocorrem em $\mathbf{A}$. Pelo lema \eqref{lem.fund:troca}, temos $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}'$ para toda valoração $v$, e como $\vDash \mathbf{A}$, temos $\mathbf{A}' \equiv \mathbf{A}$, de modo que $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}$. Agora, definindo
+        \[
+            v_1(p_i) :=
+                \begin{cases}
+                    v(p_i), & \text{se } i < n \\
+                    \mathfrak{t}, & \text{se } i = n
+                \end{cases}
+            \quad \text{ e } \quad
+            v_2(p_i) :=
+                \begin{cases}
+                    v(p_i), & \text{se } i < n \\
+                    \mathfrak{f}, & \text{se } i = n
+                \end{cases},
+        \]
+    cada $p'_i$, para $i<n$, fica bem definido. Como $v_2(p_n) = \mathfrak{f}$, vem $\{p'_1, \ldots, p'_{n-1}, (\neg p_n) \} \vdash \mathbf{A}$, de modo que, pelo teorema da dedução \eqref{teo.fund:deduçãoproposicional}, temos $\{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A})$. Analogamente, como $v_1(p_n) = \mathfrak{t}$, então $\{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A})$. Assim:
+        \[
+            \begin{array}{rll}
+                1. & \{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A}) & p. \\
+                2. & \{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A}) & p. \\
+                3. & \{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A}) \rightarrow (((\neg p_n) \rightarrow \mathbf{A}) \rightarrow \mathbf{A}) & \eqref{prop.fund:propriedadesvdash} \\
+                4. & \{p'_1, \ldots, p'_{n-1}\} \vdash (((\neg p_n) \rightarrow \mathbf{A}) \rightarrow \mathbf{A}) & \text{MP}(2,3) \\
+                5. & \{p'_1, \ldots, p'_{n-1}\} \vdash \mathbf{A} & \text{MP}(1,4)
+            \end{array}
+        \]
+    Com isso, eliminamos $p_n$. Repetindo esse processo (um número finito de vezes), eliminamos $p_{n-1}, \ldots, p_1$, obtendo por fim $\vdash \mathbf{A}$.
+    \itemproof
+\end{proof}
+
+
+\begin{cor}[Adequação]
+    $\vDash \mathbf{A}$ se, e somente se, $\vdash \mathbf{A}$.
+\end{cor}
+
+\begin{proof}
+    Segue dos teoremas da correção \eqref{teo.fund:correçãoproposicional} e da completude \eqref{teo.fund:completudeproposicional}. \itemproof
+\end{proof}
+
+
+
+coisas
+
+\begin{defi}
+    Sejam $\mathbf{A} \in \mathrm{Form}$ e $\Gamma \subseteq \mathrm{Form}$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Um \textit{modelo} de $\mathbf{A}$ é uma valoração $v$ tal que $v(\mathbf{A}) = \mathfrak{t}$. Dizemos que $v$ \textit{satisfaz} $\mathbf{A}$. Isso é denotado por $v \vDash \mathbf{A}$.
+            \item Um \textit{modelo} de $\Gamma$ é uma valoração $v$ tal que $v \vDash \mathbf{B}$ para todo $\mathbf{B} \in \Gamma$.
+        \end{enumerate}
+\end{defi}
+
+\begin{defi}
+    Sejam $\mathbf{A}, \mathbf{B} \in \mathrm{Form}$ e $\Gamma \subseteq \mathrm{Form}$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dizemos que $\mathbf{B}$ é uma \textit{consequência semântica} de $\mathbf{A}$ se todo modelo de $\mathbf{A}$ é também um modelo de $\mathbf{B}$. Isso é denotado por $\{\mathbf{A} \} \vDash \mathbf{B}$.
+            \item Dizemos que $\mathbf{B}$ é uma \textit{consequência semântica} de $\Gamma$ se todo modelo de $\Gamma$ é também um modelo de $\mathbf{B}$. Isso é denotado por $\Gamma \vDash \mathbf{B}$.
+        \end{enumerate}
+\end{defi}
+
+\begin{teo}
+    Se $\Gamma \vdash \mathbf{A}$, então $\Gamma \vDash \mathbf{A}$.
+\end{teo}
+
+\begin{proof}
+    O caso $\Gamma = \emptyset$ é simplesmente o teorema da correção \eqref{teo.fund:correçãoproposicional}. Suponha, então, que $\Gamma \neq \emptyset$. Se $\mathbf{C}_1, \ldots, \mathbf{C}_n$ são as fórmulas de $\Gamma$ que aparecem na dedução de $\mathbf{A}$, então $\{\mathbf{C}_1, \ldots, \mathbf{C}_n\} \vdash \mathbf{A}$, de modo que, por sucessivas aplicações do teorema da dedução \eqref{teo.fund:deduçãoproposicional}, temos $\vdash \mathbf{C}_1 \rightarrow \cdots \rightarrow \mathbf{C}_n \rightarrow \mathbf{A}$. Com isso, para toda valoração $v$ tal que $v(\mathbf{C}_i) = \mathfrak{t}$ para todo $i \in [n]$, temos $v(\mathbf{A}) = \mathfrak{t}$. Como $\{\mathbf{C}_1, \ldots, \mathbf{C}_n\} \subseteq \Gamma$, temos $v \vDash \mathbf{A}$ para toda valoração $v$ tal que $v \vDash \Gamma$, isto é, $\Gamma \vDash \mathbf{A}$. \itemproof
 \end{proof}
 
 \chapter{Teorias de Primeira Ordem}
@@ -628,7 +787,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     \item $\forall x (\emptyset \setminus x = \emptyset)$.
                 \end{enumerate}
             \item \leavevmode
-                \begin{enumerate}
+                \begin{enumerate}[label=\roman*.]
                     \item $\forall x \forall y (x \setminus y = x \leftrightarrow x \cap y = \emptyset)$;
                     \item $\forall x \forall y (x \setminus y = \emptyset \leftrightarrow x \subseteq y)$.
                 \end{enumerate}
@@ -1400,63 +1559,60 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 
 \begin{ax}[Infinito]
     Existe um conjunto indutivo.
-        \[    \boxed{
-            \exists x ( (\emptyset \in x) \land \forall y ((y \in x) \rightarrow (y^+ \in x)) )
-        }
+        \[
+            \boxed{
+                \exists x ( (\emptyset \in x) \land \forall y ((y \in x) \rightarrow (y^+ \in x)) )
+            }
         \]
 \end{ax}
 
 \begin{teo} \label{teo.fund:omega}
-    Para cada conjunto indutivo $I$, definindo
+    Seja $I$ um conjunto indutivo. Defina
         \[
-            \omega(I) := \bigcap \{ x \in \mathcal{P}{(I)} : \ind{(x)}\},
+            \omega(I) := \bigcap \{ x \in \mathcal{P}{(I)} : \ind{(x)}\}.
         \]
-    valem as seguintes afirmações para quaisquer conjuntos $I$ e $J$ indutivos.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $\omega(I)$ é um conjunto indutivo:
-                \[ \ds
-                    \forall I ( \ind{(I)} \rightarrow \ind{(\omega(I))}).
-                \]
-            \item $\omega(I) = \omega(J)$:
+            \item Para todo conjunto $I$, se $I$ é indutivo, então $\omega(I)$ é indutivo.
                 \[
-                    \forall I \forall J ( \ind{(I)} \land \ind{(J)} \rightarrow \omega(I) = \omega(J) ).
+                    \forall I ( \ind{(I)} \rightarrow \ind{(\omega(I))})
+                \]
+            \item Para quaisquer conjuntos $I$ e $J$, se $I$ e $J$ são indutivos, então $\omega(I) = \omega(J)$.
+                \[
+                    \forall I \forall J ( \ind{(I)} \land \ind{(J)} \rightarrow \omega(I) = \omega(J) )
                 \] 
         \end{enumerate}  
 \end{teo}
 
 \begin{proof} \label{teo.fund:uomega}
     Provemos primeiramente que $\omega(I)$ está bem definido. Pelo axioma das partes, existe o conjunto $\mathcal{P}{(I)}$. Pelo axioma da separação com universo $\mathcal{P}{(I)}$ e a fórmula $ (\emptyset \in x) \land \forall y ((y \in x) \rightarrow (y^+ \in x)  )$ (que se abrevia por $\ind{(x)}$), existe $z(I) :=  \{ x \in \mathcal{P}{(I)} : \ind{(x)} \}$. Pelo teorema \eqref{teo.fund:intfamilia}, como $z(I) \neq \emptyset$ já que $I \in z(I)$, existe $\omega(I) := \bigcap z(I)$.
-
-    \textbf{(a)} Provemos primeiramente que $\emptyset \in \omega(I)$. Observe que, pelo teorema \eqref{teo.fund:intfamilia}, $\omega(I) := \bigcap z(I)$ é o conjunto que satisfaz
-        \[
-            \forall x \left(x \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow x \in y) \right). \tag{$\lozenge_1$}
-        \]
-    Com isso, $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow \emptyset \in y)$. Agora, note que, por definição,
-        \[
-           \forall y (y \in z(I) \leftrightarrow y \subset I \land \ind{(y)}); \tag{$\lozenge_2$}
-        \]
-    daí, $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \subset I \land \ind{(y)} \rightarrow \emptyset \in y)$, o que sabemos ser verdade: se $y \subset I$ é indutivo, então $\emptyset \in y$. Assim, $\emptyset \in \bigcap{z(I)} = \omega (I)$.
-
-    Agora provemos que $\forall x ( (x \in \omega(I)) \rightarrow (x^+ \in \omega(I)) )$. 
-    Com ($\lozenge_1$), precisamos provar que
-        \[
-            \forall x ( \forall y (y \in z(I) \rightarrow x \in y) \rightarrow \forall y (y \in z(I) \rightarrow x^+ \in y)  ),
-        \]
-    isto é, precisamos provar que
-        \[
-            \forall x ( \forall y (y \in z(I) \rightarrow (x \in y \rightarrow x^+ \in y) ).
-        \]
-    Por ($\lozenge_2$), ficamos com
-        \[
-            \forall x ( \forall y (y \subset I \land \ind{(y)} \rightarrow (x \in y \rightarrow x^+ \in y) )),
-        \]
-    o que sabemos ser verdade: se $y \subset I$ é indutivo, então $\forall x (x \in y \rightarrow x^+ \in y)$.
-    
-    \textbf{(b)} Provemos inicialmente que, para quaisquer $I$ e $J$ indutivos, $\omega (I) \subset J$, isto é, que $\omega(I)$ é, de certo modo, o ``menor'' conjunto indutivo. Inicialmente, veja que o mesmo argumento do item (a) nos mostra que, se $I$ e $J$ são indutivos, então $I \cap J$ é indutivo. Como $I \cap J \subset I$, temos $I \cap J \in z(I)$. Agora, pelo teorema   \eqref{teo.fund:intfamilia},
-        \[
-            x \in \bigcap z(I) \leftrightarrow \forall w (w \in z(I) \rightarrow x \in w ),
-        \] 
-    donde, particularmente para $w = I \cap J$, $x \in \bigcap z(I) \rightarrow x \in I \cap J$, isto é, $\omega{(I)} = \bigcap{z(I)} \subset I \cap J \subset J$. Para finalizar, como $\omega(I)$ é indutivo, vale $\omega{(I)} \subset \omega{(J)}$ e, por simetria, também vale $\omega{(J)} \subset \omega{(I)}$, donde $\omega{(I)} = \omega{(J)}$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Provemos primeiramente que $\emptyset \in \omega(I)$. Pelo teorema \eqref{teo.fund:intfamilia}, $\omega(I) := \bigcap z(I)$ é o conjunto que satisfaz
+                \[
+                    \forall x \left(x \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow x \in y) \right).
+                \]
+            Com isso, $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow \emptyset \in y)$. Como, por definição,
+                \[
+                    \forall y (y \in z(I) \leftrightarrow y \subseteq I \land \ind{(y)}),
+                \]
+            temos $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \subseteq I \land \ind{(y)} \rightarrow \emptyset \in y)$, o que sabemos ser verdade: se $y \subseteq I$ é indutivo, então $\emptyset \in y$. Logo, $\emptyset \in \bigcap{z(I)} = \omega (I)$. Agora provemos que $\forall x ( (x \in \omega(I)) \rightarrow (x^+ \in \omega(I)) )$. Isso equivale a
+                \[
+                    \forall x ( \forall y (y \in z(I) \rightarrow x \in y) \rightarrow \forall y (y \in z(I) \rightarrow x^+ \in y)  ),
+                \]
+            o que equivale a
+                \[
+                    \forall x ( \forall y (y \in z(I) \rightarrow (x \in y \rightarrow x^+ \in y) )),
+                \]
+            o que equivale a
+                \[
+                    \forall y (y \subseteq I \land \ind{(y)} \rightarrow \forall x (x \in y \rightarrow x^+ \in y)),
+                \]
+            o que sabemos ser verdade: se $y \subseteq I$ é indutivo, então $\forall x (x \in y \rightarrow x^+ \in y)$. Logo, $\omega{(I)}$ é indutivo. \itemproof
+            \item Provemos inicialmente que, para quaisquer $I$ e $J$ indutivos, tem-se $\omega (I) \subseteq J$. O mesmo argumento do item anterior mostra que $I \cap J$ são indutivos, e como $I \cap J \subseteq I$, vem $I \cap J \in z(I)$. Com isso, como
+                \[
+                    \forall x \left( x \in \bigcap z(I) \leftrightarrow \forall w (w \in z(I) \rightarrow x \in w ) \right),
+                \]
+            particularmente para $w = I \cap J$, se $x \in \bigcap z(I)$, então $x \in I \cap J$, de modo que $\bigcap{z(I)} \subseteq I \cap J \subseteq J$, isto é, $\omega{(I)} \subseteq J$. Como isso, como $\omega{(I)}$ e $\omega{(J)}$ são indutivos, temos $\omega{(I)} \subseteq \omega{(J)}$ e $\omega{(J)} \subseteq \omega{(I)}$, isto é, $\omega{(I)} = \omega{(J)}$. \itemproof
+        \end{enumerate}
 \end{proof}
 
 \begin{obs}
@@ -1464,30 +1620,110 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{obs}
 
 \begin{defi}
-    O conjunto dos números naturais, que será denotado por $\omega$, é definido como a interseção de todos os conjuntos indutivos.
+    O conjunto dos números naturais é definido como a interseção de todos os conjuntos indutivos. Ele é denotado por $\omega$.
 \end{defi}
 
-\begin{teo} \label{teo.fund:peano}
-    O conjunto $\omega$ dos números naturais serve como modelo para os axiomas de Peano, a saber:
+\begin{teo}[Indução]
+    Se $A \subseteq \omega$ é indutivo, então $A = \omega$.
+\end{teo}
+
+\begin{proof}
+    Pelo teorema \eqref{teo.fund:omega}, se $A$ é indutivo, então $\omega \subseteq A$. Daí, como $A \subseteq \omega$, vem $A = \omega$. \itemproof
+\end{proof}
+
+\begin{teo}[Axiomas de Peano] \label{teo.fund:peano}
+    O conjunto $\omega$ dos números naturais satisfaz os axiomas de Peano, isto é, valem as seguintes afirmações.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $\forall x \forall y (x,y \in \omega  \rightarrow  (\neg (x=y) \rightarrow \neg (x^+ = y^+ )))$;
-            \item $\forall x (x \in \omega \rightarrow (\neg (x^+ = \emptyset) ))$;
-            \item $(P(\emptyset) \land  \forall x (x \in \omega \rightarrow (P(x) \rightarrow P(x^+)))) \rightarrow \forall x (x \in \omega \rightarrow P(x))$, para cada fórmula $P$.
+            \item $\forall x \forall y (x,y \in \omega  \rightarrow  (\neg (x=y) \rightarrow \neg (x^+ = y^+ )))$.
+            \item $\forall x (x \in \omega \rightarrow (\neg (x^+ = \emptyset) ))$.
+            \item Para toda fórmula $P$,
+                \[
+                    P(\emptyset) \land  \forall x (P(x) \rightarrow P(x^+)) \rightarrow \forall x (x \in \omega \rightarrow P(x)).
+                \]
         \end{enumerate}
 \end{teo}
 
 \begin{proof}
-    \textbf{(a)} Suponha, por absurdo, que $x \neq y$ e $x^+ = y^+$. Sabemos que $x \in x^+$; sendo $x^+ = y^+ = y \cup \{y\}$, vemos que $x \in y$ ou $x \in \{y\}$. Esta última equivale a $x=y$, o que contraria a hipótese. Logo, só pode ser $x \in y$. Analogamente, obtemos $y \in x$, o que contraria a proposição \eqref{prop.fund:xinyeyinxabs}. Logo, se $x \neq y$, só pode ser $x^+ \neq y^+$. \itemproof
-
+    Ver \cite{fajardo2024conjuntos}, teorema 3.20, página 89. \itemproof
+\begin{comment}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Suponha, por absurdo, que $x \neq y$ e $x^+ = y^+$. Então $x^+ = y \cup \{y \}$, e como $x \in x^+$, vem $x \in y \cup \{y\}$. Como $x \neq y$, então $x \in y$. Analogamente, $y \in x$, o que contraria a proposição \eqref{prop.fund:xinyeyinxabs}. Logo, se $x \neq y$, então $x^+ \neq y^+$. \itemproof
+        \end{enumerate}
     Note que não usamos a hipótese de ser $x,y \in \omega$, ou seja, vale a afirmação mais forte $\forall x \forall y (\neg(x=y) \rightarrow \neg (x^+ = y^+) )$.
-
-    \textbf{(b)} Sabemos que $\forall x (x \in x^+)$. Se fosse $x^+ = \emptyset$ para algum $x$, seria $x \in \emptyset$, o que não é. \itemproof
-
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}, resume]
+            \item Sabemos que $\forall x (x \in x^+)$. Se fosse $x^+ = \emptyset$ para algum $x$, seria $x \in \emptyset$, o que não é. \itemproof
+        \end{enumerate}
     Novamente, não usamos a hipótese de ser $x \in \omega$, ou seja, vale a afirmação mais forte $\forall x (\neg(x^+ = \emptyset))$.
-        
-    \textbf{(c)} Seja $P$ uma fórmula em que $x$ aparece livre tal que $P(\emptyset)$ e $\forall x (P(x) \rightarrow P(x^+))$. Pelo axioma da separação, defina $A := \{ x \in \omega : P(x) \}$. Afirmamos que $A$ é indutivo. De fato, isso segue imediatamente do fato de ser, por hipótese, $P(\emptyset)$ e $\forall x (P(x) \rightarrow P(x^+))$. Com o que provamos no item (b) do teorema \eqref{teo.fund:uomega}, temos $\omega \subset A$, o que nos mostra que todo elemento de $\omega$ satisfaz $P(x)$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}, resume]
+            \item Pelo axioma da separação, defina $A := \{ x \in \omega : P(x) \}$. Então $A \subseteq \omega$. Afirmamos que $A$ é indutivo. Como $P(\emptyset)$, então $\emptyset \in A$. Se $x \in A$, então $x \in \omega$ e $P(x)$, e como $P(x^+)$ e $x^+ \in \omega$, vem $x^+ \in A$. Com isso, $A$ é indutivo, de modo que $\omega \subseteq A$, e como $A \subseteq \omega$, vem $A = \omega$. \itemproof
+        \end{enumerate}.
+\end{comment}
 \end{proof}
 
+\begin{lem}
+    Para quaisquer $m,n \in \omega$, valem as seguintes afirmações.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $m \in n$, então $m^+ \in n$ ou $m^+=n$.
+            \item Se $m \in n$, então $m \subsetneq n$.
+            \item $m \in n$ se, e somente se, $m^+ \in n^+$.
+            \item Ou $m \in n$, ou $n \in m$, ou $m = n$.
+            \item Se $m \subsetneq n$, então $m \in n$.
+            \item $\bigcup \omega = \omega$.
+        \end{enumerate}
+\end{lem}
+
+\begin{proof}
+    Ver \cite{fajardo2024conjuntos}, teorema 3.21, página 90. \itemproof
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
+        \end{enumerate}
+\end{proof}
+
+\begin{teo}
+    
+\end{teo}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{defi}
+    Um conjunto $A$ é \textit{transitivo} se
+        \[
+            \forall x \forall y (x \in y \land y \in A \rightarrow x \in A).
+        \]
+\end{defi}
+
+\begin{prop}
+    Um conjunto $A$ é transitivo se, e somente se,
+        \begin{enumerate}[label=\roman*.]
+            \item $\forall a (a \in A \rightarrow a \subsetneq A)$.
+            \item $\bigcup A \subseteq A$.
+            \item $\bigcup A^+ = A$.
+            \item $A \subseteq \mathcal{P}(A)$.
+        \end{enumerate}    
+\end{prop}
+
+\begin{proof}
+    Ver \cite{hercules}, proposição 5.4, página 108. \itemproof
+\end{proof}
+
+\begin{prop}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Todo número natural é um conjunto transitivo.
+            \item O conjunto $\omega$ é transitivo.
+        \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item a
+            \item Provemos que $\forall n (n \in \omega \rightarrow n \subsetneq \omega)$.
+        \end{enumerate}
+\end{proof}
 
 \begin{teo}
     $(\omega, \subset)$ é bem ordenado.
@@ -1574,12 +1810,14 @@ Para a próxima versão do teorema da recursão, denotamos por $X^{<\omega}$ o c
 \begin{ax}[da Escolha]
     Para todo conjunto $x$ de conjuntos não vazios existe uma função $\varphi : x \to \bigcup x$ tal que $\varphi(y) \in y$ para todo $y \in x$.
         \[
-            \forall x \left(\emptyset \notin x \rightarrow \exists \varphi \left( \varphi : x \to \bigcup x \land \forall y (y \in x \rightarrow \varphi(y) \in y) \right)\right).
+            \boxed{
+                \forall x \left(\emptyset \notin x \rightarrow \exists \varphi \left( \varphi : x \to \bigcup x \land \forall y (y \in x \rightarrow \varphi(y) \in y) \right)\right)
+            }        
         \]
 \end{ax}
 
 \begin{obs}
-    Usamos a sigla \textsf{AC} (do inglês \textit{Axiom of Choice}) para nos referirmos ao axioma da escolha. Por seu caráter não construtivo, o axioma da escolha é o axioma matemático mais controverso, evitado por uns e usado indiscriminadamente por outros. Desastres acontecem com e sem \textsf{AC}: por exemplo, sem \textsf{AC}, muitos resultados matemáticos fundamentais falham, sendo equivalentes em \textsf{ZF} a \textsf{AC} ou a alguma forma fraca de \textsf{AC}.
+    Usamos a sigla \textsf{AC} (do inglês \textit{Axiom of Choice}) para nos referirmos ao axioma da escolha. Por seu caráter não construtivo, o axioma da escolha é o axioma mais controverso da matemática, evitado por uns e usado indiscriminadamente por outros. Desastres acontecem com e sem \textsf{AC}: por exemplo, sem \textsf{AC}, muitos resultados matemáticos fundamentais falham, sendo equivalentes em \textsf{ZF} a \textsf{AC} ou a alguma forma fraca de \textsf{AC}.
 \end{obs}
 
 \begin{prop}
@@ -1604,11 +1842,11 @@ Para a próxima versão do teorema da recursão, denotamos por $X^{<\omega}$ o c
 \end{defi}
 
 \begin{defi}
-    O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ é definido como
+    O \textit{produto cartesiano} de uma sequência $\left(x_i \right)_{i \in I}$ é definido como
         \[
-           \prod_{i \in I} X_i := \left\{ f \in \left(\bigcup_{i \in I} X_i\right)^{I} : \forall i(i \in I \rightarrow f(i) \in X_i) \right\},
+           \prod_{i \in I} x_i := \left\{ f \in \left(\bigcup_{i \in I} x_i\right)^{I} : \forall i(i \in I \rightarrow f(i) \in x_i) \right\},
         \]
-    isto é, $\prod_{i \in I} X_i$ é definido como o conjunto de todas as funções $f$ de domínio $I$ tais que $f(i) \in X_i$ para todo $i \in I$.
+    isto é, $\prod_{i \in I} x_i$ é definido como o conjunto de todas as funções $f$ de domínio $I$ tais que $f(i) \in x_i$ para todo $i \in I$.
 \end{defi}
 
 \begin{prop}
