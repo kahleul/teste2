@@ -1267,6 +1267,53 @@ O conjunto $\mathcal{M}_{m \times n} \left(\R \right)$ de todas as matrizes $m \
 
 \chapter{Geometria Analítica}
 
+Seguimos os capítulos 12 e 13 de \cite{apostol1}.
+
+\begin{defi}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dois vetores $A, B \in \R^n$ são \textit{paralelos} se existe $c \in \R_{\neq 0}$ tal que $B = c A$.
+            \item Dois vetores $A, B \in \R^n$ têm a mesma \textit{direção} se existe $c \in \R_{>0}$ tal que $B = c A$.
+            \item Dois vetores $A, B \in \R^n$ têm \textit{direções opostas} se existe $c \in \R_{<0}$ tal que $B = c A$.
+        \end{enumerate}
+\end{defi}
+
+\begin{defi}
+    O \textit{produto escalar} de dois vetores $A = (a_1, \ldots, a_n)$ e $B = (b_1, \ldots, b_n)$ é definido como
+        \[
+            A \cdot B := \sum_{i=1}^{n} a_i b_i.
+        \]
+\end{defi}
+
+\begin{prop}
+    
+\end{prop}
+
+\begin{proof}
+    \itemproof
+\end{proof}
+
+\begin{teo}[Cauchy-Schwarz]
+    Para quaisquer $A, B \in \R^n$, tem-se 
+        \[
+            (A \cdot B)^2 \leq (A \cdot A)(B \cdot B).
+        \]
+\end{teo}
+
+\begin{proof}
+    Se $A = 0$ ou $B = 0$, o resultado segue trivialmente. Suponha, então, que $A,B \in \R^n_{\neq 0}$.
+    
+    \itemproof
+\end{proof}
+
+
+\begin{defi}
+    A \textit{norma} de um vetor $A \in \R^n$ é definida como
+        \[
+            \|A\| := \sqrt{A \cdot A}.
+        \]
+\end{defi}
+
 \begin{defi}
     A \textit{projeção} de $A \in \R^n$ em $B \in \R^n_{\neq 0}$ é definida como
         \[

@@ -871,7 +871,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     Basta provar que $\forall x \forall y ((x \notin y) \lor (y \notin x))$. Pelo axioma do par, tome $z := \{ x,y \}$. Como $z \neq \emptyset$, pelo axioma da regularidade existe $w \in z$ tal que $w \cap z = \emptyset$. Se $w = x$, então $y \notin x$, porque se fosse $y \in x$ teríamos $x \cap z = \{ y\} \neq \emptyset$, uma contradição. Analogamente, se $w = y$, então $x \notin y$. \itemproof
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{cor.fund:xnotinx}
     Não existe $x$ tal que $x \in x$.
         \[
             \forall x(x \notin x)
@@ -1012,16 +1012,21 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item 
-            \item 
-            \item 
+            \item Se $x \in \Dom{(R)}$, então existe $y \in \Im{(R)}$ tal que $(x,y) \in R$. Como $R \subseteq A \times B$, temos $(x,y) \in A \times B$, donde $x \in A$ e $y \in B$. Assim, $x \in A$ e existe $y \in B$ tal que $xRy$, o que prova a inclusão $\subseteq$. Reciprocamente, se $x \in A$ e existe $y \in B$ tal que $(x,y) \in R$, então $x \in \Dom{(R)}$, o que prova a inclusão $\supseteq$. \itemproof
+            \item Se $y \in \Im{(R)}$, então existe $x \in \Dom{(R)}$ tal que $(x,y) \in R$. Como $R \subseteq A \times B$, temos $(x,y) \in A \times B$, donde $x \in A$ e $y \in B$. Assim, $y \in B$ e existe $x \in A$ tal que $xRy$, o que prova a inclusão $\subseteq$. Reciprocamente, se $y \in B$ e existe $x \in A$ tal que $(x,y) \in R$, então $y \in \Im{(R)}$, o que prova a inclusão $\supseteq$. \itemproof
+            \item Se $(x,z) \in S \circ R$, então $x \in \Dom{(R)}$ e $z \in \Im{(S)}$. Como $\Dom{(R)} \subseteq A$ (primeiro item) e $\Im{(S)} \subseteq D$ (segundo item), temos $x \in A$ e $z \in D$, de modo que $(x,z) \in A \times D$. Com isso, $S \circ R \subseteq A \times D$. \itemproof
         \end{enumerate}
 \end{proof}
 
 \begin{prop} \label{prop.fund:relacoes}
     Sejam $R$, $S$ e $T$ relações. Valem as seguintes afirmações.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $\Dom{R^{-1}} = \Im{(R)}$, $\Im{(R^{-1})} = \Dom{(R)}$ e $(R^{-1})^{-1} = R$.
+            \item 
+                \begin{enumerate}[label=\roman*.]
+                    \item $(R^{-1})^{-1} = R$.
+                    \item $\Dom{R^{-1}} = \Im{(R)}$.
+                    \item $\Im{(R^{-1})} = \Dom{(R)}$
+                \end{enumerate}
             \item $T \circ (S \circ R) = (T \circ S) \circ R$.
             \item $(S \circ R)^{-1} = R^{-1} \circ S^{-1}$.
             \item Se $\Im{(R)} \subseteq \Dom{(S)}$, então $\Dom{(S \circ R)} = \Dom{(R)}$.
@@ -1032,7 +1037,12 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Temos $(a,b) \in R$ se, e somente se, $(b,a) \in R^{-1}$, o que é equivalente a $(a,b) \in (R^{-1})^{-1}$. Logo $R = (R^{-1})^{-1}$. \itemproof
+            \item 
+                \begin{enumerate}[label=\roman*.]
+                    \item Temos $(a,b) \in R$ se, e somente se, $(b,a) \in R^{-1}$, o que é equivalente a $(a,b) \in (R^{-1})^{-1}$. Logo $R = (R^{-1})^{-1}$.
+                    \item 
+                    \item 
+                \end{enumerate}
             \item Se $(a,d) \in T \circ (S \circ R)$, então $a \in \Dom{(S \circ R)}$, $d \in \Im{(T)}$ e existe $c \in \Im{(S \circ R)} \cap \Dom{(T)}$ tal que $(a,c) \in S \circ R$ e $(c,d) \in T$. De $(a,c) \in S \circ R$ segue que $a \in \Dom{(R)}$, $c \in \Im{(S)}$ e existe $b \in \Im{(R)} \cap \Dom{(S)}$ tal que $(a,b) \in R$ e $(b,c) \in S$. Como $b \in \Dom{(S)}$, $d \in \Im{(T)}$ e existe $c \in \Dom{(T)} \cap \Im{(S)}$ tal que $(b,c) \in S$ e $(c,d) \in T$, temos que $(b,d) \in T \circ S$. Com isso, $b \in \Dom{(T \circ S)}$ e $d \in \Im{(T \circ S)}$. Como $a \in \Dom{(R)}$, $d \in \Im{(T \circ S)}$ e existe $b \in \Dom{(T \circ S)} \cap \Im{(R)}$ tal que $(a,b) \in R$ e $(b,d) \in T \circ S$, temos que $(a,d) \in (T \circ S) \circ R$. Com isso, $T \circ (S \circ R) \subseteq (T \circ S) \circ R$. A prova de que $(T \circ S) \circ R \subseteq T \circ (S \circ R)$ é completamente análoga, de modo que $T \circ (S \circ R) = (T \circ S) \circ R$. \itemproof
             \item Se $(c,a) \in (S \circ R)^{-1}$, então $(a,c) \in S \circ R$, $a \in \Dom{(R)}$, $c \in \Im{(S)}$ e existe $b \in \Im{(R)} \cap \Dom{(S)}$ tal que $(a,b) \in R$ e $(b,c) \in S$ isto é, $(c,b) \in S^{-1}$, $(b,a) \in R^{-1}$, com $c \in \Dom{(S^{-1})}$, $a \in \Im{(R^{-1})}$ e $b \in \Im{(S^{-1})} \cap \Dom{(R^{-1})}$. Com isso, $(c,a) \in R^{-1} \circ S^{-1}$, de modo que $(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}$. A prova de que $R^{-1} \circ S^{-1} \subseteq (S \circ R)^{-1}$ é completamente análoga, de modo que $(S \circ R)^{-1} = R^{-1} \circ S^{-1}$. \itemproof
             \item Se $a \in \Dom{(R)}$, então existe $b \in \Im{(R)}$ tal que $(a,b) \in R$. Se $\Im{(R)} \subseteq \Dom{(S)}$, então $b \in \Dom{(S)}$, de modo que existe $c \in \Im{(S)}$ tal que $(b,c) \in S$. Assim, $(a,c) \in S \circ R$, de modo que $a \in \Dom{(S \circ R)}$. Com isso, $\Dom{(R)} \subseteq \Dom{(S \circ R)}$. Agora, se $a \in \Dom{(S \circ R)}$, então existe $c \in \Im{(S \circ R)}$ tal que $(a,c) \in S \circ R$, donde $a \in \Dom{(R)}$ e $\Dom{(S \circ R)} \subseteq \Dom{(R)}$. Com isso, $\Dom{(R)} = \Dom{(S \circ R)}$. \itemproof
@@ -1284,7 +1294,6 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item \itemproof
             \item Por definição, $f|_X = \{ (a,b) \in f : a \in X \}$, isto é, $f$ é um conjunto de pares ordenados e, portanto, uma relação. Se $(a,b) \in f|_X$ e $(a,c) \in f|_X$, então, pela definição de $f|_X$, $(a,b) \in f$, $(a,c) \in f$ e $a \in X$; como $f$ é função, $b=c$, de modo que $f|_X$ é também uma função. Provemos, por fim, que $\Dom{(f|_X)} =  \Dom{(f)} \cap X$. Se $a \in \Dom{(f|_X)}$, então existe $b \in \Im{(f|_X)}$ tal que $(a,b) \in f|_X$; pela definição de $f|_X$, vem $(a,b) \in f$ e $a \in X$, e de $(a,b) \in f$ vem $a \in \Dom{(f)}$. Com isso, $a \in \Dom{(f)} \cap X$, de modo que $\Dom{(f|_X)} \subseteq \Dom{(f)} \cap X$. Por outro lado, se $a \in \Dom{(f)} \cap X$, então de $a \in \Dom{(f)}$ segue que existe $b \in \Im{(f)}$ tal que $(a,b) \in f$, e como $a \in X$, vem $(a,b) \in f|_X$, de modo que $\Dom{(f)} \cap X \subseteq \Dom{(f|_X)}$. Logo $\Dom{(f|_X)} = \Dom{(f)} \cap X$. Em particular, temos $f|_X = f |_{\Dom{(f)} \cap X}$. \itemproof
             \item Se $(a,x) \in g \circ f$ e $(a,y) \in g \circ f$, então, por definição, existe $b \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a,b) \in f$ e $(b,x) \in g$ e existe $c \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a, c) \in f$ e $(c,y) \in g$. Como $f$ é função, vem $b=c$; daí, vem $(b,x) \in g$ e $(b,y) \in g$, e como $g$ é função, vem $x=y$. \itemproof
         \end{enumerate}
@@ -1531,7 +1540,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{cor}
 
 \begin{proof}
-    A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $f$ é invertível à esquerda e à direita, então pelos teoremas \eqref{teo.fund:invesquerda} e \eqref{teo.fund:invdireita} $f$ é bijetiva em $B$, de modo que, pelo teorema \eqref{teo.fund:bij2}, $f$ é invertível.
+    A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $f$ é invertível à esquerda e à direita, então pelos teoremas \eqref{teo.fund:invesquerda} e \eqref{teo.fund:invdireita} $f$ é bijetiva em $B$, de modo que, pelo teorema \eqref{teo.fund:bij2}, $f$ é invertível. \itemproof
 \end{proof}
 
 \begin{obs}
@@ -1541,20 +1550,33 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \section{O Axioma do Infinito e os Números Naturais}
 
 \begin{defi}
+    O \textit{sucessor} de um conjunto $x$ é definido como $x^+ := x \cup \{x\}$.
+\end{defi}
+
+\begin{prop}
+    Valem as seguintes afirmações sobre o sucessor.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item $\forall x \forall y ((y \in x^+) \leftrightarrow ((y \in x) \lor (y = x)))$
+            \item $\forall x (x \in x^+)$
+            \item $\forall x (x \subseteq x^+)$
+        \end{enumerate}
+\end{prop}
+
+\begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item (Sucessor) Dado um conjunto $x$, o \textit{sucessor} de $x$, denotado por $x^+$, é definido como o conjunto $x \cup \{x \}$:
-                \[
-                    \forall x \forall y ((y \in x^+) \leftrightarrow ((y \in x) \lor (y = x)))
-                \]
-            \item (Conjuntos indutivos) Um conjunto $x$ é \textit{indutivo} se $\emptyset \in x$ e $y \in x \rightarrow y^+ \in x$ para todo conjunto $y$. Isso é denotado por
-                \[
-                    \ind{(x)} \overset{\text{def}}{\leftrightarrow} ((\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x))).
-                \]
+            \item \itemproof
+            \item \itemproof
+            \item \itemproof
         \end{enumerate}
-% Diremos que um conjunto $x$ é \textit{indutivo} se \[ (\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x)).\]   
-%    $\emptyset \in x$ e $y \in x \rightarrow y^+$ para todo $y$:
-%        \[ \forall x (\ind{(x)} \overset{\text{def}}{\leftrightarrow} ((\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x)))) \]
+\end{proof}
+
+\begin{defi}
+    Um conjunto $x$ é \textit{indutivo} se
+        \[
+            (\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x)).
+        \]
+    Isso é denotado por $\ind{(x)}$.
 \end{defi}
 
 \begin{ax}[Infinito]
@@ -1661,33 +1683,6 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{comment}
 \end{proof}
 
-\begin{lem}
-    Para quaisquer $m,n \in \omega$, valem as seguintes afirmações.
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $m \in n$, então $m^+ \in n$ ou $m^+=n$.
-            \item Se $m \in n$, então $m \subsetneq n$.
-            \item $m \in n$ se, e somente se, $m^+ \in n^+$.
-            \item Ou $m \in n$, ou $n \in m$, ou $m = n$.
-            \item Se $m \subsetneq n$, então $m \in n$.
-            \item $\bigcup \omega = \omega$.
-        \end{enumerate}
-\end{lem}
-
-\begin{proof}
-    Ver \cite{fajardo2024conjuntos}, teorema 3.21, página 90. \itemproof
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item 
-        \end{enumerate}
-\end{proof}
-
-\begin{teo}
-    
-\end{teo}
-
-\begin{proof}
-    
-\end{proof}
-
 \begin{defi}
     Um conjunto $A$ é \textit{transitivo} se
         \[
@@ -1707,21 +1702,74 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 
 \begin{proof}
     Ver \cite{hercules}, proposição 5.4, página 108. \itemproof
+        \begin{enumerate}
+            \item ($\Rightarrow$) Se $A$ é transitivo e $a \in A$, então para todo $x \in a$ temos $x \in A$, de modo que $a \subseteq A$. Se fosse $a = A$, teríamos $a \in a$ ou $A \in A$, o que contraria o corolário \eqref{cor.fund:xnotinx}. Com isso, $a \neq A$, donde $a \subsetneq A$.
+            ($\Leftarrow$) Se $a \subsetneq A$ para todo $a \in A$, então $a \subseteq A$.
+            Logo, se $x \in y$ e $y \in A$, então $y \subseteq A$, de modo que $x \in A$.
+            \itemproof
+        \end{enumerate}
 \end{proof}
 
-\begin{prop}
+\begin{teo}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Todo número natural é um conjunto transitivo.
             \item O conjunto $\omega$ é transitivo.
         \end{enumerate}
-\end{prop}
+\end{teo}
 
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item a
-            \item Provemos que $\forall n (n \in \omega \rightarrow n \subsetneq \omega)$.
+            \item O conjunto vazio $\emptyset$ é trivialmente transitivo (por vacuidade). Agora, supondo que $n \in \omega$ é transitivo, provemos que $n^+ \in \omega$ também é transitivo. Se $x \in n^+$, então $x \in n$ ou $x = n$. 
+                \begin{itemize}
+                    \item Se $x \in n$, então, dado $y \in x$, como $n$ é transitivo, vem $y \in n$, e como $n \subsetneq n^+$, vem $y \in n^+$, de modo que $n^+$ é transitivo.
+                    \item Se $x = n$, então, dado $y \in x$, temos $y \in n$, e como $n \subsetneq n^+$, vem $y \in n^+$, de modo que $n^+$ é transitivo. 
+                \end{itemize}
+            Com isso, todo número natural é transitivo. \itemproof
+            \item Provemos que $\forall n (n \in \omega \rightarrow n \subsetneq \omega)$ por indução. Trivialmente $\emptyset \subsetneq \omega$. Agora, se $n \in \omega$, então $\{n\} \subsetneq \omega$, e como $n \subsetneq \omega$ (hipótese de indução), temos $n \cup \{n\} \subseteq \omega$, isto é, $n^+ \subsetneq \omega$, pois $n^+ \neq \omega$. \itemproof
+        \end{enumerate}
+\end{proof}
+
+\begin{lem}
+    Para quaisquer $m,n \in \omega$, valem as seguintes afirmações.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $m \in n$, então $m^+ \in n$ ou $m^+=n$.
+            \item Se $m \in n$, então $m \subsetneq n$.
+        \end{enumerate}
+\end{lem}
+
+\begin{proof}
+    Ver \cite{fajardo2024conjuntos}, teorema 3.21, página 90. \itemproof
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
+        \end{enumerate}
+\end{proof}
+
+\begin{teo}
+    Para quaisquer $m,n \in \omega$, valem as seguintes afirmações.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item $m \in n$ se, e somente se, $m^+ \in n^+$.
+            \item Ou $m \in n$, ou $n \in m$, ou $m = n$.
+        \end{enumerate}
+\end{teo}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{cor}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Para quaisuqer $m,n \in \omega$, se $m \subsetneq n$, então $m \in n$.
+            \item $\bigcup \omega = \omega$.
+        \end{enumerate}
+\end{cor}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
         \end{enumerate}
 \end{proof}
 

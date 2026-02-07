@@ -643,3 +643,20 @@ O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ em
     Com isso, eliminamos $p_n$. Repetindo esse processo (um número finito de vezes), eliminamos $p_{n-1}, \ldots, p_1$, obtendo por fim $\vdash \mathbf{A}$.
     \itemproof
 \end{proof}
+
+\begin{defi}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item (Sucessor) Dado um conjunto $x$, o \textit{sucessor} de $x$, denotado por $x^+$, é definido como o conjunto $x \cup \{x \}$:
+                \[
+                    \forall x \forall y ((y \in x^+) \leftrightarrow ((y \in x) \lor (y = x)))
+                \]
+            \item (Conjuntos indutivos) Um conjunto $x$ é \textit{indutivo} se $\emptyset \in x$ e $y \in x \rightarrow y^+ \in x$ para todo conjunto $y$. Isso é denotado por
+                \[
+                    \ind{(x)} \overset{\text{def}}{\leftrightarrow} ((\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x))).
+                \]
+        \end{enumerate}
+% Diremos que um conjunto $x$ é \textit{indutivo} se \[ (\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x)).\]   
+%    $\emptyset \in x$ e $y \in x \rightarrow y^+$ para todo $y$:
+%        \[ \forall x (\ind{(x)} \overset{\text{def}}{\leftrightarrow} ((\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x)))) \]
+\end{defi}
