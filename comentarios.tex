@@ -660,3 +660,14 @@ O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ em
 %    $\emptyset \in x$ e $y \in x \rightarrow y^+$ para todo $y$:
 %        \[ \forall x (\ind{(x)} \overset{\text{def}}{\leftrightarrow} ((\emptyset \in x) \land \forall y ( (y \in x) \rightarrow (y^+ \in x)))) \]
 \end{defi}
+\begin{defi}
+    Sejam $(X, \leq)$ um conjunto parcialmente ordenado e $S$ um subconjunto não vazio de $X$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dizemos que $x \in X$ é uma \textit{cota superior} de $S$ se $y \leq x$ para todo $y \in S$. Nesse caso, dizemos que $S$ é \textit{limitado superiormente}.
+            \item Dizemos que $x \in X$ é uma \textit{cota inferior} de $S$ se $x \leq y$ para todo $y \in S$. Nesse caso, dizemos que $S$ é \textit{limitado inferiormente}.
+            \item Dizemos que $M \in S$ é o \textit{elemento máximo} de $S$ se $y \leq M$ para todo $y \in S$.
+            \item Dizemos que $m \in S$ é o \textit{elemento mínimo} de $S$ se $m \leq y$ para todo $y \in S$.
+            \item Dizemos que $M \in X$ é o \textit{supremo} de $S$ se $S$ é limitado superiormente e $M \leq y$ para toda cota superior $y \in X$ de $S$.
+            \item Dizemos que $m \in X$ é o \textit{ínfimo} de $S$ se $S$ é limitado inferiormente e $y \leq m$ para toda cota inferior $y \in X$ de $S$.
+        \end{enumerate}
+\end{defi}

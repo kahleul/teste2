@@ -1075,7 +1075,6 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                 \[
                     \forall x \forall y \forall z (x,y,z \in X \rightarrow (xRy \land yRz \rightarrow xRz)).
                 \]
-            %$(x,x) \in R$ para todo $x \in X$. %se $(x,x) \notin R$ para todo $x \in X$.
         \end{enumerate}
 \end{defi}
 
@@ -1121,18 +1120,36 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{proof}
 
 \begin{defi}
-    Sejam $(X, \leq)$ um conjunto parcialmente ordenado e $S \in \mathcal{P}(X)_{\neq \emptyset}$.
+    Sejam $(X, \leq)$ um conjunto parcialmente ordenado e $S$ um subconjunto não vazio de $X$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Dizemos que $x \in X$ é um \textit{limitante superior} de $S$ se $y \leq x$ para todo $y \in S$.
-            \item Dizemos que $x \in X$ é um \textit{limitante inferior} de $S$ se $x \leq y$ para todo $y \in S$.
-            \item Dizemos que $S$ é \textit{limitado superiormente} se existe $x \in X$ que é um limitante superior de $S$.
-            \item Dizemos que $S$ é \textit{limitado inferiormente} se existe $x \in X$ que é limitante inferior de $S$.
-            \item Dizemos que $x \in S$ é o \textit{elemento máximo} de $S$ se $y \leq x$ para todo $y \in S$.
-            \item Dizemos que $x \in S$ é o \textit{elemento mínimo} de $S$ se $x \leq y$ para todo $y \in S$.
-            \item Dizemos que $x \in S$ é \textit{maximal} em $S$ se não existe $y \in S$ tal que $x < y$.
-            \item Dizemos que $x \in S$ é \textit{minimal} em $S$ se não existe $y \in S$ tal que $y < x$.
-            \item Dizemos que $x \in X$ é o \textit{supremo} de $S$ se $S$ é limitado superiormente e $x \leq y$ para todo limitante superior $y \in X$ de $S$.
-            \item Dizemos que $x \in X$ é o \textit{ínfimo} de $S$ se $S$ é limitado inferiormente e $y \leq x$ para todo limitante inferior $y \in X$ de $S$.
+            \item Dizemos que $M \in X$ é
+                \begin{enumerate}[label=\roman*.]
+                    \item uma \textit{cota superior} de $S$ se
+                        \[
+                            \forall x (x \in S \rightarrow x \leq M).
+                        \]
+                    Nesse caso, dizemos que $S$ é \textit{limitado superiormente} em $X$.
+                    \item o \textit{elemento máximo} de $S$ se $M$ é uma cota superior de $S$ e $M \in S$. Isso é denotado por $\max{S} := M$.
+                    \item o \textit{supremo} de $S$ se
+                        \[
+                            \forall x (x \in S \rightarrow x \leq M) \land \forall y (y \in X \land \forall x (x \in S \rightarrow x \leq y) \rightarrow M \leq y),
+                        \]
+                    isto é, se $M$ é a menor cota superior de $S$. Isso é denotado por $\sup{S} := M$.
+                \end{enumerate}
+            \item Dizemos que $m \in X$ é
+                \begin{enumerate}[label=\roman*.]
+                    \item uma \textit{cota inferior} de $S$ se
+                        \[
+                            \forall x (x \in S \rightarrow m \leq x).
+                        \]
+                    Nesse caso, dizemos que $S$ é \textit{limitado inferiormente} em $X$.
+                    \item o \textit{elemento mínimo} de $S$ se $m$ é uma cota inferior de $S$ e $m \in S$. Isso é denotado por $\min{S} := m$.
+                    \item o \textit{ínfimo} de $S$ se
+                        \[
+                            \forall x (x \in S \rightarrow m \leq x) \land \forall y (y \in X \land \forall x (x \in S \rightarrow m \leq y) \rightarrow y \leq m),
+                        \]
+                    isto é, se $m$ é a maior cota inferior de $S$. Isso é denotado por $\inf{S} := m$.
+                \end{enumerate}
         \end{enumerate}
 \end{defi}
 
@@ -1143,13 +1160,13 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{defi}
     Seja $(X, \leq)$ um conjunto parcialmente ordenado.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Dizemos que $\leq$ é uma relação de ordem \textit{total}, ou que o par $(X,\leq)$ é \textit{totalmente ordenado}, se 
+            \item Dizemos que $\leq$ é uma relação de ordem \textit{total}\footnote{O termo \textit{ordem linear} também costuma ser usado. Nesse caso, dizemos que o par $(X,\leq)$ é um \textit{conjunto linearmete ordenado}.}, e que o par $(X,\leq)$ é um \textit{conjunto totalmente ordenado}, se 
                 \[
                     \forall x \forall y (x,y \in X \rightarrow (x \leq y \lor y \leq x)).
                 \]
-            \item Dizemos que $\leq$ é uma \textit{boa ordem} em $X$, ou que o par $(X,\leq)$ é \textit{bem-ordenado}, se todo subconjunto não vazio de $X$ possui um elemento mínimo.
-            \item Dizemos que $\leq$ é uma \textit{árvore} se, para todo $x \in X$, o conjunto $S = \{ y \in X : y \leq x\}$ é tal que $(S, \leq \bigcap S \times S)$ é bem-ordenado.
+            \item Dizemos que $\leq$ é uma \textit{boa ordem} em $X$, e que o par $(X,\leq)$ é um \textit{conjunto bem-ordenado}, se todo subconjunto não vazio de $X$ possui um elemento mínimo.
             \item Dizemos que $\leq$ é um \textit{reticulado} se para quaisquer $x,y \in X$, o conjunto $\{ x,y \}$ possui supremo e ínfimo.
+            \item Dizemos que $\leq$ é uma \textit{árvore} se, para todo $x \in X$, o conjunto $S = \{ y \in X : y \leq x\}$ é tal que $(S, \leq \cap \ S^2)$ é um conjunto bem-ordenado.
         \end{enumerate}
 \end{defi}
 
@@ -1162,18 +1179,41 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \end{enumerate}
 \end{prop}
 
+\begin{proof}
+    \itemproof
+\end{proof}
+
 \begin{prop}
-    Se $(X,\leq)$ é ordenado e $Y \subset X$, então $\leq  \bigcap Y \times Y$ é uma relação de ordem e
-        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item se $\leq$ é uma ordem total, então $\leq  \bigcap Y \times Y$ é uma ordem total;
-            \item se $\leq$ é uma boa ordem, então $\leq  \bigcap Y \times Y$ é uma boa ordem;
-            \item se $\leq$ é uma árvore, então $\leq  \bigcap Y \times Y$ é uma árvore;
-        \end{enumerate}
+    Se $(X,\leq)$ é parcialmente ordenado e $Y \subseteq X$, então $(Y, \leq \cap \ Y^2)$ é parcialmente ordenado.
 \end{prop}
 
 \begin{defi}
-    Seja $(X,\leq)$ um conjunto ordenado. Sendo $Y \subset X$, dizemos que $\leq \bigcap Y \times Y$ é uma \textit{subordem} de $\leq$. Dizemos que o conjunto ordenado $(Y, \leq \bigcap Y \times Y)$ é um \textit{subconjunto ordenado} de $(X, \leq)$.
+    \itemproof
 \end{defi}
+
+\begin{defi}
+    Sejam $(X,\leq)$ parcialmente ordenado e $Y \subseteq X$. 
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dizemos que $\leq \cap \ Y^2$ é uma \textit{subordem} de $\leq$.
+            \item Dizemos que $(Y, \leq \cap \ Y^2)$ é um \textit{subconjunto parcialmente ordenado} de $(X, \leq)$. Isso é denotado por $(Y, \leq)$.
+        \end{enumerate}
+\end{defi}
+
+\begin{prop}
+    Sejam $(X,\leq)$ parcialmente ordenado e $Y \subseteq X$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Se $\leq$ é uma ordem total, então $\leq \cap \ Y^2$ é uma ordem total.
+            \item Se $\leq$ é uma boa ordem, então $\leq \cap \ Y^2$ é uma boa ordem.
+            \item Se $\leq$ é uma árvore, então $\leq \cap \ Y^2$ é uma árvore.
+        \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item 
+        \end{enumerate}
+\end{proof}
 
 \subsection{Relações de Equivalência}
 
@@ -1565,9 +1605,10 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item \itemproof
-            \item \itemproof
-            \item \itemproof
+            \item Pela definição de sucessor, $x^+ = x \cup \{x\}$. Pela definição de união, $y \in x \cup \{x\}$ se, e somente se, $y \in x$ ou $y \in \{x\}$. Como $y \in \{x\}$ equivale a $y = x$, temos que $y \in x^+$ se, e somente se, $y \in x$ ou $y = x$. \itemproof
+            \item Tomando $y=x$ no item anterior, obtemos $(x \in x^+) \leftrightarrow ((x \in x) \lor (x = x))$. Como vale $x = x$, vale também a disjunção $(x \in x) \lor (x = x)$, de modo que $x \in x^+$. \itemproof
+            \item Se $z \in x$, então $(z \in x) \lor (z = x)$, de modo que $z \in x^+$.
+            Com isso, $\forall z (z \in x \rightarrow z \in x^+)$, isto é, $x \subseteq x^+$. \itemproof
         \end{enumerate}
 \end{proof}
 
@@ -1701,12 +1742,9 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Ver \cite{hercules}, proposição 5.4, página 108. \itemproof
-        \begin{enumerate}
-            \item ($\Rightarrow$) Se $A$ é transitivo e $a \in A$, então para todo $x \in a$ temos $x \in A$, de modo que $a \subseteq A$. Se fosse $a = A$, teríamos $a \in a$ ou $A \in A$, o que contraria o corolário \eqref{cor.fund:xnotinx}. Com isso, $a \neq A$, donde $a \subsetneq A$.
-            ($\Leftarrow$) Se $a \subsetneq A$ para todo $a \in A$, então $a \subseteq A$.
-            Logo, se $x \in y$ e $y \in A$, então $y \subseteq A$, de modo que $x \in A$.
-            \itemproof
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Por um lado ($\Rightarrow$), se $A$ é transitivo e $a \in A$, então para todo $x \in a$ temos $x \in A$, de modo que $a \subseteq A$. Se fosse $a = A$, teríamos $a \in a$ ou $A \in A$, o que contraria o corolário \eqref{cor.fund:xnotinx}. Com isso, $a \neq A$, donde $a \subsetneq A$. Por outro lado ($\Leftarrow$), se $a \subsetneq A$ para todo $a \in A$, então $a \subseteq A$. Logo, se $x \in y$ e $y \in A$, então $y \subseteq A$, de modo que $x \in A$. \itemproof
         \end{enumerate}
 \end{proof}
 
@@ -1721,7 +1759,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item O conjunto vazio $\emptyset$ é trivialmente transitivo (por vacuidade). Agora, supondo que $n \in \omega$ é transitivo, provemos que $n^+ \in \omega$ também é transitivo. Se $x \in n^+$, então $x \in n$ ou $x = n$. 
+            \item A prova se dará por indução em $n$. O conjunto vazio $\emptyset$ é trivialmente transitivo (por vacuidade). Agora, supondo que $n \in \omega$ é transitivo, provemos que $n^+ \in \omega$ também é transitivo. Se $x \in n^+$, então $x \in n$ ou $x = n$. 
                 \begin{itemize}
                     \item Se $x \in n$, então, dado $y \in x$, como $n$ é transitivo, vem $y \in n$, e como $n \subsetneq n^+$, vem $y \in n^+$, de modo que $n^+$ é transitivo.
                     \item Se $x = n$, então, dado $y \in x$, temos $y \in n$, e como $n \subsetneq n^+$, vem $y \in n^+$, de modo que $n^+$ é transitivo. 
@@ -1740,13 +1778,14 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{lem}
 
 \begin{proof}
-    Ver \cite{fajardo2024conjuntos}, teorema 3.21, página 90. \itemproof
+    \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item 
+            \item A prova se dará por indução em $n$. Se $m \in \emptyset$, então a conclusão segue trivialmente por vacuidade. Agora, supondo que $m \in n$ implica $m^+ \in n$ ou $m^+=n$, provemos que $m \in n^+$ implica $m^+ \in n^+$ ou $m^+ = n^+$. Se $m \in n^+$, então $m \in n$ ou $m=n$. Se $m \in n$, então $m^+ \in n$ ou $m^+=n$ (hipótese de indução). Como $n \subsetneq n^+$ e $n \in n^+$, vem $m^+ \in n^+$. Se $m=n$, então $m^+=n^+$. \itemproof
+            \item A prova se dará por indução em $n$. Se $m \in \emptyset$, então a conclusão segue trivialmente por vacuidade. Agora, supondo que $m \in n$ implica $m \subsetneq n$, provemos que $m \in n^+$ implica $m \subsetneq n^+$. Se $m \in n^+$, então $m \in n$ ou $m=n$. Se $m \in n$, então $m \subsetneq n$ (hipótese de indução), e como $n \subsetneq n^+$, vem $m \subsetneq n^+$. Se $m = n$, então $m \subsetneq n^+$ pois $n \subsetneq n^+$. \itemproof
         \end{enumerate}
 \end{proof}
 
-\begin{teo}
+\begin{teo} \label{teo.fund:tricotomiadopertence}
     Para quaisquer $m,n \in \omega$, valem as seguintes afirmações.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item $m \in n$ se, e somente se, $m^+ \in n^+$.
@@ -1755,13 +1794,29 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Por um lado ($\Rightarrow$), se $m \in n$, então $m^+ \in n$ ou $m^+ = n$. Como $n \subsetneq n^+$ e $n \in n^+$, em ambos os casos temos $m^+ \in n^+$. Por outro lado ($\Leftarrow$), se $m^+ \in n^+$, então $m^+ \in n$ ou $m^+ = n$. Se $m^+ \in n$, então $m^+ \subsetneq n$, e como $m \in m^+$, segue que $m \in n$. Se $m^+ = n$, como $m \in m^+$, temos imediatamente $m \in n$. \itemproof
+
+
+            \item A prova se dará por indução em $n$. Se $n = \emptyset$, não pode ser $m \in \emptyset$. Provemos rapidamente que ou $\emptyset \in m$ ou $m = \emptyset$.
+                \begin{itemize}
+                    \item Se $m = \emptyset$, a afirmação é trivialmente verdadeira. Supondo que $m = \emptyset$ ou $\emptyset \in m$, provemos que $m^+ = \emptyset$ ou $\emptyset \in m^+$. Como $m \in m^+$, não pode ser $m^+ = \emptyset$. Se $m = \emptyset$, então $m^+ = \{\emptyset\}$, de modo que $\emptyset \in m^+$. Se $\emptyset \in m$, então $\emptyset \in m^+$ pois $m \subseteq m^+$.
+                \end{itemize}
+            Com isso, o resultado vale para $n = \emptyset$. Agora, supondo que o resultado vale para $n$, provemos que ele também vale para $n^+$. Se $m \in \omega$, então, pela hipótese de indução,
+                \begin{itemize}
+                    \item se $m \in n$, como $n \subsetneq n^+$, temos $m \in n^+$;
+                    \item se $m = n$, como $n \in n^+$, temos $m \in n^+$;
+                    \item se $n \in m$, então $n^+ \in m$ ou $n^+ = m$.
+                \end{itemize}
+            Com isso, em qualquer caso, pelo menos uma das afirmações $m \in n^+$, $n^+ \in m$ ou $m = n^+$ é verdadeira. A exclusividade é garantida pela proposição \eqref{prop.fund:xinyeyinxabs} e pelo corolário \eqref{cor.fund:xnotinx}. \itemproof
+        \end{enumerate}
 \end{proof}
 
 \begin{cor}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Para quaisuqer $m,n \in \omega$, se $m \subsetneq n$, então $m \in n$.
+            \item Para quaisquer $m,n \in \omega$, se $m \subsetneq n$, então $m \in n$.
             \item $\bigcup \omega = \omega$.
         \end{enumerate}
 \end{cor}
@@ -1769,7 +1824,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item 
+            \item Se $m \subsetneq n$, então $m \neq n$. Pelo teorema \eqref{teo.fund:tricotomiadopertence}, ou $m \in n$, ou $n \in m$. Se fosse $n \in m$, teríamos $n \in n$, uma contradição. Logo, só pode ser $m \in n$. \itemproof
+            \item Se $x \in \bigcup \omega$, então existe $y \in \omega$ tal que $x \in y$, e como $y \subseteq \omega$, vem $x \in \omega$. Com isso, $\bigcup \omega \subseteq \omega$. Agora, se $x \in \omega$, então existe $x^+ \in \omega$ tal que $x \in x^+$, de modo que $x \in \bigcup \omega$. Com isso, $\bigcup \omega \supseteq \omega$. Logo, $\bigcup \omega = \omega$. \itemproof
         \end{enumerate}
 \end{proof}
 
@@ -1913,3 +1969,22 @@ Para a próxima versão do teorema da recursão, denotamos por $X^{<\omega}$ o c
     $(\Leftarrow)$ Agora, seja $x \neq \emptyset$ tal que $\emptyset \notin x$. Defina $g = (X_i)_{i \in I}$ assim: $I = x$ e $g := \id_I$. Como $X_i = g(i) = \id_I(i) = i \in I = x$ e $\emptyset \notin x$, temos $X_i \neq \emptyset$ para todo $i \in I$, de modo que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, existe $\varphi \in \prod_{i \in I} X_i$ tal que $\varphi(i) \in X_i$ para todo $i \in I$, e como $X_i = i$ e $I = x$, vem $\varphi(i) \in i$ para todo $i \in x$, de modo que $\varphi : x \to \bigcup x$ é uma função de escolha em $x$. \itemproof
 \end{proof}
 
+\begin{defi}
+    Sejam $(X, \leq)$ um conjunto parcialmente ordenado e $S$ um subconjunto não vazio de $X$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Dizemos que $x \in S$ é \textit{maximal} em $S$ se não existe $y \in S$ tal que $x < y$.
+            \item Dizemos que $x \in S$ é \textit{minimal} em $S$ se não existe $y \in S$ tal que $y < x$.
+            \item Dizemos que $S$ é uma cadeia em $X$ se
+                \[
+                    \forall x \forall y (x,y \in S \rightarrow (x \leq y \lor y \leq x)).
+                \]
+        \end{enumerate}
+\end{defi}
+
+\begin{teo}[Lema de Zorn]
+    Seja $(X, \leq)$ um conjunto parcialmente ordenado. Se toda cadeia em $X$ é limitada superiormente em $X$, então $X$ possui um elemento maximal. 
+\end{teo}
+
+\begin{proof}
+    \itemproof
+\end{proof}
