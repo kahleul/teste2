@@ -1,0 +1,619 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{apostol1}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=85b3f3c597a02d5a2301197d66bc1639}{%
+           family={{APOSTOL, Tom Mike}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons, Inc.}%
+      }
+      \strng{namehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{fullhash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{fullhashraw}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{bibnamehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authorbibnamehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authornamehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authorfullhash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authorfullhashraw}{85b3f3c597a02d5a2301197d66bc1639}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Calculus Volume I}
+      \field{year}{1969}
+    \endentry
+    \entry{apostol2}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=85b3f3c597a02d5a2301197d66bc1639}{%
+           family={{APOSTOL, Tom Mike}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons, Inc.}%
+      }
+      \strng{namehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{fullhash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{fullhashraw}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{bibnamehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authorbibnamehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authornamehash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authorfullhash}{85b3f3c597a02d5a2301197d66bc1639}
+      \strng{authorfullhashraw}{85b3f3c597a02d5a2301197d66bc1639}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Calculus Volume II}
+      \field{year}{1969}
+      \true{nocite}
+    \endentry
+    \entry{aurichi}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1ea6c53286fe4cb5e68e7f8486f2ea3c}{%
+           family={{AURICHI, Leandro F}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Notas de Aula}%
+      }
+      \strng{namehash}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{fullhash}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{fullhashraw}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{bibnamehash}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{authorbibnamehash}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{authornamehash}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{authorfullhash}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \strng{authorfullhashraw}{1ea6c53286fe4cb5e68e7f8486f2ea3c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cálculo não renal}
+      \field{year}{2025}
+      \true{nocite}
+    \endentry
+    \entry{tme4}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=93b6eeb74d79551f177c412e6cacd550}{%
+           family={{CAMINHA, Antonio}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora da SBM}%
+      }
+      \strng{namehash}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{fullhash}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{fullhashraw}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{bibnamehash}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{authorbibnamehash}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{authornamehash}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{authorfullhash}{93b6eeb74d79551f177c412e6cacd550}
+      \strng{authorfullhashraw}{93b6eeb74d79551f177c412e6cacd550}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Tópicos de Matemática Elementar - volume 4: Combinatória}
+      \field{year}{2024}
+    \endentry
+    \entry{fajardo2024conjuntos}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=23a1225162739913ed71a05d5fde197e}{%
+           family={{FAJARDO, Rogério A. S.}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Edusp}%
+      }
+      \strng{namehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{fullhash}{23a1225162739913ed71a05d5fde197e}
+      \strng{fullhashraw}{23a1225162739913ed71a05d5fde197e}
+      \strng{bibnamehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authorbibnamehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authornamehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authorfullhash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authorfullhashraw}{23a1225162739913ed71a05d5fde197e}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{A Teoria dos Conjuntos e os Fundamentos da Matemática}
+      \field{year}{2024}
+    \endentry
+    \entry{fajardo2017logica}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=23a1225162739913ed71a05d5fde197e}{%
+           family={{FAJARDO, Rogério A. S.}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Edusp}%
+      }
+      \strng{namehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{fullhash}{23a1225162739913ed71a05d5fde197e}
+      \strng{fullhashraw}{23a1225162739913ed71a05d5fde197e}
+      \strng{bibnamehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authorbibnamehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authornamehash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authorfullhash}{23a1225162739913ed71a05d5fde197e}
+      \strng{authorfullhashraw}{23a1225162739913ed71a05d5fde197e}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Lógica Matemática}
+      \field{year}{2017}
+      \true{nocite}
+    \endentry
+    \entry{hercules}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=d179710654e46c86c5ec0d5f64797a0e}{%
+           family={{FEITOSA, Hércules de Araújo; ALFONSO, Alexys Bruno; NASCIMENTO, Maria Cunho}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora Ciência Moderna}%
+      }
+      \strng{namehash}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{fullhash}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{fullhashraw}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{bibnamehash}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{authorbibnamehash}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{authornamehash}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{authorfullhash}{d179710654e46c86c5ec0d5f64797a0e}
+      \strng{authorfullhashraw}{d179710654e46c86c5ec0d5f64797a0e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Teoria dos Conjuntos}
+      \field{year}{2010}
+    \endentry
+    \entry{herculespaulovich}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=07e206a94a3390306fd05d82c453ff90}{%
+           family={{FEITOSA, Hércules de Araújo; PAULOVICH, Leonardo}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora UNESP}%
+      }
+      \strng{namehash}{07e206a94a3390306fd05d82c453ff90}
+      \strng{fullhash}{07e206a94a3390306fd05d82c453ff90}
+      \strng{fullhashraw}{07e206a94a3390306fd05d82c453ff90}
+      \strng{bibnamehash}{07e206a94a3390306fd05d82c453ff90}
+      \strng{authorbibnamehash}{07e206a94a3390306fd05d82c453ff90}
+      \strng{authornamehash}{07e206a94a3390306fd05d82c453ff90}
+      \strng{authorfullhash}{07e206a94a3390306fd05d82c453ff90}
+      \strng{authorfullhashraw}{07e206a94a3390306fd05d82c453ff90}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Um Prelúdio à Lógica}
+      \field{year}{2005}
+    \endentry
+    \entry{tertulianoprob}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=348f431434a254c343b2f87110ee5d5a}{%
+           family={{FRANCO, Tertuliano}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora do IMPA}%
+      }
+      \strng{namehash}{348f431434a254c343b2f87110ee5d5a}
+      \strng{fullhash}{348f431434a254c343b2f87110ee5d5a}
+      \strng{fullhashraw}{348f431434a254c343b2f87110ee5d5a}
+      \strng{bibnamehash}{348f431434a254c343b2f87110ee5d5a}
+      \strng{authorbibnamehash}{348f431434a254c343b2f87110ee5d5a}
+      \strng{authornamehash}{348f431434a254c343b2f87110ee5d5a}
+      \strng{authorfullhash}{348f431434a254c343b2f87110ee5d5a}
+      \strng{authorfullhashraw}{348f431434a254c343b2f87110ee5d5a}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Princípios de Combinatória e Probabilidade}
+      \field{year}{2020}
+    \endentry
+    \entry{guidorizzi1}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9796e7f4d6ce50a5174b90ccceaa3792}{%
+           family={{GUIDORIZZI, Hamilton Luiz}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {LTC}%
+      }
+      \strng{namehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{bibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorbibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authornamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Um Curso de Cálculo Volume 1}
+      \field{year}{2001}
+    \endentry
+    \entry{guidorizzi2}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9796e7f4d6ce50a5174b90ccceaa3792}{%
+           family={{GUIDORIZZI, Hamilton Luiz}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {LTC}%
+      }
+      \strng{namehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{bibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorbibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authornamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Um Curso de Cálculo Volume 2}
+      \field{year}{2001}
+    \endentry
+    \entry{guidorizzi3}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9796e7f4d6ce50a5174b90ccceaa3792}{%
+           family={{GUIDORIZZI, Hamilton Luiz}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {LTC}%
+      }
+      \strng{namehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{bibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorbibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authornamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \field{extraname}{3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Um Curso de Cálculo Volume 3}
+      \field{year}{2001}
+      \true{nocite}
+    \endentry
+    \entry{guidorizzi4}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9796e7f4d6ce50a5174b90ccceaa3792}{%
+           family={{GUIDORIZZI, Hamilton Luiz}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {LTC}%
+      }
+      \strng{namehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{fullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{bibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorbibnamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authornamehash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhash}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \strng{authorfullhashraw}{9796e7f4d6ce50a5174b90ccceaa3792}
+      \field{extraname}{4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Um Curso de Cálculo Volume 4}
+      \field{year}{2001}
+      \true{nocite}
+    \endentry
+    \entry{jechhrbacek1999}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=95292afeaab2cd98547fc809d4e2db07}{%
+           family={{JECH, Thomas; HRBACEK, Karel}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{fullhash}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{fullhashraw}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{bibnamehash}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{authorbibnamehash}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{authornamehash}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{authorfullhash}{95292afeaab2cd98547fc809d4e2db07}
+      \strng{authorfullhashraw}{95292afeaab2cd98547fc809d4e2db07}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Introduction to Set Theory}
+      \field{year}{1999}
+      \true{nocite}
+    \endentry
+    \entry{johnpfaffen}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=14a4a4870faa10b67c669aee7c597663}{%
+           family={{JOHNSONBAUGH, Richard; PFAFFENBERGER, W. E.}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MARCEL DEKKER, INC.}%
+      }
+      \strng{namehash}{14a4a4870faa10b67c669aee7c597663}
+      \strng{fullhash}{14a4a4870faa10b67c669aee7c597663}
+      \strng{fullhashraw}{14a4a4870faa10b67c669aee7c597663}
+      \strng{bibnamehash}{14a4a4870faa10b67c669aee7c597663}
+      \strng{authorbibnamehash}{14a4a4870faa10b67c669aee7c597663}
+      \strng{authornamehash}{14a4a4870faa10b67c669aee7c597663}
+      \strng{authorfullhash}{14a4a4870faa10b67c669aee7c597663}
+      \strng{authorfullhashraw}{14a4a4870faa10b67c669aee7c597663}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Foundations of Mathematical Analysis}
+      \field{year}{1981}
+    \endentry
+    \entry{learykristiansen2017logica}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b75a0ec76a58f905379bcf92ae685a15}{%
+           family={{LEARY, Christopher; KRISTIANSEN, Lars}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Milne Library Publishing}%
+      }
+      \strng{namehash}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{fullhash}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{fullhashraw}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{bibnamehash}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{authorbibnamehash}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{authornamehash}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{authorfullhash}{b75a0ec76a58f905379bcf92ae685a15}
+      \strng{authorfullhashraw}{b75a0ec76a58f905379bcf92ae685a15}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{A Friendly Introduction to Mathematical Logic}
+      \field{year}{2015}
+    \endentry
+    \entry{elonal}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=2979d720bb9fb547df611309085e3cee}{%
+           family={{LIMA, Elon Lages}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora do IMPA}%
+      }
+      \strng{namehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{fullhash}{2979d720bb9fb547df611309085e3cee}
+      \strng{fullhashraw}{2979d720bb9fb547df611309085e3cee}
+      \strng{bibnamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorbibnamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authornamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorfullhash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorfullhashraw}{2979d720bb9fb547df611309085e3cee}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10}
+      \field{title}{Álgebra Linear}
+      \field{year}{2020}
+      \true{nocite}
+    \endentry
+    \entry{analisereal1}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=2979d720bb9fb547df611309085e3cee}{%
+           family={{LIMA, Elon Lages}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora do IMPA}%
+      }
+      \strng{namehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{fullhash}{2979d720bb9fb547df611309085e3cee}
+      \strng{fullhashraw}{2979d720bb9fb547df611309085e3cee}
+      \strng{bibnamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorbibnamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authornamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorfullhash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorfullhashraw}{2979d720bb9fb547df611309085e3cee}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{13}
+      \field{title}{Análise Real vol. 1}
+      \field{year}{2024}
+    \endentry
+    \entry{cursodeanalise1}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=2979d720bb9fb547df611309085e3cee}{%
+           family={{LIMA, Elon Lages}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora do IMPA}%
+      }
+      \strng{namehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{fullhash}{2979d720bb9fb547df611309085e3cee}
+      \strng{fullhashraw}{2979d720bb9fb547df611309085e3cee}
+      \strng{bibnamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorbibnamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authornamehash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorfullhash}{2979d720bb9fb547df611309085e3cee}
+      \strng{authorfullhashraw}{2979d720bb9fb547df611309085e3cee}
+      \field{extraname}{3}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{15}
+      \field{title}{Curso de Análise vol. 1}
+      \field{year}{2022}
+    \endentry
+    \entry{rolla}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b5be39404be6abe9a43adaf6971bd5e4}{%
+           family={{ROLLA, Leonardo T.; LIMA, Bernardo N. B. de}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora do IMPA}%
+      }
+      \strng{namehash}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{fullhash}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{fullhashraw}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{bibnamehash}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{authorbibnamehash}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{authornamehash}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{authorfullhash}{b5be39404be6abe9a43adaf6971bd5e4}
+      \strng{authorfullhashraw}{b5be39404be6abe9a43adaf6971bd5e4}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Probabilidade}
+      \field{year}{2026}
+    \endentry
+    \entry{shoenfield1967}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=02f737cd5b66344e768e425a78019db0}{%
+           family={{SHOENFIELD, Joseph R.}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Publishing Company}%
+      }
+      \strng{namehash}{02f737cd5b66344e768e425a78019db0}
+      \strng{fullhash}{02f737cd5b66344e768e425a78019db0}
+      \strng{fullhashraw}{02f737cd5b66344e768e425a78019db0}
+      \strng{bibnamehash}{02f737cd5b66344e768e425a78019db0}
+      \strng{authorbibnamehash}{02f737cd5b66344e768e425a78019db0}
+      \strng{authornamehash}{02f737cd5b66344e768e425a78019db0}
+      \strng{authorfullhash}{02f737cd5b66344e768e425a78019db0}
+      \strng{authorfullhashraw}{02f737cd5b66344e768e425a78019db0}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Mathematical Logic}
+      \field{year}{1967}
+    \endentry
+    \entry{stromberg}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b725a5f46d80c2b16f559c45c6ea507e}{%
+           family={{STROMBERG, Karl R.}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wadsworth, Inc.}%
+      }
+      \strng{namehash}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{fullhash}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{fullhashraw}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{bibnamehash}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{authorbibnamehash}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{authornamehash}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{authorfullhash}{b725a5f46d80c2b16f559c45c6ea507e}
+      \strng{authorfullhashraw}{b725a5f46d80c2b16f559c45c6ea507e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{An Introduction to Classical Real Analysis}
+      \field{year}{1981}
+    \endentry
+    \entry{ajwhite}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=59d5841f07bb2368c1a7d96f763ee90a}{%
+           family={{WHITE, A. J.}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Publishing Company}%
+      }
+      \strng{namehash}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{fullhash}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{fullhashraw}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{bibnamehash}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{authorbibnamehash}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{authornamehash}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{authorfullhash}{59d5841f07bb2368c1a7d96f763ee90a}
+      \strng{authorfullhashraw}{59d5841f07bb2368c1a7d96f763ee90a}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Real Analysis: an introduction}
+      \field{year}{1968}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

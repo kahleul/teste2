@@ -477,7 +477,12 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Trivialmente, a implicação $(z \in x) \rightarrow (z \in x)$ é verdadeira para todo $z$. Logo, pela definição de inclusão $\subseteq$, temos $x \subseteq x$. \itemproof
+            \item Se $x \subseteq y$ e $y \subseteq x$, então todo elemento de $x$ pertence a $y$ e todo elemento de $y$ pertence a $x$. Pelo axioma da extensão \eqref{ax:1}, $x=y$. \itemproof
+            \item Suponha que $x \subseteq y$ e $y \subseteq z$. Seja $w \in x$. Como $x \subseteq y$, temos $w \in y$. Daí, como $y \subseteq z$, de $w \in y$ segue que $w \in z$. Assim, todo elemento de $x$ é elemento de $z$, isto é, $x \subseteq z$. \itemproof
+        \end{enumerate}
 \end{proof}
 
 \subsection{O Axioma do Vazio}
@@ -561,6 +566,10 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{prop}
     $\forall x \forall y((x \in y) \leftrightarrow \{x\} \subseteq y)$.
 \end{prop}
+
+\begin{proof}
+    Por um lado ($\Rightarrow$), suponha que $x \in y$. Pela definição de inclusão, precisamos provar que $\forall z ((z \in \{x\}) \rightarrow (z \in y))$. Se $z \in \{x\}$, então $z = x$. Como $x \in y$ por hipótese e $z=x$, temos $z \in y$. Logo $\{x\} \subseteq y$. Por outro lado ($\Leftarrow$), suponha que $\{x\} \subseteq y$. Temos que $x \in \{x\}$. Como $\{x\} \subseteq y$, pela definição de inclusão, todo elemento de $\{x\}$ pertence a $y$. Logo $x \in y$. \itemproof
+\end{proof}
 
 \subsection{O Axioma da União}
 
@@ -715,7 +724,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                 \[
                     x \setminus y := \{z \in x : z \notin y \}.
                 \]
-            Dizemos que $x \setminus y$ é o \textit{complementar} de $y$ relativo a $x$ se $y \subseteq x$. Nesse caso, denotamos $x \setminus y$ por $y^{C}$.
+            Dizemos que $x \setminus y$ é o \textit{complementar} de $y$ relativo a $x$ se $y \subseteq x$. Isso é denotado por $y^{C} := x \setminus y$.
             \item A \textit{diferença simétrica} entre $x$ e $y$ é definida como
                 \[
                     x \Delta y := \{ z \in x \cup y :z \notin x \cap y \}.
@@ -882,7 +891,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     Segue do teorema anterior com $y = x$. \itemproof
 \end{proof}
 
-\section{Relações e Funções}
+\section{Relações}
 
 \subsection{Produto Cartesiano}
 
@@ -1160,7 +1169,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{defi}
     Seja $(X, \leq)$ um conjunto parcialmente ordenado.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Dizemos que $\leq$ é uma relação de ordem \textit{total}\footnote{O termo \textit{ordem linear} também costuma ser usado. Nesse caso, dizemos que o par $(X,\leq)$ é um \textit{conjunto linearmete ordenado}.}, e que o par $(X,\leq)$ é um \textit{conjunto totalmente ordenado}, se 
+            \item Dizemos que $\leq$ é uma relação de ordem \textit{total}\footnote{O termo \textit{ordem linear} também costuma ser usado. Nesse caso, dizemos que o par $(X,\leq)$ é um \textit{conjunto linearmente ordenado}.}, e que o par $(X,\leq)$ é um \textit{conjunto totalmente ordenado}, se 
                 \[
                     \forall x \forall y (x,y \in X \rightarrow (x \leq y \lor y \leq x)).
                 \]
@@ -1180,38 +1189,58 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Sejam $x, y \in X$. Como $\leq$ é uma boa ordem, todo subconjunto não vazio de $X$ possui elemento mínimo. Assim, o conjunto $\{x,y\} \subseteq X$ possui um elemento mínimo. Se $\min\{x,y\} = x$, então $x \leq y$. Se $\min\{x,y\} = y$, então $y \leq x$. Em qualquer caso, vale $x \leq y$ ou $y \leq x$, de modo que a ordem $\leq$ é total. \itemproof
+            \item Pela definição de árvore, precisamos mostrar que, para todo $x \in X$, o conjunto $S = \{ y \in X : y \leq x\}$ é bem-ordenado pela ordem induzida. Seja $A \subseteq S$ um subconjunto não vazio. Como $S \subseteq X$, temos que $A \subseteq X$. Como $X$ é bem-ordenado, $A$ possui um elemento mínimo. Com isso, todo subconjunto não vazio de $S$ possui um elemento mínimo, isto é, $S$ é bem-ordenado. \itemproof
+            \item Sejam $x, y \in X$. Como a ordem $\leq$ é total, temos $x \leq y$ ou $y \leq x$. Suponha, sem perda de generalidade, que $x \leq y$. Como $x \leq x$ e $x \leq y$, temos que $x$ é uma cota inferior de $\{x,y\}$. Se $z$ uma cota inferior qualquer de $\{x,y\}$, então, em particular, $z \leq x$. Logo, $x$ é a maior das cotas inferiores, isto é, $x = \inf\{x,y\}$. Como $y \geq x$ e $y \geq y$, temos que $y$ é uma cota superior de $\{x,y\}$. Se $w$ uma cota superior qualquer de $\{x,y \}$, então, em particular, $w \geq y$. Logo, $y$ é a menor das cotas superiores, isto é, $y = \sup\{x,y\}$. Portanto, $\{x,y\}$ possui supremo e ínfimo. \itemproof
+        \end{enumerate}
 \end{proof}
 
 \begin{prop}
     Se $(X,\leq)$ é parcialmente ordenado e $Y \subseteq X$, então $(Y, \leq \cap \ Y^2)$ é parcialmente ordenado.
 \end{prop}
 
-\begin{defi}
-    \itemproof
-\end{defi}
+\begin{proof}
+    Defina $\leq_Y \ := \ \leq \cap \ Y^2$.
+        \begin{enumerate}[label=\roman*.]
+            \item (Reflexividade) Dado $y \in Y$, como $Y \subseteq X$, temos $y \in X$, donde $y \leq y$. Como $y \in Y$, vem $(y,y) \in \leq_Y$.
+            \item (Antissimetria) Sejam $x, y \in Y$ tais que $(x,y) \in \leq_Y$ e $(y,x) \in \leq_Y$. Então $x \leq y$ e $y \leq x$. Pela antissimetria de $\leq$, vem $x=y$.
+            \item (Transitividade) Sejam $x, y, z \in Y$ tais que $(x,y) \in \leq_Y$ e $(y,z) \in \leq_Y$. Então $x \leq y$ e $y \leq z$. Pela transitividade de $\leq$, vem $x \leq z$. Como $x, z \in Y$, vem $(x,z) \in \leq_Y$.
+        \end{enumerate}
+    Com isso, $\leq_Y \ := \ \leq \cap \ Y^2$ é uma ordem. \itemproof
+\end{proof}
 
 \begin{defi}
     Sejam $(X,\leq)$ parcialmente ordenado e $Y \subseteq X$. 
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Dizemos que $\leq \cap \ Y^2$ é uma \textit{subordem} de $\leq$.
-            \item Dizemos que $(Y, \leq \cap \ Y^2)$ é um \textit{subconjunto parcialmente ordenado} de $(X, \leq)$. Isso é denotado por $(Y, \leq)$.
+            \item Dizemos que $\leq_Y \ := \ \leq \cap \ Y^2$ é uma \textit{subordem} de $\leq$.
+            \item Dizemos que $(Y, \leq_Y)$ é um \textit{subconjunto parcialmente ordenado} de $(X, \leq)$. Isso é denotado por $(Y, \leq)$.
         \end{enumerate}
 \end{defi}
 
 \begin{prop}
     Sejam $(X,\leq)$ parcialmente ordenado e $Y \subseteq X$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $\leq$ é uma ordem total, então $\leq \cap \ Y^2$ é uma ordem total.
-            \item Se $\leq$ é uma boa ordem, então $\leq \cap \ Y^2$ é uma boa ordem.
-            \item Se $\leq$ é uma árvore, então $\leq \cap \ Y^2$ é uma árvore.
+            \item Se $\leq$ é uma ordem total, então $\leq_Y$ é uma ordem total.
+            \item Se $\leq$ é uma boa ordem, então $\leq_Y$ é uma boa ordem.
+            \item Se $\leq$ é uma árvore, então $\leq_Y$ é uma árvore.
         \end{enumerate}
 \end{prop}
 
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item 
+            \item Sejam $x, y \in Y$. Como $Y \subseteq X$, temos $x, y \in X$, e como $\leq$ é total em $X$, temos $x \leq y$ ou $y \leq x$, de modo que $x \leq_Y y$ ou $y \leq_Y x$. \itemproof
+            \item Seja $A \in \mathcal{P}(Y)_{\neq \emptyset}$. Como $Y \subseteq X$, temos $A \subseteq X$, e como $\leq$ é uma boa ordem em $X$, existe $\min{A} \in A$. Como para todo $z \in A \subseteq Y$ temos $\min{A} \leq z$, segue que $\min{A}$ é o mínimo de $A$ com relação a $\leq_Y$. \itemproof
+            \item Sendo $x \in Y$ e $S := \{y \in Y : y \leq_Y x \}$, provemos que $(S, \leq_Y \cap \ S^2)$ é bem ordenado. Pondo $T := \{y \in X : y \leq x \}$, temos $S = T \cap Y$, e como $x \in X$ e $\leq$ é uma árvore, temos que $(T, \leq \cap \ T^2)$ é bem ordenado. Como $S \subseteq T$, temos que $(S, (\leq \cap \ T^2) \cap S^2 )$ é também uma boa ordem. Observando que
+                \begin{align*}
+                    \leq_Y \cap \ S^2 &= (\leq \cap \ Y^2) \cap (T \cap Y)^2 \\
+                    &= \leq \cap \ Y^2 \cap T^2 \\
+                    &= (\leq \cap \ T^2) \cap (T^2 \cap Y^2) \\
+                    &= (\leq \cap \ T^2) \cap S^2, 
+                \end{align*}
+            segue que $(S, \leq_Y \cap \ S^2)$ é bem ordenado. \itemproof
         \end{enumerate}
 \end{proof}
 
@@ -1292,7 +1321,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     Pois tome $R := \{(x,y) \in X \times X : \exists A (A \in \mathcal{P} \land x,y \in A) \}$. \itemproof
 \end{proof}
 
-\subsection{Funções}
+\section{Funções}
 
 \begin{defi}[Função] \label{defi.fund:função}
     \leavevmode
@@ -1340,10 +1369,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{proof}
 
 
-
-\subsection{Bijeções e Funções Inversas}
-
-\subsubsection{Injeções}
+\subsection{Funções Injetivas}
 
 \begin{defi}
     Uma função $f$ é \textit{injetiva} se
@@ -1410,7 +1436,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     Se $f$ é injetiva, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função e $f^{-1} \circ f = \id_{\Dom{(f)}}$, de modo que $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível à esquerda, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetiva. \itemproof
 \end{proof}
 
-\subsubsection{Sobrejeções}
+\subsection{Funções Sobrejetivas}
 
 \begin{defi}
     Uma função $f : A \to B$ é \textit{sobrejetiva $B$} se $\Im{(f)} = B$.
@@ -1493,7 +1519,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
     \itemproof
 \end{proof}
 
-\subsubsection{Bijeções e Funções Inversas}
+\subsection{Funções Bijetivas e Funções Inversas}
 
 \begin{defi}
     Uma função $f: A \to B$ é \textit{bijetiva em relação a $B$} se é injetiva e sobrejetiva em $B$.
@@ -1830,11 +1856,19 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{proof}
 
 \begin{teo}
-    $(\omega, \subset)$ é bem ordenado.
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Para todo $n \in \omega$, o conjunto $(n, \subseteq)$ é bem ordenado.
+            \item $(\omega, \subseteq)$ é um conjunto bem ordenado.
+        \end{enumerate}
 \end{teo}
 
 \begin{proof}
-    Ver \cite{fajardo2024conjuntos}, teorema 4.26, página 111.
+    \leavevmode
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item A prova se dará por indução em $n$. Trivialmente $\emptyset$ é bem ordenado por $\subseteq$ (por vacuidade: não existem subconjuntos não vazios de $\emptyset$). Agora, suponha que $n \in \omega$ seja bem ordenado por $\subseteq$. Tome $S \in \mathcal{P}(n^+)_{\neq \emptyset}$ e defina $S' := S \setminus \{n\}$. Se $S' = \emptyset$, então $S = \{n\}$ e $S$ tem um elemento mínimo (nesse caso, $n = \min{S}$). Se $S' \neq \emptyset$, então, como $S' \subseteq n$, existe $\min{S'} \in S'$. Provemos que $\min{S'} \subseteq x$ para todo $x \in S$. Se $x \in S$, então $x \in n^+$, de modo que $x \in n$ ou $x = n$. Se $x \in n$, então, como $x \in S$ e $x \neq n$, vem $x \in S'$, donde $\min{S'} \subseteq x$. Se $x=n$, então, como $\min{S'} \in n$ já que $S' \subseteq n$, da transitividade de $n$ vem $\min{S'} \subseteq n$, de modo que $\min{S'} \subseteq x$. Com isso, $\min{S'}$ é o elemento mínimo de $S$, de modo que $n^+$ é bem ordenado por $\subseteq$. \itemproof
+            \item Sejam $S \in \mathcal{P}(\omega)_{\neq \emptyset}$ e $n_0 \in S$. Como $n_0 \in S \cap n^+_0$, temos $S \cap n^+_0 \neq \emptyset$, e como $S \cap n^+_0 \subseteq n^+_0$, existe $m := \min{S \cap n^+_0}$. Agora, sendo $n \in S$, provemos que $m \subseteq n$. Se $n \in S$, então ou $n \in n_0$, ou $n = n_0$, ou $n_0 \in n$, pela tricotomia de $\in$. Se $n \in n_0$, então, como $n_0 \subseteq n^+_0$, vem $n \in S \cap n^+_0$, de modo que $m \subseteq n$. Se $n = n_0$, então $n \in n^+_0$, e como $n_0 \subseteq n^+_0$, vem $n \in S \cap n^+_0$, de modo que $m \subseteq n$. Se $n_0 \in n$, então $n_0 \subseteq n$ (transitividade de $n$), e como $m \subseteq n_0$ já que $n_0 \in S \cap n^+_0$, vem $m \subseteq n$. Com isso, $m = \min{S \cap n^+_0}$ é o elemento mínimo de $S$, de modo que $\omega$ é bem-ordenado por $\subseteq$. \itemproof
+        \end{enumerate}
 \end{proof}
 
 \subsection{O Teorema da Recursão}
@@ -1846,37 +1880,37 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
     \end{enumerate}
 
 \begin{teo}[da recursão finita] \label{teo.fund:recfin}
-    Sejam $X$ um conjunto, $x_0 \in X$ e $g:X \to X$. Existe e é única a função $f : \omega \to X$ tal que
+    Sejam $X$ um conjunto, $x_0 \in X$ e $f:X \to X$. Existe uma única função $\varphi : \omega \to X$ tal que
         \begin{itemize}
-            \item $f(0) = x_0$;
-            \item $f(n^+) = g(f(n))$, para todo $n \in \omega$.
+            \item $\varphi(0) = x_0$;
+            \item $\varphi(n^+) = f(\varphi(n))$, para todo $n \in \omega$.
         \end{itemize}
 \end{teo}
 
 \begin{proof}
-    A ideia é considerar todas as relações contidas em $\omega \times X$ que cumprem as condições desejadas e provar que a interseção de todas elas resulta em uma única função de domínio $\omega$. Defina
+    A ideia é considerar todas as relações de $\omega$ em $X$ que têm as propriedades desejadas e provar que a interseção de todas elas resulta em uma única função de domínio $\omega$. Defina
         \[
-            \mathcal{C} := \left\{  R \in \mathcal{P}(\omega \times X) : (0,x_0) \in R \land \forall n \forall y ((n,y) \in R \to (n^{+},g(y)) \in R) \right\}.
+            \mathcal{C} := \left\{ R \in \mathcal{P}(\omega \times X) : (0,x_0) \in R \land \forall n \forall x ((n,x) \in R \to (n^{+},f(x)) \in R) \right\}.
         \]
-    Como $\omega \times X \in \mathcal{C}$, temos $\mathcal{C} \neq \emptyset$, de modo que, pelo teorema \eqref{teo.fund:intfamilia} podemos tomar $f := \bigcap \mathcal{C}$. Temos $(0,x_0) \in f$ porque $(0,x_0) \in R$ para toda $R \in C$. Analogamente, se $(n,y) \in f$, então $(n,y) \in R$ para toda $R \in C$, de modo que $(n^{+},g(y)) \in R$ para toda $R \in C$, provando que $(n^{+},g(y)) \in f$ e que $f \in \mathcal{C}$.
+    Como $\omega \times X \in \mathcal{C}$, temos $\mathcal{C} \neq \emptyset$, de modo que, pelo teorema \eqref{teo.fund:intfamilia} podemos tomar $\varphi := \bigcap \mathcal{C}$. Temos $(0,x_0) \in \varphi$ porque $(0,x_0) \in R$ para toda $R \in \mathcal{C}$. Analogamente, se $(n,x) \in \varphi$, então $(n,x) \in R$ para toda $R \in \mathcal{C}$, de modo que $(n^{+},f(x)) \in R$ para toda $R \in \mathcal{C}$, o que prova que $(n^{+},f(x)) \in \varphi$ e que $\varphi \in \mathcal{C}$.
         \begin{enumerate}[label=\roman*.]
-            \item $\mathrm{Dom}(f) = \omega$. Claramente, $\mathrm{Dom}(f) \subset \omega$. Como $(0,x_0) \in f$, temos $0 \in \mathrm{Dom}(f)$. Agora, se $n \in \mathrm{Dom}(f)$, então existe $y \in X$ tal que $(n,y) \in f$, já que $f$ é uma relação. Com isso, vem $(n^+,g(y)) \in f$, donde $n^+ \in \mathrm{Dom}(f)$. Assim, $\mathrm{Dom}(f)$ é indutivo, e como $\mathrm{Dom}(f) \subset \omega$, temos que $\mathrm{Dom}(f) = \omega$.
-            \item $f$ é função. Provaremos que $(n,y) \in f$ e $(n,z) \in f$ implicam $y=z$ por indução em $n$.
+            \item $\Dom{(\varphi)} = \omega$. Claramente, $\Dom{(\varphi)} \subseteq \omega$. Como $(0,x_0) \in \varphi$, temos $0 \in \Dom{(\varphi)}$. Agora, se $n \in \Dom{(\varphi)}$, então existe $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n^+,f(x)) \in \varphi$, donde $n^+ \in \Dom{(\varphi)}$. Assim, $\Dom{(\varphi)}$ é indutivo, e como $\Dom{(\varphi)} \subseteq \omega$, temos $\Dom{(\varphi)} = \omega$.
+            \item $\varphi$ é função. Provemos que $(n,x) \in \varphi$ e $(n,y) \in \varphi$ implicam $x=y$ por indução em $n$.
                 \begin{itemize}
-                    \item Base de indução. Como $(0, x_0) \in f$, provemos que se $(0,z) \in f$, então $z=x_0$. Equivalentemente, via contrapositiva, podemos provar que se $z \in X$ é tal que $z \neq x_0$, então $(0,z) \notin f$. Como $(0,z) \notin f$ equivale a $f \setminus \{ (0,z)\} \in \mathcal{C}$, provemos isso para todo $z \in X$ tal que $z \neq x_0$. Sendo $z \neq x_0$, o par $(0,x_0)$ não foi ``removido'' de $f$, de modo que $(0,x_0) \in f \setminus \{(0,z)\}$. Agora, se $(n,y) \in f \setminus \{(0,z)\}$, então, como $f \in C$, temos que $(n^+,g(y)) \in f$. Como, pelo teorema \eqref{teo.fund:peano}, $n^+ \neq 0$ para todo $n \in \omega$, temos $(n^+,g(y)) \in f \setminus \{(0,z)\}$. Isso prova que $f \setminus \{(0,z) \}$ é uma relação que satisfaz as condições do teorema e, portanto, $f \setminus \{(0,z) \} \in \mathcal{C}$. Com isso, se $(0,z) \in f$, então $z=x_0$.
-                    \item Passo indutivo. Agora, tomando $n \in \mathrm{Dom}(f)$, existe $y \in X$ tal que $(n,y) \in f$, e ainda, $(n^+,g(y)) \in f$. Supondo, por hipótese de indução, que $(n,z) \in f$ implica $y=z$, precisamos provar que $(n^+,z) \in f$ implica $z = g(y)$. Provemos, então, via contrapositiva, que se $z \in X$ é tal que $z \neq g(y)$, então $(n^{+},z) \notin f$. Isso significa provar, assim como fizemos no caso base da indução, que $f \setminus \{(n^+,z)\} \in \mathcal{C}$. De fato, como $n^+ \neq 0$, temos $(0,x_0) \in f \setminus \{(n^+, z) \}$ (o par $(0,x_0)$ não pode ter sido ``removido''). Agora, se $m \in \mathrm{Dom}(f)$, existe $t \in X$ tal que $(m,t) \in f$ e $(m^+,g(t)) \in f$. Se for $m^+ = n^+$, então $m=n$ (teorema \eqref{teo.fund:peano}), de modo que, pela hipótese de indução, $t=y$, donde $g(t) = g(y) \neq z$. Assim, $f \setminus \{(n^+,z)\}$ satisfaz as condições do teorema e, portanto, $f \setminus \{(n^+,z)\} \in \mathcal{C}$. Com isso, se $(n^+,z) \in f$, então $z = g(y)$.
+                    \item Base de indução. Como $(0, x_0) \in \varphi$, se existisse $y \in X$ tal que $(0, y) \in \varphi$ e $y \neq x_0$, então $(0, x_0) \in \varphi \setminus \{(0,y)\}$, e se $(m,z) \in \varphi \setminus \{(0,y)\}$, então $(m^+, f(z)) \in \varphi$, e como $m^+ \neq 0$ para todo $m \in \omega$, teríamos $(m^+, f(z)) \in \varphi \setminus \{(0,y)\}$, de modo que $\varphi \setminus \{(0,y)\} \in \mathcal{C}$, uma contradição: teríamos $\varphi \subseteq \varphi \setminus \{(0,y)\}$, mas como $\varphi \setminus \{(0,y)\} \subseteq \varphi$, seria $\varphi \setminus \{(0,y)\} = \varphi$, isto é, $(0,y) \notin \varphi$, o que contraria a hipótese $(0,y) \in \varphi$. Com isso, se $(0,y) \in \varphi$, então $y=x_0$.
+                    \item Passo indutivo. Se $n \in \Dom{(\varphi)}$, então existe $x \in X$ tal que $(n,x) \in \varphi$. Suponha, por hipótese de indução, que $(n,y) \in \varphi$ implica $y=x$. De $(n,x) \in \varphi$, vem $(n^+,f(x)) \in \varphi$. Suponha que existe $y \in X$ tal que $(n^+,y) \in \varphi$ e $y \neq f(x)$. Como $n^+ \neq 0$, teríamos $(0,x_0) \in \varphi \setminus \{(n^+,y)\}$, e se $(m,z) \in \varphi \setminus \{(n^+,y)\}$, então $(m^+,f(z)) \in \varphi$. Se $m^+ = n^+$, então $m=n$, e pela hipótese de indução, teríamos $z=x$, de modo que $f(z) = f(x) \neq y$, o que implicaria $(m^+, f(z)) \in \varphi \setminus \{(n^+,y)\}$. Por outro lado, se $m \neq n$, então $m^+ \neq n^+$, de modo que $(m^+, f(z)) \in \varphi \setminus \{(n^+,y)\}$. Em qualquer caso, teríamos $\varphi \setminus \{(n^+,y)\} \in \mathcal{C}$, uma contradição (pelo mesmo motivo visto na base de indução). Com isso, se $(n^+,y) \in \varphi$, então $y=f(x)$.
                 \end{itemize}
-            \item Unicidade de $f$. Se $h$ é outra função satisfazendo as condições do teorema, então $h(0) = x_0 = f(0)$ e, se $h(n) = f(n)$, então
+            \item Unicidade de $\varphi$. Se $\psi$ é outra função satisfazendo as condições do teorema, então $\psi(0) = x_0 = \varphi(0)$ e, se $\psi(n) = \varphi(n)$, então
                 \[
-                    h(n^+) = g(h(n)) = g(f(n)) = f(n^+).
+                    \psi(n^+) = f(\psi(n)) = f(\varphi(n)) = \varphi(n^+),
                 \]  
-            de modo que, por indução, $h = f$.
+            de modo que, por indução, $\psi = \varphi$.
         \end{enumerate}
-    Com isso, vemos que existe uma relação $f$ que é uma função, tem domínio $\omega$, é única e satisfaz as condições do teorema. 
+    Logo, existe uma única função $\varphi: \omega \to X$ tal que $\varphi(0) = x_0$ e $\varphi(n^+) = f(\varphi(n))$ para todo $n \in \omega$. \itemproof 
 \end{proof}
 
 \begin{teo}[da recursão com parâmetro] \label{teo.fund:recpar}
-    Sejam $X$ um conjunto, $x_0 \in X$ e $g : \omega \times X \to X$. Existe e é única a função $f : \omega \to X$ tal que
+    Sejam $X$ um conjunto, $x_0 \in X$ e $g : \omega \times X \to X$. Existe uma única função $f : \omega \to X$ tal que
         \begin{itemize}
             \item $f(0) = x_0$;
             \item $f(n^+) = g(n, f(n))$, para todo $n \in \omega$.
@@ -1897,10 +1931,15 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
     Com isso, $h'$ é uma função que satisfaz as mesmas condições que $f'$; como $f'$ foi construída pelo teorema da recursão, segue que $h' = f'$.
 \end{proof}
 
-Para a próxima versão do teorema da recursão, denotamos por $X^{<\omega}$ o conjunto de todas as funções de um certo $n \in \omega$ em $X$.
+\begin{defi}
+    O conjunto de todas as funções de um certo $n \in \omega$ em $X$ é denotado por $X^{< \omega}$, isto é,
+        \[
+            X^{< \omega} := \{f \in \mathcal{P}(\omega \times X) : \exists n (n \in \omega \land f \in X^n) \}.
+        \]
+\end{defi}
 
 \begin{teo}[da recursão completa]
-    Sejam $X$ um conjunto e $g :  X^{<\omega} \to X$ uma função. Existe e é única a função $f : \omega \to X$ tal que $f(n) = g(f|_n)$ para todo $n \in \omega$.
+    Sejam $X$ um conjunto e $f :  X^{<\omega} \to X$ uma função. Existe uma única função $\varphi : \omega \to X$ tal que $\varphi(n) = f(\varphi|_n)$ para todo $n \in \omega$.
 \end{teo}
 
 \begin{proof}
