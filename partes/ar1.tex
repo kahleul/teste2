@@ -32,7 +32,7 @@
 \end{prop}
 
 \begin{proof}
-    Absolutamente trivial. \itemproof
+    Absolutamente trivial. \blackproof
 \end{proof}
 
 \begin{ex}
@@ -83,7 +83,7 @@
 \end{teo}
 
 \begin{proof}
-    \textbf{(a)} Seja $\left(x_n\right)_{n \in \N}$ uma sequência crescente e limitada superiormente. Como o conjunto $X := \{x_n \mid n \in \N\}$ é, por hipótese, não vazio e limitado superiormente, pela propriedade do supremo existe $\sup X$. Como, para todo $\epsilon \in \R_{>0}$, $\sup{X} - \epsilon$ não é uma cota superior de $X$, existe $n_0 \in \N$ tal que $\sup{X} - \epsilon < x_{n_0} \leq \sup{X}$. Como $\left(x_n\right)_{n \in \N}$ é crescente, para todo $n \in \N$, se $n > n_0$, então $\sup{X} - \epsilon < x_{n_0} \leq x_n \leq \sup{X} < \sup{X} + \epsilon$. Temos então que $x_n \to \sup{X}$, isto é, $\left(x_n\right)_{n \in \N}$ converge para $\sup{X}$. \itemproof
+    \textbf{(a)} Seja $\left(x_n\right)_{n \in \N}$ uma sequência crescente e limitada superiormente. Como o conjunto $X := \{x_n \mid n \in \N\}$ é, por hipótese, não vazio e limitado superiormente, pela propriedade do supremo existe $\sup X$. Como, para todo $\epsilon \in \R_{>0}$, $\sup{X} - \epsilon$ não é uma cota superior de $X$, existe $n_0 \in \N$ tal que $\sup{X} - \epsilon < x_{n_0} \leq \sup{X}$. Como $\left(x_n\right)_{n \in \N}$ é crescente, para todo $n \in \N$, se $n > n_0$, então $\sup{X} - \epsilon < x_{n_0} \leq x_n \leq \sup{X} < \sup{X} + \epsilon$. Temos então que $x_n \to \sup{X}$, isto é, $\left(x_n\right)_{n \in \N}$ converge para $\sup{X}$. \blackproof
 
     \textbf{(b)} Segue analogamente: sendo $\left(x_n\right)_{n \in \N}$ uma sequência decrescente e limitada inferiormente, basta provar que $x_n \to \inf{\{x_n :n \in \N \}}$.
 \end{proof}
@@ -154,10 +154,10 @@
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item ($\Rightarrow$) blabla.
             
-            ($\Leftarrow$) blabla. \itemproof
+            ($\Leftarrow$) blabla. \blackproof
             \item ($\Rightarrow$) Para que $0$ seja um ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ deve existir $h \in B$ tal que $0 < |h-0| < \delta$. Bem, como $a$ é um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ existe $x \in A$ tal que $0 < |x-a| < \delta$. Pois tomando $h := x-a$, temos que $x = a+h$, e como $x \in A$, temos $a+h \in A$, de modo que $h \in B$. Daí, segue a conclusão.
 
-            ($\Leftarrow$) Para que $a$ seja um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ deve existir $x \in A$ tal que $0 < |x-a| < \delta$. Bem, como $0$ é ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ existe $h \in B$ tal que $0<|h|<\delta$. Pois tome $x:=a+h$: como $h \in B$, temos que $a+h \in A$, de modo que $x \in A$. Daí, segue a conclusão. \itemproof
+            ($\Leftarrow$) Para que $a$ seja um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ deve existir $x \in A$ tal que $0 < |x-a| < \delta$. Bem, como $0$ é ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ existe $h \in B$ tal que $0<|h|<\delta$. Pois tome $x:=a+h$: como $h \in B$, temos que $a+h \in A$, de modo que $x \in A$. Daí, segue a conclusão. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -186,7 +186,7 @@
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 
@@ -218,14 +218,14 @@
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{teo}[Bilateral $\Leftrightarrow$ Laterais]
 \end{teo}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi} (Limites no infinito)
@@ -306,7 +306,7 @@
             &= |f(x) - L_1| + |f(x) - L_2| \\
             &< \epsilon,
         \end{align*}
-    donde $L_1 = L_2$. \itemproof
+    donde $L_1 = L_2$. \blackproof
 
     \textbf{(b)}
 
@@ -385,7 +385,7 @@
 \end{cor}
 
 \begin{proof}
-    \textbf{(a)} Basta tomar $\epsilon = L$. \itemproof
+    \textbf{(a)} Basta tomar $\epsilon = L$. \blackproof
 
     \textbf{(b)}
 \end{proof}
@@ -482,7 +482,7 @@
         \[
             x \in \left] p - \delta, p + \delta \right[ \Rightarrow |f(x) - f(p)| < \epsilon.
         \]
-    Como $ x \in \left] p - \delta, p + \delta \right[ \Leftrightarrow |x-p| < \delta $, vemos que para todo $\epsilon>0$ existe um $\delta > 0$ tal que $|x-p| < \delta \Rightarrow |f(x) - f(p)| < \epsilon$, isto é, $f$ é contínua em $p$. \itemproof
+    Como $ x \in \left] p - \delta, p + \delta \right[ \Leftrightarrow |x-p| < \delta $, vemos que para todo $\epsilon>0$ existe um $\delta > 0$ tal que $|x-p| < \delta \Rightarrow |f(x) - f(p)| < \epsilon$, isto é, $f$ é contínua em $p$. \blackproof
 
     \textbf{(b)} Pelo item anterior, se $\epsilon < r$, então nada há de ser provado. Temos que provar o resultado para todos os $\epsilon$'s, isto é, falta provar o caso $\epsilon \geq r$.
 
@@ -512,8 +512,8 @@
                 \[
                     |f(x) - f(a)| < f(a) \Leftrightarrow 0 = f(a) - f(a) < f(x) < 2f(a),
                 \]
-            a conclusão segue. \itemproof
-            \item Tomando $\epsilon = -f(a)$, segue analogamente. \itemproof
+            a conclusão segue. \blackproof
+            \item Tomando $\epsilon = -f(a)$, segue analogamente. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -675,7 +675,7 @@
 \end{teo}
 
 \begin{proof}
-    \textbf{(a)} Seja $\left(x_n\right)_{n \in \N}$ uma sequência crescente e limitada superiormente. Como o conjunto $X := \{x_n \mid n \in \N\}$ é, por hipótese, não vazio e limitado superiormente, pela propriedade do supremo existe $\sup X$. Como, para todo $\epsilon \in \R_{>0}$, $\sup{X} - \epsilon$ não é uma cota superior de $X$, existe $n_0 \in \N$ tal que $\sup{X} - \epsilon < x_{n_0} \leq \sup{X}$. Como $\left(x_n\right)_{n \in \N}$ é crescente, para todo $n \in \N$, se $n > n_0$, então $\sup{X} - \epsilon < x_{n_0} \leq x_n \leq \sup{X} < \sup{X} + \epsilon$. Temos então que $x_n \to \sup{X}$, isto é, $\left(x_n\right)_{n \in \N}$ converge para $\sup{X}$. \itemproof
+    \textbf{(a)} Seja $\left(x_n\right)_{n \in \N}$ uma sequência crescente e limitada superiormente. Como o conjunto $X := \{x_n \mid n \in \N\}$ é, por hipótese, não vazio e limitado superiormente, pela propriedade do supremo existe $\sup X$. Como, para todo $\epsilon \in \R_{>0}$, $\sup{X} - \epsilon$ não é uma cota superior de $X$, existe $n_0 \in \N$ tal que $\sup{X} - \epsilon < x_{n_0} \leq \sup{X}$. Como $\left(x_n\right)_{n \in \N}$ é crescente, para todo $n \in \N$, se $n > n_0$, então $\sup{X} - \epsilon < x_{n_0} \leq x_n \leq \sup{X} < \sup{X} + \epsilon$. Temos então que $x_n \to \sup{X}$, isto é, $\left(x_n\right)_{n \in \N}$ converge para $\sup{X}$. \blackproof
 
     \textbf{(b)} Segue analogamente: sendo $\left(x_n\right)_{n \in \N}$ uma sequência decrescente e limitada inferiormente, basta provar que $x_n \to \inf{\{x_n :n \in \N \}}$.
     \begin{comment}
@@ -808,7 +808,7 @@
             \item Se fosse $f(p) > 0$, pela conservação do sinal existiria $\delta \in \R_{>0}$ tal que $f(x) > 0$ para todo $x \in (p-\delta,p+\delta) \cap [a,b]$. Com isso, se $x \in S$, então $x \leq p - \delta$, de modo que $p - \delta$ é uma cota superior de $S$, uma contradição pois $p - \delta < p = \sup{S}$.
             \item Se fosse $f(p) < 0$, pela conservação do sinal existiria $\delta \in \R_{>0}$ tal que $f(x) < 0$ para todo $x \in (p-\delta,p+\delta) \cap [a,b]$. Em particular, se $x \in (p,p+\delta) \cap [a,b]$, então $f(x) > 0$ e $x \in S$, uma contradição pois $x > p = \sup{S}$.
         \end{itemize}
-    Logo, só pode ser $f(p) = 0$. Além disso, como $p \in [a,b]$ e $f(a) < 0$ e $f(b) > 0$, temos que $p \in (a,b)$. \itemproof
+    Logo, só pode ser $f(p) = 0$. Além disso, como $p \in [a,b]$ e $f(a) < 0$ e $f(b) > 0$, temos que $p \in (a,b)$. \blackproof
 \end{proof}
 
 \begin{proof}
@@ -1049,9 +1049,9 @@ O intuito aqui é definir $a^x$ quando $x \in \R$.
 \end{teo}
 
 \begin{proof}
-    \textbf{(a)} Segue como corolário da conservação do sinal \eqref{consin2}. \itemproof
+    \textbf{(a)} Segue como corolário da conservação do sinal \eqref{consin2}. \blackproof
 
-    \textbf{(b)} Basta aplicar o resultado do item (a) na função $h(x) := f(x) - g(x)$. \itemproof
+    \textbf{(b)} Basta aplicar o resultado do item (a) na função $h(x) := f(x) - g(x)$. \blackproof
 
     \textbf{(c)} Segue como corolário do item (b) acima.
 \end{proof}
@@ -1076,11 +1076,11 @@ O intuito aqui é definir $a^x$ quando $x \in \R$.
 \end{teo}
 
 \begin{proof} 
-    \textbf{(a)} Sabemos que $(1+\epsilon)^n \geq 1 + n\epsilon$ para todo natural $n \geq 1$. Pois tome $n$ tal que $1 + n\epsilon > a$ (basta que $ n > \frac{a-1}{\epsilon}$); daí, $(1+\epsilon)^n>a$, donde $a^{\frac{1}{n}} - 1 < \epsilon$. \itemproof
+    \textbf{(a)} Sabemos que $(1+\epsilon)^n \geq 1 + n\epsilon$ para todo natural $n \geq 1$. Pois tome $n$ tal que $1 + n\epsilon > a$ (basta que $ n > \frac{a-1}{\epsilon}$); daí, $(1+\epsilon)^n>a$, donde $a^{\frac{1}{n}} - 1 < \epsilon$. \blackproof
 
-    \textbf{(b)} Para racionais $t>x$ temos $a^r<a^t$ para todo racional $r<x$. Pelo item anterior, existe um natural $n$ para o qual $a^{\frac{1}{n}} - 1 < \epsilon \cdot a^{-t}$, donde $a^t (a^{\frac{1}{n}}-1) < \epsilon$. Tomando racionais $r$ e $s$, com $r<x<s$, para os quais $s-r < 1/n$, temos $a^s - a^r = a^r (a^{s-r} -1) < a^t (a^{\frac{1}{n}} - 1) < \epsilon$. \itemproof
+    \textbf{(b)} Para racionais $t>x$ temos $a^r<a^t$ para todo racional $r<x$. Pelo item anterior, existe um natural $n$ para o qual $a^{\frac{1}{n}} - 1 < \epsilon \cdot a^{-t}$, donde $a^t (a^{\frac{1}{n}}-1) < \epsilon$. Tomando racionais $r$ e $s$, com $r<x<s$, para os quais $s-r < 1/n$, temos $a^s - a^r = a^r (a^{s-r} -1) < a^t (a^{\frac{1}{n}} - 1) < \epsilon$. \blackproof
 
-    \textbf{(c)} O conjunto $A := \{a^r : r \in \Q \land r<x \}$ é não vazio e limitado superiormente (por todo $a^s$, com $s>x$). Assim, existe $\gamma := \sup A$. Claramente, $a^r \leq \gamma \leq a^s$, mas, mais geralmente, $a^r < \lambda < a^s$ (prove!). Provemos, agora, a unicidade de $\gamma$. Se $\gamma'$ for tal que $a^r < \gamma' < a^s$ para quaisquer racionais $r$ e $s$, com $r<x<s$, então $|\gamma - \gamma'| < a^s - a^r$. Pelo item anterior, para todo $\epsilon > 0$ existem $r_0$ e $s_0$, com $r_0 < x < s_0$, para os quais $a^{s_0} - a^{r_0} < \epsilon$; logo, temos $|\gamma - \gamma'| < \epsilon$ para todo $\epsilon > 0$, donde $\gamma = \gamma'$. \itemproof
+    \textbf{(c)} O conjunto $A := \{a^r : r \in \Q \land r<x \}$ é não vazio e limitado superiormente (por todo $a^s$, com $s>x$). Assim, existe $\gamma := \sup A$. Claramente, $a^r \leq \gamma \leq a^s$, mas, mais geralmente, $a^r < \lambda < a^s$ (prove!). Provemos, agora, a unicidade de $\gamma$. Se $\gamma'$ for tal que $a^r < \gamma' < a^s$ para quaisquer racionais $r$ e $s$, com $r<x<s$, então $|\gamma - \gamma'| < a^s - a^r$. Pelo item anterior, para todo $\epsilon > 0$ existem $r_0$ e $s_0$, com $r_0 < x < s_0$, para os quais $a^{s_0} - a^{r_0} < \epsilon$; logo, temos $|\gamma - \gamma'| < \epsilon$ para todo $\epsilon > 0$, donde $\gamma = \gamma'$. \blackproof
 
     \textbf{(d)} Pelo item anterior, para quaisquer $a>1$ e $x$ reais existe um único $\gamma$; assim, basta tomar $f(x) := \gamma$. Antes de provar a continuidade de $f$, provemos que $f$ é estritamente crescente. De fato, tomando reais $x_1 < x_2$ temos que $a^{r_1} < f(x_1) < a^{s_1}$ e $a^{r_2} < f(x_2) < a^{s_2}$ para todos os racionais $r_1$, $r_2$, $s_1$ e $s_2$ tais que $r_1 < x_1 < s_1$ e $r_2 < x_2 < s_2$. Como existe $s$ racional tal que $x_1 < s < x_2$, temos $f(x_1)<a^s<f(x_2$, donde $f$ é estritamente crescente.
 
@@ -1340,7 +1340,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
 \end{teo}
 
 \begin{proof}
-    \textbf{(a)} Se $f$ for constante em $[a,b]$, então $f'(x) = 0$ para todo $x \in \left]a,b \right[$. Suponha, então, que $f$ não seja constante em $[a,b]$. Sendo $f$ contínua em $[a,b]$, pelo Teorema de Weierstrass \eqref{teo.calc:weierstrass}, existem $x_1, x_2 \in [a,b]$ tais que $f(x_1) \leq f(x) \leq f(x_2)$ para todo $x \in [a,b]$. Se fosse $f(x_1) = f(x_2)$, então $f$ seria constante; logo, $f(x_1) \neq f(x_2)$. E como, por hipótese, $f(a) = f(b)$, temos que $x_1$ ou $x_2$ estão em $]a,b[$. O $x_i \in \left] a,b \right[$ é um ponto de máximo local de $f$; daí, pelo Teorema \eqref{teo:maxlocal}, $f'(x_i)=0$. \itemproof
+    \textbf{(a)} Se $f$ for constante em $[a,b]$, então $f'(x) = 0$ para todo $x \in \left]a,b \right[$. Suponha, então, que $f$ não seja constante em $[a,b]$. Sendo $f$ contínua em $[a,b]$, pelo Teorema de Weierstrass \eqref{teo.calc:weierstrass}, existem $x_1, x_2 \in [a,b]$ tais que $f(x_1) \leq f(x) \leq f(x_2)$ para todo $x \in [a,b]$. Se fosse $f(x_1) = f(x_2)$, então $f$ seria constante; logo, $f(x_1) \neq f(x_2)$. E como, por hipótese, $f(a) = f(b)$, temos que $x_1$ ou $x_2$ estão em $]a,b[$. O $x_i \in \left] a,b \right[$ é um ponto de máximo local de $f$; daí, pelo Teorema \eqref{teo:maxlocal}, $f'(x_i)=0$. \blackproof
 
     \textbf{(b)} Defina $S: [a,b] \to \R$ por
         \[
@@ -1403,7 +1403,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
         $
             f(b) - f(a) = f'(c) (b-a).
         $
-    Como $f'(c) > 0$ e $b>a$, temos que $f(b) - f(a) > 0$, donde $f(a) < f(b)$. \itemproof
+    Como $f'(c) > 0$ e $b>a$, temos que $f(b) - f(a) > 0$, donde $f(a) < f(b)$. \blackproof
     
     \textbf{(b)} Segue analogamente.
 \end{proof}
@@ -1445,7 +1445,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
         $
             f(x) > f(p) + f'(p)(x-p).
         $
-    Definindo $g: I \to \R$ por $g(x) := f(x) - f(p) - f'(p)(x-p)$, basta provar que $g(x)>0$ para todo $x \in I$, com $x \neq p$. É fácil ver que $g'(x) = f'(x) - f'(p)$. Como $f''(x)>0$ em $I$, temos que $f'$ é estritamente crescente em $I$. Com isso, $g'(x) > 0$ para $x>p$ e $g'(x) < 0$ para $x < p$. Com isso, $g$ é estritamente decrescente em $\{ x \in I : x<p \}$ e estritamente crescente em $\{x \in I : x>p \}$. Com isso, sendo $g(p) = 0$, temos $g(x) > 0$ para todo $x \in I$, com $x \neq p$. \itemproof
+    Definindo $g: I \to \R$ por $g(x) := f(x) - f(p) - f'(p)(x-p)$, basta provar que $g(x)>0$ para todo $x \in I$, com $x \neq p$. É fácil ver que $g'(x) = f'(x) - f'(p)$. Como $f''(x)>0$ em $I$, temos que $f'$ é estritamente crescente em $I$. Com isso, $g'(x) > 0$ para $x>p$ e $g'(x) < 0$ para $x < p$. Com isso, $g$ é estritamente decrescente em $\{ x \in I : x<p \}$ e estritamente crescente em $\{x \in I : x>p \}$. Com isso, sendo $g(p) = 0$, temos $g(x) > 0$ para todo $x \in I$, com $x \neq p$. \blackproof
     
     \textbf{(b)} Segue analogamente.
 \end{proof}
@@ -1661,7 +1661,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
                 \[
                     \sum_{i=1}^{n} m_i \Delta x_i \leq \sum_{i=1}^{n} M_i \Delta x_i,
                 \]
-            de modo que $L(f,P) \leq U(f,P)$, como havíamos afirmado. \itemproof
+            de modo que $L(f,P) \leq U(f,P)$, como havíamos afirmado. \blackproof
             
             \item Façamos indução em $|Q \setminus P|$. Se $|Q \setminus P| = 1$, então $Q$ só tem um ponto a mais que $P$, isto é, existe $\bar{x} \in Q$ tal que $\bar{x} \notin P$. Em particular, existe um único índice $j \in [n]$ tal que $x_{j-1} < \bar{x} < x_j$. Com isso, tomando
                 \[
@@ -1674,13 +1674,13 @@ $\subseteq D_f$ e derivável em $]a,b[$.
                     &= \sum_{\substack{i = 1 \\ i \neq j  }}^{n} M_i \Delta x_i + M_j(x_j - x_{j-1}) \\
                     &= \sum_{i = 1}^{n} M_i \Delta x_i = U(f,P).
                 \end{align*}
-            Isso completa a base da indução. Agora, suponha que se $|Q \setminus P| = k > 1$, então $U(f,Q) \leq U(f,P)$. Tomando $Q'$ com só um ponto a mais que $Q$, temos que $U(f,Q') \leq U(f,Q)$, de modo que se $|Q' \setminus P| = k+1$ então $U(f,Q') \leq U(f,P)$. Isso completa o passo indutivo e, portanto, completa a prova. A prova de que $L(f,P') \geq L(f,P)$ segue de modo completamente análogo. \itemproof
+            Isso completa a base da indução. Agora, suponha que se $|Q \setminus P| = k > 1$, então $U(f,Q) \leq U(f,P)$. Tomando $Q'$ com só um ponto a mais que $Q$, temos que $U(f,Q') \leq U(f,Q)$, de modo que se $|Q' \setminus P| = k+1$ então $U(f,Q') \leq U(f,P)$. Isso completa o passo indutivo e, portanto, completa a prova. A prova de que $L(f,P') \geq L(f,P)$ segue de modo completamente análogo. \blackproof
     
             \item Para quaisquer partições $P$ e $Q$ de $[a,b]$, sempre existe um refinamento comum a ambas. De fato, basta tomar a união $P \cup Q$ e reindexar os índices conforme a definição. Assim, pelos itens anteriores,
                 \[
                     L(f,P) \leq L(f, P \cup Q) \leq U( f, P \cup Q) \leq U(f,Q),
                 \]
-            como havíamos afirmado. \itemproof
+            como havíamos afirmado. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1718,7 +1718,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
         \[ \ds
             \lowerint_{a}^{b} f(x) \, dx \leq \upperint_{a}^{b} f(x) \, dx,
         \]
-    como havíamos afirmado. \itemproof
+    como havíamos afirmado. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1852,7 +1852,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
         \[
             S^+(f,P) - S_-(f,P) = \sum_{i=1}^{n} (M_i - m_i) \Delta x_i < \dfrac{\epsilon}{b-a} \sum_{i=1}^{n} \Delta x_i = \epsilon.
         \]
-    Assim, pelo critério de integrabilidade, $f$ é integrável. \itemproof
+    Assim, pelo critério de integrabilidade, $f$ é integrável. \blackproof
 
     \textbf{(b)} Como $f$ é limitada, existe $M \in \R_{>0}$ tal que $|f(x)| \leq M$ para todo $x \in [a,b]$. Se $f$ tem, digamos $p \in \N$ pontos de descontinuidade, sejam eles $x_j \in [a,b]$, para cada $j \in [p]$. Agora, seja $\epsilon \in \R_{>0}$ arbitrário. Para cada $j \in [p]$, tome $[c_j, d_j]$ centrado em $x_j$ tal que $[c_i, d_i] \cap [c_j, d_j] = \emptyset$ se $i \neq j$ e $\sum_{j=1}^{p} (d_j - c_j) < \epsilon$. Tomando $[a_j, b_j] = [c_j, d_j] \cap [a,b]$ para cada $j \in [p]$, sendo $A := [a,b] \setminus \bigcup_{j=1}^{p} \left]a_j,b_j \right[$ temos que $f$ é uniformemente contínua em $A$.
 \end{proof}
@@ -1875,7 +1875,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
             &= \dfrac{b-a}{n} [f(b) - f(a)] \\
             &<\epsilon.
         \end{align*}
-    Assim, pelo critério de integrabilidade, $f$ é integrável. No caso em que $f$ é decrescente, a demonstração é análoga. \itemproof
+    Assim, pelo critério de integrabilidade, $f$ é integrável. No caso em que $f$ é decrescente, a demonstração é análoga. \blackproof
     
     \textbf{(b)}
 \end{proof}
@@ -1986,7 +1986,7 @@ $\subseteq D_f$ e derivável em $]a,b[$.
                 \[
                     \lim_{h \to 0} \left[ \dfrac{F(x_0+h) - F(x_0)}{h} - f(x_0) \right] = 0,
                 \]
-            como havíamos afirmado. \itemproof
+            como havíamos afirmado. \blackproof
         \end{enumerate}
 
     \textbf{(a)} 
@@ -2110,169 +2110,3 @@ $\subseteq D_f$ e derivável em $]a,b[$.
 \begin{defi}
     Seja 
 \end{defi}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Demonstrações}
-
-\begin{proof}
-    \textbf{(a)} Consideremos o caso em que $x \to p$. Como $\ds \lim_{x \to p} f(x) = L_1$ e $\ds \lim_{x \to p} f(x) = L_2$, temos por definição que para todo $\epsilon > 0$ existem $\delta_1, \delta_2 > 0$ para os quais
-    \begin{align*}  
-            0 < | x - p | < \delta_1 \Rightarrow | f(x) - L_1 | < \dfrac{\epsilon}{2}; \\
-            0 < | x - p | < \delta_2 \Rightarrow | f(x) - L_2 | < \dfrac{\epsilon}{2}.
-        \end{align*}
-    Tomando $\delta := \min \{\delta_1, \delta_2\}$, temos que para todo $\epsilon > 0$ existe $\delta > 0$ tal que
-        \[
-            0 < | x - p | < \delta \Rightarrow |f(x) - L_1| + |f(x) - L_2| < \epsilon.
-        \]
-    Com isso, temos que, para todo $\epsilon > 0$,
-        \begin{align*}
-            | L_1 - L_2 | &= | L_1 - f(x) + f(x) - L_2 | \\
-            &\leq | L_1 - f(x) | + | f(x) - L_2 | \\
-            &= |f(x) - L_1| + |f(x) - L_2| \\
-            &< \epsilon.
-        \end{align*}
-    Daí, $L_1 = L_2$. \itemproof
-
-    \textbf{(b)} \itemproof
-
-    \textbf{(c)} \itemproof
-
-    \textbf{(d)} (Verificar) Como, por hipótese, $\ds \lim_{x \to p} f(x) = L = \lim_{x \to p} h(x)$, temos
-        \begin{align*}
-            \forall \epsilon > 0, \exists \delta_1 > 0: 0 < \left| x - p \right| < \delta_1 \Rightarrow L - \epsilon < f(x) < L + \epsilon; \\
-            \forall \epsilon > 0, \exists \delta_2 > 0: 0 < \left| x - p \right| < \delta_1 \Rightarrow L - \epsilon < h(x) < L + \epsilon.
-        \end{align*}
-    Pois tome $\delta = \min \left\{ \delta_1, \delta_2, r \right\}$; daí, vem
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow L - \epsilon < f(x) \leq g(x) \leq h(x) < L + \epsilon,
-        \]
-    e então
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow L - \epsilon < g(x) < L + \epsilon, 
-        \]
-    isto é, $\ds \lim_{x \to p} g(x) = L$.
-\end{proof}
-
-\begin{proof}
-    \textbf{(a)} (Verificar) Consideremos o caso em que $x \to p$. Precisamos provar que
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow \lim_{u \to a} g(u) - \epsilon < g[f(x)] < \lim_{u \to a} g(u) + \epsilon.
-        \]
-     Como $\ds \lim_{u \to a} g(u) = g(a)$, temos que provar que
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow g(a) - \epsilon < g[f(x)] <g(a) + \epsilon. \tag{1} \label{eq:1}
-        \]
-    Por definição,
-        \begin{multline*}
-            \lim_{u \to a} g(u) = g(a) \Leftrightarrow \forall \epsilon > 0, \exists \delta_1 > 0: \\
-            a - \delta_1 < u < a + \delta_1 \Rightarrow g(a) - \epsilon < g(u) < g(a) + \epsilon,
-        \end{multline*}
-    sendo esta última parte equivalente a 
-        \[
-            a - \delta_1 < f(x) < a + \delta_1 \Rightarrow g(a) - \epsilon < g[f(x)] < g(a) + \epsilon. \tag{2} \label{eq:2}
-        \]
-    Como, por hipótese, $\ds \lim_{x \to p} f(x) = a$, temos que
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow a - \epsilon < f(x) < a + \epsilon. \tag{3} \label{eq:3}
-        \]
-    Para $\epsilon = \delta_1$ em $\eqref{eq:3}$, existe um $\delta > 0$ tal que 
-        \[
-            0 < \left| x-p \right| < \delta \Rightarrow a - \delta_1 < f(x) < a + \delta_1. \tag{4} \label{eq:4}
-        \]
-    Daí, $\eqref{eq:4}$, com $\eqref{eq:2}$, resulta que
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow g(a) - \epsilon < g[f(x)] < g(a) + \epsilon,
-        \]
-    como queríamos provar. \itemproof
-    
-    \textbf{(b)} (Verificar) Precisamos provar que
-        \[
-            \forall \epsilon > 0, \exists \delta > 0 : 0 < \left| x-p \right| < \delta \Rightarrow \left| g[f(x)] - \lim_{u \to a} g(u) \right| < \epsilon,
-        \]
-    isto é,
-        \[  
-            0 < \left| x-p \right| < \delta \Rightarrow \left| g[f(x)] - L \right| < \epsilon.
-        \]
-    Bem, por definição,
-        \[
-            \lim_{u \to a} g(u) = g(a) \Leftrightarrow \forall \epsilon > 0, \exists \delta_1 > 0: 0 < \left| u-a \right| < \delta_1 \Rightarrow \left| g(u) - L \right| < \epsilon.
-        \]
-    Lembrando que $u := f(x)$, temos então
-        \[
-            0 < \left| f(x) - a \right| < \delta_1 \Rightarrow \left| g[f(x)] - L \right| < \epsilon.
-        \]
-    Por outro lado,
-        \[
-            \lim_{x \to p} f(x) = a \Leftrightarrow \forall \epsilon > 0, \exists \delta_2 > 0 : 0 < \left| x-p \right| < \delta_2 \Rightarrow \left| f(x) - a \right| < \epsilon,
-        \]
-    e então, tomando $\epsilon = \delta_1$, $0 < \left| x-p \right| < \delta_2 \Rightarrow \left| f(x) - a \right| < \delta_1$.
-
-    Pois tome $\delta = \left\{ \delta_2, r \right\}$; teremos $0 < \left| x-p \right| < \delta \Rightarrow 0 < \left| f(x) - a \right| < \delta_1$.
-\end{proof}
-
-
-\begin{proof}
-\end{proof}
-
-\newpage
-
-Um \textit{designador} é uma expressão que é um termo ou uma fórmula. Como se vê na definição de termo e fórmula, todo designador tem a forma \( \mathbf{u} \mathbf{v}_1 \ldots \mathbf{v}_n \), onde \( \mathbf{u} \) é um símbolo, \( \mathbf{v}_1, \ldots, \mathbf{v}_n \) são designadores, e \( n \) é um número natural determinado por \( \mathbf{u} \). Por exemplo, se \( \mathbf{u} \) é uma variável, então \( n = 0 \); se \( \mathbf{u} \) é um símbolo funcional \( k \)-ário, então \( n = k \); se \( \mathbf{u} \) é \( \exists \), então \( n = 2 \). Chamamos \( n \) de \textit{índice} de \( \mathbf{u} \). %ok
-
-Dizemos que duas expressões são \textit{compatíveis} se uma delas pode ser obtida adicionando alguma expressão (possivelmente a expressão vazia) ao final da outra. 
-    \begin{itemize}
-        \item Se \( \mathbf{u} \mathbf{v} \) e \( \mathbf{u}'\mathbf{v}' \) são compatíveis, então \( \mathbf{u} \) e \( \mathbf{u}' \) são compatíveis; 
-        \item se \( \mathbf{u} \mathbf{v} \) e \( \mathbf{u} \mathbf{v}' \) são compatíveis, então \( \mathbf{v} \) e \( \mathbf{v}' \) são compatíveis.
-    \end{itemize} %ok
-
-\textbf{Lema.} Seja $n$ um natural fixo. Se $\mathbf{u}_1, \ldots, \mathbf{u}_n$ e $\mathbf{u}'_1, \ldots, \mathbf{u}'_n$ são designadores, e $\mathbf{u}_1 \ldots \mathbf{u}_n$ e $\mathbf{u}'_1 \ldots \mathbf{u}'_n$ são compatíveis, então $\mathbf{u}'_i$ é $\mathbf{u}_i$, para $i = 1, \ldots, n$.
-
-\begin{proof}
-    Façamos indução no comprimento de $\mathbf{u}_1 \ldots \mathbf{u}_n$, isto é, no número de símbolos totais dessa expressão. Sendo $|\mathbf{u}_1 \ldots \mathbf{u}_n| = L$, provemos que se o resultado vale para toda sequência de designadores de comprimento menor que $L$, então vale para as sequências de designadores de comprimento $L$. Escrevendo $\mathbf{u}_1$ como $\mathbf{v} \mathbf{v}_1 \ldots \mathbf{v}_k$, onde $\mathbf{v}$ é um símbolo e $\mathbf{v}_1, \ldots, \mathbf{v}_k$ são designadores, vemos que $\mathbf{u}'_1$ é da forma $\mathbf{v} \mathbf{v}'_1 \ldots \mathbf{v}'_k$, onde $\mathbf{v}'_1, \ldots, \mathbf{v}'_k$ são designadores. Agora, como $\mathbf{u}_1$ é compatível com $\mathbf{u}'_1$ (isso segue do primeiro bullet point, fazendo $\mathbf{u}$ ser $\mathbf{u}_1$, $\mathbf{v}$ ser $\mathbf{u}_2 \ldots \mathbf{u}_n$, $\mathbf{u}'$ ser $\mathbf{u}'_1$ e $\mathbf{v}'$ ser $\mathbf{u}'_2 \ldots \mathbf{u}'_n$), temos que $\mathbf{v} \mathbf{v}_1 \ldots \mathbf{v}_k$ é compatível com $\mathbf{v} \mathbf{v}'_1 \ldots \mathbf{v}'_k$, de modo que  $\mathbf{v}_1 \ldots \mathbf{v}_k$ é compatível com $\mathbf{v}'_1 \ldots \mathbf{v}'_k$ (isso segue do segundo bullet point). Como, evidentemente, $|\mathbf{v}_1 \ldots \mathbf{v}_k| < L$, pela hipótese de indução concluímos que $\mathbf{v}_i$ é $\mathbf{v}'_i$ para cada $i = 1, \ldots, k$. Com isso, temos que $\mathbf{u}_1$ é $\mathbf{u}'_1$, de modo que $\mathbf{u}_2 \ldots \mathbf{u}_n$ é compatível com $\mathbf{u}'_2 \ldots \mathbf{u}'_n$ (pela segunda observação), e como $|\mathbf{u}_2 \ldots \mathbf{u}_n| < L$, pela hipótese de indução concluímos que $\mathbf{u}_i$ é $\mathbf{u}'_i$ para $i = 2, \ldots, n$. Isso nos dá a tese de indução, já que já sabemos que $\mathbf{u}_1$ é $\mathbf{u}'_1$.
-\end{proof}
-
-\begin{proof}
-    Façamos indução forte no comprimento de $\mathbf{u}_1 \ldots \mathbf{u}_n$, isto é, no número de símbolos totais dessa expressão. Sendo $|\mathbf{u}_1 \ldots \mathbf{u}_n| = L$, provemos que se o resultado vale para toda sequência de designadores de comprimento menor que $L$, então vale para as sequências de designadores de comprimento $L$. Escrevendo $\mathbf{u}_1$ como $\mathbf{v} \mathbf{v}_1 \ldots \mathbf{v}_k$, onde $\mathbf{v}$ é um símbolo e $\mathbf{v}_1, \ldots, \mathbf{v}_k$ são designadores, vemos que $\mathbf{u}'_1$ é da forma $\mathbf{v} \mathbf{v}'_1 \ldots \mathbf{v}'_k$, onde $\mathbf{v}'_1, \ldots, \mathbf{v}'_k$ são designadores. Agora, como $\mathbf{u}_1$ é compatível com $\mathbf{u}'_1$ (isso segue da primeira observação ``se \( \mathbf{u} \mathbf{v} \) e \( \mathbf{u}'\mathbf{v}' \) são compatíveis, então \( \mathbf{u} \) e \( \mathbf{u}' \) são compatíveis'', fazendo $\mathbf{u}$ ser $\mathbf{u}_1$, $\mathbf{v}$ ser $\mathbf{u}_2 \ldots \mathbf{u}_n$, $\mathbf{u}'$ ser $\mathbf{u}'_1$ e $\mathbf{v}'$ ser $\mathbf{u}'_2 \ldots \mathbf{u}'_n$), temos que $\mathbf{v} \mathbf{v}_1 \ldots \mathbf{v}_k$ é compatível com $\mathbf{v} \mathbf{v}'_1 \ldots \mathbf{v}'_k$, de modo que  $\mathbf{v}_1 \ldots \mathbf{v}_k$ é compatível com $\mathbf{v}'_1 \ldots \mathbf{v}'_k$ (isso segue da segunda observação ``se \( \mathbf{u} \mathbf{v} \) e \( \mathbf{u} \mathbf{v}' \) são compatíveis, então \( \mathbf{v} \) e \( \mathbf{v}' \) são compatíveis''). Como, evidentemente, $|\mathbf{v}_1 \ldots \mathbf{v}_k| < L$, pela hipótese de indução concluímos que $\mathbf{v}_i$ é $\mathbf{v}'_i$ para cada $i = 1, \ldots, k$. Com isso, temos que $\mathbf{u}_1$ é $\mathbf{u}'_1$, de modo que $\mathbf{u}_2 \ldots \mathbf{u}_n$ é compatível com $\mathbf{u}'_2 \ldots \mathbf{u}'_n$ (pela segunda observação), e como $|\mathbf{u}_2 \ldots \mathbf{u}_n| < L$, pela hipótese de indução concluímos que $\mathbf{u}_i$ é $\mathbf{u}'_i$ para $i = 2, \ldots, n$. Isso nos dá a tese de indução, já que já sabemos que $\mathbf{u}_1$ é $\mathbf{u}'_1$.
-   \end{proof}
- \newpage
-Consideremos um conjunto enumerável correspondente aos símbolos do alfabeto e $X$ o conjunto de todas as sequências finitas de símbolos. Seja $Z$ o conjunto de todos os subconjuntos $Y$ de $X$ tais que
-\begin{itemize}
-    \item as variáveis proposicionais pertencem a $Y$;
-    \item se $A$ pertence a $Y$, então $(\neg A)$ pertence a $Y$;
-    \item se $A$ e $B$ pertencem a $Y$, então $(A \land B)$, $(A \lor B)$, $(A \rightarrow B)$ e $(A \leftrightarrow B)$ pertencem a $Y$.
-\end{itemize}
-
-\begin{teo}
-Suponha que uma propriedade vale para toda fórmula atômica e que, se vale para as fórmulas $A$ e $B$, também vale para $(\neg A)$, $(A \land B)$, $(A \lor B)$, $(A \rightarrow B)$ e $(A \leftrightarrow B)$. Então essa propriedade vale para todas as fórmulas da lógica proposicional.
-\end{teo}
-
-\begin{proof}
-    Tomando $F$ a interseção de $Z$, temos que $F$ satisfaz as condições acima (isto é, pertence à família $Z$) e é o menor conjunto (na ordem da inclusão) que pertence a $Z$. Isto é, se $Y \in Z$, então $F \subset Y$. Segue facilmente, daí, o teorema. Deixamos os detalhes ao leitor.
-\end{proof}

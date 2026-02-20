@@ -1,3 +1,5 @@
+Todos os erros são culpa do autor. Todos os acertos são culpa dos autores da bibliografia.
+
 Frases cringes:
 
 > "Since there never is a textbook that covers exactly what you would like it to cover, or in exactly the way you think is the right way, the temptation to write your own book is strong."

@@ -23,5 +23,4 @@
 # Ignorar arquivos de sistema do VS Code
 .vscode/
 
-# IMPORTANTE: Normalmente ignoramos PDF, mas você pediu para manter.
-# Portanto, NÃO coloque *.pdf aqui.
+# IMPORTANTE: Normalmente ignoramos PDF, mas você pediu para manter. Portanto, NÃO coloque *.pdf aqui.

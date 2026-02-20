@@ -58,7 +58,7 @@
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi}
@@ -126,7 +126,7 @@
 \end{prop}
 
 \begin{proof}
-    Ver \cite{johnpfaffen}, teorema 4.5, página 14. \itemproof
+    Ver \cite{johnpfaffen}, teorema 4.5, página 14. \blackproof
 \end{proof}
 
 
@@ -152,7 +152,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{prop}
 
 \begin{proof} 
-    Como $1 \in A$ para todo $A \in \mathcal{A}$, temos $1 \in \bigcap \mathcal{A}$. Agora, se $n \in \bigcap \mathcal{A}$, então $n \in A$ para todo $A \in \mathcal{A}$; como cada $A \in \mathcal{A}$ é indutivo, temos $n + 1 \in A$, donde $n+1 \in \bigcap \mathcal{A}$. \itemproof
+    Como $1 \in A$ para todo $A \in \mathcal{A}$, temos $1 \in \bigcap \mathcal{A}$. Agora, se $n \in \bigcap \mathcal{A}$, então $n \in A$ para todo $A \in \mathcal{A}$; como cada $A \in \mathcal{A}$ é indutivo, temos $n + 1 \in A$, donde $n+1 \in \bigcap \mathcal{A}$. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -178,8 +178,8 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $A$ é um conjunto indutivo, então, pela definição de $\N$, temos $\N \subseteq A$. Daí, se $A \subseteq \N$, então $A = \N$. \itemproof
-            \item Definindo $A := \{ n \in \N : s(n)\}$, temos $A \subseteq \N$. Além disso, $1 \in A$ e $n+1 \in A$ sempre que $n \in A$, de modo que $A$ é indutivo. Com isso, $\N \subseteq A$, de modo que $A = \N$, isto é, vale $s(n)$ para todo $n \in \N$. \itemproof
+            \item Se $A$ é um conjunto indutivo, então, pela definição de $\N$, temos $\N \subseteq A$. Daí, se $A \subseteq \N$, então $A = \N$. \blackproof
+            \item Definindo $A := \{ n \in \N : s(n)\}$, temos $A \subseteq \N$. Além disso, $1 \in A$ e $n+1 \in A$ sempre que $n \in A$, de modo que $A$ é indutivo. Com isso, $\N \subseteq A$, de modo que $A = \N$, isto é, vale $s(n)$ para todo $n \in \N$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -195,9 +195,9 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Fixe $m \in \N$ e defina $A := \{n \in \N : m + n \in \N \}$. Temos $1 \in A$ pois se $m \in \N$ então $m+1 \in \N$ já que $\N$ é indutivo. Agora, se $n \in A$, então $m + n \in \N$, e como $\N$ é indutivo vem $(m+n)+1 \in \N$, isto é, $m+(n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$. Como $A \subseteq \N$ pela definição de $A$, segue que $A = \N$. Como $m$ foi fixado arbitrariamente, segue que $m + n \in \N$ para quaisquer $m,n \in \N$. \itemproof
-            \item Fixe $m \in \N$ e defina $A := \{n \in \N : m \cdot n \in \N \}$. Temos $1 \in A$ pois $m \cdot 1 = m \in \N$. Agora, se $n \in A$, então $m \cdot n \in \N$, e pelo item anterior $m \cdot n + m \in \N$, isto é, $m \cdot (n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$. Como $A \subseteq \N$ pela definição de $A$, segue que $A = \N$. Como $m$ foi fixado arbitrariamente, segue que $m \cdot n \in \N$ para quaisquer $m,n \in \N$. \itemproof
-            \item Definindo $A := \{ n \in \N : n \geq 1\}$, temos $A \subseteq \N$. Claramente $1 \in A$ pois $1 \geq 1$. Agora, se $n \in A$, então $1>0 \Rightarrow n+1 > n \geq 1 \Rightarrow n+1 \geq 1$, de modo que $n+1 \in A$. Com isso $\N \subseteq A$, donde $A = \N$. \itemproof
+            \item Fixe $m \in \N$ e defina $A := \{n \in \N : m + n \in \N \}$. Temos $1 \in A$ pois se $m \in \N$ então $m+1 \in \N$ já que $\N$ é indutivo. Agora, se $n \in A$, então $m + n \in \N$, e como $\N$ é indutivo vem $(m+n)+1 \in \N$, isto é, $m+(n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$. Como $A \subseteq \N$ pela definição de $A$, segue que $A = \N$. Como $m$ foi fixado arbitrariamente, segue que $m + n \in \N$ para quaisquer $m,n \in \N$. \blackproof
+            \item Fixe $m \in \N$ e defina $A := \{n \in \N : m \cdot n \in \N \}$. Temos $1 \in A$ pois $m \cdot 1 = m \in \N$. Agora, se $n \in A$, então $m \cdot n \in \N$, e pelo item anterior $m \cdot n + m \in \N$, isto é, $m \cdot (n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$. Como $A \subseteq \N$ pela definição de $A$, segue que $A = \N$. Como $m$ foi fixado arbitrariamente, segue que $m \cdot n \in \N$ para quaisquer $m,n \in \N$. \blackproof
+            \item Definindo $A := \{ n \in \N : n \geq 1\}$, temos $A \subseteq \N$. Claramente $1 \in A$ pois $1 \geq 1$. Agora, se $n \in A$, então $1>0 \Rightarrow n+1 > n \geq 1 \Rightarrow n+1 \geq 1$, de modo que $n+1 \in A$. Com isso $\N \subseteq A$, donde $A = \N$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -213,9 +213,9 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Suponha que existe $p \in \N$ com $p \neq 1$ tal que $p-1 \notin \N$, e seja $A = \N \setminus \{p\}$. Como $1 \in \N$ e $p \neq 1$, temos $1 \in A$. Agora, se $n \in A$, então $n \neq p$, e também $n+1 \neq p$ (se fosse $n+1 = p$, então $p-1 = n \in \N$, mas supomos $p-1 \notin \N$), de modo que $A$ é indutivo. Assim, $\N \setminus \{ p\} = \N$, uma clara contradição, de modo que não existe tal $p$. \itemproof
-            \item Definindo $A := \{n \in \N : \forall m (m \in \N \land n < m \Rightarrow m - n \in \N) \}$, temos $A \subseteq \N$. Para todo $m \in \N$ com $m > 1$, temos $m \neq 1$, de modo que $m-1 \in \N$ pelo item anterior. Com isso, $1 \in A$. Agora, se $n \in A$, então para todo $m \in \N$ com $m > n$ tem-se $m-n \in \N$, e precisamos provar que $n+1 \in A$, isto é, que para todo $m \in \N$ com $m > n+1$ tem-se $m-(n+1) \in \N$. Se $m>n+1$, então $m>n+1>n$, de modo que, pela hipótese de indução, temos $m-n \in \N$. Agora, como $m>n+1$, temos $m-n \neq 1$, e como $m-n \in \N$, pelo item anterior temos $(m-n)-1 \in \N$, isto é, $m-(n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$, de modo que $A = \N$. \itemproof
-            \item Sendo $n \in \N$, suponha que existe $m \in \N$ tal que $n < m < n+1$. Daí, $m-n<1$ e, pelo item anterior, $m - n \in \N$, absurdo! Logo, tal $m$ não pode existir. \itemproof
+            \item Suponha que existe $p \in \N$ com $p \neq 1$ tal que $p-1 \notin \N$, e seja $A = \N \setminus \{p\}$. Como $1 \in \N$ e $p \neq 1$, temos $1 \in A$. Agora, se $n \in A$, então $n \neq p$, e também $n+1 \neq p$ (se fosse $n+1 = p$, então $p-1 = n \in \N$, mas supomos $p-1 \notin \N$), de modo que $A$ é indutivo. Assim, $\N \setminus \{ p\} = \N$, uma clara contradição, de modo que não existe tal $p$. \blackproof
+            \item Definindo $A := \{n \in \N : \forall m (m \in \N \land n < m \Rightarrow m - n \in \N) \}$, temos $A \subseteq \N$. Para todo $m \in \N$ com $m > 1$, temos $m \neq 1$, de modo que $m-1 \in \N$ pelo item anterior. Com isso, $1 \in A$. Agora, se $n \in A$, então para todo $m \in \N$ com $m > n$ tem-se $m-n \in \N$, e precisamos provar que $n+1 \in A$, isto é, que para todo $m \in \N$ com $m > n+1$ tem-se $m-(n+1) \in \N$. Se $m>n+1$, então $m>n+1>n$, de modo que, pela hipótese de indução, temos $m-n \in \N$. Agora, como $m>n+1$, temos $m-n \neq 1$, e como $m-n \in \N$, pelo item anterior temos $(m-n)-1 \in \N$, isto é, $m-(n+1) \in \N$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, isto é, $\N \subseteq A$, de modo que $A = \N$. \blackproof
+            \item Sendo $n \in \N$, suponha que existe $m \in \N$ tal que $n < m < n+1$. Daí, $m-n<1$ e, pelo item anterior, $m - n \in \N$, absurdo! Logo, tal $m$ não pode existir. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -224,7 +224,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{teo}
 
 \begin{proof}
-    Suponha por contradição que existe um subconjunto $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ que não tem um elemento mínimo. Definindo $[n] := \{ x \in \N : x \leq n \}$ e $X := \{ n \in \N : [n] \cap A = \emptyset \}$, temos $1 \in X$ (de fato, se $1 \notin X$, então  $[1] \cap A \neq \emptyset$, de modo que $1 \in A$ seria o elemento mínimo de $A$, absurdo!). Agora, se $n \in X$, então $[n] \cap A = \emptyset$; daí, se fosse $n+1 \in A$, este seria o elemento mínimo de $A$, absurdo! Logo, só pode ser $n+1 \in X$, de modo que $X$ é indutivo e $\N \subseteq X$. Como $X \subseteq \N$ por definição, temos que $X = \N$, donde $A = \emptyset$, uma contradição. \itemproof
+    Suponha por contradição que existe um subconjunto $A \in \mathcal{P}{(\N)}_{\neq \emptyset}$ que não tem um elemento mínimo. Definindo $[n] := \{ x \in \N : x \leq n \}$ e $X := \{ n \in \N : [n] \cap A = \emptyset \}$, temos $1 \in X$ (de fato, se $1 \notin X$, então  $[1] \cap A \neq \emptyset$, de modo que $1 \in A$ seria o elemento mínimo de $A$, absurdo!). Agora, se $n \in X$, então $[n] \cap A = \emptyset$; daí, se fosse $n+1 \in A$, este seria o elemento mínimo de $A$, absurdo! Logo, só pode ser $n+1 \in X$, de modo que $X$ é indutivo e $\N \subseteq X$. Como $X \subseteq \N$ por definição, temos que $X = \N$, donde $A = \emptyset$, uma contradição. \blackproof
 \end{proof}
 
 \begin{proof}
@@ -232,11 +232,11 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
         \[
             X := \{ n \in \N : \forall r (r \in \N \land 1 \leq r \leq n \Rightarrow r \in \N \setminus A) \},
         \]
-    temos $1 \in X$. De fato, se fosse $1 \notin X$, então existiria $r \in \N$ tal que $1 \leq r \leq 1$ e $r \notin \N \setminus A$, isto é, teríamos $1 \in A$, de modo que $A$ teria um elemento mínimo, uma contradição. Agora, provemos que se $n \in X$ então $n+1 \in X$. Se fosse $n+1 \notin X$, então teríamos $n+1 \in A$, e como $A$ não tem um elemento mínimo existiria $p \in A$ tal que $p < n+1$. Como $p \in \N$, pelo lema \eqref{lema.reais:discretude} teríamos $1 \leq p \leq n$ (não poderia ser $n < p < n+1$ justamente pelo lema), mas como $n \in X$ teríamos $p \in \N \setminus A$, uma contradição pois $p \in A$. Com isso, $n+1 \in X$ e $X$ é indutivo, de modo que, $X = \N$. Logo, para todo $n \in \N$ temos $n \in \N \setminus A$, isto é, $A = \emptyset$, de modo que não existe um subconjunto não vazio de $\N$ que não tenha um elemento mínimo. \itemproof
+    temos $1 \in X$. De fato, se fosse $1 \notin X$, então existiria $r \in \N$ tal que $1 \leq r \leq 1$ e $r \notin \N \setminus A$, isto é, teríamos $1 \in A$, de modo que $A$ teria um elemento mínimo, uma contradição. Agora, provemos que se $n \in X$ então $n+1 \in X$. Se fosse $n+1 \notin X$, então teríamos $n+1 \in A$, e como $A$ não tem um elemento mínimo existiria $p \in A$ tal que $p < n+1$. Como $p \in \N$, pelo lema \eqref{lema.reais:discretude} teríamos $1 \leq p \leq n$ (não poderia ser $n < p < n+1$ justamente pelo lema), mas como $n \in X$ teríamos $p \in \N \setminus A$, uma contradição pois $p \in A$. Com isso, $n+1 \in X$ e $X$ é indutivo, de modo que, $X = \N$. Logo, para todo $n \in \N$ temos $n \in \N \setminus A$, isto é, $A = \emptyset$, de modo que não existe um subconjunto não vazio de $\N$ que não tenha um elemento mínimo. \blackproof
 \end{proof}
 
 \begin{proof}
-    Defina $X := \{ n \in \N : [n] \subseteq \N \setminus A\}$. Se $1 \in A$, então $1 = \min A$. Se $1 \notin A$, então $[1] = \{ 1 \} \subset \N \setminus A$, de modo que $1 \in X$. Agora, como $A \neq \emptyset$, temos que $X \neq \N$. Se $1 \in X$ e $X \neq \N$, então existe $n_0 \in X$ tal que $n_0 + 1 \notin X$ (se um tal $n_0$ não existisse, $X$ seria indutivo e teríamos $X = \N$), isto é, $[n_0] \cap A = \emptyset$ e $[n_0+1] \cap A \neq \emptyset$. Com isso, temos $n_0 + 1 \in A$, sendo este o elemento mínimo de $A$ (pois, pelo lema \eqref{lema.reais:discretude}, não existe um natural entre $n_0$ e $n_0 + 1$). \itemproof
+    Defina $X := \{ n \in \N : [n] \subseteq \N \setminus A\}$. Se $1 \in A$, então $1 = \min A$. Se $1 \notin A$, então $[1] = \{ 1 \} \subset \N \setminus A$, de modo que $1 \in X$. Agora, como $A \neq \emptyset$, temos que $X \neq \N$. Se $1 \in X$ e $X \neq \N$, então existe $n_0 \in X$ tal que $n_0 + 1 \notin X$ (se um tal $n_0$ não existisse, $X$ seria indutivo e teríamos $X = \N$), isto é, $[n_0] \cap A = \emptyset$ e $[n_0+1] \cap A \neq \emptyset$. Com isso, temos $n_0 + 1 \in A$, sendo este o elemento mínimo de $A$ (pois, pelo lema \eqref{lema.reais:discretude}, não existe um natural entre $n_0$ e $n_0 + 1$). \blackproof
 \end{proof}
 
 \begin{cor}
@@ -252,7 +252,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{teo}
 
 \begin{proof}
-    Provemos que $X := \N - A$ é vazio. De fato, se $X \neq \emptyset$, então pela Boa Ordenação existiria $p \in X$ mínimo; daí, todo $m < p$ seria $m \in A$, de modo que, pela definição de $A$, $p \in A$, absurdo! Logo, $X = \emptyset$. \itemproof
+    Provemos que $X := \N - A$ é vazio. De fato, se $X \neq \emptyset$, então pela Boa Ordenação existiria $p \in X$ mínimo; daí, todo $m < p$ seria $m \in A$, de modo que, pela definição de $A$, $p \in A$, absurdo! Logo, $X = \emptyset$. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -268,7 +268,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
 \end{teo}
 
 \begin{proof}
-    Ver \cite{cursodeanalise1}, teorema 3 do capítulo 3. \itemproof    
+    Ver \cite{cursodeanalise1}, teorema 3 do capítulo 3. \blackproof    
 \end{proof}
 
 \subsection{A Unicidade dos Números Naturais}
@@ -296,7 +296,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
             \item Como $(1,a) \in \varphi$, provemos a unicidade de $a$ como imagem de $1$ por $\varphi$. Se existisse $b \in X$ tal que $(1,b) \in \varphi$ e $b \neq a$, então $(1,a) \in \varphi \setminus \{(1,b)\}$, e se $(n,x) \in \varphi \setminus \{(1,b)\}$, então $(n,x) \in \varphi$, de modo que $(n+1,f(x)) \in \varphi$; como $n+1 \neq 1$, teríamos $(n+1, f(x)) \in \varphi \setminus \{(1,b)\}$, de modo que $\varphi \setminus \{(1,b)\} \in \mathcal{C}$, uma contradição. Com isso, $1 \in S$.
             \item Se $n \in S$, então existe um único $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n+1,f(x)) \in \varphi$; provemos então a unicidade de $f(x)$ como imagem de $n+1$ por $\varphi$. Suponha que exista $b \in X$ tal que $(n+1,b) \in \varphi$ e $b \neq f(x)$. Temos $(1,a) \in \varphi \setminus \{(n+1,b)\}$ pois $n+1 \neq 1$. Se $(m,y) \in \varphi \setminus \{(n+1,b)\}$, então $(m,y) \in \varphi$ e $(m+1,f(y)) \in \varphi$. Se $m=n$, então $y=x$, $m+1 = n+1$ e $f(y) = f(x) \neq b$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Se $m \neq n$, então $m+1 \neq n+1$, de modo que $(m+1, f(x)) \in \varphi \setminus \{(n+1, b)\}$. Com isso, vem $\varphi \setminus \{(n+1, b)\} \in \mathcal{C}$, uma contradição. Logo, se $n \in S$, então $n+1 \in S$, de modo que $S = \N$.
         \end{enumerate}
-    Com isso, fica provada a existência de uma função $\varphi : \N \to X$ com as propriedades desejadas. Provemos, por fim, sua unicidade. Sendo $\psi : \N \to X$ uma função com essas mesmas propriedades e definindo $T := \{ n \in \N : \psi(n) = \varphi(n)\}$, claramente $1 \in T$, e se $n \in T$, então $\psi(n) = \varphi(n)$, de modo que $\psi(n+1) = f(\psi(n)) = f(\varphi(n)) = \varphi(n+1)$, isto é, $n+1 \in T$. Com isso, vem $T = \N$, o que prova a unicidade de $\varphi$. \itemproof
+    Com isso, fica provada a existência de uma função $\varphi : \N \to X$ com as propriedades desejadas. Provemos, por fim, sua unicidade. Sendo $\psi : \N \to X$ uma função com essas mesmas propriedades e definindo $T := \{ n \in \N : \psi(n) = \varphi(n)\}$, claramente $1 \in T$, e se $n \in T$, então $\psi(n) = \varphi(n)$, de modo que $\psi(n+1) = f(\psi(n)) = f(\varphi(n)) = \varphi(n+1)$, isto é, $n+1 \in T$. Com isso, vem $T = \N$, o que prova a unicidade de $\varphi$. \blackproof
 \end{proof}
 
 \begin{teo}
@@ -345,7 +345,7 @@ Em toda esta seção, $(\F, +, \cdot, \leq)$ é um corpo ordenado qualquer.
             de modo que $n +_1 1_{\F_1} \in A$, isto é, $A$ é indutivo. Logo $A = \N$.
             \item Se $m = n$, então $\varphi(m) = \varphi(n)$, e se $\varphi(m) = \varphi(n)$, então $m=n$ pela injetividade de $\varphi$. Com isso, basta provarmos $m <_1 n \Leftrightarrow \varphi(m) <_2 \varphi(n)$. Se $m <_1 n$, então pelo lema \eqref{lema.reais:discretude} existe $k \in \N_{\F_1}$ tal que $n = m +_1 k$. Com isso, $\varphi(n) = \varphi(m) +_2 \varphi(k)$, e se fosse $\varphi(m) \geq_2 \varphi(n)$, teríamos $\varphi(k) \leq_2 0_{\F_2}$, um absurdo. Agora, se $\varphi(m) <_2 \varphi(n)$, então $m \neq n$ pela injetividade de $\varphi$, e se fosse $m >_1 n$ existiria $k \in \N_{\F_1}$ tal que $m = n +_1 k$, de modo que $\varphi(n +_1 k) <_2 \varphi(n)$, uma contradição.
         \end{enumerate}
-    Com isso, vemos que a função $\varphi : \N_{\F_1} \to \N_{\F_2}$, obtida pelo teorema da recursão, é bijetiva, preserva a adição, a multiplicação e a ordem, como queríamos. \itemproof
+    Com isso, vemos que a função $\varphi : \N_{\F_1} \to \N_{\F_2}$, obtida pelo teorema da recursão, é bijetiva, preserva a adição, a multiplicação e a ordem, como queríamos. \blackproof
 \end{proof}
 
 \subsection{Definições recursivas}
@@ -380,7 +380,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Comecemos com um lema: se existe uma bijeção $f:X \to Y$, então, dados $a \in X$ e $b \in Y$, existe também uma bijeção $g: X \to Y$ tal que $g(a)=b$. De fato, como $f$ é sobrejetora, então existe $a' \in X$ tal que $f(a') = b$; sendo $b' = f(a)$, definamos $g: X \to Y$ pondo $g(a) = b$, $g(a')=b'$ e $g(x) = f(x)$ para todo $x \neq a, a'$ em $X$. É fácil ver que $g$ é uma bijeção. Agora, seja $n_0$ o menor natural para o qual existe uma bijeção $f: A \subsetneq [n_0] \to [n_0]$. Se $n_0 \in A$, então, pelo lema, existe uma bijeção $g: A \subsetneq [n_0] \to [n_0]$ com $g(n_0) = n_0$; daí, a restrição $\tilde{g} : A \setminus \{n_0\} \subsetneq [n_0 -1] \to [n_0 -1]$ é uma bijeção, o que contraria a minimalidade de $n_0$. Por outro lado, se $n_0 \notin A$, então $A \subsetneq [n_0 -1]$; tomando $a \in A$ com $f(a) = n_0$, a restrição $\tilde{f} : A \setminus \{a\} \subsetneq A \subseteq [n_0 -1] \to [n_0 -1]$ é uma bijeção, o que, novamente, contraria a minimalidade de $n_0$. \itemproof
+            \item Comecemos com um lema: se existe uma bijeção $f:X \to Y$, então, dados $a \in X$ e $b \in Y$, existe também uma bijeção $g: X \to Y$ tal que $g(a)=b$. De fato, como $f$ é sobrejetora, então existe $a' \in X$ tal que $f(a') = b$; sendo $b' = f(a)$, definamos $g: X \to Y$ pondo $g(a) = b$, $g(a')=b'$ e $g(x) = f(x)$ para todo $x \neq a, a'$ em $X$. É fácil ver que $g$ é uma bijeção. Agora, seja $n_0$ o menor natural para o qual existe uma bijeção $f: A \subsetneq [n_0] \to [n_0]$. Se $n_0 \in A$, então, pelo lema, existe uma bijeção $g: A \subsetneq [n_0] \to [n_0]$ com $g(n_0) = n_0$; daí, a restrição $\tilde{g} : A \setminus \{n_0\} \subsetneq [n_0 -1] \to [n_0 -1]$ é uma bijeção, o que contraria a minimalidade de $n_0$. Por outro lado, se $n_0 \notin A$, então $A \subsetneq [n_0 -1]$; tomando $a \in A$ com $f(a) = n_0$, a restrição $\tilde{f} : A \setminus \{a\} \subsetneq A \subseteq [n_0 -1] \to [n_0 -1]$ é uma bijeção, o que, novamente, contraria a minimalidade de $n_0$. \blackproof
 
             \item Basta ver que esse enunciado é a contrapositiva do item anterior. No entanto, ainda assim, daremos uma outra prova, que se dará por indução em $n$. Evidentemente, o resultado vale para $n=1$. Agora, supondo que o resultado vale para $n \in \N$, tomando uma bijeção $f : [n+1] \to A \subseteq [n+1]$ provaremos que $A = [n+1]$. Sendo $a := f(n+1)$, a restrição $\tilde{f} : [n] \to A \setminus \{a \}$ é uma bijeção.
                 \begin{itemize}
@@ -396,7 +396,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
                         \]
                     a restrição $\tilde{g} : [n] \to A \setminus \{n+1\}$ é uma bijeção; daí, como $A \setminus \{ n+1\} \subseteq [n]$, pela hipótese de indução $A \setminus \{ n+1\}  = [n]$, donde $A = [n+1] $.
                 \end{itemize}
-            Com isso, temos $A = [n+1]$ em ambos os casos, como queríamos provar. \itemproof
+            Com isso, temos $A = [n+1]$ em ambos os casos, como queríamos provar. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -414,13 +414,13 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Se fosse $m<n$, teríamos $[m] \subsetneq [n]$, donde existiria uma bijeção $g^{-1} \circ f : [m] \to [n]$, o que contraria o teorema \eqref{teo:1}. Analogamente, se fosse $n<m$, teríamos $[n] \subsetneq [m]$, donde existiria uma bijeção $f^{-1} \circ g : [n] \to [m]$, o que novamente contraria o teorema \eqref{teo:1}! Logo, só pode ser $m=n$.
 
-            Uma outra prova é o que segue. Se $h = g^{-1} \circ f :[m] \to [n]$ é uma bijeção, então $m=n$. De fato, se $m \leq n$, então $[m] \subseteq [n]$, e como $h^{-1} : [n] \to [m] \subseteq [n]$, pelo teorema \eqref{teo:1} só pode ser $[m]= [n]$, donde $m=n$. \itemproof
+            Uma outra prova é o que segue. Se $h = g^{-1} \circ f :[m] \to [n]$ é uma bijeção, então $m=n$. De fato, se $m \leq n$, então $[m] \subseteq [n]$, e como $h^{-1} : [n] \to [m] \subseteq [n]$, pelo teorema \eqref{teo:1} só pode ser $[m]= [n]$, donde $m=n$. \blackproof
             
             \item Como $A,B \neq \emptyset$ são finitos, existem $n,m \in \N$ e bijeções $g: [n] \to A$ e $h : [m] \to B $.
 
             ($\Rightarrow$) Sendo $|B| = n$, existe uma bijeção $\varphi : [n] \to B$, donde $ g^{-1} \circ \varphi : A \to B$ é uma bijeção.
 
-            ($\Leftarrow$) Existindo uma bijeção $f : A \to B$, temos que $g^{-1} \circ f^{-1} \circ h : [m] \to [n]$ é também uma bijeção, donde $m=n$, isto é, $|A|=|B|$. \itemproof
+            ($\Leftarrow$) Existindo uma bijeção $f : A \to B$, temos que $g^{-1} \circ f^{-1} \circ h : [m] \to [n]$ é também uma bijeção, donde $m=n$, isto é, $|A|=|B|$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -437,7 +437,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]         
-            \item Suponha que existe uma tal bijeção. Se $X$ é finito, então existe uma bijeção $h : [n] \to X$ para algum $n \in \N$. Definindo $A := h^{-1}(Y)$, temos $A \subsetneq [n]$ e, além disso, a restrição de $h$ a $A$ é uma bijeção $h_A : A \to Y$. Com isso, a composta $h^{-1} \circ f^{-1} \circ h_A : A \to [n]$ é uma bijeção de $A \subsetneq [n]$ em $[n]$, o que contraria o teorema \eqref{teo:1}! Logo, não pode existir uma bijeção $f:X \to Y$ onde $X$ é finito e $Y \subsetneq X$. \itemproof
+            \item Suponha que existe uma tal bijeção. Se $X$ é finito, então existe uma bijeção $h : [n] \to X$ para algum $n \in \N$. Definindo $A := h^{-1}(Y)$, temos $A \subsetneq [n]$ e, além disso, a restrição de $h$ a $A$ é uma bijeção $h_A : A \to Y$. Com isso, a composta $h^{-1} \circ f^{-1} \circ h_A : A \to [n]$ é uma bijeção de $A \subsetneq [n]$ em $[n]$, o que contraria o teorema \eqref{teo:1}! Logo, não pode existir uma bijeção $f:X \to Y$ onde $X$ é finito e $Y \subsetneq X$. \blackproof
 
             Observe que esse item é uma mera reformulação do teorema \eqref{teo:1}.
     
@@ -675,8 +675,8 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Sejam $\alpha$ e $\beta$ supremos de $S$. Como $\alpha$ é a menor das cotas superiores de $S$ e $\beta$ é uma cota superior de $S$, temos $\alpha \leq \beta$. Como $\beta$ é a menor das cotas superiores de $S$ e $\alpha$ é uma cota superior de $S$, temos $\beta \leq \alpha$. Logo $\alpha = \beta$. \itemproof
-            \item Segue analogamente. \itemproof
+            \item Sejam $\alpha$ e $\beta$ supremos de $S$. Como $\alpha$ é a menor das cotas superiores de $S$ e $\beta$ é uma cota superior de $S$, temos $\alpha \leq \beta$. Como $\beta$ é a menor das cotas superiores de $S$ e $\alpha$ é uma cota superior de $S$, temos $\beta \leq \alpha$. Logo $\alpha = \beta$. \blackproof
+            \item Segue analogamente. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -701,10 +701,10 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Segue facilmente por contradição.
                 \begin{enumerate}[label=\roman*.]
-                    \item Do contrário, seria $x \leq \beta < \sup{S}$ para todo $x \in S$, de modo que $\beta$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo. \itemproof
-                    \item Do contrário, existiria $\epsilon \in \F_{>0}$ tal que $x \leq \sup{S} - \epsilon < \sup{S}$ para todo $x \in S$, de modo que $\sup{S} - \epsilon$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo. \itemproof
+                    \item Do contrário, seria $x \leq \beta < \sup{S}$ para todo $x \in S$, de modo que $\beta$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo. \blackproof
+                    \item Do contrário, existiria $\epsilon \in \F_{>0}$ tal que $x \leq \sup{S} - \epsilon < \sup{S}$ para todo $x \in S$, de modo que $\sup{S} - \epsilon$ seria uma cota superior de $S$ menor que $\sup{S}$, um absurdo. \blackproof
                 \end{enumerate}
-            \item Segue analogamente. \itemproof
+            \item Segue analogamente. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -717,7 +717,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \end{cor}
 
 \begin{proof}
-    Ver \cite{ajwhite}, teorema 1-10, página 32. Ver \cite{stromberg}, corolário 1.12, página 13. \itemproof
+    Ver \cite{ajwhite}, teorema 1-10, página 32. Ver \cite{stromberg}, corolário 1.12, página 13. \blackproof
 \end{proof}
 
 \begin{prop}
@@ -727,7 +727,7 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
 \begin{proof}
     Provemos que em todo corpo ordenado completo $\F$ o conjunto $\N_{\F}$ é ilimitado superiormente. Daí, pelo teorema \eqref{teo.reais:arquimedes}, seguirá que $\F$ é arquimediano.
     
-    Suponha, por absurdo, que $\N_{\F}$ seja limitado superiormente. Como $\N_{\F} \in \mathcal{P}(\F)_{\neq \emptyset}$, existe $a := \sup{\N_{\F}}$. Por \eqref{teo.reais:supinf}, para $\epsilon = 1$ existe $n \in \N_{\F}$ tal que $a-1 < n$, isto é, $a < n+1$, e como $n+1 \in \N_{\F}$, temos uma contradição. \itemproof
+    Suponha, por absurdo, que $\N_{\F}$ seja limitado superiormente. Como $\N_{\F} \in \mathcal{P}(\F)_{\neq \emptyset}$, existe $a := \sup{\N_{\F}}$. Por \eqref{teo.reais:supinf}, para $\epsilon = 1$ existe $n \in \N_{\F}$ tal que $a-1 < n$, isto é, $a < n+1$, e como $n+1 \in \N_{\F}$, temos uma contradição. \blackproof
 \end{proof}
 
 
@@ -810,8 +810,8 @@ Seguimos \cite{cursodeanalise1} e \cite{analisereal1} de perto.
                 \[
                     e = e * e' = e' * e = e',
                 \]
-            como havíamos afirmado. \itemproof
-            \item Segue analogamente. \itemproof
+            como havíamos afirmado. \blackproof
+            \item Segue analogamente. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -851,9 +851,9 @@ Anéis
                 \[
                     0' = 0' + 0 = 0 + 0' = 0,
                 \]
-            conforme afirmado. \itemproof
+            conforme afirmado. \blackproof
             \item
-            \item Observando que $a \cdot 0 = a \cdot (0+0) = a \cdot 0 + a \cdot 0$, somando $-(a \cdot 0)$ aos dois lados de $ a \cdot 0 = a \cdot 0 + a \cdot 0$, segue que $0 \cdot a = 0$. \itemproof
+            \item Observando que $a \cdot 0 = a \cdot (0+0) = a \cdot 0 + a \cdot 0$, somando $-(a \cdot 0)$ aos dois lados de $ a \cdot 0 = a \cdot 0 + a \cdot 0$, segue que $0 \cdot a = 0$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -886,7 +886,7 @@ Anéis
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi}
@@ -930,7 +930,7 @@ Anéis
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{obs}
@@ -991,7 +991,7 @@ Anéis
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1015,7 +1015,7 @@ Anéis
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1043,7 +1043,7 @@ Anéis
 \end{teo}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \section{Homomorfismos}

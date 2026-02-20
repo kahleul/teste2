@@ -4,12 +4,12 @@
 \usepackage[brazilian]{babel}
 \usepackage{libertine}
 
-
+\usepackage{mathtools}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
-\usepackage{mathtools}
+\usepackage{etoolbox}
 
 \usepackage{csquotes}
 \usepackage{microtype}
@@ -38,35 +38,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newtheoremstyle{meuestilo}
-  {8pt}                     % Espaço acima
-  {0pt}                     % Espaço abaixo
-  {\normalfont}             % Fonte do corpo do teorema
-  {}                        % Indentação (vazio = nenhuma)
-  {\bfseries}               % Fonte do cabeçalho do teorema
-  {.}                       % Pontuação após o cabeçalho
-  { }                       % Espaço após o cabeçalho
-  {}                        % Especificação do cabeçalho (vazio = `Teorema 1.1`)
-
-\theoremstyle{meuestilo}
-
-\newtheorem{defi}{Definição}[chapter]
-\newtheorem{teo}[defi]{Teorema}
-\newtheorem{prop}[defi]{Proposição}
-\newtheorem{lem}[defi]{Lema}
-\newtheorem{cor}[defi]{Corolário}
-\newtheorem{obs}[defi]{Observação}
-\newtheorem{ex}[defi]{Exemplo}
-\newtheorem{ax}[defi]{Axioma}
-\newtheorem{fato}[defi]{Fato}
-\newtheorem{nota}[defi]{Notação}
-
-\renewenvironment{proof}[1][Prova.]{\par\noindent\textbf{#1} }%{\hfill$\blacksquare$\par}
-
-\newcommand{\itemproof}{\hfill$\blacksquare$\par}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
@@ -76,12 +47,14 @@
 \newcommand{\Pb}{\mathbb{P}}
 \newcommand{\ds}{\displaystyle}
 \newcommand{\op}{\operatorname}
-\newcommand{\ind}{\operatorname{Ind}}
 \newcommand{\id}{\operatorname{Id}}
+\newcommand{\ind}{\operatorname{Ind}}
 \newcommand{\Dom}{\operatorname{Dom}}
 \renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\sin}{\operatorname{sen}}
 
+\let\oldrestriction\restriction
+\DeclareRobustCommand{\restriction}{\mathord{\oldrestriction}}
 
 \makeatletter
 \NewDocumentCommand{\lowerint}{}{\mathop{}\mathpalette\lowerint@\relax\!\int}
@@ -125,12 +98,79 @@
     urlcolor=blue,
     breaklinks=true
 ]{hyperref}
+\usepackage[noabbrev]{cleveref}
+
+\newtheoremstyle{meuestilo}
+  {8pt}                     % Espaço acima
+  {0pt}                     % Espaço abaixo
+  {\normalfont}             % Fonte do corpo do teorema
+  {}                        % Indentação (vazio = nenhuma)
+  {\bfseries}               % Fonte do cabeçalho do teorema
+  {.}                       % Pontuação após o cabeçalho
+  { }                       % Espaço após o cabeçalho
+  {}                        % Especificação do cabeçalho (vazio = `Teorema 1.1`)
+
+\theoremstyle{meuestilo}
+
+\newtheorem{defi}{Definição}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{prop}{Proposição}[section]
+\newtheorem{lem}{Lema}[section]
+\newtheorem{cor}{Corolário}[section]
+\newtheorem{obs}{Observação}[section]
+\newtheorem{ex}{Exemplo}[section]
+\newtheorem{ax}{Axioma}[section]
+\newtheorem{fato}{Fato}[section]
+\newtheorem{nota}{Notação}[section]
+\newtheorem{claim}{Afirmação}
+
+% 2. Forçamos o contador a voltar para 0 sempre que um 'proof' começar
+\AtBeginEnvironment{proof}{\setcounter{claim}{0}}
+
+\renewenvironment{proof}[1][Prova.]{\par\noindent\textbf{#1} }%{\hfill$\blacksquare$\par} comentário para remover o \blacksquare ao final do ambiente proof
+
+\newenvironment{midproof}[1][Prova.]{\par\noindent\textit{#1} }%{\hfill$\blacksquare$\par} comentário para remover o \blacksquare ao final do ambiente midproof
+
+\newcommand{\itemproof}{\hfill$\blacksquare$\par}
+\newcommand{\blackproof}{\hfill$\blacksquare$\par}
+\newcommand{\whiteproof}{\hfill$\square$\par}
+
+\crefname{defi}{definição}{definições}
+\crefname{teo}{teorema}{teoremas}
+\crefname{prop}{proposição}{proposições}
+\crefname{lem}{lema}{lemas}
+\crefname{cor}{corolário}{corolários}
+\crefname{obs}{observação}{observações}
+\crefname{ex}{exemplo}{exemplos}
+\crefname{ax}{axioma}{axiomas}
+\crefname{fato}{fato}{fatos}
+\crefname{nota}{notação}{notações}
+\crefname{claim}{afirmação}{afirmações}
+
+% Itens Extras
+\crefname{equation}{equação}{equações}
+\crefname{chapter}{capítulo}{capítulos}
+\crefname{section}{seção}{seções}
+\crefname{subsection}{subseção}{subseções}
+\crefname{appendix}{apêndice}{apêndices}
+\crefname{figure}{figura}{figuras}
+\crefname{table}{tabela}{tabelas}
+
+% --- Ajuste de Conjunções (Importante para o Português) ---
+% Isso troca o "and" por "e" em referências múltiplas (ex: Teoremas 1 e 2)
+\newcommand{\crefpairconjunction}{ e }
+\newcommand{\crefmiddleconjunction}{, }
+\newcommand{\creflastconjunction}{ e }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{demonstrações erradas de teoremas falsos}
 \author{Alexander Kahleul}
 \date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Créditos ao Gemini e ao ChatGPT: não sei muito LaTeX, mas aprendi com eles o pouco que sei.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

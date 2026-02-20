@@ -740,7 +740,7 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
 \end{cor}
 
 \begin{proof}
-    Particularmente para $\lambda = 1$, temos $u + v \in W$. Particularmente para $v = 0_V$, temos $\lambda u \in W$. \itemproof
+    Particularmente para $\lambda = 1$, temos $u + v \in W$. Particularmente para $v = 0_V$, temos $\lambda u \in W$. \blackproof
 \end{proof}
 
 \begin{prop}
@@ -779,7 +779,7 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Para quaisquer $u,v \in W_1 \cap W_2$, temos, em particular, $u,v \in W_1$ e $u,v \in W_2$. Como $W_1$ e $W_2$ são espaços vetoriais, temos que $u+\lambda v \in W_1$ e $u+ \lambda v \in W_2$ para todo $\lambda \in \R$, donde $u+\lambda v \in W_1 \cap W_2$. Logo $W_1 \cap W_2$ é um subespaço vetorial de $V$. \itemproof
+            \item Para quaisquer $u,v \in W_1 \cap W_2$, temos, em particular, $u,v \in W_1$ e $u,v \in W_2$. Como $W_1$ e $W_2$ são espaços vetoriais, temos que $u+\lambda v \in W_1$ e $u+ \lambda v \in W_2$ para todo $\lambda \in \R$, donde $u+\lambda v \in W_1 \cap W_2$. Logo $W_1 \cap W_2$ é um subespaço vetorial de $V$. \blackproof
             \item Por contradição, suponha que existam $w_1 \in W_1$ e $w_2 \in W_2$ tais que $w_1 \notin W_2$ e $w_2 \notin W_1$. Como, por hipótese, $W_1 \cup W_2$ é um subespaço vetorial, $ w: =w_1+w_2 \in W_1 \cup W_2$, isto é, $w \in W_1$ ou $w \in W_2$. 
                 \begin{itemize} 
                     \item Se $w \in W_1$, então $w + (- w_1) = w_2 \in W_1$, absurdo!
@@ -913,13 +913,13 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
         
 \begin{proof}
     \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-        \item Se $u \in S$, então $u = 1 u \in [S]$. \itemproof
+        \item Se $u \in S$, então $u = 1 u \in [S]$. \blackproof
 
-        \item Pelo item anterior, $[S] \subseteq [[S]]$. Agora, se $u \in [[S]]$, então $u$ é uma combinação linear de vetores de $[S]$, que por sua vez são combinações lineares de vetores de $[S]$, de modo que $u \in [S]$. Assim, $[[S]] \subseteq [S]$, de modo que $[[S]] = [S]$. \itemproof
+        \item Pelo item anterior, $[S] \subseteq [[S]]$. Agora, se $u \in [[S]]$, então $u$ é uma combinação linear de vetores de $[S]$, que por sua vez são combinações lineares de vetores de $[S]$, de modo que $u \in [S]$. Assim, $[[S]] \subseteq [S]$, de modo que $[[S]] = [S]$. \blackproof
 
-        \item Se $u \in [S]$, então $u$ é uma combinação linear de elementos de $S$; como $S$ é um subespaço vetorial, temos então $u \in S$, de modo que $[S] \subseteq S$. Como $S \subseteq [S]$, temos então $[S] = S$. \itemproof
+        \item Se $u \in [S]$, então $u$ é uma combinação linear de elementos de $S$; como $S$ é um subespaço vetorial, temos então $u \in S$, de modo que $[S] \subseteq S$. Como $S \subseteq [S]$, temos então $[S] = S$. \blackproof
         
-        \item Se $u \in S$, então existem vetores $u_1, \ldots, u_n \in S$ e escalares $\lambda_1, \ldots, \lambda_n \in \R$ tais que $u = \lambda_1 u_1 + \cdots + \lambda_n u_n$. Como $u_1, \ldots, u_n \in S$, por ser $S \subseteq T$ vem $u_1, \ldots, u_n \in T$, de modo que $\lambda_1 u_1 + \cdots + \lambda_n u_n \in T$. \itemproof
+        \item Se $u \in S$, então existem vetores $u_1, \ldots, u_n \in S$ e escalares $\lambda_1, \ldots, \lambda_n \in \R$ tais que $u = \lambda_1 u_1 + \cdots + \lambda_n u_n$. Como $u_1, \ldots, u_n \in S$, por ser $S \subseteq T$ vem $u_1, \ldots, u_n \in T$, de modo que $\lambda_1 u_1 + \cdots + \lambda_n u_n \in T$. \blackproof
 
         \item 
     \end{enumerate}
@@ -976,7 +976,7 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Sendo $S = \{u\}$, se $\lambda \cdot u = 0_V$ então $\lambda \neq 0$ já que $u \neq 0_V$. Logo $S$ é L.I.. \itemproof
+            \item Sendo $S = \{u\}$, se $\lambda \cdot u = 0_V$ então $\lambda \neq 0$ já que $u \neq 0_V$. Logo $S$ é L.I.. \blackproof
             
             \item ($\Rightarrow$) Se $S$ é L.D., então existem $v_1, v_2, \ldots, v_n \in S$ para os quais vale
                 \[
@@ -992,10 +992,10 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
                 \[
                     \lambda_1 v_1 + \cdots + \lambda_n v_n + (-1)v = 0;
                 \]
-            como $-1 \neq 0$, temos, por definição, que $S$ é L.D.. \itemproof
+            como $-1 \neq 0$, temos, por definição, que $S$ é L.D.. \blackproof
         \end{enumerate}
     
-    \textbf{(c)} Basta ver que $0_V$ é combinação linear de quaisquer $v_1, v_2, \ldots, v_n \in V$: temos $0_V = 0v_1 + 0v_2 + \cdots + 0v_n$. Assim, pelo item anterior, $S$ é L.D.. \itemproof
+    \textbf{(c)} Basta ver que $0_V$ é combinação linear de quaisquer $v_1, v_2, \ldots, v_n \in V$: temos $0_V = 0v_1 + 0v_2 + \cdots + 0v_n$. Assim, pelo item anterior, $S$ é L.D.. \blackproof
 
     \textbf{(d)}
 
@@ -1046,7 +1046,7 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
                 \]
             uma combinação linear não trivial de $T$, de modo que $T$ é L.D..
         \end{itemize}
-    Com isso, vemos que se o resultado vale para subconjuntos de $V$ com $n-1$ vetores, então ele também vale para subconjuntos de $V$ com $n$ vetores. Isso completa o passo indutivo e, portanto, completa a prova. \itemproof
+    Com isso, vemos que se o resultado vale para subconjuntos de $V$ com $n-1$ vetores, então ele também vale para subconjuntos de $V$ com $n$ vetores. Isso completa o passo indutivo e, portanto, completa a prova. \blackproof
 \end{proof}
 
 \begin{cor}
@@ -1070,11 +1070,11 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
         \[
             v_n = \left( \dfrac{-\lambda_1}{\lambda_n} \right) v_1 + \left( \dfrac{-\lambda_2}{\lambda_n} \right) v_2 + \cdots + \left( \dfrac{-\lambda_{n-1}}{\lambda_n} \right) v_{n-1},
         \]
-    de modo que $v_n$ é uma combinação linear de $v_1, v_2, \ldots, v_{n-1} \in S$. Pelo item (g) de \eqref{prop:deplin}, removemos $v_n$ e obtemos $[S \setminus \{v_n\}] = [S] = V$. Repetindo esse processo (em um número finito de vezes, digamos, $m$, já que $V$ é finitamente gerado) eventualmente obteremos um subconjunto $L.I.$ de $S$ com $n-m$ vetores que continua gerando $V$; esse subconjunto vem a ser, então, a base de $V$. \itemproof
+    de modo que $v_n$ é uma combinação linear de $v_1, v_2, \ldots, v_{n-1} \in S$. Pelo item (g) de \eqref{prop:deplin}, removemos $v_n$ e obtemos $[S \setminus \{v_n\}] = [S] = V$. Repetindo esse processo (em um número finito de vezes, digamos, $m$, já que $V$ é finitamente gerado) eventualmente obteremos um subconjunto $L.I.$ de $S$ com $n-m$ vetores que continua gerando $V$; esse subconjunto vem a ser, então, a base de $V$. \blackproof
 \end{proof}
 
 \begin{proof}
-    Alternativamente, suponha que $S$ é L.D.. Como $V \neq \{0\}$, existe $i \in [n]$ tal que $v_i \neq 0$. Suponha, sem perda de generalidade, que $i=1$, isto é, que $v_1 \neq 0$; se todo $v_i$, com $i \in [n] \setminus \{1\}$, puder ser escrito como combinação linear de $v_1$, então $V = [v_1]$ e $\{ v_1\}$ é uma base de $V$. Se isso não ocorre, então existe algum $v_i$, com $i \in [n] \setminus \{1\}$, que não pode ser escrito como combinação linear de $v_1$. Suponha, sem perda de generalidade, que $i=2$; se todo $v_i$, com $i \in [n] \setminus \{1,2\}$, puder ser escrito como combinação linear de $v_1$ e $v_2$, então $V = [v_1, v_2]$ e $\{ v_1, v_2\}$ é uma base de $V$. Repetindo esse processo (em um número finito de vezes, já que $V$ é finitamente gerado) eventualmente obteremos um subconjunto $L.I.$ de $S$ que gera $V$; esse subconjunto vem a ser, então, a base de $V$. \itemproof
+    Alternativamente, suponha que $S$ é L.D.. Como $V \neq \{0\}$, existe $i \in [n]$ tal que $v_i \neq 0$. Suponha, sem perda de generalidade, que $i=1$, isto é, que $v_1 \neq 0$; se todo $v_i$, com $i \in [n] \setminus \{1\}$, puder ser escrito como combinação linear de $v_1$, então $V = [v_1]$ e $\{ v_1\}$ é uma base de $V$. Se isso não ocorre, então existe algum $v_i$, com $i \in [n] \setminus \{1\}$, que não pode ser escrito como combinação linear de $v_1$. Suponha, sem perda de generalidade, que $i=2$; se todo $v_i$, com $i \in [n] \setminus \{1,2\}$, puder ser escrito como combinação linear de $v_1$ e $v_2$, então $V = [v_1, v_2]$ e $\{ v_1, v_2\}$ é uma base de $V$. Repetindo esse processo (em um número finito de vezes, já que $V$ é finitamente gerado) eventualmente obteremos um subconjunto $L.I.$ de $S$ que gera $V$; esse subconjunto vem a ser, então, a base de $V$. \blackproof
 \end{proof}
 
 \begin{teo}[Invariância] \label{alr.teo:bases}
@@ -1082,7 +1082,7 @@ A demonstração é feita exibindo-se, explicitamente, as inversas.
 \end{teo}
 
 \begin{proof}
-    Como $\mathcal{B}_1$ é L.I. e $[\mathcal{B}_1] = V$, pelo lema \eqref{alr.lem:fundamental} temos que $|\mathcal{B}_2| \leq |\mathcal{B}_1|$ já que $\mathcal{B}_2 \subsetneq V = [\mathcal{B}_1]$. De fato, se fosse $|\mathcal{B}_2| > |\mathcal{B}_1|$, pelo lema \eqref{alr.lem:fundamental} $\mathcal{B}_2$ seria L.D., o que contradiz a hipótese. Analogamente, como $\mathcal{B}_2$ é L.I. e $[\mathcal{B}_2] = V$, temos que $|\mathcal{B}_1| \leq |\mathcal{B}_2|$. Sendo $|\mathcal{B}_2| \leq |\mathcal{B}_1|$ e $|\mathcal{B}_1| \leq |\mathcal{B}_2|$, temos que $|\mathcal{B}_1| = |\mathcal{B}_2|$, conforme afirmado. \itemproof
+    Como $\mathcal{B}_1$ é L.I. e $[\mathcal{B}_1] = V$, pelo lema \eqref{alr.lem:fundamental} temos que $|\mathcal{B}_2| \leq |\mathcal{B}_1|$ já que $\mathcal{B}_2 \subsetneq V = [\mathcal{B}_1]$. De fato, se fosse $|\mathcal{B}_2| > |\mathcal{B}_1|$, pelo lema \eqref{alr.lem:fundamental} $\mathcal{B}_2$ seria L.D., o que contradiz a hipótese. Analogamente, como $\mathcal{B}_2$ é L.I. e $[\mathcal{B}_2] = V$, temos que $|\mathcal{B}_1| \leq |\mathcal{B}_2|$. Sendo $|\mathcal{B}_2| \leq |\mathcal{B}_1|$ e $|\mathcal{B}_1| \leq |\mathcal{B}_2|$, temos que $|\mathcal{B}_1| = |\mathcal{B}_2|$, conforme afirmado. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1290,7 +1290,7 @@ Seguimos os capítulos 12 e 13 de \cite{apostol1}.
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{teo}[Cauchy-Schwarz]
@@ -1303,7 +1303,7 @@ Seguimos os capítulos 12 e 13 de \cite{apostol1}.
 \begin{proof}
     Se $A = 0$ ou $B = 0$, o resultado segue trivialmente. Suponha, então, que $A,B \in \R^n_{\neq 0}$.
     
-    \itemproof
+    \blackproof
 \end{proof}
 
 
@@ -1343,7 +1343,7 @@ Seguimos os capítulos 12 e 13 de \cite{apostol1}.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item 
             \item 
-            \item Pois tome $L = L(P, Q-P)$. Temos $P \in L$ pois $P = P + 0 \cdot (Q-P)$ e temos $Q \in L$ pois $Q = P + 1 \cdot (Q-P)$. Agora, seja $L'$ uma reta tal que $P, Q \in L'$. Como $P \in L'$, temos por definição $L' = L(P,A)$ para algum vetor $A \in \R^n_{\neq 0}$. Como $Q \in L' = L(P,A)$, existe $t \in \R$ tal que $Q = P + t A$. Daí, $Q-P = t A$, e como $Q - P \neq 0$, temos $t \neq 0$ e $Q-P \parallel A$, donde $L' = L$ pelo primeiro item. \itemproof
+            \item Pois tome $L = L(P, Q-P)$. Temos $P \in L$ pois $P = P + 0 \cdot (Q-P)$ e temos $Q \in L$ pois $Q = P + 1 \cdot (Q-P)$. Agora, seja $L'$ uma reta tal que $P, Q \in L'$. Como $P \in L'$, temos por definição $L' = L(P,A)$ para algum vetor $A \in \R^n_{\neq 0}$. Como $Q \in L' = L(P,A)$, existe $t \in \R$ tal que $Q = P + t A$. Daí, $Q-P = t A$, e como $Q - P \neq 0$, temos $t \neq 0$ e $Q-P \parallel A$, donde $L' = L$ pelo primeiro item. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1358,7 +1358,7 @@ Seguimos os capítulos 12 e 13 de \cite{apostol1}.
 \end{teo}
 
 \begin{proof}
-    Seja $L = L(P,A)$ e tome $L' = L(Q,A)$. De cara, $Q \in L'$ e $L' \parallel L$. A unicidade segue imediatamente da proposição \eqref{c2.prop:retas}. \itemproof
+    Seja $L = L(P,A)$ e tome $L' = L(Q,A)$. De cara, $Q \in L'$ e $L' \parallel L$. A unicidade segue imediatamente da proposição \eqref{c2.prop:retas}. \blackproof
 \end{proof}
 
 \begin{teo}
@@ -1424,7 +1424,7 @@ Seguimos os capítulos 12 e 13 de \cite{apostol1}.
 \end{teo}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 

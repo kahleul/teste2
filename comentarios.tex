@@ -21,7 +21,7 @@ O conteúdo aqui é lixo. Quando vou modificar o texto removendo uma grande part
 
 \textbf{(a)} ($\Rightarrow$) Para que $0$ seja um ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ deve existir $h \in B$ tal que $0 < |h-0| < \delta$. Bem, como $a$ é um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ existe $x \in A$ tal que $0 < |x-a| < \delta$. Pois tomando $h := x-a$, temos que $x = a+h$, e como $x \in A$, temos $a+h \in A$, de modo que $h \in B$. Daí, segue a conclusão.
 
-    ($\Leftarrow$) Para que $a$ seja um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ deve existir $x \in A$ tal que $0 < |x-a| < \delta$. Bem, como $0$ é ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ existe $h \in B$ tal que $0<|h|<\delta$. Pois tome $x:=a+h$: como $h \in B$, temos que $a+h \in A$, de modo que $x \in A$. Daí, segue a conclusão. \itemproof
+    ($\Leftarrow$) Para que $a$ seja um ponto de acumulação de $A$, para todo $\delta \in \R_{>0}$ deve existir $x \in A$ tal que $0 < |x-a| < \delta$. Bem, como $0$ é ponto de acumulação de $B$, para todo $\delta \in \R_{>0}$ existe $h \in B$ tal que $0<|h|<\delta$. Pois tome $x:=a+h$: como $h \in B$, temos que $a+h \in A$, de modo que $x \in A$. Daí, segue a conclusão. \blackproof
 
 \begin{defi}
     \textbf{(a)} (Vizinhança) Uma \textit{vizinhança} de $a \in \R$ é qualquer intervalo aberto $I \subseteq \R$ com $a \in I$. Dado $\delta \in \R_{>0}$, dizemos que a vizinhança $V_{\delta}(a) := (a-\delta, a+\delta)$ \textit{centrada} em $a$ e possui \textit{raio} $\delta$.
@@ -368,7 +368,7 @@ O axioma do vazio nos diz que existe um conjunto $x$ que cumpre $\forall y (y \n
         \[
             \forall z (\forall y (y \notin z) \rightarrow \forall w ((w \in z) \leftrightarrow (w \in x) ) ). \tag{$\lozenge$}
         \]
-    A fórmula $\lozenge$ só será falsa se $\forall y (y \notin z) \rightarrow \forall w ((w \in z) \leftrightarrow (w \in x) )$ for falsa, que por sua vez só será falsa se $\forall w ((w \in z) \leftrightarrow (w \in x)$ for falsa, que por sua vez só será falsa se $(w \in z) \leftrightarrow (w \in x)$ for falsa. No entanto, essa última fórmula é tautologicamente verdadeira, uma vez que $w \in x$ e $w \in z$ são sempre falsas. De fato, $w \in x$ é sempre falsa já que $\forall y (y \notin x)$ pelo axioma do vazio e $w \in z$ é sempre falsa já que $\forall y (y \notin z)$ por hipótese. Logo, a fórmula ($\lozenge$) é sempre verdadeira. \itemproof
+    A fórmula $\lozenge$ só será falsa se $\forall y (y \notin z) \rightarrow \forall w ((w \in z) \leftrightarrow (w \in x) )$ for falsa, que por sua vez só será falsa se $\forall w ((w \in z) \leftrightarrow (w \in x)$ for falsa, que por sua vez só será falsa se $(w \in z) \leftrightarrow (w \in x)$ for falsa. No entanto, essa última fórmula é tautologicamente verdadeira, uma vez que $w \in x$ e $w \in z$ são sempre falsas. De fato, $w \in x$ é sempre falsa já que $\forall y (y \notin x)$ pelo axioma do vazio e $w \in z$ é sempre falsa já que $\forall y (y \notin z)$ por hipótese. Logo, a fórmula ($\lozenge$) é sempre verdadeira. \blackproof
 
 
     
@@ -497,22 +497,22 @@ O axioma do vazio nos diz que existe um conjunto $x$ que cumpre $\forall y (y \n
 \item Para todo $\epsilon \in \R_{>0}$ existe $n \in \N$ tal que $\dfrac{1}{n} < \epsilon$.
 \item Se $a,x,y \in \R$ cumprem $a \leq x \leq a + \dfrac{y}{n}$ para todo $n \in \N$, então $x=a$.
 
-\item Suponha que $\N$ seja limitado superiormente. Como $\N \subsetneq \R$, existe $a := \sup{\N}$. Como $a-1$ não é cota superior de $\N$, existe $n \in \N$ tal que $a-1 < n$, donde $a < n+1 \in \N$, absurdo! Em particular, concluímos que para todo $x \in \R$ existe $n \in \N$ tal que $n > x$. \itemproof
-\item Pelo item anterior, para o número $\frac{b}{a}$ existe $n \in \N$ tal que $n > \frac{b}{a}$, e sendo $a>0$, temos $na>b$. \itemproof
-\item Basta colocar $b=1$ e $a= \epsilon$ no item anterior: existe $n \in \N$ tal que $n \cdot \epsilon > 1$, donde $\frac{1}{n} < \epsilon$. \itemproof
-\item Se fosse $x > a$, então a propriedade arquimediana nos diz que existe $n \in \N$ tal que $n \cdot (x-a) > y$, donde $x > a + \frac{y}{n}$, o que contraria a hipótese. Logo, só pode ser $x=a$. \itemproof
+\item Suponha que $\N$ seja limitado superiormente. Como $\N \subsetneq \R$, existe $a := \sup{\N}$. Como $a-1$ não é cota superior de $\N$, existe $n \in \N$ tal que $a-1 < n$, donde $a < n+1 \in \N$, absurdo! Em particular, concluímos que para todo $x \in \R$ existe $n \in \N$ tal que $n > x$. \blackproof
+\item Pelo item anterior, para o número $\frac{b}{a}$ existe $n \in \N$ tal que $n > \frac{b}{a}$, e sendo $a>0$, temos $na>b$. \blackproof
+\item Basta colocar $b=1$ e $a= \epsilon$ no item anterior: existe $n \in \N$ tal que $n \cdot \epsilon > 1$, donde $\frac{1}{n} < \epsilon$. \blackproof
+\item Se fosse $x > a$, então a propriedade arquimediana nos diz que existe $n \in \N$ tal que $n \cdot (x-a) > y$, donde $x > a + \frac{y}{n}$, o que contraria a hipótese. Logo, só pode ser $x=a$. \blackproof
 
 Definindo $A := \{ n \in \N : n-1=0 \lor n-1 \in \N \}$, temos $A \subseteq \N$. Temos $1 \in A$ pois vale $1 - 1 = 0 \lor 1 - 1 \in \N$. Agora, se $n \in A$, então $(n+1)-1 = n \in A$, de modo que $n+1 \in A$. Com isso, $A$ é indutivo, de modo que $\N \subseteq A$, donde $A = \N$. 
 
-Agora, supondo que $n,m \in \N$ e $m<n$ implicam $n-m \in \N$, provemos que $n,m \in \N$ e $m+1<n$ implicam $n-(m+1) \in \N$. De fato, $m+1 < n \Rightarrow m < n-1$; pelo item anterior, $n-1 \in \N$, donde, pela hipótese de indução, $(n-1) - m \in \N$, isto é, $n - (m+1) \in \N$. Isso nos mostra que $m \in A \Rightarrow m+1 \in A$, isto é, que $A$ é indutivo; daí, $\N \subseteq A$, donde $A = \N$. \itemproof
+Agora, supondo que $n,m \in \N$ e $m<n$ implicam $n-m \in \N$, provemos que $n,m \in \N$ e $m+1<n$ implicam $n-(m+1) \in \N$. De fato, $m+1 < n \Rightarrow m < n-1$; pelo item anterior, $n-1 \in \N$, donde, pela hipótese de indução, $(n-1) - m \in \N$, isto é, $n - (m+1) \in \N$. Isso nos mostra que $m \in A \Rightarrow m+1 \in A$, isto é, que $A$ é indutivo; daí, $\N \subseteq A$, donde $A = \N$. \blackproof
 
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left]
-            \item[\textbf{(a)} $\Rightarrow$ \textbf{(b)}:] \itemproof
-            \item[\textbf{(b)} $\Rightarrow$ \textbf{(c)}:] \itemproof
-            \item[\textbf{(c)} $\Rightarrow$ \textbf{(d)}:] \itemproof
-            \item[\textbf{(d)} $\Rightarrow$ \textbf{(a)}:] \itemproof  
+            \item[\textbf{(a)} $\Rightarrow$ \textbf{(b)}:] \blackproof
+            \item[\textbf{(b)} $\Rightarrow$ \textbf{(c)}:] \blackproof
+            \item[\textbf{(c)} $\Rightarrow$ \textbf{(d)}:] \blackproof
+            \item[\textbf{(d)} $\Rightarrow$ \textbf{(a)}:] \blackproof  
         \end{enumerate}
 \end{proof}
 
@@ -545,7 +545,7 @@ Se $(x,y) \in f$ e $(z,y) \in f$, então $(y,x) \in f^{-1}$ e $(y,z) \in f^{-1}$
 
 %%se $f$ é invertível à esquerda e à direita. A função $g: B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$ é chamada de \textit{função inversa} de $f$.
 
-$f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pelo teorema \eqref{teo.fund:invesquerda}, $f$ é invertível à esquerda se, e somente se, $f$ é injetiva. Pelo teorema \eqref{teo.fund:invdireita}, $f$ é invertível à direita se, e somente se, $f$ é sobrejetiva. Com isso, $f$ é invertível se, e somente, $f$ é bijetiva. \itemproof  
+$f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pelo teorema \eqref{teo.fund:invesquerda}, $f$ é invertível à esquerda se, e somente se, $f$ é injetiva. Pelo teorema \eqref{teo.fund:invdireita}, $f$ é invertível à direita se, e somente se, $f$ é sobrejetiva. Com isso, $f$ é invertível se, e somente, $f$ é bijetiva. \blackproof  
 
 \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item A função inversa de uma função invertível é única.\footnote{Note que é esta proposição que nos permite dizer ``a função inversa'' em vez de ``uma função inversa''. }
@@ -561,7 +561,7 @@ $f$ é invertível se, e somente se, é invertível à esquerda e à direita. Pe
             \item Se $(y,z) \in f \circ f^{-1}$, então existe $x \in \Dom{(f)} \cap \Im{(f^{-1})}$ tal que $(y,x) \in f^{-1}$ e $(x,z) \in f$. Daí, $(x,y) \in f$, e como $f$ é uma função, vem $y=z$. Logo $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$.
             \item Agora, se $(y,y) \in \id_{\Im{(f)}}$, então existe $x \in \Dom{(f)}$ tal que $(x,y) \in f$. Logo $(y,x) \in f^{-1}$, de modo que $(y, y) \in f \circ f^{-1}$, isto é, $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$.
         \end{enumerate}
-    Com isso, vem $f \circ f^{-1} = \id_{\Im{(f)}}$, como queríamos. \itemproof
+    Com isso, vem $f \circ f^{-1} = \id_{\Im{(f)}}$, como queríamos. \blackproof
 
 Convém introduzir um símoblo predicado.
 
@@ -641,7 +641,7 @@ O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ em
             \end{array}
         \]
     Com isso, eliminamos $p_n$. Repetindo esse processo (um número finito de vezes), eliminamos $p_{n-1}, \ldots, p_1$, obtendo por fim $\vdash \mathbf{A}$.
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi}
@@ -671,3 +671,108 @@ O \textit{produto cartesiano} de uma sequência $\left(X_i \right)_{i \in I}$ em
             \item Dizemos que $m \in X$ é o \textit{ínfimo} de $S$ se $S$ é limitado inferiormente e $y \leq m$ para toda cota inferior $y \in X$ de $S$.
         \end{enumerate}
 \end{defi}
+
+\begin{claim}
+            $\Dom{(\psi(n))} = n$ para todo $n \in \omega$.
+        \end{claim}
+        \begin{midproof}
+            A prova se dará por indução em $n$.
+                Para $n=0$, como $\psi(0) = \emptyset$, temos $\Dom{(\psi(0))} = \Dom{(\emptyset)} = \emptyset = 0$. Suponha, por hipótese de indução, que $\Dom{(\psi(n))} = n$. Observando que
+                    \[
+                        \psi(n^+) = h(\psi(n)) = \psi(n) \cup \{ (\Dom{(\psi(n))}, f(\psi(n)))\},
+                    \]
+                obtemos
+                    \[
+                        \Dom{(\psi(n^+))} = \Dom{(\psi(n))} \cup \{ \Dom{(\psi(n))} \},
+                    \]
+                e como $\Dom{(\psi(n))} = n$, vem $\Dom{(\psi(n^+))} = n \cup \{ n \} = n^+$. \whiteproof
+        \end{midproof}
+
+        Como $\Dom{(\psi(n^+))} = n^+$, temos $n \in \Dom{(\psi(n^+))}$, e se $m \supseteq n^+$, então $\psi(m) \restriction_{n^+} = \psi(n^+)$, de modo que $\varphi(n) = \psi(n^+)(n)$. Como
+                \[
+                    \psi(n^+) = \psi(n) \cup \{ (n, f(\psi(n)))\}
+                \]
+            e $n \notin \Dom{(\psi(n))} = n$, só pode ser $\psi(n^+)(n) = f(\psi(n))$. Para finalizarmos, vejamos que $\psi(n) = \varphi \restriction_n$. Por um lado ($\subseteq$), se $(k,x) \in \psi(n)$, então existe $\psi(n) \in \Im{(\psi)}$, com $n \in \omega$, tal que $(k,x) \in \psi(n)$, de modo que $(k,x) \in \bigcup \Im{(\psi)} = \varphi$. Com isso, como $k \in n$, vem $(k,x) \in \varphi \restriction_n$. Por outro lado ($\supseteq$), se $(k,x) \in \varphi \restriction_n$, então existe $m \in \omega$ tal que $(k,x) \in \psi(m)$, e como $k \in n$
+
+\begin{midproof}
+            Seja $\Phi : \omega \to X$ tal que $\Phi(n) = f(\Phi \restriction_n)$ para todo $n \in \omega$. Provemos que $\Phi \restriction_n = \psi(n)$ para todo $n \in \omega$ por indução em $n$. 
+            Para $n=0$, trivialmente $\Phi \restriction_{0} = \emptyset = \psi(0)$. Suponha, por hipótese de indução, que $\Phi \restriction_n = \psi(n)$. Com isso,
+                \begin{align*}
+                    \Phi|_{n^+} &= \Phi|_n \cup \{ (n, \Phi(n)) \} \\
+                    &= \psi(n) \cup \{ (n, f(\Phi|_n)) \} \\
+                    &= \psi(n) \cup \{ (n, f(\psi(n))) \} \\
+                    &= h(\psi(n)) = \psi(n^+),
+                \end{align*}
+            o que completa o passo indutivo. Agora, como $\psi(n) = \varphi \restriction_n$ para todo $n \in \omega$, temos que $\Phi \restriction_n = \varphi \restriction_n$ para todo $n \in \omega$, de modo que
+                \[
+                    \Phi(n) = \Phi \restriction_{n^+}(n) = \varphi \restriction_{n^+}(n) = \varphi(n)
+                \]
+            para todo $n \in \omega$.
+        \end{midproof}
+    
+    
+        Provemos que $\varphi$ satisfaz a condição de recursão.
+    Dado $n \in \omega$, como $\Dom{(\psi(n))} = n$ e $\psi(n) \subseteq \varphi$, temos que $\varphi|_n = \psi(n)$.
+    O valor $\varphi(n)$ é determinado por $\psi(n^+)$, visto que $n \in \Dom{(\psi(n^+))}$.
+    Assim:
+        \[
+            \varphi(n) = \psi(n^+)(n) = f(\psi(n)) = f(\varphi|_n).
+        \]
+\[
+                    \varphi = \bigcup \Im{(\psi)} = \bigcup_{n \in \omega} \psi(n) = \bigcup_{n \in \omega} \varphi \restriction_n = \bigcup
+                \]
+    Para a unicidade, suponha que exista outra função 
+    \begin{align*}
+                        \Phi|_{n^+} &= \Phi|_n \cup \{ (n, \Phi(n)) \} \\
+                        &= \varphi \restriction_n \cup \{ (n, f(\Phi \restriction_n)) \} \\
+                        &= \varphi \restriction_n \cup \{ (n, f(\varphi \restriction_n)) \} \\
+                        &= h(\varphi \restriction_n) = \psi(n^+).
+                \end{align*}
+    
+    
+    tal que $\Phi(n) = f(\Phi|_n)$ para todo $n \in \omega$.
+    Mostremos por indução que $\Phi|_n = \psi(n)$.
+    Para $n=0$, $\Phi|_0 = \emptyset = \psi(0)$.
+    Supondo que $\Phi|_n = \psi(n)$, temos
+        \begin{align*}
+            \Phi|_{n^+} &= \Phi|_n \cup \{ (n, \Phi(n)) \} \\
+                        &= \psi(n) \cup \{ (n, f(\Phi|_n)) \} \\
+                        &= \psi(n) \cup \{ (n, f(\psi(n))) \} \\
+                        &= h(\psi(n)) = \psi(n^+).
+        \end{align*}
+    Logo, $\Phi|_n = \psi(n)$ para todo $n \in \omega$.
+    Consequentemente, $\Phi = \bigcup_{n \in \omega} \Phi|_n = \bigcup_{n \in \omega} \psi(n) = \varphi$.
+    \blackproof
+%\end{proof}
+
+\begin{proof} \label{teo.fund:uomega}
+    Provemos primeiramente que $\omega(I)$ está bem definido. Pelo axioma das partes, existe o conjunto $\mathcal{P}{(I)}$. Pelo axioma da separação com universo $\mathcal{P}{(I)}$ e a fórmula $ (\emptyset \in x) \land \forall y ((y \in x) \rightarrow (y^+ \in x)  )$ (que se abrevia por $\ind{(x)}$), existe $z(I) :=  \{ x \in \mathcal{P}{(I)} : \ind{(x)} \}$. Pelo \Cref{teo.fund:intfamilia}, como $z(I) \neq \emptyset$ já que $I \in z(I)$, existe $\omega(I) := \bigcap z(I)$.
+        \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
+            \item Provemos primeiramente que $\emptyset \in \omega(I)$. Pelo \Cref{teo.fund:intfamilia}, $\omega(I) := \bigcap z(I)$ é o conjunto que satisfaz
+                \[
+                    \forall x \left(x \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow x \in y) \right).
+                \]
+            Com isso, $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow \emptyset \in y)$. Como, por definição,
+                \[
+                    \forall y (y \in z(I) \leftrightarrow y \subseteq I \land \ind{(y)}),
+                \]
+            temos $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \subseteq I \land \ind{(y)} \rightarrow \emptyset \in y)$, o que sabemos ser verdade: se $y \subseteq I$ é indutivo, então $\emptyset \in y$. Logo, $\emptyset \in \bigcap{z(I)} = \omega (I)$. Agora provemos que $\forall x ( (x \in \omega(I)) \rightarrow (x^+ \in \omega(I)) )$. Isso equivale a
+                \[
+                    \forall x ( \forall y (y \in z(I) \rightarrow x \in y) \rightarrow \forall y (y \in z(I) \rightarrow x^+ \in y)  ),
+                \]
+            o que equivale a
+                \[
+                    \forall x ( \forall y (y \in z(I) \rightarrow (x \in y \rightarrow x^+ \in y) )),
+                \]
+            o que equivale a
+                \[
+                    \forall y (y \subseteq I \land \ind{(y)} \rightarrow \forall x (x \in y \rightarrow x^+ \in y)),
+                \]
+            o que sabemos ser verdade: se $y \subseteq I$ é indutivo, então $\forall x (x \in y \rightarrow x^+ \in y)$. Logo, $\omega{(I)}$ é indutivo. \blackproof
+            \item Provemos inicialmente que, para quaisquer $I$ e $J$ indutivos, tem-se $\omega (I) \subseteq J$. O mesmo argumento do item anterior mostra que $I \cap J$ são indutivos, e como $I \cap J \subseteq I$, vem $I \cap J \in z(I)$. Com isso, como
+                \[
+                    \forall x \left( x \in \bigcap z(I) \leftrightarrow \forall w (w \in z(I) \rightarrow x \in w ) \right),
+                \]
+            particularmente para $w = I \cap J$, se $x \in \bigcap z(I)$, então $x \in I \cap J$, de modo que $\bigcap{z(I)} \subseteq I \cap J \subseteq J$, isto é, $\omega{(I)} \subseteq J$. Como isso, como $\omega{(I)}$ e $\omega{(J)}$ são indutivos, temos $\omega{(I)} \subseteq \omega{(J)}$ e $\omega{(J)} \subseteq \omega{(I)}$, isto é, $\omega{(I)} = \omega{(J)}$. \blackproof
+        \end{enumerate}
+\end{proof}

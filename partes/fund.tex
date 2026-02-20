@@ -102,8 +102,8 @@ Seguimos \cite{herculespaulovich}.
                         m. & \Delta \vdash (\mathbf{A} \rightarrow \mathbf{B}) & \text{MP}(i, l)
                 \end{array}
                 \]
-            Assim, se $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$, então $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$. \itemproof
-            \item Como $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$ e $\Delta \subseteq \Delta \cup \{\mathbf{A}\}$, temos $\Delta \cup \{\mathbf{A}\} \vdash (\mathbf{A} \rightarrow \mathbf{B})$. Daí, como $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{A}$, temos que $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$. \itemproof
+            Assim, se $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$, então $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$. \blackproof
+            \item Como $\Delta \vdash (\mathbf{A} \rightarrow \mathbf{B})$ e $\Delta \subseteq \Delta \cup \{\mathbf{A}\}$, temos $\Delta \cup \{\mathbf{A}\} \vdash (\mathbf{A} \rightarrow \mathbf{B})$. Daí, como $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{A}$, temos que $\Delta \cup \{\mathbf{A}\} \vdash \mathbf{B}$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -143,8 +143,8 @@ Seguimos \cite{herculespaulovich}.
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Suponha, por absurdo, que $\not\vDash\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A})$. Isso só é possível se $v[(\mathbf{B} \rightarrow \mathbf{A})] = \mathfrak{f}$, o que, por sua vez, só é possível se $v(\mathbf{A}) = \mathfrak{f}$, o que contraria a hipótese. Logo, $\vDash\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A})$. A prova de que os outros (esquemas de) axiomas são válidos segue analogamente. \itemproof
-            \item Suponha, por absurdo, que $\not\vDash \mathbf{B}$. Logo, existe uma valoração $v$ tal que $v(\mathbf{B}) = \mathfrak{f}$. Para essa valoração, como $\vDash \mathbf{A}$, temos $v(\mathbf{A}) = \mathfrak{t}$, de modo que $v[(\mathbf{A} \rightarrow \mathbf{B})] = \mathfrak{f}$, o que contraria a hipótese. Com isso, $\vDash \mathbf{B}$. \itemproof
+            \item Suponha, por absurdo, que $\not\vDash\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A})$. Isso só é possível se $v[(\mathbf{B} \rightarrow \mathbf{A})] = \mathfrak{f}$, o que, por sua vez, só é possível se $v(\mathbf{A}) = \mathfrak{f}$, o que contraria a hipótese. Logo, $\vDash\mathbf{A} \rightarrow (\mathbf{B} \rightarrow \mathbf{A})$. A prova de que os outros (esquemas de) axiomas são válidos segue analogamente. \blackproof
+            \item Suponha, por absurdo, que $\not\vDash \mathbf{B}$. Logo, existe uma valoração $v$ tal que $v(\mathbf{B}) = \mathfrak{f}$. Para essa valoração, como $\vDash \mathbf{A}$, temos $v(\mathbf{A}) = \mathfrak{t}$, de modo que $v[(\mathbf{A} \rightarrow \mathbf{B})] = \mathfrak{f}$, o que contraria a hipótese. Com isso, $\vDash \mathbf{B}$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -154,7 +154,7 @@ Seguimos \cite{herculespaulovich}.
 \end{teo}
 
 \begin{proof}
-    Façamos indução no número de fórmulas que ocorrem na dedução de $\mathbf{A}$. Se $(A_1)$ é a dedução de $\mathbf{A}$, então $A_1 \equiv \mathbf{A}$ e $\mathbf{A}$ é um axioma, e como todos os axiomas são válidos (lema \eqref{lem.fund:axregrasvalidos}), temos $\vDash \mathbf{A}$. Agora, seja $(A_1, \ldots, A_n)$ a dedução de $\mathbf{A}$ e suponha, por hipótese de indução, que o resultado vale para toda fórmula que pode ser deduzida por uma dedução com menos de $n$ fórmulas. Se $\mathbf{A}$ é um axioma, então $\vDash \mathbf{A}$. Suponha, então, que $\mathbf{A}$ é obtida de duas fórmulas de índices $<n$ via MP. Essas duas fórmulas têm as formas $\mathbf{B}$ e $(\mathbf{B} \rightarrow \mathbf{A})$, e como elas foram deduzidas por menos de $n$ fórmulas, temos que $\vDash \mathbf{B}$ e $\vDash (\mathbf{B} \rightarrow \mathbf{A})$. Daí, como a regra MP conserva validade (lema \eqref{lem.fund:axregrasvalidos}), temos que $\vDash \mathbf{A}$. \itemproof
+    Façamos indução no número de fórmulas que ocorrem na dedução de $\mathbf{A}$. Se $(A_1)$ é a dedução de $\mathbf{A}$, então $A_1 \equiv \mathbf{A}$ e $\mathbf{A}$ é um axioma, e como todos os axiomas são válidos (\cref{lem.fund:axregrasvalidos}), temos $\vDash \mathbf{A}$. Agora, seja $(A_1, \ldots, A_n)$ a dedução de $\mathbf{A}$ e suponha, por hipótese de indução, que o resultado vale para toda fórmula que pode ser deduzida por uma dedução com menos de $n$ fórmulas. Se $\mathbf{A}$ é um axioma, então $\vDash \mathbf{A}$. Suponha, então, que $\mathbf{A}$ é obtida de duas fórmulas de índices $<n$ via MP. Essas duas fórmulas têm as formas $\mathbf{B}$ e $(\mathbf{B} \rightarrow \mathbf{A})$, e como elas foram deduzidas por menos de $n$ fórmulas, temos que $\vDash \mathbf{B}$ e $\vDash (\mathbf{B} \rightarrow \mathbf{A})$. Daí, como a regra MP conserva validade (\cref{lem.fund:axregrasvalidos}), temos que $\vDash \mathbf{A}$. \blackproof
 \end{proof}
 
 \begin{lem}[Kalmár] \label{lem.fund:troca}
@@ -184,7 +184,7 @@ Seguimos \cite{herculespaulovich}.
 \end{teo}
 
 \begin{proof}
-    Sejam $p_1, \ldots, p_n$ as variáveis proposicionais que ocorrem em $\mathbf{A}$. Pelo lema \eqref{lem.fund:troca}, temos $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}'$ para toda valoração $v$, e como $\vDash \mathbf{A}$, temos $\mathbf{A}' \equiv \mathbf{A}$, de modo que $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}$. Agora, definindo
+    Sejam $p_1, \ldots, p_n$ as variáveis proposicionais que ocorrem em $\mathbf{A}$. Pelo \cref{lem.fund:troca}, temos $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}'$ para toda valoração $v$, e como $\vDash \mathbf{A}$, temos $\mathbf{A}' \equiv \mathbf{A}$, de modo que $\{p'_1, \ldots, p'_n \} \vdash \mathbf{A}$. Agora, definindo
         \[
             v_1(p_i) :=
                 \begin{cases}
@@ -198,7 +198,7 @@ Seguimos \cite{herculespaulovich}.
                     \mathfrak{f}, & \text{se } i = n
                 \end{cases},
         \]
-    cada $p'_i$, para $i<n$, fica bem definido. Como $v_2(p_n) = \mathfrak{f}$, vem $\{p'_1, \ldots, p'_{n-1}, (\neg p_n) \} \vdash \mathbf{A}$, de modo que, pelo teorema da dedução \eqref{teo.fund:deduçãoproposicional}, temos $\{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A})$. Analogamente, como $v_1(p_n) = \mathfrak{t}$, então $\{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A})$. Assim:
+    cada $p'_i$, para $i<n$, fica bem definido. Como $v_2(p_n) = \mathfrak{f}$, vem $\{p'_1, \ldots, p'_{n-1}, (\neg p_n) \} \vdash \mathbf{A}$, de modo que, pelo \Cref{teo.fund:deduçãoproposicional}, temos $\{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A})$. Analogamente, como $v_1(p_n) = \mathfrak{t}$, então $\{p'_1, \ldots, p'_{n-1}\} \vdash (p_n \rightarrow \mathbf{A})$. Assim:
         \[
             \begin{array}{rll}
                 1. & \{p'_1, \ldots, p'_{n-1}\} \vdash ((\neg p_n) \rightarrow \mathbf{A}) & p. \\
@@ -209,7 +209,7 @@ Seguimos \cite{herculespaulovich}.
             \end{array}
         \]
     Com isso, eliminamos $p_n$. Repetindo esse processo (um número finito de vezes), eliminamos $p_{n-1}, \ldots, p_1$, obtendo por fim $\vdash \mathbf{A}$.
-    \itemproof
+    \blackproof
 \end{proof}
 
 
@@ -218,7 +218,7 @@ Seguimos \cite{herculespaulovich}.
 \end{cor}
 
 \begin{proof}
-    Segue dos teoremas da correção \eqref{teo.fund:correçãoproposicional} e da completude \eqref{teo.fund:completudeproposicional}. \itemproof
+    Segue dos \cref{teo.fund:correçãoproposicional,teo.fund:completudeproposicional}. \blackproof
 \end{proof}
 
 
@@ -246,7 +246,7 @@ coisas
 \end{teo}
 
 \begin{proof}
-    O caso $\Gamma = \emptyset$ é simplesmente o teorema da correção \eqref{teo.fund:correçãoproposicional}. Suponha, então, que $\Gamma \neq \emptyset$. Se $\mathbf{C}_1, \ldots, \mathbf{C}_n$ são as fórmulas de $\Gamma$ que aparecem na dedução de $\mathbf{A}$, então $\{\mathbf{C}_1, \ldots, \mathbf{C}_n\} \vdash \mathbf{A}$, de modo que, por sucessivas aplicações do teorema da dedução \eqref{teo.fund:deduçãoproposicional}, temos $\vdash \mathbf{C}_1 \rightarrow \cdots \rightarrow \mathbf{C}_n \rightarrow \mathbf{A}$. Com isso, para toda valoração $v$ tal que $v(\mathbf{C}_i) = \mathfrak{t}$ para todo $i \in [n]$, temos $v(\mathbf{A}) = \mathfrak{t}$. Como $\{\mathbf{C}_1, \ldots, \mathbf{C}_n\} \subseteq \Gamma$, temos $v \vDash \mathbf{A}$ para toda valoração $v$ tal que $v \vDash \Gamma$, isto é, $\Gamma \vDash \mathbf{A}$. \itemproof
+    O caso $\Gamma = \emptyset$ é simplesmente o teorema da correção \eqref{teo.fund:correçãoproposicional}. Suponha, então, que $\Gamma \neq \emptyset$. Se $\mathbf{C}_1, \ldots, \mathbf{C}_n$ são as fórmulas de $\Gamma$ que aparecem na dedução de $\mathbf{A}$, então $\{\mathbf{C}_1, \ldots, \mathbf{C}_n\} \vdash \mathbf{A}$, de modo que, por sucessivas aplicações do teorema da dedução \eqref{teo.fund:deduçãoproposicional}, temos $\vdash \mathbf{C}_1 \rightarrow \cdots \rightarrow \mathbf{C}_n \rightarrow \mathbf{A}$. Com isso, para toda valoração $v$ tal que $v(\mathbf{C}_i) = \mathfrak{t}$ para todo $i \in [n]$, temos $v(\mathbf{A}) = \mathfrak{t}$. Como $\{\mathbf{C}_1, \ldots, \mathbf{C}_n\} \subseteq \Gamma$, temos $v \vDash \mathbf{A}$ para toda valoração $v$ tal que $v \vDash \Gamma$, isto é, $\Gamma \vDash \mathbf{A}$. \blackproof
 \end{proof}
 
 \chapter{Teorias de Primeira Ordem}
@@ -436,7 +436,7 @@ coisas
         \end{enumerate}
 \end{defi}
 
-\chapter{O sistema ZFC}
+\chapter{Teoria dos Conjuntos}
 
 A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{L}_{ST}$, consiste em somente um símbolo de predicado binário dito de \textit{pertencimento} $\in$. A seguir apresentamos os axiomas de ZFC que constituem a teoria de primeira ordem da teoria dos conjuntos. Na primeira seção apresentamos e discutimos os axiomas básicos, deixando os axiomas do infinito (que garante a existência do conjunto dos números naturais $\omega$), da escolha (que tem muitas equivalências) e da substituição (fundamental para a teoria dos ordinais), os mais importantes, e mais complicados, para serem tratados nas próximas seções.
 
@@ -479,9 +479,9 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Trivialmente, a implicação $(z \in x) \rightarrow (z \in x)$ é verdadeira para todo $z$. Logo, pela definição de inclusão $\subseteq$, temos $x \subseteq x$. \itemproof
-            \item Se $x \subseteq y$ e $y \subseteq x$, então todo elemento de $x$ pertence a $y$ e todo elemento de $y$ pertence a $x$. Pelo axioma da extensão \eqref{ax:1}, $x=y$. \itemproof
-            \item Suponha que $x \subseteq y$ e $y \subseteq z$. Seja $w \in x$. Como $x \subseteq y$, temos $w \in y$. Daí, como $y \subseteq z$, de $w \in y$ segue que $w \in z$. Assim, todo elemento de $x$ é elemento de $z$, isto é, $x \subseteq z$. \itemproof
+            \item Trivialmente, a implicação $(z \in x) \rightarrow (z \in x)$ é verdadeira para todo $z$. Logo, pela definição de inclusão $\subseteq$, temos $x \subseteq x$. \blackproof
+            \item Se $x \subseteq y$ e $y \subseteq x$, então todo elemento de $x$ pertence a $y$ e todo elemento de $y$ pertence a $x$. Pelo axioma da extensão \eqref{ax:1}, $x=y$. \blackproof
+            \item Suponha que $x \subseteq y$ e $y \subseteq z$. Seja $w \in x$. Como $x \subseteq y$, temos $w \in y$. Daí, como $y \subseteq z$, de $w \in y$ segue que $w \in z$. Assim, todo elemento de $x$ é elemento de $z$, isto é, $x \subseteq z$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -509,7 +509,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Se $x_1 \neq x_2$, então ou existe $z \in x_1$ tal que $z \notin x_2$, ou existe $z \in x_2$ tal que $z \notin x_1$. Em ambos os casos, $x_1$ e $x_2$ não são vazios, uma contradição. Logo $x_1 = x_2$. \itemproof
+    Se $x_1 \neq x_2$, então ou existe $z \in x_1$ tal que $z \notin x_2$, ou existe $z \in x_2$ tal que $z \notin x_1$. Em ambos os casos, $x_1$ e $x_2$ não são vazios, uma contradição. Logo $x_1 = x_2$. \blackproof
 \end{proof}
 
 \begin{obs}
@@ -529,11 +529,11 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Suponha que existe $x$ tal que $\emptyset \not\subseteq x$. Então existe $y \in \emptyset$ tal que $y \notin x$, uma contradição pois $\forall y (y \notin \emptyset)$. Logo $\forall x (\emptyset \subseteq x)$. \itemproof
+    Suponha que existe $x$ tal que $\emptyset \not\subseteq x$. Então existe $y \in \emptyset$ tal que $y \notin x$, uma contradição pois $\forall y (y \notin \emptyset)$. Logo $\forall x (\emptyset \subseteq x)$. \blackproof
 \end{proof}
 
 \begin{proof}
-    Pela definição de $\subseteq$, precisamos provar que $\forall x (\forall y ( (y \in \emptyset) \rightarrow (y \in x) ) )$. Como a fórmula $y \in \emptyset$ é sempre falsa, $(y \in \emptyset) \rightarrow (y \in x)$ é sempre verdadeira, donde $\forall y ( (y \in \emptyset) \rightarrow (y \in x) )$ é sempre verdadeira, donde $\forall x (\forall y ( (y \in \emptyset) \rightarrow (y \in x) ) )$ é sempre verdadeira. Isto prova que a fórmula $\forall x (\emptyset \subseteq x)$ é sempre verdadeira. \itemproof
+    Pela definição de $\subseteq$, precisamos provar que $\forall x (\forall y ( (y \in \emptyset) \rightarrow (y \in x) ) )$. Como a fórmula $y \in \emptyset$ é sempre falsa, $(y \in \emptyset) \rightarrow (y \in x)$ é sempre verdadeira, donde $\forall y ( (y \in \emptyset) \rightarrow (y \in x) )$ é sempre verdadeira, donde $\forall x (\forall y ( (y \in \emptyset) \rightarrow (y \in x) ) )$ é sempre verdadeira. Isto prova que a fórmula $\forall x (\emptyset \subseteq x)$ é sempre verdadeira. \blackproof
 \end{proof}
 
 \subsection{O Axioma do Par}
@@ -560,7 +560,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \[
             \forall w ( (w \in z') \leftrightarrow ((w=x) \lor (w=y)) ),
         \]
-    então $\forall w ((w \in z') \leftrightarrow (w \in z) )$, de modo que $z' = z$ pelo axioma da extensão. \itemproof
+    então $\forall w ((w \in z') \leftrightarrow (w \in z) )$, de modo que $z' = z$ pelo axioma da extensão. \blackproof
 \end{proof}
 
 \begin{prop}
@@ -568,7 +568,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Por um lado ($\Rightarrow$), suponha que $x \in y$. Pela definição de inclusão, precisamos provar que $\forall z ((z \in \{x\}) \rightarrow (z \in y))$. Se $z \in \{x\}$, então $z = x$. Como $x \in y$ por hipótese e $z=x$, temos $z \in y$. Logo $\{x\} \subseteq y$. Por outro lado ($\Leftarrow$), suponha que $\{x\} \subseteq y$. Temos que $x \in \{x\}$. Como $\{x\} \subseteq y$, pela definição de inclusão, todo elemento de $\{x\}$ pertence a $y$. Logo $x \in y$. \itemproof
+    Por um lado ($\Rightarrow$), suponha que $x \in y$. Pela definição de inclusão, precisamos provar que $\forall z ((z \in \{x\}) \rightarrow (z \in y))$. Se $z \in \{x\}$, então $z = x$. Como $x \in y$ por hipótese e $z=x$, temos $z \in y$. Logo $\{x\} \subseteq y$. Por outro lado ($\Leftarrow$), suponha que $\{x\} \subseteq y$. Temos que $x \in \{x\}$. Como $\{x\} \subseteq y$, pela definição de inclusão, todo elemento de $\{x\}$ pertence a $y$. Logo $x \in y$. \blackproof
 \end{proof}
 
 \subsection{O Axioma da União}
@@ -595,7 +595,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \[
             \forall z ((z \in y') \leftrightarrow \exists w ( (z \in w) \land (w \in x))),
         \]
-    então $\forall z ((z \in y') \leftrightarrow (z \in y)) $, donde $y' = y$ pelo axioma da extensão. \itemproof
+    então $\forall z ((z \in y') \leftrightarrow (z \in y)) $, donde $y' = y$ pelo axioma da extensão. \blackproof
 \end{proof}
 
 \begin{teo}
@@ -607,7 +607,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Provemos que $z := \bigcup \{x,y\}$, que existe pelos axiomas do par e da união, funciona. De fato, para todo $w$, temos $w \in z$ se, e somente se, existe $u \in \{x,y \}$ tal que $w \in u$. Mas $u \in \{ x,y \}$ se, e somente se, $u = x$ ou $u=y$, de modo que $w \in x$ ou $w \in y$, como queríamos. A unicidade de $z$ segue do axioma da extensão, de modo que podemos denotar $x \cup y := z$. \itemproof
+    Provemos que $z := \bigcup \{x,y\}$, que existe pelos axiomas do par e da união, funciona. De fato, para todo $w$, temos $w \in z$ se, e somente se, existe $u \in \{x,y \}$ tal que $w \in u$. Mas $u \in \{ x,y \}$ se, e somente se, $u = x$ ou $u=y$, de modo que $w \in x$ ou $w \in y$, como queríamos. A unicidade de $z$ segue do axioma da extensão, de modo que podemos denotar $x \cup y := z$. \blackproof
 \end{proof}
 
 \begin{proof}
@@ -623,7 +623,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             &\leftrightarrow \exists u ( (w \in x) \lor (w \in y) ) \\
             &\leftrightarrow (w \in x) \lor (w \in y).
         \end{align*}
-    Com isso, temos $\lozenge$, como queríamos. \itemproof
+    Com isso, temos $\lozenge$, como queríamos. \blackproof
 \end{proof}
 
 \subsection{O Axioma das Partes}
@@ -642,7 +642,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Pelo axioma das partes, o conjunto $y$ cumpre $\forall z ( (z \in y) \leftrightarrow (z \subseteq x) )$. Se $y'$ cumpre $\forall z ( (z \in y') \leftrightarrow (z \subseteq x) )$, então $\forall z ((z \in y' )\leftrightarrow(z \in y))$, de modo que $y' = y$ pelo axioma da extensão. \itemproof
+    Pelo axioma das partes, o conjunto $y$ cumpre $\forall z ( (z \in y) \leftrightarrow (z \subseteq x) )$. Se $y'$ cumpre $\forall z ( (z \in y') \leftrightarrow (z \subseteq x) )$, então $\forall z ((z \in y' )\leftrightarrow(z \in y))$, de modo que $y' = y$ pelo axioma da extensão. \blackproof
 \end{proof}
 
 \subsection{O Esquema de Axiomas da Separação}
@@ -666,7 +666,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Segue do axioma da extensão. \itemproof
+    Segue do axioma da extensão. \blackproof
 \end{proof}
 
 \begin{teo}[Paradoxo de Russell] Não existe o conjunto de todos os conjuntos.
@@ -676,7 +676,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Suponha que $\exists x \forall y (y \in x)$. Pelo axioma da separação com universo $x$ e a fórmula $y \notin y$, existe $z$ tal que $\forall y ( (y \in z) \leftrightarrow ((y \in x) \land (y \notin y)))$ (note que $z$ não ocorre livre em $y \notin y$). Como $\forall y (y \in x)$, temos $\forall y ((y \in z) \leftrightarrow (y \notin y))$. Particularmente para $y = z$, temos $((z \in z) \leftrightarrow (z \notin z))$, uma contradição. Logo $\forall x \exists y (y \notin x)$. \itemproof
+    Suponha que $\exists x \forall y (y \in x)$. Pelo axioma da separação com universo $x$ e a fórmula $y \notin y$, existe $z$ tal que $\forall y ( (y \in z) \leftrightarrow ((y \in x) \land (y \notin y)))$ (note que $z$ não ocorre livre em $y \notin y$). Como $\forall y (y \in x)$, temos $\forall y ((y \in z) \leftrightarrow (y \notin y))$. Particularmente para $y = z$, temos $((z \in z) \leftrightarrow (z \notin z))$, uma contradição. Logo $\forall x \exists y (y \notin x)$. \blackproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:intfamilia}
@@ -709,7 +709,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             \item por um lado ($\Rightarrow$), se $z \in y$, então trivialmente $\forall w ((w \in x) \rightarrow (z \in w))$;
             \item por outro lado ($\Leftarrow$), se $z$ é tal que $\forall w ((w \in x) \rightarrow (z \in w))$, então, particularmente para $w = v$, temos $v \in x \rightarrow z \in v$, e como $v \in x$, temos $z \in v$. Como $z \in v$ e $\forall w ((w \in x) \rightarrow (z \in w))$, temos que $z \in y$.
         \end{itemize}
-    Logo, existe $y$ tal que $\lozenge$. A unicidade de $y$ segue do axioma da extensão, de modo que podemos denotar $\bigcap x := y$.  \itemproof
+    Logo, existe $y$ tal que $\lozenge$. A unicidade de $y$ segue do axioma da extensão, de modo que podemos denotar $\bigcap x := y$.  \blackproof
 \end{proof}
 
 \begin{defi} \label{defi.fund:capminus}
@@ -753,7 +753,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Trivial. \itemproof
+    Trivial. \blackproof
 \end{proof}
 
 \begin{prop}[Propriedades da Interseção]
@@ -771,7 +771,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Trivial. \itemproof
+    Trivial. \blackproof
 \end{proof}
 
 \begin{prop}[Distributividade]
@@ -783,7 +783,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Trivial. \itemproof
+    Trivial. \blackproof
 \end{proof}
 
 \begin{prop}[Propriedades da Diferença]
@@ -820,7 +820,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Trivial. \itemproof
+    Trivial. \blackproof
 \end{proof}
 
 \begin{prop}[Propriedades do Complemento Relativo]
@@ -839,7 +839,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Trivial. \itemproof
+    Trivial. \blackproof
 \end{proof}
 
 
@@ -877,7 +877,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Basta provar que $\forall x \forall y ((x \notin y) \lor (y \notin x))$. Pelo axioma do par, tome $z := \{ x,y \}$. Como $z \neq \emptyset$, pelo axioma da regularidade existe $w \in z$ tal que $w \cap z = \emptyset$. Se $w = x$, então $y \notin x$, porque se fosse $y \in x$ teríamos $x \cap z = \{ y\} \neq \emptyset$, uma contradição. Analogamente, se $w = y$, então $x \notin y$. \itemproof
+    Basta provar que $\forall x \forall y ((x \notin y) \lor (y \notin x))$. Pelo axioma do par, tome $z := \{ x,y \}$. Como $z \neq \emptyset$, pelo axioma da regularidade existe $w \in z$ tal que $w \cap z = \emptyset$. Se $w = x$, então $y \notin x$, porque se fosse $y \in x$ teríamos $x \cap z = \{ y\} \neq \emptyset$, uma contradição. Analogamente, se $w = y$, então $x \notin y$. \blackproof
 \end{proof}
 
 \begin{cor} \label{cor.fund:xnotinx}
@@ -888,7 +888,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{cor}
 
 \begin{proof}
-    Segue do teorema anterior com $y = x$. \itemproof
+    Segue do teorema anterior com $y = x$. \blackproof
 \end{proof}
 
 \section{Relações}
@@ -910,7 +910,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Ver \cite{fajardo2024conjuntos}, teorema 4.2, página 95. Ver \cite{hercules}, teorema 4.2, página 50. \itemproof
+    Ver \cite{fajardo2024conjuntos}, teorema 4.2, página 95. Ver \cite{hercules}, teorema 4.2, página 50. \blackproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:prodcart}
@@ -933,12 +933,14 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             &\leftrightarrow \{a\} \in \mathcal{P}{(A \cup B)} \land \{ a,b\} \in \mathcal{P}{(A \cup B)} \\
             &\leftrightarrow \{a\} \subseteq (A \cup B) \land \{ a,b\} \subseteq (A \cup B),
         \end{align*}
-    o que sabemos ser verdade. A unicidade de $C$ segue do axioma da extensão, de modo que podemos denotar $A \times B := C$. \itemproof
+    o que sabemos ser verdade. A unicidade de $C$ segue do axioma da extensão, de modo que podemos denotar $A \times B := C$. \blackproof
 \end{proof}
 
 \begin{defi}
     O \textit{produto cartesiano} dos conjuntos $A$ e $B$ é definido como $A \times B$.
 \end{defi}
+
+Defina $\pi_1 : A \times B \to A$ e $\pi_2 : A \times B \to B$ por $\pi_1(a,b) = a$ e $\pi_2(a,b) = b$ para quaisquer $(a,b) \in A \times B$.
 
 \subsection{Relações}
 
@@ -971,7 +973,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \end{align*}
     Seja $x \in R$. Então existem $a$ e $b$ tais que $x = (a,b)$. Se $\{ \{a \}, \{a,b \} \} \in R$, então $\{ \{a \}, \{a,b \} \} \subseteq \bigcup R$, donde $\{a,b \} \in \bigcup R$, donde $\{ a,b \} \subseteq \bigcup \bigcup R$, donde $a,b \in \bigcup \bigcup R$. Como $aRb$, pelas definições de $A$ e $B$, temos $a \in A$ e $b \in B$. Como $x = (a,b)$ e $a \in A$ e $b \in B$, pelo teorema \eqref{teo.fund:prodcart} temos $x \in A \times B$, donde, por fim, segue que $R \subseteq A \times B$.
 
-    ($\Leftarrow$) Os elementos de $A \times B$ são pares ordenados; logo, qualquer subconjunto de $A \times B$ terá pares ordenados como elementos. \itemproof
+    ($\Leftarrow$) Os elementos de $A \times B$ são pares ordenados; logo, qualquer subconjunto de $A \times B$ terá pares ordenados como elementos. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1000,7 +1002,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             Equivalentemente, $R^{-1}[Y]$ é a imagem de $Y$ pela relação $R^{-1}$. 
             \item A \textit{restrição de $R$ a $X$} é definida como
                 \[
-                    R|_X := \{ (a,b) \in R : a \in X \}.
+                    R \restriction_X := \{ (a,b) \in R : a \in X \}.
                 \]
             \item A \textit{composição de $R$ e $S$} é definida como 
                 \[
@@ -1021,9 +1023,9 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $x \in \Dom{(R)}$, então existe $y \in \Im{(R)}$ tal que $(x,y) \in R$. Como $R \subseteq A \times B$, temos $(x,y) \in A \times B$, donde $x \in A$ e $y \in B$. Assim, $x \in A$ e existe $y \in B$ tal que $xRy$, o que prova a inclusão $\subseteq$. Reciprocamente, se $x \in A$ e existe $y \in B$ tal que $(x,y) \in R$, então $x \in \Dom{(R)}$, o que prova a inclusão $\supseteq$. \itemproof
-            \item Se $y \in \Im{(R)}$, então existe $x \in \Dom{(R)}$ tal que $(x,y) \in R$. Como $R \subseteq A \times B$, temos $(x,y) \in A \times B$, donde $x \in A$ e $y \in B$. Assim, $y \in B$ e existe $x \in A$ tal que $xRy$, o que prova a inclusão $\subseteq$. Reciprocamente, se $y \in B$ e existe $x \in A$ tal que $(x,y) \in R$, então $y \in \Im{(R)}$, o que prova a inclusão $\supseteq$. \itemproof
-            \item Se $(x,z) \in S \circ R$, então $x \in \Dom{(R)}$ e $z \in \Im{(S)}$. Como $\Dom{(R)} \subseteq A$ (primeiro item) e $\Im{(S)} \subseteq D$ (segundo item), temos $x \in A$ e $z \in D$, de modo que $(x,z) \in A \times D$. Com isso, $S \circ R \subseteq A \times D$. \itemproof
+            \item Se $x \in \Dom{(R)}$, então existe $y \in \Im{(R)}$ tal que $(x,y) \in R$. Como $R \subseteq A \times B$, temos $(x,y) \in A \times B$, donde $x \in A$ e $y \in B$. Assim, $x \in A$ e existe $y \in B$ tal que $xRy$, o que prova a inclusão $\subseteq$. Reciprocamente, se $x \in A$ e existe $y \in B$ tal que $(x,y) \in R$, então $x \in \Dom{(R)}$, o que prova a inclusão $\supseteq$. \blackproof
+            \item Se $y \in \Im{(R)}$, então existe $x \in \Dom{(R)}$ tal que $(x,y) \in R$. Como $R \subseteq A \times B$, temos $(x,y) \in A \times B$, donde $x \in A$ e $y \in B$. Assim, $y \in B$ e existe $x \in A$ tal que $xRy$, o que prova a inclusão $\subseteq$. Reciprocamente, se $y \in B$ e existe $x \in A$ tal que $(x,y) \in R$, então $y \in \Im{(R)}$, o que prova a inclusão $\supseteq$. \blackproof
+            \item Se $(x,z) \in S \circ R$, então $x \in \Dom{(R)}$ e $z \in \Im{(S)}$. Como $\Dom{(R)} \subseteq A$ (primeiro item) e $\Im{(S)} \subseteq D$ (segundo item), temos $x \in A$ e $z \in D$, de modo que $(x,z) \in A \times D$. Com isso, $S \circ R \subseteq A \times D$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1052,10 +1054,10 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     \item 
                     \item 
                 \end{enumerate}
-            \item Se $(a,d) \in T \circ (S \circ R)$, então $a \in \Dom{(S \circ R)}$, $d \in \Im{(T)}$ e existe $c \in \Im{(S \circ R)} \cap \Dom{(T)}$ tal que $(a,c) \in S \circ R$ e $(c,d) \in T$. De $(a,c) \in S \circ R$ segue que $a \in \Dom{(R)}$, $c \in \Im{(S)}$ e existe $b \in \Im{(R)} \cap \Dom{(S)}$ tal que $(a,b) \in R$ e $(b,c) \in S$. Como $b \in \Dom{(S)}$, $d \in \Im{(T)}$ e existe $c \in \Dom{(T)} \cap \Im{(S)}$ tal que $(b,c) \in S$ e $(c,d) \in T$, temos que $(b,d) \in T \circ S$. Com isso, $b \in \Dom{(T \circ S)}$ e $d \in \Im{(T \circ S)}$. Como $a \in \Dom{(R)}$, $d \in \Im{(T \circ S)}$ e existe $b \in \Dom{(T \circ S)} \cap \Im{(R)}$ tal que $(a,b) \in R$ e $(b,d) \in T \circ S$, temos que $(a,d) \in (T \circ S) \circ R$. Com isso, $T \circ (S \circ R) \subseteq (T \circ S) \circ R$. A prova de que $(T \circ S) \circ R \subseteq T \circ (S \circ R)$ é completamente análoga, de modo que $T \circ (S \circ R) = (T \circ S) \circ R$. \itemproof
-            \item Se $(c,a) \in (S \circ R)^{-1}$, então $(a,c) \in S \circ R$, $a \in \Dom{(R)}$, $c \in \Im{(S)}$ e existe $b \in \Im{(R)} \cap \Dom{(S)}$ tal que $(a,b) \in R$ e $(b,c) \in S$ isto é, $(c,b) \in S^{-1}$, $(b,a) \in R^{-1}$, com $c \in \Dom{(S^{-1})}$, $a \in \Im{(R^{-1})}$ e $b \in \Im{(S^{-1})} \cap \Dom{(R^{-1})}$. Com isso, $(c,a) \in R^{-1} \circ S^{-1}$, de modo que $(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}$. A prova de que $R^{-1} \circ S^{-1} \subseteq (S \circ R)^{-1}$ é completamente análoga, de modo que $(S \circ R)^{-1} = R^{-1} \circ S^{-1}$. \itemproof
-            \item Se $a \in \Dom{(R)}$, então existe $b \in \Im{(R)}$ tal que $(a,b) \in R$. Se $\Im{(R)} \subseteq \Dom{(S)}$, então $b \in \Dom{(S)}$, de modo que existe $c \in \Im{(S)}$ tal que $(b,c) \in S$. Assim, $(a,c) \in S \circ R$, de modo que $a \in \Dom{(S \circ R)}$. Com isso, $\Dom{(R)} \subseteq \Dom{(S \circ R)}$. Agora, se $a \in \Dom{(S \circ R)}$, então existe $c \in \Im{(S \circ R)}$ tal que $(a,c) \in S \circ R$, donde $a \in \Dom{(R)}$ e $\Dom{(S \circ R)} \subseteq \Dom{(R)}$. Com isso, $\Dom{(R)} = \Dom{(S \circ R)}$. \itemproof
-            \item Se $c \in \Im{(S)}$, então existe $b \in \Dom{(S)}$ tal que $(b,c) \in S$. Se $\Dom{(S)} \subseteq \Im{(R)}$, então $b \in \Im{(R)}$, de modo que existe $a \in \Dom{(R)}$ tal que $(a,b) \in R$. Assim, $(a,c) \in S \circ R$, de modo que $c \in \Im{(S \circ R)}$. Com isso, $\Im{(S)} \subseteq \Im{(S \circ R)}$. Agora, se $c \in \Im{(S \circ R)}$, então existe $a \in \Dom{(S \circ R)}$ tal que $(a,c) \in S \circ R$, donde $c \in \Im{(S)}$ e $\Im{(S \circ R)} \subseteq \Im{(S)}$. Com isso, $\Im{(S)} = \Im{(S \circ R)}$. \itemproof
+            \item Se $(a,d) \in T \circ (S \circ R)$, então $a \in \Dom{(S \circ R)}$, $d \in \Im{(T)}$ e existe $c \in \Im{(S \circ R)} \cap \Dom{(T)}$ tal que $(a,c) \in S \circ R$ e $(c,d) \in T$. De $(a,c) \in S \circ R$ segue que $a \in \Dom{(R)}$, $c \in \Im{(S)}$ e existe $b \in \Im{(R)} \cap \Dom{(S)}$ tal que $(a,b) \in R$ e $(b,c) \in S$. Como $b \in \Dom{(S)}$, $d \in \Im{(T)}$ e existe $c \in \Dom{(T)} \cap \Im{(S)}$ tal que $(b,c) \in S$ e $(c,d) \in T$, temos que $(b,d) \in T \circ S$. Com isso, $b \in \Dom{(T \circ S)}$ e $d \in \Im{(T \circ S)}$. Como $a \in \Dom{(R)}$, $d \in \Im{(T \circ S)}$ e existe $b \in \Dom{(T \circ S)} \cap \Im{(R)}$ tal que $(a,b) \in R$ e $(b,d) \in T \circ S$, temos que $(a,d) \in (T \circ S) \circ R$. Com isso, $T \circ (S \circ R) \subseteq (T \circ S) \circ R$. A prova de que $(T \circ S) \circ R \subseteq T \circ (S \circ R)$ é completamente análoga, de modo que $T \circ (S \circ R) = (T \circ S) \circ R$. \blackproof
+            \item Se $(c,a) \in (S \circ R)^{-1}$, então $(a,c) \in S \circ R$, $a \in \Dom{(R)}$, $c \in \Im{(S)}$ e existe $b \in \Im{(R)} \cap \Dom{(S)}$ tal que $(a,b) \in R$ e $(b,c) \in S$ isto é, $(c,b) \in S^{-1}$, $(b,a) \in R^{-1}$, com $c \in \Dom{(S^{-1})}$, $a \in \Im{(R^{-1})}$ e $b \in \Im{(S^{-1})} \cap \Dom{(R^{-1})}$. Com isso, $(c,a) \in R^{-1} \circ S^{-1}$, de modo que $(S \circ R)^{-1} \subseteq R^{-1} \circ S^{-1}$. A prova de que $R^{-1} \circ S^{-1} \subseteq (S \circ R)^{-1}$ é completamente análoga, de modo que $(S \circ R)^{-1} = R^{-1} \circ S^{-1}$. \blackproof
+            \item Se $a \in \Dom{(R)}$, então existe $b \in \Im{(R)}$ tal que $(a,b) \in R$. Se $\Im{(R)} \subseteq \Dom{(S)}$, então $b \in \Dom{(S)}$, de modo que existe $c \in \Im{(S)}$ tal que $(b,c) \in S$. Assim, $(a,c) \in S \circ R$, de modo que $a \in \Dom{(S \circ R)}$. Com isso, $\Dom{(R)} \subseteq \Dom{(S \circ R)}$. Agora, se $a \in \Dom{(S \circ R)}$, então existe $c \in \Im{(S \circ R)}$ tal que $(a,c) \in S \circ R$, donde $a \in \Dom{(R)}$ e $\Dom{(S \circ R)} \subseteq \Dom{(R)}$. Com isso, $\Dom{(R)} = \Dom{(S \circ R)}$. \blackproof
+            \item Se $c \in \Im{(S)}$, então existe $b \in \Dom{(S)}$ tal que $(b,c) \in S$. Se $\Dom{(S)} \subseteq \Im{(R)}$, então $b \in \Im{(R)}$, de modo que existe $a \in \Dom{(R)}$ tal que $(a,b) \in R$. Assim, $(a,c) \in S \circ R$, de modo que $c \in \Im{(S \circ R)}$. Com isso, $\Im{(S)} \subseteq \Im{(S \circ R)}$. Agora, se $c \in \Im{(S \circ R)}$, então existe $a \in \Dom{(S \circ R)}$ tal que $(a,c) \in S \circ R$, donde $c \in \Im{(S)}$ e $\Im{(S \circ R)} \subseteq \Im{(S)}$. Com isso, $\Im{(S)} = \Im{(S \circ R)}$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1125,7 +1127,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Definindo $f : X \to \mathcal{P}{(X)}$ por $f(x) := \{y \in X : y \leq x \}$, temos que $f$ é bijetiva em relação a $Y := \Im{(f)}$. De fato, se $f(x) = f(y)$, então $x \in f(y)$ e $y \in f(x)$ já que $x \in f(x)$ e $y \in f(y)$; daí, pela definição de $f$, vem $x \leq y$ e $y \leq x$, de modo que $x = y$ e $f$ é injetiva. Provemos então que $x \leq y$ se, e somente se, $f(x) \subseteq f(y)$, para quaisquer $x,y \in X$. Se $z \in f(x)$, então $z \leq x$, e se $x \leq y$, então $z \leq y$, de modo que $z \in f(y)$ e $f(x) \subseteq f(y)$. Agora, se $x \in f(x) \subseteq f(y)$, então $x \in f(y)$, donde $x \leq y$. Com isso, $(X, \leq)$ é ordem-isomorfo a $(Y, \subseteq)$, como havíamos afirmado. \itemproof
+    Definindo $f : X \to \mathcal{P}{(X)}$ por $f(x) := \{y \in X : y \leq x \}$, temos que $f$ é bijetiva em relação a $Y := \Im{(f)}$. De fato, se $f(x) = f(y)$, então $x \in f(y)$ e $y \in f(x)$ já que $x \in f(x)$ e $y \in f(y)$; daí, pela definição de $f$, vem $x \leq y$ e $y \leq x$, de modo que $x = y$ e $f$ é injetiva. Provemos então que $x \leq y$ se, e somente se, $f(x) \subseteq f(y)$, para quaisquer $x,y \in X$. Se $z \in f(x)$, então $z \leq x$, e se $x \leq y$, então $z \leq y$, de modo que $z \in f(y)$ e $f(x) \subseteq f(y)$. Agora, se $x \in f(x) \subseteq f(y)$, então $x \in f(y)$, donde $x \leq y$. Com isso, $(X, \leq)$ é ordem-isomorfo a $(Y, \subseteq)$, como havíamos afirmado. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1191,9 +1193,9 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Sejam $x, y \in X$. Como $\leq$ é uma boa ordem, todo subconjunto não vazio de $X$ possui elemento mínimo. Assim, o conjunto $\{x,y\} \subseteq X$ possui um elemento mínimo. Se $\min\{x,y\} = x$, então $x \leq y$. Se $\min\{x,y\} = y$, então $y \leq x$. Em qualquer caso, vale $x \leq y$ ou $y \leq x$, de modo que a ordem $\leq$ é total. \itemproof
-            \item Pela definição de árvore, precisamos mostrar que, para todo $x \in X$, o conjunto $S = \{ y \in X : y \leq x\}$ é bem-ordenado pela ordem induzida. Seja $A \subseteq S$ um subconjunto não vazio. Como $S \subseteq X$, temos que $A \subseteq X$. Como $X$ é bem-ordenado, $A$ possui um elemento mínimo. Com isso, todo subconjunto não vazio de $S$ possui um elemento mínimo, isto é, $S$ é bem-ordenado. \itemproof
-            \item Sejam $x, y \in X$. Como a ordem $\leq$ é total, temos $x \leq y$ ou $y \leq x$. Suponha, sem perda de generalidade, que $x \leq y$. Como $x \leq x$ e $x \leq y$, temos que $x$ é uma cota inferior de $\{x,y\}$. Se $z$ uma cota inferior qualquer de $\{x,y\}$, então, em particular, $z \leq x$. Logo, $x$ é a maior das cotas inferiores, isto é, $x = \inf\{x,y\}$. Como $y \geq x$ e $y \geq y$, temos que $y$ é uma cota superior de $\{x,y\}$. Se $w$ uma cota superior qualquer de $\{x,y \}$, então, em particular, $w \geq y$. Logo, $y$ é a menor das cotas superiores, isto é, $y = \sup\{x,y\}$. Portanto, $\{x,y\}$ possui supremo e ínfimo. \itemproof
+            \item Sejam $x, y \in X$. Como $\leq$ é uma boa ordem, todo subconjunto não vazio de $X$ possui elemento mínimo. Assim, o conjunto $\{x,y\} \subseteq X$ possui um elemento mínimo. Se $\min\{x,y\} = x$, então $x \leq y$. Se $\min\{x,y\} = y$, então $y \leq x$. Em qualquer caso, vale $x \leq y$ ou $y \leq x$, de modo que a ordem $\leq$ é total. \blackproof
+            \item Pela definição de árvore, precisamos mostrar que, para todo $x \in X$, o conjunto $S = \{ y \in X : y \leq x\}$ é bem-ordenado pela ordem induzida. Seja $A \subseteq S$ um subconjunto não vazio. Como $S \subseteq X$, temos que $A \subseteq X$. Como $X$ é bem-ordenado, $A$ possui um elemento mínimo. Com isso, todo subconjunto não vazio de $S$ possui um elemento mínimo, isto é, $S$ é bem-ordenado. \blackproof
+            \item Sejam $x, y \in X$. Como a ordem $\leq$ é total, temos $x \leq y$ ou $y \leq x$. Suponha, sem perda de generalidade, que $x \leq y$. Como $x \leq x$ e $x \leq y$, temos que $x$ é uma cota inferior de $\{x,y\}$. Se $z$ uma cota inferior qualquer de $\{x,y\}$, então, em particular, $z \leq x$. Logo, $x$ é a maior das cotas inferiores, isto é, $x = \inf\{x,y\}$. Como $y \geq x$ e $y \geq y$, temos que $y$ é uma cota superior de $\{x,y\}$. Se $w$ uma cota superior qualquer de $\{x,y \}$, então, em particular, $w \geq y$. Logo, $y$ é a menor das cotas superiores, isto é, $y = \sup\{x,y\}$. Portanto, $\{x,y\}$ possui supremo e ínfimo. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1208,7 +1210,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
             \item (Antissimetria) Sejam $x, y \in Y$ tais que $(x,y) \in \leq_Y$ e $(y,x) \in \leq_Y$. Então $x \leq y$ e $y \leq x$. Pela antissimetria de $\leq$, vem $x=y$.
             \item (Transitividade) Sejam $x, y, z \in Y$ tais que $(x,y) \in \leq_Y$ e $(y,z) \in \leq_Y$. Então $x \leq y$ e $y \leq z$. Pela transitividade de $\leq$, vem $x \leq z$. Como $x, z \in Y$, vem $(x,z) \in \leq_Y$.
         \end{enumerate}
-    Com isso, $\leq_Y \ := \ \leq \cap \ Y^2$ é uma ordem. \itemproof
+    Com isso, $\leq_Y \ := \ \leq \cap \ Y^2$ é uma ordem. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1231,8 +1233,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Sejam $x, y \in Y$. Como $Y \subseteq X$, temos $x, y \in X$, e como $\leq$ é total em $X$, temos $x \leq y$ ou $y \leq x$, de modo que $x \leq_Y y$ ou $y \leq_Y x$. \itemproof
-            \item Seja $A \in \mathcal{P}(Y)_{\neq \emptyset}$. Como $Y \subseteq X$, temos $A \subseteq X$, e como $\leq$ é uma boa ordem em $X$, existe $\min{A} \in A$. Como para todo $z \in A \subseteq Y$ temos $\min{A} \leq z$, segue que $\min{A}$ é o mínimo de $A$ com relação a $\leq_Y$. \itemproof
+            \item Sejam $x, y \in Y$. Como $Y \subseteq X$, temos $x, y \in X$, e como $\leq$ é total em $X$, temos $x \leq y$ ou $y \leq x$, de modo que $x \leq_Y y$ ou $y \leq_Y x$. \blackproof
+            \item Seja $A \in \mathcal{P}(Y)_{\neq \emptyset}$. Como $Y \subseteq X$, temos $A \subseteq X$, e como $\leq$ é uma boa ordem em $X$, existe $\min{A} \in A$. Como para todo $z \in A \subseteq Y$ temos $\min{A} \leq z$, segue que $\min{A}$ é o mínimo de $A$ com relação a $\leq_Y$. \blackproof
             \item Sendo $x \in Y$ e $S := \{y \in Y : y \leq_Y x \}$, provemos que $(S, \leq_Y \cap \ S^2)$ é bem ordenado. Pondo $T := \{y \in X : y \leq x \}$, temos $S = T \cap Y$, e como $x \in X$ e $\leq$ é uma árvore, temos que $(T, \leq \cap \ T^2)$ é bem ordenado. Como $S \subseteq T$, temos que $(S, (\leq \cap \ T^2) \cap S^2 )$ é também uma boa ordem. Observando que
                 \begin{align*}
                     \leq_Y \cap \ S^2 &= (\leq \cap \ Y^2) \cap (T \cap Y)^2 \\
@@ -1240,7 +1242,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     &= (\leq \cap \ T^2) \cap (T^2 \cap Y^2) \\
                     &= (\leq \cap \ T^2) \cap S^2, 
                 \end{align*}
-            segue que $(S, \leq_Y \cap \ S^2)$ é bem ordenado. \itemproof
+            segue que $(S, \leq_Y \cap \ S^2)$ é bem ordenado. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1278,10 +1280,10 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left]
-            \item[\textbf{(a)} $\Rightarrow$ \textbf{(b)}:] Por definição, $[b] = \{ x \in X : x \sim b \}$, e como $a \sim b$, segue $a \in [b]$. \itemproof
-            \item[\textbf{(b)} $\Rightarrow$ \textbf{(c)}:] Se $a \in [b]$, então $a \sim b$, isto é, $b \in [a]$. \itemproof
-            \item[\textbf{(c)} $\Rightarrow$ \textbf{(d)}:] Se $b \in [a]$, então $b \sim a$. Se $x \in [a]$, então $x \sim a$, de modo que $x \sim b$, isto é, $x \in [b]$. Com isso, $[a] \subseteq [b]$. Analogamente temos $[b] \subseteq [a]$, de modo que $[a] = [b]$. \itemproof
-            \item[\textbf{(d)} $\Rightarrow$ \textbf{(a)}:] Se $a \in [a] = [b]$, então $a \sim b$. \itemproof  
+            \item[\textbf{(a)} $\Rightarrow$ \textbf{(b)}:] Por definição, $[b] = \{ x \in X : x \sim b \}$, e como $a \sim b$, segue $a \in [b]$. \blackproof
+            \item[\textbf{(b)} $\Rightarrow$ \textbf{(c)}:] Se $a \in [b]$, então $a \sim b$, isto é, $b \in [a]$. \blackproof
+            \item[\textbf{(c)} $\Rightarrow$ \textbf{(d)}:] Se $b \in [a]$, então $b \sim a$. Se $x \in [a]$, então $x \sim a$, de modo que $x \sim b$, isto é, $x \in [b]$. Com isso, $[a] \subseteq [b]$. Analogamente temos $[b] \subseteq [a]$, de modo que $[a] = [b]$. \blackproof
+            \item[\textbf{(d)} $\Rightarrow$ \textbf{(a)}:] Se $a \in [a] = [b]$, então $a \sim b$. \blackproof  
         \end{enumerate}
 \end{proof}
 
@@ -1307,9 +1309,9 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $\emptyset \in X/ \sim$, então existiria $x \in X$ tal que $\emptyset = [x]$, mas $x \in [x]$, uma contradição. \itemproof
-            \item Se $y \in \bigcup X / \sim$, então existe $Y \in X / \sim$ tal que $y \in Y$. Como $Y \in X / \sim$, existe $x \in X$ tal que $Y = [x]$. Como $[x] \subseteq X$, vem $y \in X$, de modo que $\bigcup X / \sim \subseteq X$. Agora, se $x \in X$, então $x \sim x$ e $x \in [x]$, e como $[x] \in X / \sim$, vem $x \in \bigcup X / \sim$, de modo que $X \subseteq \bigcup X / \sim$. Logo $\bigcup X / \sim = X$. \itemproof
-            \item Se $Y \cap Z = \emptyset$, nada há de ser provado. Se $Y \cap Z \neq \emptyset$, então existe $x \in X$ tal que $x \in Y \cap Z$. Sendo $y_0, z_0 \in X$ tais que $Y = [y_0]$ e $Z = [z_0]$, temos $x \sim y_0$ e $x \sim z_0$, de modo que $[y_0] = [z_0]$, isto é, $Y = Z$. \itemproof
+            \item Se $\emptyset \in X/ \sim$, então existiria $x \in X$ tal que $\emptyset = [x]$, mas $x \in [x]$, uma contradição. \blackproof
+            \item Se $y \in \bigcup X / \sim$, então existe $Y \in X / \sim$ tal que $y \in Y$. Como $Y \in X / \sim$, existe $x \in X$ tal que $Y = [x]$. Como $[x] \subseteq X$, vem $y \in X$, de modo que $\bigcup X / \sim \subseteq X$. Agora, se $x \in X$, então $x \sim x$ e $x \in [x]$, e como $[x] \in X / \sim$, vem $x \in \bigcup X / \sim$, de modo que $X \subseteq \bigcup X / \sim$. Logo $\bigcup X / \sim = X$. \blackproof
+            \item Se $Y \cap Z = \emptyset$, nada há de ser provado. Se $Y \cap Z \neq \emptyset$, então existe $x \in X$ tal que $x \in Y \cap Z$. Sendo $y_0, z_0 \in X$ tais que $Y = [y_0]$ e $Z = [z_0]$, temos $x \sim y_0$ e $x \sim z_0$, de modo que $[y_0] = [z_0]$, isto é, $Y = Z$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1318,7 +1320,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Pois tome $R := \{(x,y) \in X \times X : \exists A (A \in \mathcal{P} \land x,y \in A) \}$. \itemproof
+    Pois tome $R := \{(x,y) \in X \times X : \exists A (A \in \mathcal{P} \land x,y \in A) \}$. \blackproof
 \end{proof}
 
 \section{Funções}
@@ -1349,13 +1351,13 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Teste só para ver se está funcionando. \itemproof
+    Teste só para ver se está funcionando. \blackproof
 \end{proof}
 
 \begin{prop}
     Sejam $f$ e $g$ funções e $X$ um conjunto.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item $f|_X$ é uma função e seu domínio é $\Dom{(f)} \cap X$.
+            \item $f \restriction_X$ é uma função e seu domínio é $\Dom{(f)} \cap X$.
             \item $g \circ f$ é uma função.
         \end{enumerate}
 \end{prop}
@@ -1363,8 +1365,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Por definição, $f|_X = \{ (a,b) \in f : a \in X \}$, isto é, $f$ é um conjunto de pares ordenados e, portanto, uma relação. Se $(a,b) \in f|_X$ e $(a,c) \in f|_X$, então, pela definição de $f|_X$, $(a,b) \in f$, $(a,c) \in f$ e $a \in X$; como $f$ é função, $b=c$, de modo que $f|_X$ é também uma função. Provemos, por fim, que $\Dom{(f|_X)} =  \Dom{(f)} \cap X$. Se $a \in \Dom{(f|_X)}$, então existe $b \in \Im{(f|_X)}$ tal que $(a,b) \in f|_X$; pela definição de $f|_X$, vem $(a,b) \in f$ e $a \in X$, e de $(a,b) \in f$ vem $a \in \Dom{(f)}$. Com isso, $a \in \Dom{(f)} \cap X$, de modo que $\Dom{(f|_X)} \subseteq \Dom{(f)} \cap X$. Por outro lado, se $a \in \Dom{(f)} \cap X$, então de $a \in \Dom{(f)}$ segue que existe $b \in \Im{(f)}$ tal que $(a,b) \in f$, e como $a \in X$, vem $(a,b) \in f|_X$, de modo que $\Dom{(f)} \cap X \subseteq \Dom{(f|_X)}$. Logo $\Dom{(f|_X)} = \Dom{(f)} \cap X$. Em particular, temos $f|_X = f |_{\Dom{(f)} \cap X}$. \itemproof
-            \item Se $(a,x) \in g \circ f$ e $(a,y) \in g \circ f$, então, por definição, existe $b \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a,b) \in f$ e $(b,x) \in g$ e existe $c \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a, c) \in f$ e $(c,y) \in g$. Como $f$ é função, vem $b=c$; daí, vem $(b,x) \in g$ e $(b,y) \in g$, e como $g$ é função, vem $x=y$. \itemproof
+            \item Por definição, $f\restriction_X = \{ (a,b) \in f : a \in X \}$, isto é, $f$ é um conjunto de pares ordenados e, portanto, uma relação. Se $(a,b) \in f\restriction_X$ e $(a,c) \in f\restriction_X$, então, pela definição de $f\restriction_X$, $(a,b) \in f$, $(a,c) \in f$ e $a \in X$; como $f$ é função, $b=c$, de modo que $f\restriction_X$ é também uma função. Provemos, por fim, que $\Dom{(f\restriction_X)} =  \Dom{(f)} \cap X$. Se $a \in \Dom{(f\restriction_X)}$, então existe $b \in \Im{(f\restriction_X)}$ tal que $(a,b) \in f\restriction_X$; pela definição de $f\restriction_X$, vem $(a,b) \in f$ e $a \in X$, e de $(a,b) \in f$ vem $a \in \Dom{(f)}$. Com isso, $a \in \Dom{(f)} \cap X$, de modo que $\Dom{(f\restriction_X)} \subseteq \Dom{(f)} \cap X$. Por outro lado, se $a \in \Dom{(f)} \cap X$, então de $a \in \Dom{(f)}$ segue que existe $b \in \Im{(f)}$ tal que $(a,b) \in f$, e como $a \in X$, vem $(a,b) \in f\restriction_X$, de modo que $\Dom{(f)} \cap X \subseteq \Dom{(f\restriction_X)}$. Logo $\Dom{(f\restriction_X)} = \Dom{(f)} \cap X$. Em particular, temos $f\restriction_X = f \restriction_{\Dom{(f)} \cap X}$. \blackproof
+            \item Se $(a,x) \in g \circ f$ e $(a,y) \in g \circ f$, então, por definição, existe $b \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a,b) \in f$ e $(b,x) \in g$ e existe $c \in \Im{(f)} \cap \Dom{(g)}$ tal que $(a, c) \in f$ e $(c,y) \in g$. Como $f$ é função, vem $b=c$; daí, vem $(b,x) \in g$ e $(b,y) \in g$, e como $g$ é função, vem $x=y$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1389,8 +1391,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Sejam $x,y \in \Dom{(g \circ f)}$. Se $g(f(x)) = g(f(y))$, então $f(x) = f(y)$ pela injetividade de $g$. Se $f(x) = f(y)$, então $x = y$ pela injetividade de $f$. Logo $g \circ f$ é injetiva. \itemproof
-            \item Sejam $x,y \in \Dom{(f)}$ tais que $f(x) = f(y)$. Se $\Im{(f)} \subseteq \Dom{(g)}$, então $f(x), f(y) \in \Dom{(g)}$, e como $f(x) = f(y)$, temos $g (f(x)) = g(f(y))$. Daí, como $\Dom{(f)} = \Dom{(g \circ f)}$ (proposição \eqref{prop.fund:relacoes}) e $g \circ f$ é injetiva, vem $x=y$, de modo que $f$ é injetiva. \itemproof
+            \item Sejam $x,y \in \Dom{(g \circ f)}$. Se $g(f(x)) = g(f(y))$, então $f(x) = f(y)$ pela injetividade de $g$. Se $f(x) = f(y)$, então $x = y$ pela injetividade de $f$. Logo $g \circ f$ é injetiva. \blackproof
+            \item Sejam $x,y \in \Dom{(f)}$ tais que $f(x) = f(y)$. Se $\Im{(f)} \subseteq \Dom{(g)}$, então $f(x), f(y) \in \Dom{(g)}$, e como $f(x) = f(y)$, temos $g (f(x)) = g(f(y))$. Daí, como $\Dom{(f)} = \Dom{(g \circ f)}$ (proposição \eqref{prop.fund:relacoes}) e $g \circ f$ é injetiva, vem $x=y$, de modo que $f$ é injetiva. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1409,7 +1411,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $(y,x) \in f^{-1}$ e $(z,x) \in f^{-1}$, então $(x,y) \in f$ e $(x,z) \in f$, e como $f$ é função vem $y=z$, de modo que $f^{-1}$ é uma função injetiva. \itemproof
+            \item Se $(y,x) \in f^{-1}$ e $(z,x) \in f^{-1}$, então $(x,y) \in f$ e $(x,z) \in f$, e como $f$ é função vem $y=z$, de modo que $f^{-1}$ é uma função injetiva. \blackproof
             \item A equivalência mais importante é com $f$ ser injetiva.
                 \begin{enumerate}[label=\roman*.]
                     \item Se $f^{-1}$ é uma função, então $(x,y) \in f^{-1}$ e $(x,z) \in f^{-1}$ implicam $y=z$. Daí, como $(y,x) \in f$ e $(z,x) \in f$, sendo $y=z$ segue que $f$ é injetiva. Agora, se $f$ é injetiva, então $(y,x) \in f$ e $(z,x) \in f$ implicam $y=z$, e como $(x,y) \in f^{-1}$ e $(x,z) \in f^{-1}$, segue que $f^{-1}$ é uma função.
@@ -1420,7 +1422,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     
                     ($\Leftarrow$) Sendo $(x,y) \in f$ e $(z,y) \in f$, temos $(y,x) \in f^{-1}$, de modo que $(z,x) \in f^{-1} \circ f$, e como $f^{-1} \circ f = \id_{\Dom{(f)}}$, vem $x=z$, o que prova a injetividade de $f$.
                 \end{enumerate}
-            Com isso, todas as equivalências foram provadas. \itemproof
+            Com isso, todas as equivalências foram provadas. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1433,7 +1435,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Se $f$ é injetiva, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função e $f^{-1} \circ f = \id_{\Dom{(f)}}$, de modo que $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível à esquerda, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetiva. \itemproof
+    Se $f$ é injetiva, então pelo teorema \eqref{teo.fund:inj} $f^{-1}$ é uma função e $f^{-1} \circ f = \id_{\Dom{(f)}}$, de modo que $f$ é invertível à esquerda. Agora, sendo $(x,y) \in f$ e $(z,y) \in f$, provemos que $x=z$. Como $f$ é invertível à esquerda, existe uma função $g$ tal que $g \circ f = \id_{\Dom(f)}$. Como $(x,x) \in g \circ f$, existe $w \in \Im{(f)} \cap \Dom{(g)}$ tal que $(x,w) \in f$ e $(w,x) \in g$. Como $f$ é uma função, vem $w=y$, de modo que $(y,x) \in g$. Analogamente temos $(y,z) \in g$, e como $g$ é uma função vem $x=z$, de modo que $f$ é injetiva. \blackproof
 \end{proof}
 
 \subsection{Funções Sobrejetivas}
@@ -1447,7 +1449,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Segue da proposição \eqref{prop.fund:domeimdeRAB}. \itemproof    
+    Segue da proposição \eqref{prop.fund:domeimdeRAB}. \blackproof    
 \end{proof}
 
 \begin{lem} \label{lem.fund:fegsob}
@@ -1466,8 +1468,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     \item Se $x \in \Dom{(g \circ f)}$, então existe $y \in D$ tal que $(x,y) \in g \circ f$. Logo existe $z \in \Im{(f)} \cap \Dom{(g)} \subseteq B \cap C$ tal que $(x,z) \in f$ e $(z,y) \in g$, isto é, $z = f(x)$ e $y = g(z)$. Com isso, $x \in A$ e $f(x) \in C$, de modo que $x \in \{ x \in A : f(x) \in C\}$, isto é, $\Dom{(g \circ f)} \subseteq \{ x \in A : f(x) \in C\}$.
                     \item Se $x \in \{ x \in A : f(x) \in C\}$, então $x \in A$ e $f(x) \in C$, isto é, existe (um único) $z \in C$ tal que $(x,z) \in f$. Como $z \in C$, existe $y \in \Im{g} \subseteq D$ tal que $(z,y) \in g$. Com isso, $x \in A$ e existe $y \in D$ tal que $(x,y) \in g \circ f$, de modo que $x \in \Dom{(g \circ f)}$, isto é, $\{ x \in A : f(x) \in C\} \subseteq \Dom{(g \circ f)}$.
                 \end{enumerate}
-            Logo $\Dom{(g \circ f)} = \{ x \in A : f(x) \in C\}$. \itemproof
-            \item A volta ($\Leftarrow$) já foi provada (proposição \eqref{prop.fund:relacoes}). Agora, se $y \in f(A)$, então existe $x \in A$ tal que $y = f(x)$, e como $A = \Dom{(g \circ f)}$, vem $f(x) \in C$, isto é, $y \in C$. Logo $f(A) \subseteq C$. \itemproof
+            Logo $\Dom{(g \circ f)} = \{ x \in A : f(x) \in C\}$. \blackproof
+            \item A volta ($\Leftarrow$) já foi provada (proposição \eqref{prop.fund:relacoes}). Agora, se $y \in f(A)$, então existe $x \in A$ tal que $y = f(x)$, e como $A = \Dom{(g \circ f)}$, vem $f(x) \in C$, isto é, $y \in C$. Logo $f(A) \subseteq C$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1482,8 +1484,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $B=C$, então $\Dom{(g \circ f)} = A$ pelo lema \eqref{lem.fund:fegsob}. Se $g$ é sobrejetiva, então para todo $z \in D$ existe $y \in C = B$ tal que $(y,z) \in g$. Se $f$ é sobrejetiva, então para esse $y \in B$ existe $x \in A$ tal que $(x,y) \in f$. Com isso, para todo $z \in D$ existe $x \in A$ tal que $(x,z) \in g \circ f$, o que prova a sobrejetividade de $g \circ f$. \itemproof
-            \item Se $f(A) \subseteq C$, então $\Dom{(g \circ f)} = A$ pelo lema \eqref{lem.fund:fegsob}. Se $g \circ f$ é sobrejetiva, então para todo $z \in D$ existe $x \in A$ tal que $(x,z) \in g \circ f$. Com isso, existe $y \in f(A) \cap C = C$ tal que $(x,y) \in f$ e $(y,z) \in g$. o que prova a sobrejetividade de $g$. \itemproof
+            \item Se $B=C$, então $\Dom{(g \circ f)} = A$ pelo lema \eqref{lem.fund:fegsob}. Se $g$ é sobrejetiva, então para todo $z \in D$ existe $y \in C = B$ tal que $(y,z) \in g$. Se $f$ é sobrejetiva, então para esse $y \in B$ existe $x \in A$ tal que $(x,y) \in f$. Com isso, para todo $z \in D$ existe $x \in A$ tal que $(x,z) \in g \circ f$, o que prova a sobrejetividade de $g \circ f$. \blackproof
+            \item Se $f(A) \subseteq C$, então $\Dom{(g \circ f)} = A$ pelo lema \eqref{lem.fund:fegsob}. Se $g \circ f$ é sobrejetiva, então para todo $z \in D$ existe $x \in A$ tal que $(x,z) \in g \circ f$. Com isso, existe $y \in f(A) \cap C = C$ tal que $(x,y) \in f$ e $(y,z) \in g$. o que prova a sobrejetividade de $g$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1492,7 +1494,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{lem}
 
 \begin{proof}
-    Provemos que $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$ e $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$. Se $(y,z) \in f \circ f^{-1}$, então existe $x \in \Dom{(f)} \cap \Im{(f^{-1})}$ tal que $(y,x) \in f^{-1}$ e $(x,z) \in f$. Daí, $(x,y) \in f$, e como $f$ é uma função, vem $y=z$. Logo $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$. Por outro lado, se $(y,y) \in \id_{\Im{(f)}}$, então existe $x \in \Dom{(f)}$ tal que $(x,y) \in f$. Logo $(y,x) \in f^{-1}$, de modo que $(y, y) \in f \circ f^{-1}$, isto é, $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$. Com isso, vem $f \circ f^{-1} = \id_{\Im{(f)}}$, como queríamos. \itemproof
+    Provemos que $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$ e $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$. Se $(y,z) \in f \circ f^{-1}$, então existe $x \in \Dom{(f)} \cap \Im{(f^{-1})}$ tal que $(y,x) \in f^{-1}$ e $(x,z) \in f$. Daí, $(x,y) \in f$, e como $f$ é uma função, vem $y=z$. Logo $f \circ f^{-1} \subseteq \id_{\Im{(f)}}$. Por outro lado, se $(y,y) \in \id_{\Im{(f)}}$, então existe $x \in \Dom{(f)}$ tal que $(x,y) \in f$. Logo $(y,x) \in f^{-1}$, de modo que $(y, y) \in f \circ f^{-1}$, isto é, $f \circ f^{-1} \supseteq \id_{\Im{(f)}}$. Com isso, vem $f \circ f^{-1} = \id_{\Im{(f)}}$, como queríamos. \blackproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:sob}
@@ -1500,7 +1502,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Se $f$ é sobrejetiva em $B$, então $\Im{(f)} = B$, de modo que $f \circ f^{-1} = \id_B$. Por outro lado, se $f \circ f^{-1} = \id_B$, então $f$ é sobrejetiva em $B$ porque, como também $f \circ f^{-1} = \id_{\Im{(f)}}$, vem $\Im{(f)} = B$. \itemproof
+    Se $f$ é sobrejetiva em $B$, então $\Im{(f)} = B$, de modo que $f \circ f^{-1} = \id_B$. Por outro lado, se $f \circ f^{-1} = \id_B$, então $f$ é sobrejetiva em $B$ porque, como também $f \circ f^{-1} = \id_{\Im{(f)}}$, vem $\Im{(f)} = B$. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1516,7 +1518,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{obs}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \subsection{Funções Bijetivas e Funções Inversas}
@@ -1530,7 +1532,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Segue imediatamente da definição. \itemproof
+    Segue imediatamente da definição. \blackproof
 \end{proof}
 
 \begin{prop}
@@ -1538,7 +1540,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{prop}
 
 \begin{proof}
-    Segue como corolário imediato das proposições \eqref{prop.fund:feginj} e \eqref{prop.fund:fegsob}. \itemproof
+    Segue como corolário imediato das proposições \eqref{prop.fund:feginj} e \eqref{prop.fund:fegsob}. \blackproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:bij1}
@@ -1556,16 +1558,16 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Como $f$ é função, para todo $x \in A$ existe um único $y \in B$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela proposição \eqref{prop.fund:defbij}, $f^{-1}$ é bijetiva em $A$. \itemproof
+            \item Como $f$ é função, para todo $x \in A$ existe um único $y \in B$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela proposição \eqref{prop.fund:defbij}, $f^{-1}$ é bijetiva em $A$. \blackproof
             \item A equivalência que mais importa é com $f$ ser bijetiva em $B$.
                 \begin{enumerate}[label=\roman*.]
-                    \item Se $f^{-1} \subseteq B \times A$ é uma função tal que $\Dom{(f^{-1})} = B$, então para todo $y \in B$ existe um único $x \in A$ tal que $(y,x) \in f^{-1}$, isto é, $(x,y) \in f$. Daí, pela proposição \eqref{prop.fund:defbij}, temos que $f$ é bijetiva. Agora, pela mesma proposição, se $f$ é bijetiva, então para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela definição de função, $f^{-1}$ é uma função de $B$ em $A$. \itemproof
+                    \item Se $f^{-1} \subseteq B \times A$ é uma função tal que $\Dom{(f^{-1})} = B$, então para todo $y \in B$ existe um único $x \in A$ tal que $(y,x) \in f^{-1}$, isto é, $(x,y) \in f$. Daí, pela proposição \eqref{prop.fund:defbij}, temos que $f$ é bijetiva. Agora, pela mesma proposição, se $f$ é bijetiva, então para todo $y \in B$ existe um único $x \in A$ tal que $(x,y) \in f$, isto é, $(y,x) \in f^{-1}$. Daí, pela definição de função, $f^{-1}$ é uma função de $B$ em $A$. \blackproof
                 \end{enumerate}
             Provemos que $f$ é bijetiva em $B$ se, e somente se, $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_{B}$.
                 \begin{enumerate}[label=\roman*., resume]
-                    \item Se $f$ é bijetiva em $B$, então $f$ é injetiva e sobrejetiva, de modo que, pelos teoremas \eqref{teo.fund:inj} e \eqref{teo.fund:sob}, vem $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, respectivamente. Agora, se $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, então pelos mesmos teoremas $f$ é injetiva e sobrejetiva em $B$, isto é, $f$ é bijetiva em $B$. \itemproof
+                    \item Se $f$ é bijetiva em $B$, então $f$ é injetiva e sobrejetiva, de modo que, pelos teoremas \eqref{teo.fund:inj} e \eqref{teo.fund:sob}, vem $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, respectivamente. Agora, se $f^{-1} \circ f = \id_A$ e $f \circ f^{-1} = \id_B$, então pelos mesmos teoremas $f$ é injetiva e sobrejetiva em $B$, isto é, $f$ é bijetiva em $B$. \blackproof
                 \end{enumerate}
-            Com isso, todas as equivalências foram provadas. \itemproof
+            Com isso, todas as equivalências foram provadas. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1582,7 +1584,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \[
             g_1 = g_1 \circ \id_B = g_1 \circ (f \circ g_2) = (g_1 \circ f) \circ g_2 = \id_A \circ g_2 = g_2.    
         \]
-    Logo, a função inversa da função $f : A \to B$, quando existe, é única. \itemproof
+    Logo, a função inversa da função $f : A \to B$, quando existe, é única. \blackproof
 \end{proof}
 
 \begin{teo} \label{teo.fund:bij2}
@@ -1596,8 +1598,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $f$ é invertível, então existe uma função $g: B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$, de modo que $f$ é invertível à esquerda e à direita, isto é, $f$ é injetiva (teorema \eqref{teo.fund:invesquerda}) e sobrejetiva em $B$ (teorema \eqref{teo.fund:invdireita}), isto é, $f$ é bijetiva em $B$. Por outro lado, se $f$ é bijetiva em $B$, então pelo teorema \eqref{teo.fund:bij1} sua relação inversa $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$ e, mais ainda, satisfaz $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$, de modo que $f$ é invertível. \itemproof   
-            \item Segue imediatamente do primeiro item. \itemproof
+            \item Se $f$ é invertível, então existe uma função $g: B \to A$ tal que $g \circ f = \id_A$ e $f \circ g = \id_B$, de modo que $f$ é invertível à esquerda e à direita, isto é, $f$ é injetiva (teorema \eqref{teo.fund:invesquerda}) e sobrejetiva em $B$ (teorema \eqref{teo.fund:invdireita}), isto é, $f$ é bijetiva em $B$. Por outro lado, se $f$ é bijetiva em $B$, então pelo teorema \eqref{teo.fund:bij1} sua relação inversa $f^{-1} \subseteq B \times A$ é uma função de $B$ em $A$ e, mais ainda, satisfaz $f^{-1} \circ f = \id_{A}$ e $f \circ f^{-1} = \id_{B}$, de modo que $f$ é invertível. \blackproof   
+            \item Segue imediatamente do primeiro item. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1606,7 +1608,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{cor}
 
 \begin{proof}
-    A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $f$ é invertível à esquerda e à direita, então pelos teoremas \eqref{teo.fund:invesquerda} e \eqref{teo.fund:invdireita} $f$ é bijetiva em $B$, de modo que, pelo teorema \eqref{teo.fund:bij2}, $f$ é invertível. \itemproof
+    A ida ($\Rightarrow$) decorre imediatamente das definições. Provemos então a volta ($\Leftarrow$). Se $f$ é invertível à esquerda e à direita, então pelos teoremas \eqref{teo.fund:invesquerda} e \eqref{teo.fund:invdireita} $f$ é bijetiva em $B$, de modo que, pelo teorema \eqref{teo.fund:bij2}, $f$ é invertível. \blackproof
 \end{proof}
 
 \begin{obs}
@@ -1631,10 +1633,10 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Pela definição de sucessor, $x^+ = x \cup \{x\}$. Pela definição de união, $y \in x \cup \{x\}$ se, e somente se, $y \in x$ ou $y \in \{x\}$. Como $y \in \{x\}$ equivale a $y = x$, temos que $y \in x^+$ se, e somente se, $y \in x$ ou $y = x$. \itemproof
-            \item Tomando $y=x$ no item anterior, obtemos $(x \in x^+) \leftrightarrow ((x \in x) \lor (x = x))$. Como vale $x = x$, vale também a disjunção $(x \in x) \lor (x = x)$, de modo que $x \in x^+$. \itemproof
+            \item Pela definição de sucessor, $x^+ = x \cup \{x\}$. Pela definição de união, $y \in x \cup \{x\}$ se, e somente se, $y \in x$ ou $y \in \{x\}$. Como $y \in \{x\}$ equivale a $y = x$, temos que $y \in x^+$ se, e somente se, $y \in x$ ou $y = x$. \blackproof
+            \item Tomando $y=x$ no item anterior, obtemos $(x \in x^+) \leftrightarrow ((x \in x) \lor (x = x))$. Como vale $x = x$, vale também a disjunção $(x \in x) \lor (x = x)$, de modo que $x \in x^+$. \blackproof
             \item Se $z \in x$, então $(z \in x) \lor (z = x)$, de modo que $z \in x^+$.
-            Com isso, $\forall z (z \in x \rightarrow z \in x^+)$, isto é, $x \subseteq x^+$. \itemproof
+            Com isso, $\forall z (z \in x \rightarrow z \in x^+)$, isto é, $x \subseteq x^+$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1672,40 +1674,16 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
         \end{enumerate}  
 \end{teo}
 
-\begin{proof} \label{teo.fund:uomega}
-    Provemos primeiramente que $\omega(I)$ está bem definido. Pelo axioma das partes, existe o conjunto $\mathcal{P}{(I)}$. Pelo axioma da separação com universo $\mathcal{P}{(I)}$ e a fórmula $ (\emptyset \in x) \land \forall y ((y \in x) \rightarrow (y^+ \in x)  )$ (que se abrevia por $\ind{(x)}$), existe $z(I) :=  \{ x \in \mathcal{P}{(I)} : \ind{(x)} \}$. Pelo teorema \eqref{teo.fund:intfamilia}, como $z(I) \neq \emptyset$ já que $I \in z(I)$, existe $\omega(I) := \bigcap z(I)$.
+\begin{proof} 
+    Provemos que $\omega(I)$ está bem definido. Pelo axioma das partes, existe o conjunto $\mathcal{P}{(I)}$. Pelo axioma da separação com o conjunto $\mathcal{P}{(I)}$ e a fórmula $\ind{(x)}$, existe $z(I) :=  \{ x \in \mathcal{P}{(I)} : \ind{(x)} \}$. Pelo \Cref{teo.fund:intfamilia}, como $z(I) \neq \emptyset$ já que $I \in z(I)$, existe $\omega(I) := \bigcap z(I)$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Provemos primeiramente que $\emptyset \in \omega(I)$. Pelo teorema \eqref{teo.fund:intfamilia}, $\omega(I) := \bigcap z(I)$ é o conjunto que satisfaz
-                \[
-                    \forall x \left(x \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow x \in y) \right).
-                \]
-            Com isso, $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \in z(I) \rightarrow \emptyset \in y)$. Como, por definição,
-                \[
-                    \forall y (y \in z(I) \leftrightarrow y \subseteq I \land \ind{(y)}),
-                \]
-            temos $\emptyset \in \bigcap{z(I)} \leftrightarrow \forall y (y \subseteq I \land \ind{(y)} \rightarrow \emptyset \in y)$, o que sabemos ser verdade: se $y \subseteq I$ é indutivo, então $\emptyset \in y$. Logo, $\emptyset \in \bigcap{z(I)} = \omega (I)$. Agora provemos que $\forall x ( (x \in \omega(I)) \rightarrow (x^+ \in \omega(I)) )$. Isso equivale a
-                \[
-                    \forall x ( \forall y (y \in z(I) \rightarrow x \in y) \rightarrow \forall y (y \in z(I) \rightarrow x^+ \in y)  ),
-                \]
-            o que equivale a
-                \[
-                    \forall x ( \forall y (y \in z(I) \rightarrow (x \in y \rightarrow x^+ \in y) )),
-                \]
-            o que equivale a
-                \[
-                    \forall y (y \subseteq I \land \ind{(y)} \rightarrow \forall x (x \in y \rightarrow x^+ \in y)),
-                \]
-            o que sabemos ser verdade: se $y \subseteq I$ é indutivo, então $\forall x (x \in y \rightarrow x^+ \in y)$. Logo, $\omega{(I)}$ é indutivo. \itemproof
-            \item Provemos inicialmente que, para quaisquer $I$ e $J$ indutivos, tem-se $\omega (I) \subseteq J$. O mesmo argumento do item anterior mostra que $I \cap J$ são indutivos, e como $I \cap J \subseteq I$, vem $I \cap J \in z(I)$. Com isso, como
-                \[
-                    \forall x \left( x \in \bigcap z(I) \leftrightarrow \forall w (w \in z(I) \rightarrow x \in w ) \right),
-                \]
-            particularmente para $w = I \cap J$, se $x \in \bigcap z(I)$, então $x \in I \cap J$, de modo que $\bigcap{z(I)} \subseteq I \cap J \subseteq J$, isto é, $\omega{(I)} \subseteq J$. Como isso, como $\omega{(I)}$ e $\omega{(J)}$ são indutivos, temos $\omega{(I)} \subseteq \omega{(J)}$ e $\omega{(J)} \subseteq \omega{(I)}$, isto é, $\omega{(I)} = \omega{(J)}$. \itemproof
+            \item \blackproof
+            \item \blackproof
         \end{enumerate}
 \end{proof}
 
 \begin{obs}
-    O teorema \eqref{teo.fund:omega} nos diz que $\omega(I)$ é a interseção da família de todos os conjuntos indutivos e que o parâmtro $I$ pode ser suprimido. A seguinte definição só é possível devido a esse teorema.
+    O \Cref{teo.fund:omega} nos diz que $\omega(I)$ é a interseção da família de todos os conjuntos indutivos e que o parâmtro $I$ pode ser suprimido. A seguinte definição só é possível devido a esse teorema.
 \end{obs}
 
 \begin{defi}
@@ -1717,7 +1695,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Pelo teorema \eqref{teo.fund:omega}, se $A$ é indutivo, então $\omega \subseteq A$. Daí, como $A \subseteq \omega$, vem $A = \omega$. \itemproof
+    Pelo teorema \eqref{teo.fund:omega}, se $A$ é indutivo, então $\omega \subseteq A$. Daí, como $A \subseteq \omega$, vem $A = \omega$. \blackproof
 \end{proof}
 
 \begin{teo}[Axiomas de Peano] \label{teo.fund:peano}
@@ -1733,19 +1711,19 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \end{teo}
 
 \begin{proof}
-    Ver \cite{fajardo2024conjuntos}, teorema 3.20, página 89. \itemproof
+    Ver \cite{fajardo2024conjuntos}, teorema 3.20, página 89. \blackproof
 \begin{comment}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Suponha, por absurdo, que $x \neq y$ e $x^+ = y^+$. Então $x^+ = y \cup \{y \}$, e como $x \in x^+$, vem $x \in y \cup \{y\}$. Como $x \neq y$, então $x \in y$. Analogamente, $y \in x$, o que contraria a proposição \eqref{prop.fund:xinyeyinxabs}. Logo, se $x \neq y$, então $x^+ \neq y^+$. \itemproof
+            \item Suponha, por absurdo, que $x \neq y$ e $x^+ = y^+$. Então $x^+ = y \cup \{y \}$, e como $x \in x^+$, vem $x \in y \cup \{y\}$. Como $x \neq y$, então $x \in y$. Analogamente, $y \in x$, o que contraria a proposição \eqref{prop.fund:xinyeyinxabs}. Logo, se $x \neq y$, então $x^+ \neq y^+$. \blackproof
         \end{enumerate}
     Note que não usamos a hipótese de ser $x,y \in \omega$, ou seja, vale a afirmação mais forte $\forall x \forall y (\neg(x=y) \rightarrow \neg (x^+ = y^+) )$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}, resume]
-            \item Sabemos que $\forall x (x \in x^+)$. Se fosse $x^+ = \emptyset$ para algum $x$, seria $x \in \emptyset$, o que não é. \itemproof
+            \item Sabemos que $\forall x (x \in x^+)$. Se fosse $x^+ = \emptyset$ para algum $x$, seria $x \in \emptyset$, o que não é. \blackproof
         \end{enumerate}
     Novamente, não usamos a hipótese de ser $x \in \omega$, ou seja, vale a afirmação mais forte $\forall x (\neg(x^+ = \emptyset))$.
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}, resume]
-            \item Pelo axioma da separação, defina $A := \{ x \in \omega : P(x) \}$. Então $A \subseteq \omega$. Afirmamos que $A$ é indutivo. Como $P(\emptyset)$, então $\emptyset \in A$. Se $x \in A$, então $x \in \omega$ e $P(x)$, e como $P(x^+)$ e $x^+ \in \omega$, vem $x^+ \in A$. Com isso, $A$ é indutivo, de modo que $\omega \subseteq A$, e como $A \subseteq \omega$, vem $A = \omega$. \itemproof
+            \item Pelo axioma da separação, defina $A := \{ x \in \omega : P(x) \}$. Então $A \subseteq \omega$. Afirmamos que $A$ é indutivo. Como $P(\emptyset)$, então $\emptyset \in A$. Se $x \in A$, então $x \in \omega$ e $P(x)$, e como $P(x^+)$ e $x^+ \in \omega$, vem $x^+ \in A$. Com isso, $A$ é indutivo, de modo que $\omega \subseteq A$, e como $A \subseteq \omega$, vem $A = \omega$. \blackproof
         \end{enumerate}.
 \end{comment}
 \end{proof}
@@ -1770,7 +1748,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Por um lado ($\Rightarrow$), se $A$ é transitivo e $a \in A$, então para todo $x \in a$ temos $x \in A$, de modo que $a \subseteq A$. Se fosse $a = A$, teríamos $a \in a$ ou $A \in A$, o que contraria o corolário \eqref{cor.fund:xnotinx}. Com isso, $a \neq A$, donde $a \subsetneq A$. Por outro lado ($\Leftarrow$), se $a \subsetneq A$ para todo $a \in A$, então $a \subseteq A$. Logo, se $x \in y$ e $y \in A$, então $y \subseteq A$, de modo que $x \in A$. \itemproof
+            \item Por um lado ($\Rightarrow$), se $A$ é transitivo e $a \in A$, então para todo $x \in a$ temos $x \in A$, de modo que $a \subseteq A$. Se fosse $a = A$, teríamos $a \in a$ ou $A \in A$, o que contraria o corolário \eqref{cor.fund:xnotinx}. Com isso, $a \neq A$, donde $a \subsetneq A$. Por outro lado ($\Leftarrow$), se $a \subsetneq A$ para todo $a \in A$, então $a \subseteq A$. Logo, se $x \in y$ e $y \in A$, então $y \subseteq A$, de modo que $x \in A$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1790,8 +1768,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     \item Se $x \in n$, então, dado $y \in x$, como $n$ é transitivo, vem $y \in n$, e como $n \subsetneq n^+$, vem $y \in n^+$, de modo que $n^+$ é transitivo.
                     \item Se $x = n$, então, dado $y \in x$, temos $y \in n$, e como $n \subsetneq n^+$, vem $y \in n^+$, de modo que $n^+$ é transitivo. 
                 \end{itemize}
-            Com isso, todo número natural é transitivo. \itemproof
-            \item Provemos que $\forall n (n \in \omega \rightarrow n \subsetneq \omega)$ por indução. Trivialmente $\emptyset \subsetneq \omega$. Agora, se $n \in \omega$, então $\{n\} \subsetneq \omega$, e como $n \subsetneq \omega$ (hipótese de indução), temos $n \cup \{n\} \subseteq \omega$, isto é, $n^+ \subsetneq \omega$, pois $n^+ \neq \omega$. \itemproof
+            Com isso, todo número natural é transitivo. \blackproof
+            \item Provemos que $\forall n (n \in \omega \rightarrow n \subsetneq \omega)$ por indução. Trivialmente $\emptyset \subsetneq \omega$. Agora, se $n \in \omega$, então $\{n\} \subsetneq \omega$, e como $n \subsetneq \omega$ (hipótese de indução), temos $n \cup \{n\} \subseteq \omega$, isto é, $n^+ \subsetneq \omega$, pois $n^+ \neq \omega$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1806,8 +1784,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item A prova se dará por indução em $n$. Se $m \in \emptyset$, então a conclusão segue trivialmente por vacuidade. Agora, supondo que $m \in n$ implica $m^+ \in n$ ou $m^+=n$, provemos que $m \in n^+$ implica $m^+ \in n^+$ ou $m^+ = n^+$. Se $m \in n^+$, então $m \in n$ ou $m=n$. Se $m \in n$, então $m^+ \in n$ ou $m^+=n$ (hipótese de indução). Como $n \subsetneq n^+$ e $n \in n^+$, vem $m^+ \in n^+$. Se $m=n$, então $m^+=n^+$. \itemproof
-            \item A prova se dará por indução em $n$. Se $m \in \emptyset$, então a conclusão segue trivialmente por vacuidade. Agora, supondo que $m \in n$ implica $m \subsetneq n$, provemos que $m \in n^+$ implica $m \subsetneq n^+$. Se $m \in n^+$, então $m \in n$ ou $m=n$. Se $m \in n$, então $m \subsetneq n$ (hipótese de indução), e como $n \subsetneq n^+$, vem $m \subsetneq n^+$. Se $m = n$, então $m \subsetneq n^+$ pois $n \subsetneq n^+$. \itemproof
+            \item A prova se dará por indução em $n$. Se $m \in \emptyset$, então a conclusão segue trivialmente por vacuidade. Agora, supondo que $m \in n$ implica $m^+ \in n$ ou $m^+=n$, provemos que $m \in n^+$ implica $m^+ \in n^+$ ou $m^+ = n^+$. Se $m \in n^+$, então $m \in n$ ou $m=n$. Se $m \in n$, então $m^+ \in n$ ou $m^+=n$ (hipótese de indução). Como $n \subsetneq n^+$ e $n \in n^+$, vem $m^+ \in n^+$. Se $m=n$, então $m^+=n^+$. \blackproof
+            \item A prova se dará por indução em $n$. Se $m \in \emptyset$, então a conclusão segue trivialmente por vacuidade. Agora, supondo que $m \in n$ implica $m \subsetneq n$, provemos que $m \in n^+$ implica $m \subsetneq n^+$. Se $m \in n^+$, então $m \in n$ ou $m=n$. Se $m \in n$, então $m \subsetneq n$ (hipótese de indução), e como $n \subsetneq n^+$, vem $m \subsetneq n^+$. Se $m = n$, então $m \subsetneq n^+$ pois $n \subsetneq n^+$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1822,7 +1800,7 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Por um lado ($\Rightarrow$), se $m \in n$, então $m^+ \in n$ ou $m^+ = n$. Como $n \subsetneq n^+$ e $n \in n^+$, em ambos os casos temos $m^+ \in n^+$. Por outro lado ($\Leftarrow$), se $m^+ \in n^+$, então $m^+ \in n$ ou $m^+ = n$. Se $m^+ \in n$, então $m^+ \subsetneq n$, e como $m \in m^+$, segue que $m \in n$. Se $m^+ = n$, como $m \in m^+$, temos imediatamente $m \in n$. \itemproof
+            \item Por um lado ($\Rightarrow$), se $m \in n$, então $m^+ \in n$ ou $m^+ = n$. Como $n \subsetneq n^+$ e $n \in n^+$, em ambos os casos temos $m^+ \in n^+$. Por outro lado ($\Leftarrow$), se $m^+ \in n^+$, então $m^+ \in n$ ou $m^+ = n$. Se $m^+ \in n$, então $m^+ \subsetneq n$, e como $m \in m^+$, segue que $m \in n$. Se $m^+ = n$, como $m \in m^+$, temos imediatamente $m \in n$. \blackproof
 
 
             \item A prova se dará por indução em $n$. Se $n = \emptyset$, não pode ser $m \in \emptyset$. Provemos rapidamente que ou $\emptyset \in m$ ou $m = \emptyset$.
@@ -1835,14 +1813,15 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
                     \item se $m = n$, como $n \in n^+$, temos $m \in n^+$;
                     \item se $n \in m$, então $n^+ \in m$ ou $n^+ = m$.
                 \end{itemize}
-            Com isso, em qualquer caso, pelo menos uma das afirmações $m \in n^+$, $n^+ \in m$ ou $m = n^+$ é verdadeira. A exclusividade é garantida pela proposição \eqref{prop.fund:xinyeyinxabs} e pelo corolário \eqref{cor.fund:xnotinx}. \itemproof
+            Com isso, em qualquer caso, pelo menos uma das afirmações $m \in n^+$, $n^+ \in m$ ou $m = n^+$ é verdadeira. A exclusividade é garantida pela \Cref{prop.fund:xinyeyinxabs} e pelo \Cref{cor.fund:xnotinx}. \blackproof
         \end{enumerate}
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{cor.fund:bigcupomega}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
             \item Para quaisquer $m,n \in \omega$, se $m \subsetneq n$, então $m \in n$.
+            \item Para quaisquer $m,n \in \omega$, se $m \subsetneq n^+$, então $m \subseteq n$.
             \item $\bigcup \omega = \omega$.
         \end{enumerate}
 \end{cor}
@@ -1850,8 +1829,9 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item Se $m \subsetneq n$, então $m \neq n$. Pelo teorema \eqref{teo.fund:tricotomiadopertence}, ou $m \in n$, ou $n \in m$. Se fosse $n \in m$, teríamos $n \in n$, uma contradição. Logo, só pode ser $m \in n$. \itemproof
-            \item Se $x \in \bigcup \omega$, então existe $y \in \omega$ tal que $x \in y$, e como $y \subseteq \omega$, vem $x \in \omega$. Com isso, $\bigcup \omega \subseteq \omega$. Agora, se $x \in \omega$, então existe $x^+ \in \omega$ tal que $x \in x^+$, de modo que $x \in \bigcup \omega$. Com isso, $\bigcup \omega \supseteq \omega$. Logo, $\bigcup \omega = \omega$. \itemproof
+            \item Se $m \subsetneq n$, então $m \neq n$. Pelo \Cref{teo.fund:tricotomiadopertence}, ou $m \in n$, ou $n \in m$. Se fosse $n \in m$, teríamos $n \in n$, uma contradição. Logo, só pode ser $m \in n$. \blackproof
+            \item Como $m \subsetneq n^+$, pelo item anterior temos $m \in n^+$. Pela definição de sucessor, $m \in n \cup \{n\}$, o que implica $m \in n$ ou $m = n$. Se $m \in n$, então $m \subseteq n$ (pois todo número natural é um conjunto transitivo). Se $m = n$, trivialmente $m \subseteq n$. Em ambos os casos, $m \subseteq n$. \blackproof
+            \item Se $x \in \bigcup \omega$, então existe $y \in \omega$ tal que $x \in y$, e como $y \subseteq \omega$, vem $x \in \omega$. Com isso, $\bigcup \omega \subseteq \omega$. Agora, se $x \in \omega$, então existe $x^+ \in \omega$ tal que $x \in x^+$, de modo que $x \in \bigcup \omega$. Com isso, $\bigcup \omega \supseteq \omega$. Logo, $\bigcup \omega = \omega$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1866,8 +1846,8 @@ A linguagem (de primeira ordem) da teoria dos conjuntos, denotada por $\mathcal{
 \begin{proof}
     \leavevmode
         \begin{enumerate}[leftmargin=*, align=left, label=\textbf{(\alph*)}]
-            \item A prova se dará por indução em $n$. Trivialmente $\emptyset$ é bem ordenado por $\subseteq$ (por vacuidade: não existem subconjuntos não vazios de $\emptyset$). Agora, suponha que $n \in \omega$ seja bem ordenado por $\subseteq$. Tome $S \in \mathcal{P}(n^+)_{\neq \emptyset}$ e defina $S' := S \setminus \{n\}$. Se $S' = \emptyset$, então $S = \{n\}$ e $S$ tem um elemento mínimo (nesse caso, $n = \min{S}$). Se $S' \neq \emptyset$, então, como $S' \subseteq n$, existe $\min{S'} \in S'$. Provemos que $\min{S'} \subseteq x$ para todo $x \in S$. Se $x \in S$, então $x \in n^+$, de modo que $x \in n$ ou $x = n$. Se $x \in n$, então, como $x \in S$ e $x \neq n$, vem $x \in S'$, donde $\min{S'} \subseteq x$. Se $x=n$, então, como $\min{S'} \in n$ já que $S' \subseteq n$, da transitividade de $n$ vem $\min{S'} \subseteq n$, de modo que $\min{S'} \subseteq x$. Com isso, $\min{S'}$ é o elemento mínimo de $S$, de modo que $n^+$ é bem ordenado por $\subseteq$. \itemproof
-            \item Sejam $S \in \mathcal{P}(\omega)_{\neq \emptyset}$ e $n_0 \in S$. Como $n_0 \in S \cap n^+_0$, temos $S \cap n^+_0 \neq \emptyset$, e como $S \cap n^+_0 \subseteq n^+_0$, existe $m := \min{S \cap n^+_0}$. Agora, sendo $n \in S$, provemos que $m \subseteq n$. Se $n \in S$, então ou $n \in n_0$, ou $n = n_0$, ou $n_0 \in n$, pela tricotomia de $\in$. Se $n \in n_0$, então, como $n_0 \subseteq n^+_0$, vem $n \in S \cap n^+_0$, de modo que $m \subseteq n$. Se $n = n_0$, então $n \in n^+_0$, e como $n_0 \subseteq n^+_0$, vem $n \in S \cap n^+_0$, de modo que $m \subseteq n$. Se $n_0 \in n$, então $n_0 \subseteq n$ (transitividade de $n$), e como $m \subseteq n_0$ já que $n_0 \in S \cap n^+_0$, vem $m \subseteq n$. Com isso, $m = \min{S \cap n^+_0}$ é o elemento mínimo de $S$, de modo que $\omega$ é bem-ordenado por $\subseteq$. \itemproof
+            \item A prova se dará por indução em $n$. Trivialmente $\emptyset$ é bem ordenado por $\subseteq$ (por vacuidade: não existem subconjuntos não vazios de $\emptyset$). Agora, suponha que $n \in \omega$ seja bem ordenado por $\subseteq$. Tome $S \in \mathcal{P}(n^+)_{\neq \emptyset}$ e defina $S' := S \setminus \{n\}$. Se $S' = \emptyset$, então $S = \{n\}$ e $S$ tem um elemento mínimo (nesse caso, $n = \min{S}$). Se $S' \neq \emptyset$, então, como $S' \subseteq n$, existe $\min{S'} \in S'$. Provemos que $\min{S'} \subseteq x$ para todo $x \in S$. Se $x \in S$, então $x \in n^+$, de modo que $x \in n$ ou $x = n$. Se $x \in n$, então, como $x \in S$ e $x \neq n$, vem $x \in S'$, donde $\min{S'} \subseteq x$. Se $x=n$, então, como $\min{S'} \in n$ já que $S' \subseteq n$, da transitividade de $n$ vem $\min{S'} \subseteq n$, de modo que $\min{S'} \subseteq x$. Com isso, $\min{S'}$ é o elemento mínimo de $S$, de modo que $n^+$ é bem ordenado por $\subseteq$. \blackproof
+            \item Sejam $S \in \mathcal{P}(\omega)_{\neq \emptyset}$ e $n_0 \in S$. Como $n_0 \in S \cap n^+_0$, temos $S \cap n^+_0 \neq \emptyset$, e como $S \cap n^+_0 \subseteq n^+_0$, existe $m := \min{S \cap n^+_0}$. Agora, sendo $n \in S$, provemos que $m \subseteq n$. Se $n \in S$, então ou $n \in n_0$, ou $n = n_0$, ou $n_0 \in n$, pela tricotomia de $\in$. Se $n \in n_0$, então, como $n_0 \subseteq n^+_0$, vem $n \in S \cap n^+_0$, de modo que $m \subseteq n$. Se $n = n_0$, então $n \in n^+_0$, e como $n_0 \subseteq n^+_0$, vem $n \in S \cap n^+_0$, de modo que $m \subseteq n$. Se $n_0 \in n$, então $n_0 \subseteq n$ (transitividade de $n$), e como $m \subseteq n_0$ já que $n_0 \in S \cap n^+_0$, vem $m \subseteq n$. Com isso, $m = \min{S \cap n^+_0}$ é o elemento mínimo de $S$, de modo que $\omega$ é bem-ordenado por $\subseteq$. \blackproof
         \end{enumerate}
 \end{proof}
 
@@ -1892,43 +1872,91 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
         \[
             \mathcal{C} := \left\{ R \in \mathcal{P}(\omega \times X) : (0,x_0) \in R \land \forall n \forall x ((n,x) \in R \to (n^{+},f(x)) \in R) \right\}.
         \]
-    Como $\omega \times X \in \mathcal{C}$, temos $\mathcal{C} \neq \emptyset$, de modo que, pelo teorema \eqref{teo.fund:intfamilia} podemos tomar $\varphi := \bigcap \mathcal{C}$. Temos $(0,x_0) \in \varphi$ porque $(0,x_0) \in R$ para toda $R \in \mathcal{C}$. Analogamente, se $(n,x) \in \varphi$, então $(n,x) \in R$ para toda $R \in \mathcal{C}$, de modo que $(n^{+},f(x)) \in R$ para toda $R \in \mathcal{C}$, o que prova que $(n^{+},f(x)) \in \varphi$ e que $\varphi \in \mathcal{C}$.
-        \begin{enumerate}[label=\roman*.]
-            \item $\Dom{(\varphi)} = \omega$. Claramente, $\Dom{(\varphi)} \subseteq \omega$. Como $(0,x_0) \in \varphi$, temos $0 \in \Dom{(\varphi)}$. Agora, se $n \in \Dom{(\varphi)}$, então existe $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n^+,f(x)) \in \varphi$, donde $n^+ \in \Dom{(\varphi)}$. Assim, $\Dom{(\varphi)}$ é indutivo, e como $\Dom{(\varphi)} \subseteq \omega$, temos $\Dom{(\varphi)} = \omega$.
-            \item $\varphi$ é função. Provemos que $(n,x) \in \varphi$ e $(n,y) \in \varphi$ implicam $x=y$ por indução em $n$.
+    Como $\omega \times X \in \mathcal{C}$, temos $\mathcal{C} \neq \emptyset$, de modo que, pelo \Cref{teo.fund:intfamilia}, existe $\varphi := \bigcap \mathcal{C}$. Essa é a função procurada. Provemos isso.
+        \begin{claim}
+           $\varphi \in \mathcal{C}$.
+        \end{claim}
+        \begin{midproof}
+            Temos $(0,x_0) \in \varphi$ porque $(0,x_0) \in R$ para toda $R \in \mathcal{C}$. Analogamente, se $(n,x) \in \varphi$, então $(n,x) \in R$ para toda $R \in \mathcal{C}$, de modo que $(n^{+},f(x)) \in R$ para toda $R \in \mathcal{C}$, o que prova que $(n^{+},f(x)) \in \varphi$ e que $\varphi \in \mathcal{C}$. \whiteproof
+        \end{midproof}
+        \begin{claim}
+            $\Dom{(\varphi)} = \omega$.
+        \end{claim}
+        \begin{midproof}
+            Claramente, $\Dom{(\varphi)} \subseteq \omega$. Como $(0,x_0) \in \varphi$, temos $0 \in \Dom{(\varphi)}$. Agora, se $n \in \Dom{(\varphi)}$, então existe $x \in X$ tal que $(n,x) \in \varphi$. Com isso, vem $(n^+,f(x)) \in \varphi$, donde $n^+ \in \Dom{(\varphi)}$. Assim, $\Dom{(\varphi)}$ é indutivo, e como $\Dom{(\varphi)} \subseteq \omega$, temos $\Dom{(\varphi)} = \omega$. \whiteproof
+        \end{midproof}
+        \begin{claim}
+            A relação $\varphi \subseteq \omega \times X$ é uma função.
+        \end{claim}
+        \begin{midproof}
+            Provemos que $(n,x) \in \varphi$ e $(n,y) \in \varphi$ implicam $x=y$ por indução em $n$.
                 \begin{itemize}
                     \item Base de indução. Como $(0, x_0) \in \varphi$, se existisse $y \in X$ tal que $(0, y) \in \varphi$ e $y \neq x_0$, então $(0, x_0) \in \varphi \setminus \{(0,y)\}$, e se $(m,z) \in \varphi \setminus \{(0,y)\}$, então $(m^+, f(z)) \in \varphi$, e como $m^+ \neq 0$ para todo $m \in \omega$, teríamos $(m^+, f(z)) \in \varphi \setminus \{(0,y)\}$, de modo que $\varphi \setminus \{(0,y)\} \in \mathcal{C}$, uma contradição: teríamos $\varphi \subseteq \varphi \setminus \{(0,y)\}$, mas como $\varphi \setminus \{(0,y)\} \subseteq \varphi$, seria $\varphi \setminus \{(0,y)\} = \varphi$, isto é, $(0,y) \notin \varphi$, o que contraria a hipótese $(0,y) \in \varphi$. Com isso, se $(0,y) \in \varphi$, então $y=x_0$.
-                    \item Passo indutivo. Se $n \in \Dom{(\varphi)}$, então existe $x \in X$ tal que $(n,x) \in \varphi$. Suponha, por hipótese de indução, que $(n,y) \in \varphi$ implica $y=x$. De $(n,x) \in \varphi$, vem $(n^+,f(x)) \in \varphi$. Suponha que existe $y \in X$ tal que $(n^+,y) \in \varphi$ e $y \neq f(x)$. Como $n^+ \neq 0$, teríamos $(0,x_0) \in \varphi \setminus \{(n^+,y)\}$, e se $(m,z) \in \varphi \setminus \{(n^+,y)\}$, então $(m^+,f(z)) \in \varphi$. Se $m^+ = n^+$, então $m=n$, e pela hipótese de indução, teríamos $z=x$, de modo que $f(z) = f(x) \neq y$, o que implicaria $(m^+, f(z)) \in \varphi \setminus \{(n^+,y)\}$. Por outro lado, se $m \neq n$, então $m^+ \neq n^+$, de modo que $(m^+, f(z)) \in \varphi \setminus \{(n^+,y)\}$. Em qualquer caso, teríamos $\varphi \setminus \{(n^+,y)\} \in \mathcal{C}$, uma contradição (pelo mesmo motivo visto na base de indução). Com isso, se $(n^+,y) \in \varphi$, então $y=f(x)$.
+                    \item Passo indutivo. Se $n \in \Dom{(\varphi)}$, então existe $x \in X$ tal que $(n,x) \in \varphi$. Suponha, por hipótese de indução, que $(n,y) \in \varphi$ implica $y=x$. De $(n,x) \in \varphi$, vem $(n^+,f(x)) \in \varphi$. Suponha que existe $y \in X$ tal que $(n^+,y) \in \varphi$ e $y \neq f(x)$. Como $n^+ \neq 0$, teríamos $(0,x_0) \in \varphi \setminus \{(n^+,y)\}$, e se $(m,z) \in \varphi \setminus \{(n^+,y)\}$, então $(m^+,f(z)) \in \varphi$. Se $m^+ = n^+$, então $m=n$, e pela hipótese de indução, teríamos $z=x$, de modo que $f(z) = f(x) \neq y$, o que implicaria $(m^+, f(z)) \in \varphi \setminus \{(n^+,y)\}$. Por outro lado, se $m \neq n$, então $m^+ \neq n^+$, de modo que $(m^+, f(z)) \in \varphi \setminus \{(n^+,y)\}$. Em qualquer caso, teríamos $\varphi \setminus \{(n^+,y)\} \in \mathcal{C}$, uma contradição (pelo mesmo motivo visto na base de indução). Logo, se $(n^+,y) \in \varphi$, então $y=f(x)$.
                 \end{itemize}
-            \item Unicidade de $\varphi$. Se $\psi$ é outra função satisfazendo as condições do teorema, então $\psi(0) = x_0 = \varphi(0)$ e, se $\psi(n) = \varphi(n)$, então
+            Com isso, temos que $\varphi$ é uma função de $\omega$ em $X$. \whiteproof
+        \end{midproof}
+    Assim, fica provada a existência de uma função $\varphi: \omega \to X$ que tem as propriedades do enunciado. Provemos, por fim, sua unicidade.
+        \begin{claim}
+            A função $\varphi : \omega \to X$ é única.
+        \end{claim}
+        \begin{midproof}
+            A prova se dará por indução. Se $\Phi : \omega \to X$ é uma função tal que $\Phi(0) = x_0$ e $\Phi(n^+) = f(\Phi(n))$ para todo $n \in \omega$, então $\Phi(0) = \varphi(0)$ e, se $\Phi(n) = \varphi(n)$, então
                 \[
-                    \psi(n^+) = f(\psi(n)) = f(\varphi(n)) = \varphi(n^+),
+                    \Phi(n^+) = f(\Phi(n)) = f(\varphi(n)) = \varphi(n^+),
                 \]  
-            de modo que, por indução, $\psi = \varphi$.
-        \end{enumerate}
-    Logo, existe uma única função $\varphi: \omega \to X$ tal que $\varphi(0) = x_0$ e $\varphi(n^+) = f(\varphi(n))$ para todo $n \in \omega$. \itemproof 
+            de modo que $\Phi = \varphi$. \whiteproof
+        \end{midproof}
+    Logo, existe uma única função $\varphi: \omega \to X$ tal que $\varphi(0) = x_0$ e $\varphi(n^+) = f(\varphi(n))$ para todo $n \in \omega$. \blackproof 
 \end{proof}
 
 \begin{teo}[da recursão com parâmetro] \label{teo.fund:recpar}
-    Sejam $X$ um conjunto, $x_0 \in X$ e $g : \omega \times X \to X$. Existe uma única função $f : \omega \to X$ tal que
+    Sejam $X$ um conjunto, $x_0 \in X$ e $f : \omega \times X \to X$. Existe uma única função $\varphi : \omega \to X$ tal que
         \begin{itemize}
-            \item $f(0) = x_0$;
-            \item $f(n^+) = g(n, f(n))$, para todo $n \in \omega$.
+            \item $\varphi(0) = x_0$;
+            \item $\varphi(n^+) = f(n, \varphi(n))$, para todo $n \in \omega$.
         \end{itemize}
 \end{teo}
 
 \begin{proof}
-    Defina $ g' : \omega \times X \longrightarrow \omega \times X$ por $g'(n, y) = (n^+, g(n, y))$. Pelo teorema da recursão finita \eqref{teo.fund:recfin}, existe uma única função $f' : \omega \rightarrow \omega \times X$ tal que $ f'(0) = (0, x_0)$ e $f'(n^+) = g'(f'(n))$ para todo $n \in \omega$.
-
-    Afirmamos que a primeira coordenada de $f'(n)$ é sempre $n$, isto é, que $f'(n) = (n, y_n)$ para todo $n \in \omega$ e algum $y_n \in X$. De fato, $f'(0) = (0,x_0)$ claramente cumpre a afirmação, e se $f'(n) = (n, y_n)$ para algum $y_n \in X$, então $f'(n^+) = g'(n, y_n) = (n^+, g(n,y_n))$, o que prova, via indução, a afirmação. Com isso, podemos definir $f : \omega \to X$ de modo que $f(n)= y_n$, para todo $n \in \omega$.
-    
-    Provemos que $f$ satisfaz as condições do teorema. Temos $f'(0) = (0,x_0)$, donde $f(0) = x_0$. Ainda pela definição de $f$, temos $f'(n) = (n, f(n))$ e $f'(n^+) = (n^+, f(n^+))$; por outro lado, $f'(n^+) = g'(n, f(n)) = (n^+, g(n,f(n)))$, de modo que $f(n^+) = g(n,f(n))$ para todo $n \in \omega$.
-
-    Por fim, provemos a unicidade de $f$. Se $h : \omega \to X$ tal que $h(0) = x_0$ e $h(n^+) = g(n, h(n))$ para todo $n \in \omega$, definindo $h' : \omega \to \omega \times X$ por $h'(n) = (n, h(n))$, temos que $h'(0) = (0,x_0)$ e, para todo $n \in \omega$,
-        \[
-            h(n^+) = (n^+, h(n^+)) = (n^+, g(n, h(n))) = g'(n, h(n)) = g'(h'(n)).
-        \]
-    Com isso, $h'$ é uma função que satisfaz as mesmas condições que $f'$; como $f'$ foi construída pelo teorema da recursão, segue que $h' = f'$.
+    Defina $g : \omega \times X \to \omega \times X$ por $g(n, y) = (n^+, f(n, y))$. Pelo \Cref{teo.fund:recfin}, existe uma única função $\psi : \omega \rightarrow \omega \times X$ tal que $ \psi(0) = (0, x_0)$ e $\psi(n^+) = g(\psi(n))$ para todo $n \in \omega$.
+        \begin{claim}
+            $\pi_1 (\psi(n)) = n$ para todo $n \in \omega$.
+        \end{claim}
+        \begin{midproof}
+            A prova se dará por indução em $n$. Para $n=0$, como $\psi(0) = (0, x_0)$, temos que $\pi_1(\psi(0)) = 0$. Suponha, por hipótese de indução, que $\pi_1(\psi(n)) = n$. Com isso, $\psi(n) = (n, \pi_2(\psi(n)))$. Pelas definições de $\psi$ e $g$, temos 
+                \[
+                    \psi(n^+) = g(\psi(n)) = g(n, \pi_2(\psi(n))) = (n^+, f(n, \pi_2(\psi(n)))),
+                \]
+            de modo que $\pi_1(\psi(n^+)) = n^+$. \whiteproof
+        \end{midproof}
+    Agora, defina $\varphi := \pi_2 \circ \psi : \omega \to X$, isto é, $\varphi(n) := \pi_2(\psi(n))$ para todo $n \in \omega$. Essa é a função procurada. Provemos isso.
+        \begin{claim}
+            $\varphi(0) = x_0$ e $\varphi(n^+) = f(n, \varphi(n))$, para todo $n \in \omega$.
+        \end{claim}
+        \begin{midproof}
+            Como $\psi(0) = (0,x_0)$, temos $\varphi(0) = \pi_2(0,x_0) = x_0$. Pela definição de $\varphi$, temos $\psi(n) = (n, \varphi(n))$ para todo $n \in \omega$, de modo que
+                \[
+                    \psi(n^+) = (n^+, f(n, \pi_2(\psi(n)))) = (n^+, f(n, \varphi(n))).
+                \]
+            Com isso, vem
+                \[
+                    \varphi(n^+) = \pi_2(\psi(n^+)) = \pi_2(n^+, f(n, \varphi(n))) = f(n,\varphi(n))
+                \]
+            para todo $n \in \omega$. \whiteproof 
+        \end{midproof}
+    Assim, fica provada a existência de uma função $\varphi: \omega \to X$ que tem as propriedades do enunciado. Provemos, por fim, sua unicidade.
+        \begin{claim}
+            A função $\varphi: \omega \to X$ é única.
+        \end{claim}
+        \begin{midproof}
+            A prova se dará por indução. Se $\Phi : \omega \to X$ é uma função tal que $\Phi(0) = x_0$ e $\Phi(n^+) = f(n, \Phi(n))$ para todo $n \in \omega$, então $\Phi(0) = \varphi(0)$ e, se $\Phi(n) = \varphi(n)$, então
+                \[
+                    \Phi(n^+) = f(n, \Phi(n)) = f(n, \varphi(n)) = \varphi(n^+),
+                \]
+            de modo que $\Phi = \varphi$. \whiteproof
+        \end{midproof}
+    Logo, existe uma única função $\varphi: \omega \to X$ tal que $\varphi(0) = x_0$ e $\varphi(n^+) = f(n,\varphi(n))$ para todo $n \in \omega$. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -1938,12 +1966,86 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
         \]
 \end{defi}
 
-\begin{teo}[da recursão completa]
-    Sejam $X$ um conjunto e $f :  X^{<\omega} \to X$ uma função. Existe uma única função $\varphi : \omega \to X$ tal que $\varphi(n) = f(\varphi|_n)$ para todo $n \in \omega$.
+\begin{teo}[da recursão completa] \label{teo.fund:reccom}
+    Sejam $X$ um conjunto e $f :  X^{<\omega} \to X$ uma função. Existe uma única função $\varphi : \omega \to X$ tal que $\varphi(n) = f(\varphi \restriction_n)$ para todo $n \in \omega$.
 \end{teo}
 
 \begin{proof}
-    Ver \cite{fajardo2024conjuntos}, corolário 4.31, página 115. Observe que esse resultado, assim como \eqref{teo.fund:recpar}, são corolários do teorema \eqref{teo.fund:recfin}.
+    Defina $h : X^{< \omega} \to X^{< \omega}$ por $h(g) := g \cup \{(\Dom{(g)}, f(g)) \}$. Pelo \Cref{teo.fund:recfin}, existe uma única função $\psi : \omega \to X^{< \omega}$ tal que $\psi(0) = \emptyset$ e $\psi(n^+) = h(\psi(n))$.
+        \begin{claim} \label{fund:reccom.claim.dompsin}
+            $\psi(n) \in X^n$ para todo $n \in \omega$.
+        \end{claim}
+        \begin{midproof}
+            Dado $n \in \omega$, como $\psi(n) \in X^{< \omega}$, existe $m \in \omega$ para o qual $\psi(n) : m \to X$. Com isso, $\Im{(\psi(n))} \subseteq X$ e a afirmação equivale a provar que $m = n$, isto é, basta provar que $\Dom{(\psi(n))} = n$ para todo $n \in \omega$. Façamos isso por indução em $n$. Para $n=0$, como $\psi(0) = \emptyset$, temos $\Dom{(\psi(0))} = \Dom{(\emptyset)} = \emptyset = 0$. Suponha, por hipótese de indução, que $\Dom{(\psi(n))} = n$. Como
+                \[
+                    \psi(n^+) = h(\psi(n)) = \psi(n) \cup \{ (\Dom{(\psi(n))}, f(\psi(n)))\},
+                \]
+            obtemos
+                \[
+                    \Dom{(\psi(n^+))} = \Dom{(\psi(n))} \cup \{ \Dom{(\psi(n))} \},
+                \]
+            e como $\Dom{(\psi(n))} = n$, vem $\Dom{(\psi(n^+))} = n \cup \{ n \} = n^+$. Isso completa o passo indutivo. Como $\Dom{(\psi(n))} = n$ e $\Im{\psi(n)} \subseteq X$, vem $\psi(n) : n \to X$, isto é, $\psi(n) \in X^n$, para todo $n \in \omega$. \whiteproof
+        \end{midproof}
+        \begin{claim} \label{fund:reccom.claim.restricao}
+            Para quaisquer $m,n \in \omega$, se $m \subseteq n$, então $\psi(n) \restriction_m = \psi(m)$.
+        \end{claim}
+        \begin{midproof}
+            A prova se dará por indução em $n$. Para $n=0$, obtemos $\psi(0) \restriction_m = \emptyset \restriction_m = \emptyset$, e como $m \subseteq \emptyset$, vem $m = \emptyset$, de modo que $\psi(0) \restriction_{\emptyset} = \emptyset = \psi(\emptyset) = \psi(0)$. Supondo, por hipótese de indução, que $\psi(n) \restriction_m = \psi(m)$ para todo $m \subseteq n$, provemos que $\psi(n^+) \restriction_m = \psi(m)$ para todo $m \subseteq n^+$. Se $m = n^+$, então $\psi(n^+) \restriction_{n^+} = \psi(n^+)$ trivialmente. Se $m \neq n^+$, então $m \subsetneq n^+$, de modo que $m \subseteq n$ (\Cref{cor.fund:bigcupomega}). 
+                \begin{itemize}
+                    \item Por um lado ($\subseteq$), seja $(k,x) \in \psi(n^+) \restriction_m$. Então $(k,x) \in \psi(n^+)$, com $k \in m$. Como $\psi(n^+) = \psi(n) \cup \{(n, f(\psi(n)))\}$, vem $(k,x) \in \psi(n)$ ou $(k,x) = (n, f(\psi(n)))$. Se fosse $(k,x) = (n, f(\psi(n)))$, então seria $k=n$, de modo que $n \in n$ pois $k \in m \subseteq n$, uma contradição. Logo, só pode ser $(k,x) \in \psi(n)$, e como $k \in m$, vem $(k,x) \in \psi(m)$ pois $\psi(n) \restriction_m = \psi(m)$ pela hipótese de indução. Assim, fica provado que $\psi(n^+) \restriction_m \subseteq \psi(m)$.
+                    \item Por outro lado ($\supseteq$), seja $(k,x) \in \psi(m)$. Então, como $\psi(m) = \psi(n) \restriction_m$ pela hipótese de indução, temos $(k,x) \in \psi(n) \restriction_m$. Como $\psi(n) \subseteq \psi(n^+)$, temos $(k,x) \in \psi(n^+)$, como $k \in m$, temos $(k,x) \in \psi(n^+) \restriction_m$. Assim, fica provado que $\psi(n^+) \restriction_m \supseteq \psi(m)$.
+                \end{itemize}
+            Com isso, vem $\psi(n^+) \restriction_m = \psi(m)$ para todo $m \subseteq n^+$. Isso completa o passo indutivo. \whiteproof
+        \end{midproof}
+    Agora, defina $\varphi := \bigcup \Im{(\psi)}$. Essa é a função procurada. Provemos isso.
+        \begin{claim} \label{fund:reccom.claim.varphifuncao}
+            $\varphi$ é uma função de $\omega$ em $X$.
+        \end{claim}
+        \begin{midproof}
+            Comecemos com $\varphi$ ser função. Como $\varphi \subseteq \omega \times X$, provemos que se $(k,x) \in \varphi$ e $(k,y) \in \varphi$, então $x=y$. Se $(k,x), (k,y) \in \varphi = \bigcup \Im{(\psi)}$, então existem $n,m \in \omega$ tais que $(k,x) \in \psi(n)$ e $(k,y) \in \psi(m)$. Como a relação $\subseteq$ é total em $\omega$, suponha, sem perda de generalidade, que $m \subseteq n$. Com isso, $\psi(n) \restriction_m = \psi(m)$, e como $k \in m$ pois $(k,y) \in \psi(m)$, vem $(k,x) \in \psi(m)$. Como $\psi(m)$ é uma função, vem $x=y$, de modo que $\varphi$ é uma função. Agora, vejamos que $\Dom{(\varphi)} = \omega$. Como
+                \[
+                    \varphi = \bigcup \Im{(\psi)} = \bigcup \{\psi(n) : n \in \omega \} = \bigcup_{n \in \omega} \psi(n),
+                \]
+            obtemos
+                \[
+                    \Dom{(\varphi)} = \Dom{\left( \bigcup_{n \in \omega} \psi(n) \right)} = \bigcup_{n \in \omega} \Dom{(\psi(n))} = \bigcup_{n \in \omega} n = \bigcup \omega = \omega,
+                \]
+            pois $\Dom{(\psi(n))} = n$ para todo $n \in \omega$ (\Cref{fund:reccom.claim.dompsin}) e $\bigcup \omega = \omega$ (\Cref{cor.fund:bigcupomega}). Por fim, verifiquemos que $\Im{(\varphi)} \subseteq X$. Para isso, basta ver que
+                \[
+                    \Im{(\varphi)} = \Im{\left(\bigcup_{n \in \omega} \psi(n) \right)} = \bigcup_{n \in \omega} \Im{(\psi(n))} \subseteq X,
+                \]
+            pois $\Im{(\psi(n))} \subseteq X$ para todo $n \in \omega$. Com isso, $\varphi : \omega \to X$. \whiteproof
+        \end{midproof}
+        \begin{claim} \label{fund:reccom.claim.propriedaderecursiva}
+            $\varphi(n) = f(\varphi \restriction_n)$ para todo $n \in \omega$.
+        \end{claim}
+        \begin{midproof}
+            Seja $n \in \omega$. Temos $(n, f(\psi(n))) \in \psi(n^+)$ pois 
+                \[
+                    \psi(n^+) = \psi(n) \cup \{ (n, f(\psi(n)))\},
+                \]
+            e como $\varphi = \bigcup \Im{(\psi)}$, temos $\psi(n^+) \subseteq \varphi$, de modo que $(n, f(\psi(n))) \in \varphi$; como $\varphi : \omega \to X$ é uma função (\Cref{fund:reccom.claim.varphifuncao}), vem  $\varphi(n) = f(\psi(n))$. Para finalizarmos, vejamos que $\psi(n) = \varphi \restriction_n$. Por um lado ($\subseteq$), se $(k,x) \in \psi(n)$, então, como $\psi(n) \in \Im{(\psi)}$, temos $(k,x) \in \bigcup \Im{(\psi)} = \varphi$. Com isso, como $k \in n$ pois $\Dom{(\psi(n))} = n$ (\Cref{fund:reccom.claim.dompsin}), vem $(k,x) \in \varphi \restriction_n$. Por outro lado ($\supseteq$), se $(k,x) \in \varphi \restriction_n$, então $(k,x) \in \varphi$ com $k \in n$ e existe $m \in \omega$ tal que $(k,x) \in \psi(m)$. Se $n \subseteq m$, então $\psi(m) \restriction_n = \psi(n)$ (\Cref{fund:reccom.claim.restricao}), e como $k \in n$, temos $(k,x) \in \psi(m) \restriction_n$, de modo que $(k,x) \in \psi(n)$. Se $m \subseteq n$, então $\psi(m) = \psi(n) \restriction_m$, e como $k \in m$, temos $(k,x) \in \psi(n) \restriction_m$, isto é, $(k,x) \in \psi(n)$. Com isso, temos $\psi(n) = \varphi \restriction_n$ para todo $n \in \omega$, de modo que, por fim, como $\varphi(n) = f(\psi(n))$, temos $\varphi(n) = f(\varphi \restriction_n)$ para todo $n \in \omega$. \whiteproof
+        \end{midproof}
+    Com isso, fica provada a existência de uma função $\varphi: \omega \to X$ que tem as propriedades do enunciado. Provemos, por fim, sua unicidade.
+        \begin{claim}
+            A função $\varphi : \omega \to X$ é única.
+        \end{claim}
+        \begin{midproof}
+            Seja $\Phi : \omega \to X$ tal que $\Phi(n) = f(\Phi \restriction_n)$ para todo $n \in \omega$. Provemos que $\Phi \restriction_n = \varphi \restriction_n$ para todo $n \in \omega$ por indução em $n$. Para $n=0$, trivialmente $\Phi \restriction_{0} = \emptyset = \varphi \restriction_{0}$. Suponha, por hipótese de indução, que $\Phi \restriction_n = \varphi \restriction_n$. Com isso,
+                \begin{align*}
+                    \Phi \restriction_{n^+} &= \Phi \restriction_n \cup \{ (n, \Phi(n)) \} \\
+                    &= \varphi \restriction_n \cup \{ (n, f(\Phi \restriction_n)) \} \\
+                    &= \varphi \restriction_n \cup \{ (n, f(\varphi \restriction_n)) \} \\
+                    &= h(\varphi \restriction_n) = h(\psi(n)) \\
+                    &= \psi(n^+) = \varphi \restriction_{n^+},
+                \end{align*}
+            o que completa o passo indutivo. Logo
+                \[
+                    \Phi(n) = \Phi \restriction_{n^+}(n) = \varphi \restriction_{n^+}(n) = \varphi(n)
+                \]
+            para todo $n \in \omega$, de modo que $\Phi = \varphi$. \whiteproof
+        \end{midproof}
+    Logo, existe uma única função $\varphi : \omega \to X$ tal que $\varphi(n) = f(\varphi \restriction_n)$ para todo $n \in \omega$. \blackproof
 \end{proof}
 
 \subsection{Aritmética dos Números Naturais}
@@ -1971,7 +2073,7 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
 \end{prop}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
 
 \begin{defi}
@@ -2005,7 +2107,7 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
         \]
     isto é, $f(i) \in g(i)$. Como $g(i) := X_i$, vem $f(i) \in X_i$ para todo $i \in I$, de modo que $f \in \prod_{i \in I} X_i$, isto é, $\prod_{i \in I} X_i \neq \emptyset$.
 
-    $(\Leftarrow)$ Agora, seja $x \neq \emptyset$ tal que $\emptyset \notin x$. Defina $g = (X_i)_{i \in I}$ assim: $I = x$ e $g := \id_I$. Como $X_i = g(i) = \id_I(i) = i \in I = x$ e $\emptyset \notin x$, temos $X_i \neq \emptyset$ para todo $i \in I$, de modo que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, existe $\varphi \in \prod_{i \in I} X_i$ tal que $\varphi(i) \in X_i$ para todo $i \in I$, e como $X_i = i$ e $I = x$, vem $\varphi(i) \in i$ para todo $i \in x$, de modo que $\varphi : x \to \bigcup x$ é uma função de escolha em $x$. \itemproof
+    $(\Leftarrow)$ Agora, seja $x \neq \emptyset$ tal que $\emptyset \notin x$. Defina $g = (X_i)_{i \in I}$ assim: $I = x$ e $g := \id_I$. Como $X_i = g(i) = \id_I(i) = i \in I = x$ e $\emptyset \notin x$, temos $X_i \neq \emptyset$ para todo $i \in I$, de modo que $\prod_{i \in I} X_i \neq \emptyset$. Com isso, existe $\varphi \in \prod_{i \in I} X_i$ tal que $\varphi(i) \in X_i$ para todo $i \in I$, e como $X_i = i$ e $I = x$, vem $\varphi(i) \in i$ para todo $i \in x$, de modo que $\varphi : x \to \bigcup x$ é uma função de escolha em $x$. \blackproof
 \end{proof}
 
 \begin{defi}
@@ -2025,5 +2127,5 @@ Para definir funções de domínio $\omega$ recursivamente, precisamos
 \end{teo}
 
 \begin{proof}
-    \itemproof
+    \blackproof
 \end{proof}
